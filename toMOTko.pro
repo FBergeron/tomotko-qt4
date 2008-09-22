@@ -28,7 +28,6 @@ HEADERS     +=  src/Base.h \
                 src/ResultListItem.h \
                 src/HistoryField.h \
                 src/SearchDialog.h \
-#               src/ZFileDialog.h \
                 src/KeyActionListViewItem.h \
 #               src/SequenceDialog.h \
                 src/SequenceListItem.h \
@@ -79,7 +78,6 @@ SOURCES     +=  src/Util.cpp \
                 src/ResultListItem.cpp \
                 src/HistoryField.cpp \
                 src/SearchDialog.cpp \
-                #src/ZFileDialog.cpp \
                 #src/SequenceDialog.cpp \
                 src/SequenceListItem.cpp \
                 src/PreferencesDialog.cpp \
