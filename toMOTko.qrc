@@ -1,0 +1,6 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>pics/SequenceMapLandscape.png</file>
+    <file>pics/SequenceMapPortrait.png</file>
+</qresource>
+</RCC>
