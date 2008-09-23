@@ -1,18 +1,17 @@
 #ifndef SEQUENCE_DIALOG_H
 #define SEQUENCE_DIALOG_H 
 
-#include <qdialog.h>
-#include <qevent.h>
-#include <qhbox.h>
-#include <qhgroupbox.h>
-#include <qlabel.h>
-#include <qlayout.h>
-#include <qlineedit.h>
-#include <qmessagebox.h>
-#include <qpushbutton.h>
-#include <qvaluestack.h>
-#include <qvbox.h>
-#include <qvgroupbox.h>
+#include <QDialog>
+#include <QStack>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QMessageBox>
+#include <QMouseEvent>
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <QWidget>
 #include "Preferences.h"
 #include "Sequence.h"
 
@@ -54,46 +53,61 @@ private:
 
     Sequence                    sequence;
 
-    QValueStack<Sequence::Item> items; 
+    QStack<Sequence::Item>      items; 
     Sequence::ItemList          currGroup;
 
     QVBoxLayout*                mainLayout;
 
-    QHBox*                      sequencePanel;
+    QWidget*                    sequencePanel;
+    QHBoxLayout*                sequencePanelLayout;
 
-    QVGroupBox*                 quizPanelWrapper;
-    QVBox*                      quizPanel;
+    QGroupBox*                  quizPanelWrapper;
+    QVBoxLayout*                quizPanelWrapperLayout;
+    QWidget*                    quizPanel;
+    QVBoxLayout*                quizPanelLayout;
 
-    QHBox*                      quizTopPanel;
-    QVBox*                      quizTopLeftPanel;
-    QVGroupBox*                 quizImagePanel;
+    QWidget*                    quizTopPanel;
+    QHBoxLayout*                quizTopPanelLayout;
+    QWidget*                    quizTopLeftPanel;
+    QVBoxLayout*                quizTopLeftPanelLayout;
+    QGroupBox*                  quizImagePanel;
+    QVBoxLayout*                quizImagePanelLayout;
     QPushButton*                quizImageButton;
     
-    QHGroupBox*                 quizFirstLangPanel;
-    QHBox*                      quizFirstLangPanelWrapper;
+    QGroupBox*                  quizFirstLangPanel;
+    QHBoxLayout*                quizFirstLangPanelLayout;
+    QWidget*                    quizFirstLangPanelWrapper;
+    QHBoxLayout*                quizFirstLangPanelWrapperLayout;
     QLabel*                     quizFirstLangLabel;
     QPushButton*                quizFirstLangTermButton;
 
-    QHGroupBox*                 quizTestLangPanel;
-    QHBox*                      quizTestLangPanelWrapper;
-    QVBox*                      quizTestLangLabelsPanel;
-    QVBox*                      quizTestLangButtonsPanel;;
+    QGroupBox*                  quizTestLangPanel;
+    QHBoxLayout*                quizTestLangPanelLayout;
+    QWidget*                    quizTestLangPanelWrapper;
+    QHBoxLayout*                quizTestLangPanelWrapperLayout;
+    QWidget*                    quizTestLangLabelsPanel;
+    QVBoxLayout*                quizTestLangLabelsPanelLayout;
+    QWidget*                    quizTestLangButtonsPanel;
+    QVBoxLayout*                quizTestLangButtonsPanelLayout;
 
     QLabel*                     quizTestLangAltLabel;
     QLabel*                     quizTestLangTermLabel;
     QPushButton*                quizTestLangAltButton;
     QPushButton*                quizTestLangTermButton;
 
-    QVBox*                      quizCommentBox;
+    QWidget*                    quizCommentBox;
+    QVBoxLayout*                quizCommentBoxLayout;
     QLabel*                     quizCommentLabel;
     QPushButton*                quizCommentButton;
 
-    QVBox*                      sequencePanelButtons;
+    QWidget*                    sequencePanelButtons;
+    QVBoxLayout*                sequencePanelButtonsLayout;
     QPushButton*                addSequenceMarkButton;
     QPushButton*                addGroupMarkButton;
     QPushButton*                removeLastMarkButton;
 
-    QHBox*                      sequenceLinePanel;
+    QWidget*                    sequenceLinePanel;
+    QHBoxLayout*                sequenceLinePanelLayout;
     QLabel*                     sequenceLineLabel;
     QLineEdit*                  sequenceLineLineEdit;
 

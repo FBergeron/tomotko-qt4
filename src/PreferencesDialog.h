@@ -34,7 +34,7 @@
 #include <QGroupBox>
 #include "KeyActionListViewItem.h"
 #include "Preferences.h"
-//#include "SequenceDialog.h"
+#include "SequenceDialog.h"
 #include "SequenceListItem.h"
 //#include "SmartListView.h"
 #include "StudyLanguageItem.h"

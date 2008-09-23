@@ -725,17 +725,17 @@ void PreferencesDialog::keyPressEvent( QKeyEvent* evt ) {
 }
 
 void PreferencesDialog::addSequence() {
-    //SequenceDialog dialog( prefs, this );
-    //dialog.showMaximized();
-    //int result = dialog.exec();
-    //if( result ) {
-    //    Sequence sequence = dialog.getSequence();
-    //    // Just add new sequence.  Ignore duplicates.
-    //    if( !isRevealingSequenceDefined( sequence.toHumanReadableString() ) ) {
-    //        SequenceListItem* item = new SequenceListItem( sequencesView, sequence.toHumanReadableString(), sequence ); 
-    //        item->setOn( true );
-    //    }
-    //}
+    SequenceDialog dialog( prefs, this );
+    dialog.showMaximized();
+    int result = dialog.exec();
+    if( result ) {
+        Sequence sequence = dialog.getSequence();
+        // Just add new sequence.  Ignore duplicates.
+        if( !isRevealingSequenceDefined( sequence.toHumanReadableString() ) ) {
+            SequenceListItem* item = new SequenceListItem( sequencesView, sequence.toHumanReadableString(), sequence ); 
+            item->setOn( true );
+        }
+    }
 }
 
 void PreferencesDialog::removeSequence() {
