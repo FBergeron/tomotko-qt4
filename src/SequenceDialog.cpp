@@ -1,7 +1,7 @@
 #include "SequenceDialog.h"
 
 SequenceDialog::SequenceDialog( Preferences* prefs, QWidget* parent ) 
-    : QDialog( parent/*, 0, true*/ ), prefs( prefs ) {
+    : QDialog( parent ), prefs( prefs ) {
     init();
 }
 
@@ -12,18 +12,13 @@ void SequenceDialog::init() {
     sequencePanel = new QWidget();
     sequencePanelLayout = new QHBoxLayout();
     sequencePanel->setLayout( sequencePanelLayout );
-    //sequencePanel->setSpacing( 10 );
+    sequencePanelLayout->setSpacing( 0 );
 
-    quizPanelWrapper = new QGroupBox( tr( "Quiz" ) );
-    quizPanelWrapperLayout = new QVBoxLayout();
-    quizPanelWrapper->setLayout( quizPanelWrapperLayout );
-    sequencePanelLayout->addWidget( quizPanelWrapper );
-    
-    quizPanel = new QWidget();
+    quizPanel = new QGroupBox( tr( "Quiz" ) );
     quizPanelLayout = new QVBoxLayout();
     quizPanel->setLayout( quizPanelLayout );
-    quizPanelWrapperLayout->addWidget( quizPanel );
-
+    sequencePanelLayout->addWidget( quizPanel, 1 );
+    
     quizTopPanel = new QWidget();
     quizTopPanelLayout = new QHBoxLayout();
     quizTopPanel->setLayout( quizTopPanelLayout );
@@ -31,12 +26,15 @@ void SequenceDialog::init() {
 
     quizTopLeftPanel = new QWidget();
     quizTopLeftPanelLayout = new QVBoxLayout();
+    quizTopLeftPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     quizTopLeftPanel->setLayout( quizTopLeftPanelLayout );
     quizTopPanelLayout->addWidget( quizTopLeftPanel );
     quizTopLeftPanel->setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Preferred ) );
 
     quizFirstLangPanel = new QGroupBox( tr( "FirstLanguage" ) );
     quizFirstLangPanelLayout = new QHBoxLayout();
+    quizFirstLangPanelLayout->setContentsMargins( 0, 0, 0, 0 );
+
     quizFirstLangPanel->setLayout( quizFirstLangPanelLayout );
     quizTopLeftPanelLayout->addWidget( quizFirstLangPanel );
 
@@ -44,16 +42,17 @@ void SequenceDialog::init() {
     quizFirstLangPanelWrapperLayout = new QHBoxLayout();
     quizFirstLangPanelWrapper->setLayout( quizFirstLangPanelWrapperLayout );
     quizFirstLangPanelLayout->addWidget( quizFirstLangPanelWrapper );
-    //quizFirstLangPanelWrapperLayout->setSpacing( 2 );
     quizFirstLangLabel = new QLabel( tr( "Word/Expr." ) );
     quizFirstLangPanelWrapperLayout->addWidget( quizFirstLangLabel );
     quizFirstLangTermButton = new QPushButton( "a" );
+    quizFirstLangTermButton->setMinimumWidth( 150 );
     quizFirstLangPanelWrapperLayout->addWidget( quizFirstLangTermButton, 1 );
     quizFirstLangTermButton->installEventFilter( this );
     quizFirstLangPanel->setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Expanding ) );
 
     quizTestLangPanel = new QGroupBox( tr( "TestLanguage" ) );
     quizTestLangPanelLayout = new QHBoxLayout();
+    quizTestLangPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     quizTestLangPanel->setLayout( quizTestLangPanelLayout );
     quizTopLeftPanelLayout->addWidget( quizTestLangPanel );
 
@@ -61,17 +60,16 @@ void SequenceDialog::init() {
     quizTestLangPanelWrapperLayout = new QHBoxLayout();
     quizTestLangPanelWrapper->setLayout( quizTestLangPanelWrapperLayout );
     quizTestLangPanelLayout->addWidget( quizTestLangPanelWrapper );
-    //quizTestLangPanelWrapperLayout->setSpacing( 2 );
     quizTestLangLabelsPanel = new QWidget();
     quizTestLangLabelsPanelLayout = new QVBoxLayout();
+    quizTestLangLabelsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     quizTestLangLabelsPanel->setLayout( quizTestLangLabelsPanelLayout );
     quizTestLangPanelWrapperLayout->addWidget( quizTestLangLabelsPanel );
-    //quizTestLangLabelsPanelLayout->setSpacing( 2 );
     quizTestLangButtonsPanel = new QWidget();
     quizTestLangButtonsPanelLayout = new QVBoxLayout();
+    quizTestLangButtonsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     quizTestLangButtonsPanel->setLayout( quizTestLangButtonsPanelLayout );
     quizTestLangPanelWrapperLayout->addWidget( quizTestLangButtonsPanel, 1 );
-    //quizTestLangButtonsPanelLayout->setSpacing( 2 );
     quizTestLangAltLabel = new QLabel( tr( "Alt./Phon." ) );
     quizTestLangLabelsPanelLayout->addWidget( quizTestLangAltLabel );
     quizTestLangTermLabel = new QLabel( tr( "Word/Expr." ) );
@@ -94,6 +92,7 @@ void SequenceDialog::init() {
     quizImageButton->setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Expanding ) );
 
     quizCommentBox = new QWidget();
+    quizCommentBox->setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Expanding ) );
     quizCommentBoxLayout = new QVBoxLayout();
     quizCommentBox->setLayout( quizCommentBoxLayout );
     quizPanelLayout->addWidget( quizCommentBox, 1 );
@@ -101,8 +100,9 @@ void SequenceDialog::init() {
     quizCommentLabel = new QLabel( tr( "CommentLabelPanel" ) );
     quizCommentBoxLayout->addWidget( quizCommentLabel );
     quizCommentButton = new QPushButton( "d" );
-    quizCommentBoxLayout->addWidget( quizCommentButton, 1 );
+    quizCommentButton->setMinimumHeight( 100 );
     quizCommentButton->setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Expanding ) );
+    quizCommentBoxLayout->addWidget( quizCommentButton, 1 );
     quizCommentButton->installEventFilter( this );
 
     sequencePanelButtons = new QWidget();
@@ -129,18 +129,29 @@ void SequenceDialog::init() {
     sequenceLinePanel = new QWidget();
     sequenceLinePanelLayout = new QHBoxLayout();
     sequenceLinePanel->setLayout( sequenceLinePanelLayout );
-    //sequenceLinePanelLayout->setSpacing( 10 );
     sequenceLineLabel = new QLabel( tr( "Sequence" ) );
     sequenceLinePanelLayout->addWidget( sequenceLineLabel );
     sequenceLineLineEdit = new QLineEdit();
     sequenceLinePanelLayout->addWidget( sequenceLineLineEdit );
     sequenceLineLineEdit->setReadOnly( true );
 
+    bottomButtonsPanel = new QWidget();
+    bottomButtonsPanelLayout = new QHBoxLayout();
+    bottomButtonsPanel->setLayout( bottomButtonsPanelLayout );
+
+    acceptButton = new QPushButton( tr( "Ok" ) );
+    connect( acceptButton, SIGNAL( clicked() ), this, SLOT( accept() ) );
+    cancelButton = new QPushButton( tr( "Cancel" ) );
+    connect( cancelButton, SIGNAL( clicked() ), this, SLOT( reject() ) );
+
+    bottomButtonsPanelLayout->addStretch();
+    bottomButtonsPanelLayout->addWidget( acceptButton );
+    bottomButtonsPanelLayout->addWidget( cancelButton );
+
     mainLayout = new QVBoxLayout();
-    mainLayout->setSpacing( 6 );
-    mainLayout->setMargin( 6 );
     mainLayout->addWidget( sequenceLinePanel );
     mainLayout->addWidget( sequencePanel, 1 );
+    mainLayout->addWidget( bottomButtonsPanel );
     mainLayout->activate();
 
     setLayout( mainLayout );
@@ -153,6 +164,11 @@ Sequence SequenceDialog::getSequence() const {
 }
 
 void SequenceDialog::accept() {
+    if( sequenceLineLineEdit->text().isEmpty() ) {
+        QMessageBox::warning( this, QObject::tr( "Warning" ), tr( "SequenceIsEmpty" ) );
+        return;
+    }
+
     QString lastChar = sequenceLineLineEdit->text().right( 1 );
     if( lastChar == " " || lastChar == "+" ) {
         QMessageBox::warning( this, QObject::tr( "Warning" ), tr( "SequenceNotTerminated" ) );
@@ -222,14 +238,20 @@ void SequenceDialog::removeLastToken() {
         sequenceLineLineEdit->setText( seqStr.left( seqStr.length() - 1 ) );
     }
     else if( lastChar == " " ) { /* " > " */
+        cerr << "top item=" << items.top() << endl;
         int index = currGroup.indexOf( items.top() );
-        currGroup.removeAt( index );
+        cerr << "index=" << index << endl;
+        if( index != -1 )
+            currGroup.removeAt( index );
+        cerr << "gc=" << sequence.getGroupCount() << endl;
         Sequence::ItemList lastGroup = sequence.getGroupAt( sequence.getGroupCount() );
         sequence.removeLastGroup();
+        cerr << 1 << endl;
         currGroup = lastGroup;
         setItemButtonsEnabled( false );
         setUnionButtonsEnabled( true );
         sequenceLineLineEdit->setText( seqStr.left( seqStr.length() - 3 ) );
+        cerr << 2 << endl;
     }
     else { /* "a", "b", "c", "d" or "e" */
         items.pop();

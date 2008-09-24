@@ -10,6 +10,7 @@
 #include <QMessageBox>
 #include <QMouseEvent>
 #include <QPushButton>
+#include <QStyle>
 #include <QVBoxLayout>
 #include <QWidget>
 #include "Preferences.h"
@@ -61,9 +62,7 @@ private:
     QWidget*                    sequencePanel;
     QHBoxLayout*                sequencePanelLayout;
 
-    QGroupBox*                  quizPanelWrapper;
-    QVBoxLayout*                quizPanelWrapperLayout;
-    QWidget*                    quizPanel;
+    QGroupBox*                  quizPanel;
     QVBoxLayout*                quizPanelLayout;
 
     QWidget*                    quizTopPanel;
@@ -110,6 +109,11 @@ private:
     QHBoxLayout*                sequenceLinePanelLayout;
     QLabel*                     sequenceLineLabel;
     QLineEdit*                  sequenceLineLineEdit;
+
+    QWidget*                    bottomButtonsPanel;
+    QHBoxLayout*                bottomButtonsPanelLayout;
+    QPushButton*                acceptButton;
+    QPushButton*                cancelButton;
 
 };
 

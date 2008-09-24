@@ -178,27 +178,27 @@ Do you want to resume this quiz?</translation>
 <context>
     <name>PreferencesDialog</name>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="157"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="158"/>
         <source>LanguageFontOverrides</source>
         <translation type="unfinished">Language font overrides</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="299"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="300"/>
         <source>Fonts</source>
         <translation type="unfinished">Fonts</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="182"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="183"/>
         <source>BuiltInSupportForAccents</source>
         <translation type="unfinished">Built-in support for accents</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="185"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="186"/>
         <source>DigraphesEnabled</source>
         <translation type="unfinished">Digraphs enabled</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="271"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="272"/>
         <source>StudyLanguages</source>
         <translation type="unfinished">Languages of interest</translation>
     </message>
@@ -213,57 +213,57 @@ Do you want to resume this quiz?</translation>
         <translation type="unfinished">Revealing sequences</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="92"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="93"/>
         <source>QuizLengthShortest</source>
         <translation type="unfinished">Shortest (1)</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="93"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="94"/>
         <source>QuizLengthMedium</source>
         <translation type="unfinished">Medium (3)</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="95"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="96"/>
         <source>QuizLengthLongest</source>
         <translation type="unfinished">Longest (5)</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="121"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="122"/>
         <source>LabelsFont</source>
         <translation type="unfinished">Labels</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="141"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="142"/>
         <source>FieldsFont</source>
         <translation type="unfinished">Fields</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="144"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="145"/>
         <source>ResetDefaultValue</source>
         <translation type="unfinished">Reset</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="298"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="299"/>
         <source>Languages</source>
         <translation type="unfinished">Languages</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="297"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="298"/>
         <source>Quiz</source>
         <translation type="unfinished">Quiz</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="300"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="301"/>
         <source>Interface</source>
         <translation type="unfinished">Interface</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="320"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="321"/>
         <source>Preferences...</source>
         <translation type="unfinished">Preferences...</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="426"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="427"/>
         <source>RevealingOrderMandatory</source>
         <translation type="unfinished">You must select at least
 one revealing sequence option.
@@ -296,7 +296,7 @@ a new one.</translation>
         <translation type="unfinished">Very large</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="432"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="433"/>
         <source>StudyLanguagesMandatory</source>
         <translation type="unfinished">You must select at least
 two study languages
@@ -304,47 +304,47 @@ two study languages
 and one target language.)</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="207"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="208"/>
         <source>Keyboard Accelerators</source>
         <translation type="unfinished">Keyboard accelerators</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="214"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="215"/>
         <source>Action</source>
         <translation type="unfinished">Action</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="214"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="215"/>
         <source>Key</source>
         <translation type="unfinished">Key</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="237"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="238"/>
         <source>Clear key</source>
         <translation type="unfinished">Clear key</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="238"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="239"/>
         <source>Set key</source>
         <translation type="unfinished">Set key</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="613"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="614"/>
         <source>&lt;press key&gt;</source>
         <translation type="unfinished">&lt;press key&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="697"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="698"/>
         <source>Duplicate key binding</source>
         <translation type="unfinished">Duplicate key binding</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="698"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="699"/>
         <source>Key &apos;</source>
         <translation type="unfinished">Key &apos;</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="698"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="699"/>
         <source>&apos;
 is currently assigned to
 &apos;</source>
@@ -353,59 +353,59 @@ is currently assigned to
 &apos;</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="699"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="700"/>
         <source>&apos;.
 Overwrite the current assignment?</source>
         <translation type="unfinished">&apos;.
 Overwrite the current assignment?</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="239"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="240"/>
         <source>Reset key</source>
         <translation type="unfinished">Reset key</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="189"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="190"/>
         <source>QuizOptions</source>
         <translation type="unfinished">Quiz</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="192"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="193"/>
         <source>hideQuizButtons</source>
         <translation type="unfinished">Hide buttons</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="56"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="57"/>
         <source>Add revealing sequence</source>
         <translation type="unfinished">Add revealing sequence</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="60"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="61"/>
         <source>Remove revealing sequence</source>
         <translation type="unfinished">Remove revealing sequence</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="69"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="70"/>
         <source>QuizWindow</source>
         <translation type="unfinished">Quiz Window</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="196"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="197"/>
         <source>GlossaryManagerOptions</source>
         <translation type="unfinished">List of Terms</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="199"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="200"/>
         <source>ShowAltInTermList</source>
         <translation type="unfinished">Show Alt./Phon. value</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="306"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="307"/>
         <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="308"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="309"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -845,66 +845,76 @@ which translations to delete.
 <context>
     <name>SequenceDialog</name>
     <message>
-        <location filename="" line="0"/>
+        <location filename="../../src/SequenceDialog.cpp" line="18"/>
         <source>Quiz</source>
-        <translation type="obsolete">Quiz Window</translation>
+        <translation type="unfinished">Quiz Window</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="../../src/SequenceDialog.cpp" line="35"/>
         <source>FirstLanguage</source>
-        <translation type="obsolete">First language</translation>
+        <translation type="unfinished">First language</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="../../src/SequenceDialog.cpp" line="77"/>
         <source>Word/Expr.</source>
-        <translation type="obsolete">Word/Expr.</translation>
+        <translation type="unfinished">Word/Expr.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="../../src/SequenceDialog.cpp" line="53"/>
         <source>TestLanguage</source>
-        <translation type="obsolete">Test language</translation>
+        <translation type="unfinished">Test language</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="../../src/SequenceDialog.cpp" line="75"/>
         <source>Alt./Phon.</source>
-        <translation type="obsolete">Alt./Phon.</translation>
+        <translation type="unfinished">Alt./Phon.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="../../src/SequenceDialog.cpp" line="86"/>
         <source>Image</source>
-        <translation type="obsolete">Image</translation>
+        <translation type="unfinished">Image</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="../../src/SequenceDialog.cpp" line="103"/>
         <source>CommentLabelPanel</source>
-        <translation type="obsolete">Examples/Comments</translation>
+        <translation type="unfinished">Examples/Comments</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="../../src/SequenceDialog.cpp" line="136"/>
         <source>Sequence</source>
-        <translation type="obsolete">Revealing Sequence</translation>
+        <translation type="unfinished">Revealing Sequence</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="../../src/SequenceDialog.cpp" line="165"/>
         <source>AddRevealingSequence</source>
-        <translation type="obsolete">Add Revealing Sequence...</translation>
+        <translation type="unfinished">Add Revealing Sequence...</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="../../src/SequenceDialog.cpp" line="184"/>
         <source>SequenceIsEmpty</source>
-        <translation type="obsolete">The currently edited revealing
+        <translation type="unfinished">The currently edited revealing
 sequence is empty.  If you want
 want to discard it, click Cancel
 to close the dialog.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
+        <location filename="../../src/SequenceDialog.cpp" line="175"/>
         <source>SequenceNotTerminated</source>
-        <translation type="obsolete">The currently edited revealing
+        <translation type="unfinished">The currently edited revealing
 sequence doesn&apos;t end by a revealable
 item.  This is invalid.  Remove
 the last operator or add another
 revealable item.</translation>
+    </message>
+    <message>
+        <location filename="../../src/SequenceDialog.cpp" line="146"/>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/SequenceDialog.cpp" line="148"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

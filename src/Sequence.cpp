@@ -4,6 +4,9 @@ const int Sequence::MAX_ITEM = 5;
 const QString Sequence::itemString[] = { "a", "b", "c", "d", "e" };
 
 Sequence::Sequence( const QString& seqStr /*= QString::null*/ ) : enabled( false ) {
+    if( seqStr.isEmpty() )
+        return;
+
     QString tempStr = seqStr;
     int indexOfColon = seqStr.indexOf( ":" );
     if( indexOfColon != -1 ) {
@@ -69,8 +72,8 @@ void Sequence::addGroup( ItemList group ) {
 }
 
 void Sequence::removeLastGroup() {
-    //QList<ItemList>::Iterator it = groups.fromLast();
-    //groups.remove( it );
+    if( !groups.isEmpty() )
+        groups.removeAt( groups.count() - 1 );
 }
 
 Sequence::ItemList Sequence::getGroupAt( int index ) const {
