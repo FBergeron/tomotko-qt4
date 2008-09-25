@@ -1,7 +1,5 @@
 ToDo
 ----
-There is a bug if I click X when the edited sequence is A+B >
-In SequenceDialog::accept(), there are 2 tests for empty sequence.  Most probably that the second one is useless and should be removed.
 When the PrefDialog is very large, the revealing options section is resized.  Is it possible to make it keep its size compact.
 In TermScheduler, the code of operator>> is in comments because it provokes an error related to array assignment.  Maybe I should use a QT container instead of an array.
 In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  Will it bring data incompatibility with previous versions? 

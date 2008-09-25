@@ -49,6 +49,7 @@ private:
     bool isItemUsed( const Sequence::Item& item ) const;
     bool areItemsLeft() const;
     void setItemButtonsEnabled( bool isEnabled );
+    //void trace() const;
 
     Preferences*                prefs;
 

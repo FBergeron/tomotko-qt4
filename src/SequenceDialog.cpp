@@ -179,10 +179,7 @@ void SequenceDialog::accept() {
     sequence.addGroup( currGroup );
     currGroup.clear();
 
-    if( sequence.isEmpty() ) {
-        QMessageBox::warning( this, QObject::tr( "Warning" ), tr( "SequenceIsEmpty" ) );
-        return;
-    }
+    //trace();
 
     QDialog::accept();
 }
@@ -207,6 +204,7 @@ void SequenceDialog::addSequenceItem( const QString& itemStr ) {
     setItemButtonsEnabled( false );
     setUnionButtonsEnabled( true );
     removeLastMarkButton->setEnabled( true );
+    //trace();
 }
 
 void SequenceDialog::addSequenceMark() {
@@ -217,6 +215,7 @@ void SequenceDialog::addSequenceMark() {
     setItemButtonsEnabled( true );
     setUnionButtonsEnabled( false );
     removeLastMarkButton->setEnabled( true );
+    //trace();
 }
 
 void SequenceDialog::addGroupMark() {
@@ -225,6 +224,7 @@ void SequenceDialog::addGroupMark() {
     setItemButtonsEnabled( true );
     setUnionButtonsEnabled( false );
     removeLastMarkButton->setEnabled( true );
+    //trace();
 }
 
 void SequenceDialog::removeLastToken() {
@@ -238,20 +238,14 @@ void SequenceDialog::removeLastToken() {
         sequenceLineLineEdit->setText( seqStr.left( seqStr.length() - 1 ) );
     }
     else if( lastChar == " " ) { /* " > " */
-        cerr << "top item=" << items.top() << endl;
-        int index = currGroup.indexOf( items.top() );
-        cerr << "index=" << index << endl;
-        if( index != -1 )
-            currGroup.removeAt( index );
-        cerr << "gc=" << sequence.getGroupCount() << endl;
-        Sequence::ItemList lastGroup = sequence.getGroupAt( sequence.getGroupCount() );
+        Sequence::ItemList lastGroup = sequence.getGroupAt( sequence.getGroupCount() - 1 );
         sequence.removeLastGroup();
-        cerr << 1 << endl;
         currGroup = lastGroup;
+        if( !currGroup.isEmpty() )
+            currGroup.removeAt( currGroup.count() - 1 );
         setItemButtonsEnabled( false );
         setUnionButtonsEnabled( true );
         sequenceLineLineEdit->setText( seqStr.left( seqStr.length() - 3 ) );
-        cerr << 2 << endl;
     }
     else { /* "a", "b", "c", "d" or "e" */
         items.pop();
@@ -260,6 +254,7 @@ void SequenceDialog::removeLastToken() {
         sequenceLineLineEdit->setText( seqStr.left( seqStr.length() - 1 ) );
     }
     removeLastMarkButton->setEnabled( sequenceLineLineEdit->text().length() > 0 );
+    //trace();
 }
 
 void SequenceDialog::setUnionButtonsEnabled( bool isEnabled ) {
@@ -283,3 +278,20 @@ void SequenceDialog::setItemButtonsEnabled( bool isEnabled ) {
     quizCommentButton->setEnabled( isEnabled && !isItemUsed( Sequence::COMMENT ) );
     quizImageButton->setEnabled( isEnabled && !isItemUsed( Sequence::IMAGE ) );
 }
+
+//void SequenceDialog::trace() const {
+//    QString itemsDelim;
+//    QString currGroupDelim;
+//    cout << "debug items=[";
+//    for( int i = 0; i < items.count(); i++ ) {
+//        cout << qPrintable( itemsDelim ) << items.at( i );
+//        itemsDelim = ",";
+//    }
+//    cout << "]";
+//    cout << " currGroup=[";
+//    for( int i = 0; i < currGroup.count(); i++ ) {
+//        cout << qPrintable( currGroupDelim ) << currGroup.at( i );
+//        currGroupDelim = ",";
+//    }
+//    cout << "] seq=" << qPrintable( sequence.toHumanReadableString() ) << endl;
+//}
