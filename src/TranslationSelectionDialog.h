@@ -46,6 +46,12 @@ private:
     QPushButton*    checkAllLanguagesButton;
 
     QVBoxLayout*    mainLayout;
+
+    QWidget*        bottomButtonsPanel;
+    QHBoxLayout*    bottomButtonsPanelLayout;
+    QPushButton*    acceptButton;
+    QPushButton*    cancelButton;
+
     Controller*     controller;
 
 };

@@ -39,12 +39,26 @@ void TranslationSelectionDialog::init( const QString& caption, const QString& me
     checkAllLanguagesButton = new QPushButton( tr( "CheckAllLanguages" )/*, this, "CheckAllLanguagesButton"*/ );
     connect( checkAllLanguagesButton, SIGNAL( clicked() ), this, SLOT( checkAllLanguages() ) );
 
+    bottomButtonsPanel = new QWidget();
+    bottomButtonsPanelLayout = new QHBoxLayout();
+    bottomButtonsPanel->setLayout( bottomButtonsPanelLayout );
+
+    acceptButton = new QPushButton( tr( "Ok" ) );
+    connect( acceptButton, SIGNAL( clicked() ), this, SLOT( accept() ) );
+    cancelButton = new QPushButton( tr( "Cancel" ) );
+    connect( cancelButton, SIGNAL( clicked() ), this, SLOT( reject() ) );
+
+    bottomButtonsPanelLayout->addStretch();
+    bottomButtonsPanelLayout->addWidget( acceptButton );
+    bottomButtonsPanelLayout->addWidget( cancelButton );
+
     mainLayout = new QVBoxLayout( this );
     mainLayout->setMargin( 10 );
     mainLayout->setSpacing( 2 );
     mainLayout->addWidget( messageLabel );
     mainLayout->addWidget( languageList, 1 );
     mainLayout->addWidget( checkAllLanguagesButton );
+    mainLayout->addWidget( bottomButtonsPanel );
 
     setWindowTitle( caption );
 }
