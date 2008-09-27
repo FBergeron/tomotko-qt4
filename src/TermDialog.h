@@ -102,7 +102,7 @@ private:
     QWidget*                imagePanel;
     QVBoxLayout*            imagePanelLayout;
     QWidget*                imageWrapper;
-    QVBoxLayout*            imageWrapperLayout;
+    QHBoxLayout*            imageWrapperLayout;
     QLabel*                 image;
     QWidget*                imageButtonsPanel;
     QHBoxLayout*            imageButtonsPanelLayout;

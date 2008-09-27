@@ -45,20 +45,24 @@ void TermDialog::init() {
 
     topPanel = new QWidget();
     topPanelLayout = new QHBoxLayout();
+    topPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     topPanel->setLayout( topPanelLayout );
 
     topLeftPanel = new QWidget();
     topLeftPanelLayout = new QVBoxLayout();
+    topLeftPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     topLeftPanel->setLayout( topLeftPanelLayout );
-    topPanelLayout->addWidget( topLeftPanel );
+    topPanelLayout->addWidget( topLeftPanel, 1 );
 
     firstLangPanel = new QGroupBox( QApplication::translate( "QObject", firstLang.toLatin1().data() ) );
     firstLangPanelLayout = new QHBoxLayout();
+    firstLangPanelLayout->setContentsMargins( 0, 0, 0, 0 ); 
     firstLangPanel->setLayout( firstLangPanelLayout );
     topLeftPanelLayout->addWidget( firstLangPanel );
 
     testLangPanel = new QGroupBox( QApplication::translate( "QObject", testLang.toLatin1().data() ) );
     testLangPanelLayout = new QVBoxLayout();
+    testLangPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     testLangPanel->setLayout( testLangPanelLayout );
     topLeftPanelLayout->addWidget( testLangPanel );
 
@@ -81,6 +85,7 @@ void TermDialog::init() {
 
     testLangLabelsPanel = new QWidget();
     testLangLabelsPanelLayout = new QVBoxLayout();
+    testLangLabelsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     testLangLabelsPanel->setLayout( testLangLabelsPanelLayout );
 
     testLangTermAltLabel = new QLabel( tr( "Alt./Phon." ) );
@@ -90,6 +95,7 @@ void TermDialog::init() {
 
     testLangFieldsPanel = new QWidget();
     testLangFieldsPanelLayout = new QVBoxLayout();
+    testLangFieldsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     testLangFieldsPanel->setLayout( testLangFieldsPanelLayout );
 
     testLangTermAltLineEdit = new DigraphLineEdit();
@@ -109,11 +115,12 @@ void TermDialog::init() {
     //commentMultiLineEdit->setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Expanding ) );
     //commentMultiLineEdit->setWrapPolicy( QMultiLineEdit::Anywhere );
     //commentMultiLineEdit->setWordWrap( QMultiLineEdit::WidgetWidth );
-    //commentMultiLineEdit->setFont( prefs.getBestFont( firstLang, testLang ) );
+    commentMultiLineEdit->setFont( prefs.getBestFont( firstLang, testLang ) );
     commentMultiLineEdit->setDigraphEnabled( isDigraphEnabled );
 
     imageBox = new QGroupBox( tr( "Image" ) );
     imageBoxLayout = new QVBoxLayout();
+    imageBoxLayout->setContentsMargins( 0, 0, 0, 0 );
     imageBox->setLayout( imageBoxLayout );
     topPanelLayout->addWidget( imageBox );
 
@@ -121,21 +128,23 @@ void TermDialog::init() {
     imagePanelLayout = new QVBoxLayout();
     imagePanel->setLayout( imagePanelLayout );
     imageBoxLayout->addWidget( imagePanel );
-    //imagePanelLayout->setSpacing( 2 );
     imageWrapper = new QWidget();
-    imageWrapperLayout = new QVBoxLayout();
+    imageWrapperLayout = new QHBoxLayout();
+    imageWrapperLayout->setContentsMargins( 0, 0, 0, 0 );
     imageWrapper->setLayout( imageWrapperLayout );
 
     image = new QLabel();
+    imageWrapperLayout->addStretch();
     imageWrapperLayout->addWidget( image );
+    imageWrapperLayout->addStretch();
     image->setSizePolicy( QSizePolicy( QSizePolicy::Preferred, QSizePolicy::Expanding ) );
-    //image->setAlignment( AlignHCenter | AlignVCenter );
-    image->setScaledContents( true );
+    image->setAlignment( Qt::AlignCenter );
 
     imageBox->setMaximumHeight( topLeftPanel->sizeHint().height() );
 
     imageButtonsPanel = new QWidget();
     imageButtonsPanelLayout = new QHBoxLayout();
+    imageButtonsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     imageButtonsPanel->setLayout( imageButtonsPanelLayout );
     setImageButton = new QPushButton( tr( "setImage" ) );
     imageButtonsPanelLayout->addWidget( setImageButton );
@@ -161,7 +170,6 @@ void TermDialog::init() {
     bottomButtonsPanelLayout->addWidget( acceptButton );
     bottomButtonsPanelLayout->addWidget( cancelButton );
 
-    //mainLayout->setSpacing( 2 );
     mainLayout->setMenuBar( menuBar );
     mainLayout->addWidget( topPanel );
     mainLayout->addWidget( commentLabel );
@@ -199,48 +207,46 @@ void TermDialog::updateModel() {
     editedTerm->addComment( commentKey, commentMultiLineEdit->toPlainText() );
 
     // If the path refers to an image in toMOTko's vocabulary, we use a relative path instead.
-    //QString vocabLocation = controller->getApplicationDirName() + "/" + vocab.getParent()->getPath() +
-    //    "/v-" + QString::number( vocab.getId() ) + "/";
-    //QString imagePath = tempImagePath.left( vocabLocation.length() ) == vocabLocation ? 
-    //        tempImagePath.right( tempImagePath.length() - vocabLocation.length() ) : tempImagePath;
-    //editedTerm->setImagePath( imagePath );
+    QString vocabLocation = controller->getApplicationDirName() + "/" + vocab.getParent()->getPath() +
+        "/v-" + QString::number( vocab.getId() ) + "/";
+    QString imagePath = tempImagePath.left( vocabLocation.length() ) == vocabLocation ? 
+            tempImagePath.right( tempImagePath.length() - vocabLocation.length() ) : tempImagePath;
+    //cerr << "imagePath=" << qPrintable( imagePath ) << endl;
+    editedTerm->setImagePath( imagePath );
 }
 
 void TermDialog::cut() {
-    //QWidget* widget = qApp->focusWidget();
-    //if( widget != NULL ) {
-    //    const char* className = widget->className();
-    //    if( strcmp( className, "DigraphLineEdit" ) == 0 )
-    //        ((DigraphLineEdit*)widget)->cut();
-    //    else if( strcmp( className, "DigraphMultiLineEdit" ) == 0 )
-    //        ((DigraphMultiLineEdit*)widget)->cut();
-    //}
+    QWidget* widget = qApp->focusWidget();
+    if( widget ) {
+        if( widget->inherits( "DigraphLineEdit" ) )
+            ((DigraphLineEdit*)widget)->cut();
+        else if( widget->inherits( "DigraphMultiLineEdit" ) )
+            ((DigraphMultiLineEdit*)widget)->cut();
+    }
 }
 
 void TermDialog::copy() {
-    //QWidget* widget = qApp->focusWidget();
-    //if( widget != NULL ) {
-    //    const char* className = widget->className();
-    //    if( strcmp( className, "DigraphLineEdit" ) == 0 )
-    //        ((DigraphLineEdit*)widget)->copy();
-    //    else if( strcmp( className, "DigraphMultiLineEdit" ) == 0 )
-    //        ((DigraphMultiLineEdit*)widget)->copy();
-    //}
+    QWidget* widget = qApp->focusWidget();
+    if( widget != NULL ) {
+        if( widget->inherits( "DigraphLineEdit" ) )
+            ((DigraphLineEdit*)widget)->copy();
+        else if( widget->inherits( "DigraphMultiLineEdit" ) )
+            ((DigraphMultiLineEdit*)widget)->copy();
+    }
 }
 
 void TermDialog::paste() {
-    //QWidget* widget = qApp->focusWidget();
-    //if( widget != NULL ) {
-    //    const char* className = widget->className();
-    //    if( strcmp( className, "DigraphLineEdit" ) == 0 )
-    //        ((DigraphLineEdit*)widget)->paste();
-    //    else if( strcmp( className, "DigraphMultiLineEdit" ) == 0 )
-    //        ((DigraphMultiLineEdit*)widget)->paste();
-    //}
+    QWidget* widget = qApp->focusWidget();
+    if( widget != NULL ) {
+        if( widget->inherits( "DigraphLineEdit" ) )
+            ((DigraphLineEdit*)widget)->paste();
+        else if( widget->inherits( "DigraphMultiLineEdit" ) )
+            ((DigraphMultiLineEdit*)widget)->paste();
+    }
 }
 
 void TermDialog::setImage() {
-    QDir dir = QDir::home();//QPEApplication::documentDir();
+    QDir dir = QDir::home();
     if( !tempImagePath.isEmpty() )
         dir = QFileInfo( tempImagePath ).dir();
 
@@ -264,11 +270,15 @@ void TermDialog::initImage( const QString& imagePath ) {
             if( imageFormat == "gif" || imageFormat == "png" ) {
                 tempImagePath = imagePath;
                 if( imageFormat == "gif" ) {
+                    //QMovie* movie = new QMovie( imagePath );
                     QMovie* movie = new QMovie( imagePath );
                     image->setMovie( movie );
+                    movie->setScaledSize( image->size() );
+                    movie->start();
                 }
                 else if( imageFormat == "png" ) {
                     QPixmap pixmap( imagePath );
+                    image->setScaledContents( true );
                     image->setPixmap( pixmap );
                     resizeImage();
                 }
@@ -316,6 +326,7 @@ void TermDialog::updateUi() {
         }
 
         QString absPath = controller->getResolvedImagePath( editedTerm->getImagePath(), vocab );
+        //cerr << "absPath=" << qPrintable( absPath ) << endl;
         initImage( absPath );
     }
 }

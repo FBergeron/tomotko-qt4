@@ -24,7 +24,7 @@
 //#include <qvgroupbox.h>
 #include <QWidget>
 #include "Controller.h"
-//#include "ImageBox.h"
+#include "ImageBox.h"
 //#include "ScrollableLineEdit.h"
 //#include "ScrollableMultiLineEdit.h"
 #include "Term.h"
@@ -166,8 +166,8 @@ private:
     QTextEdit*                  commentMultiLineEdit;//ScrollableMultiLineEdit*    commentMultiLineEdit;
     QPushButton*                commentButton;
 
-    //ImageBox*                   imageBox;
-    //QPushButton*                imageButton;
+    ImageBox*                   imageBox;
+    QPushButton*                imageButton;
 
     bool                        buttonsHidden;
 

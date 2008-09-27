@@ -12,19 +12,20 @@
 VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget* parent /*= 0*/ )
     : QWidget( parent ), controller( controller ) {
 
-    mainLayout = new QHBoxLayout();
+    mainLayout = new QVBoxLayout();
 
     treePanel = new QWidget();
     treePanelLayout = new QVBoxLayout();
-    //treePanelLayout->setSpacing( 2 );
+    treePanelLayout->setContentsMargins( 0, 0, 0, 0 );
 
-    vocabTreeView = new VocabTreeView( *controller/*, treePanel, "VocabTreeView"*/ );
+    vocabTreeView = new VocabTreeView( *controller );
     //vocabTreeView->setTreeStepSize( 24 );
-    vocabTreeView->setHeaderLabel( tr( "Glossaries" ) );//vocabTreeView->addColumn( tr( "Glossaries" ) ); 
+    vocabTreeView->setHeaderLabel( tr( "Glossaries" ) );
     //vocabTreeView->setStretchColumn( 0 );
 
     treeButtonPanel = new QWidget();
     treeButtonPanelLayout = new QHBoxLayout();
+    treeButtonPanelLayout->setContentsMargins( 0, 0, 0, 0 );
 
     treePanelLayout->addWidget( vocabTreeView, 1 );
     treePanelLayout->addWidget( treeButtonPanel );
@@ -55,22 +56,21 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
 
     folderDetailsPanel = new QWidget();
     folderDetailsPanelLayout = new QVBoxLayout();
-
-    //folderDetailsPanel->setSpacing( 2 );
+    folderDetailsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
 
     folderDetailsFolderHeaderPanel = new QWidget();
     folderDetailsFolderHeaderPanelLayout = new QHBoxLayout();
+    folderDetailsFolderHeaderPanelLayout->setContentsMargins( 0, 0, 0, 0 );
 
-    //folderDetailsFolderHeaderPanel->setSpacing( 10 );
     folderDetailsTitle = new QLabel( tr( "Folder" ) );
     folderDetailsFolderHeaderPanelLayout->addWidget( folderDetailsTitle );
     folderDetailsFolderHeaderPanel->setLayout( folderDetailsFolderHeaderPanelLayout );
     folderDetailsPanelLayout->addWidget( folderDetailsFolderHeaderPanel );
     folderDetailsFolderTitlePanel = new QWidget();
     folderDetailsFolderTitlePanelLayout = new QHBoxLayout();
+    folderDetailsFolderTitlePanelLayout->setContentsMargins( 0, 0, 0, 0 );
     folderDetailsFolderTitlePanel->setLayout( folderDetailsFolderTitlePanelLayout );
     folderDetailsFolderHeaderPanelLayout->addWidget( folderDetailsFolderTitlePanel );
-    //folderDetailsFolderTitlePanelLayout->setSpacing( 2 );
     folderDetailsFolderTitleLabel = new QLabel( tr( "Title" ) );
     folderDetailsFolderTitleLineEdit = new DigraphLineEdit();
 
@@ -79,9 +79,9 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
     folderDetailsFolderMaximizeDetailsButton->setToolTip( tr( "MaximizeDetails" ) );
     folderDetailsFolderMaximizeDetailsButton->setCheckable( true );
     folderDetailsFolderMaximizeDetailsButton->setMaximumHeight( 
-        folderDetailsFolderTitleLineEdit->sizeHint().height() > 24 ? folderDetailsFolderTitleLineEdit->sizeHint().height() : 24 );
+    folderDetailsFolderTitleLineEdit->sizeHint().height() > 24 ? folderDetailsFolderTitleLineEdit->sizeHint().height() : 24 );
     folderDetailsFolderMaximizeDetailsButton->setMaximumWidth( folderDetailsFolderMaximizeDetailsButton->maximumHeight() );
-    //connect( folderDetailsFolderMaximizeDetailsButton, SIGNAL( toggled( bool ) ), this, SLOT( toggleMaximizeDetails( bool ) ) );
+    connect( folderDetailsFolderMaximizeDetailsButton, SIGNAL( toggled( bool ) ), this, SLOT( toggleMaximizeDetails( bool ) ) );
 
     folderDetailsFolderTitlePanelLayout->addWidget( folderDetailsFolderTitleLabel );
     folderDetailsFolderTitlePanelLayout->addWidget( folderDetailsFolderTitleLineEdit );
@@ -94,21 +94,21 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
 
     vocabDetailsPanel = new QWidget();
     vocabDetailsPanelLayout = new QVBoxLayout();
+    vocabDetailsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     vocabDetailsPanel->setLayout( vocabDetailsPanelLayout );
-    //vocabDetailsPanel->setSpacing( 2 );
     vocabDetailsVocabHeaderPanel = new QWidget();
     vocabDetailsVocabHeaderPanelLayout = new QHBoxLayout();
+    vocabDetailsVocabHeaderPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     vocabDetailsVocabHeaderPanel->setLayout( vocabDetailsVocabHeaderPanelLayout );
 
-        vocabDetailsPanelLayout->addWidget( vocabDetailsVocabHeaderPanel );
-    //vocabDetailsVocabHeaderPanel->setSpacing( 10 );
+    vocabDetailsPanelLayout->addWidget( vocabDetailsVocabHeaderPanel );
     vocabDetailsTitle = new QLabel( tr( "Glossary" ) );
-        vocabDetailsVocabHeaderPanelLayout->addWidget( vocabDetailsTitle );
+    vocabDetailsVocabHeaderPanelLayout->addWidget( vocabDetailsTitle );
     vocabDetailsVocabTitlePanel = new QWidget();
     vocabDetailsVocabTitlePanelLayout = new QHBoxLayout();
+    vocabDetailsVocabTitlePanelLayout->setContentsMargins( 0, 0, 0, 0 );
     vocabDetailsVocabTitlePanel->setLayout( vocabDetailsVocabTitlePanelLayout );
-        vocabDetailsVocabHeaderPanelLayout->addWidget( vocabDetailsVocabTitlePanel );
-    //vocabDetailsVocabTitlePanelLayout->setSpacing( 2 );
+    vocabDetailsVocabHeaderPanelLayout->addWidget( vocabDetailsVocabTitlePanel );
     vocabDetailsVocabTitleLabel = new QLabel( tr( "Title" ) );
     vocabDetailsVocabTitleLineEdit = new DigraphLineEdit();
 
@@ -117,15 +117,15 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
     vocabDetailsVocabMaximizeDetailsButton->setToolTip( tr( "MaximizeDetails" ) );
     vocabDetailsVocabMaximizeDetailsButton->setCheckable( true );
     vocabDetailsVocabMaximizeDetailsButton->setMaximumHeight( 
-        folderDetailsFolderTitleLineEdit->sizeHint().height() > 24 ? folderDetailsFolderTitleLineEdit->sizeHint().height() : 24 );
+    folderDetailsFolderTitleLineEdit->sizeHint().height() > 24 ? folderDetailsFolderTitleLineEdit->sizeHint().height() : 24 );
     vocabDetailsVocabMaximizeDetailsButton->setMaximumWidth( folderDetailsFolderMaximizeDetailsButton->maximumHeight() );
-    //connect( vocabDetailsVocabMaximizeDetailsButton, SIGNAL( toggled( bool ) ), this, SLOT( toggleMaximizeDetails( bool ) ) );
+    connect( vocabDetailsVocabMaximizeDetailsButton, SIGNAL( toggled( bool ) ), this, SLOT( toggleMaximizeDetails( bool ) ) );
 
     vocabDetailsVocabTitlePanelLayout->addWidget( vocabDetailsVocabTitleLabel );
     vocabDetailsVocabTitlePanelLayout->addWidget( vocabDetailsVocabTitleLineEdit );
     vocabDetailsVocabTitlePanelLayout->addWidget( vocabDetailsVocabMaximizeDetailsButton );
 
-    vocabDetailsTabWidget = new QTabWidget(/* vocabDetailsPanel, "VocabDetailsTabWidget"*/ );
+    vocabDetailsTabWidget = new QTabWidget();
     vocabDetailsPanelLayout->addWidget( vocabDetailsTabWidget );
 
     vocabDetailsPropsPanel = new PropertiesPanel( controller->getPreferences(), vocabDetailsTabWidget );
@@ -135,6 +135,7 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
     vocabDetailsTermsPanelLayout = new QVBoxLayout();
     vocabDetailsTermsPanel->setLayout( vocabDetailsTermsPanelLayout );
     termList = new QTreeWidget();
+    termList->setSortingEnabled( true );
     termList->setSelectionMode( QAbstractItemView::ExtendedSelection );
     termList->setColumnCount( 2 );
     //termList->setAllColumnsShowFocus( true );
@@ -150,15 +151,16 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
     connect( termList, SIGNAL( itemSelectionChanged() ), this, SLOT( updateTermList() ) ); 
     connect( termList, SIGNAL( itemChanged( QTreeWidgetItem*, int ) ), this, SLOT( updateTermItemState( QTreeWidgetItem*, int ) ) );
 
-    termControlPanel = new QWidget( /*vocabDetailsTermsPanel, "TermControlPanel"*/ );
-    termControlPanelLayout = new QHBoxLayout( /*termControlPanel*/ );
+    termControlPanel = new QWidget();
+    termControlPanelLayout = new QHBoxLayout();
+    termControlPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     termControlPanel->setLayout( termControlPanelLayout );
-    //termControlPanelLayout->setSpacing( 2 );
     vocabDetailsTermsPanelLayout->addWidget( termList );
     vocabDetailsTermsPanelLayout->addWidget( termControlPanel );
 
     checkControlPanel = new QWidget();
     checkControlPanelLayout = new QHBoxLayout();
+    checkControlPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     checkControlPanel->setLayout( checkControlPanelLayout );
 
     checkAllTermsButton = new QPushButton();
@@ -176,6 +178,7 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
 
     addRemoveTermPanel = new QWidget();
     addRemoveTermPanelLayout = new QHBoxLayout();
+    addRemoveTermPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     addRemoveTermPanel->setLayout( addRemoveTermPanelLayout );
 
     addTermButton = new QPushButton( tr( "AddTerm" ) );
@@ -205,13 +208,16 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
     detailsPanel->addWidget( folderDetailsPanel );
     detailsPanel->addWidget( vocabDetailsPanel );
 
-    mainLayout->addWidget( treePanel );
-    mainLayout->addWidget( detailsPanel );
+    splitter = new QSplitter( this );
+    splitter->addWidget( treePanel );
+    splitter->addWidget( detailsPanel );
+    
+    mainLayout->addWidget( splitter );
     setLayout( mainLayout );
 
     loadData();
     updateTree();
-    vocabTreeRoot->setSelected( true ); //vocabTreeView->setSelected( vocabTreeRoot, true );
+    vocabTreeRoot->setSelected( true );
 
     detailsPanel->setCurrentIndex( panelFolderIndex );
 
@@ -240,7 +246,11 @@ void VocabularyManagerFrame::updateTree() {
         vocabTreeView->setUpdatesEnabled( false );
         vocabTreeView->clear();
     }
+    vocabTreeView->setSortingEnabled( false );
     vocabTreeRoot = buildTreeRec( vocabTreeView, NULL, controller->getVocabTree() );
+    vocabTreeView->sortItems( 0, Qt::AscendingOrder );
+    vocabTreeView->setSortingEnabled( true );
+
     //vocabTreeView->setSelected( vocabTreeRoot, true );
     //if( currentFolderId != -1 || currentVocabId != -1 )
     //    restoreSelection( currentFolderId, currentVocabId, currentTermId, selectedTermIdList );
@@ -281,7 +291,6 @@ bool VocabularyManagerFrame::isImportAllowed() const {
 void VocabularyManagerFrame::cut() {
     QWidget* widget = qApp->focusWidget();
     if( widget ) {
-        //if( strcmp( widget->name(), "VocabTreeView" ) == 0 ) {
         if( widget == vocabTreeView ) {
             TreeItem* selectedItem = (TreeItem*)vocabTreeView->currentItem();
             if( selectedItem ) {
@@ -299,7 +308,6 @@ void VocabularyManagerFrame::cut() {
                 }
             }
         }
-        //else if( strcmp( widget->name(), "TermList" ) == 0 ) {
         else if( widget == termList ) {
             copyTerms();
             doRemoveTerms( false, false );
@@ -310,7 +318,6 @@ void VocabularyManagerFrame::cut() {
 void VocabularyManagerFrame::copy() {
     QWidget* widget = qApp->focusWidget();
     if( widget ) {
-        //if( strcmp( widget->name(), "VocabTreeView" ) == 0 ) {
         if( widget == vocabTreeView ) {
             TreeItem* selectedItem = (TreeItem*)vocabTreeView->currentItem();
             if( selectedItem ) {
@@ -326,7 +333,6 @@ void VocabularyManagerFrame::copy() {
                 }
             }
         }
-        //else if( strcmp( widget->name(), "TermList" ) == 0 )
         else if( widget == termList )
             copyTerms();
     }
@@ -335,7 +341,6 @@ void VocabularyManagerFrame::copy() {
 void VocabularyManagerFrame::paste() {
     QWidget* widget = qApp->focusWidget();
     if( widget ) {
-        //if( strcmp( widget->name(), "VocabTreeView" ) == 0 ) {
         if( widget == vocabTreeView ) {
             TreeItem* selectedItem = (TreeItem*)vocabTreeView->currentItem();
             if( selectedItem ) {
@@ -352,7 +357,6 @@ void VocabularyManagerFrame::paste() {
                 }
             }
         }
-        //else if( strcmp( widget->name(), "TermList" ) == 0 ) {
         else if( widget == termList ) {
             QString dataType = controller->getClipboardDataType();
             if( dataType == QString( "terms" ) )
@@ -462,11 +466,6 @@ void VocabularyManagerFrame::exportVocabulary( Vocabulary* vocab ) {
             return; // Cancel export.
     }
 
-    //QDir dir( QPEApplication::documentDir() );
-    //ZFileDialog dialog( tr( "Export..." ), dir.path(), ZFileDialog::AnyFile, this );
-    //dialog.setSelection( vocab->getTitle() + QString( ".zip" ) ); 
-    //int result = dialog.exec();
-    //if( result ) {
     QString exportFile = QFileDialog::getSaveFileName( this, tr( "Export..." ), QDir::homePath() + "/" + vocab->getTitle() + ".zip",
         tr( "Glossaries (*.zip)" ) );
     if( !exportFile.isEmpty() ) {
@@ -493,11 +492,6 @@ void VocabularyManagerFrame::exportFolder( Folder* folder ) {
             return; // Cancel export.
     }
 
-    //QDir dir( QPEApplication::documentDir() );
-    //ZFileDialog dialog( tr( "Export..." ), dir.path(), ZFileDialog::AnyFile, this );
-    //dialog.setSelection( folder->getTitle() + QString( ".zip" ) ); 
-    //int result = dialog.exec();
-    //if( result ) {
     QString exportFile = QFileDialog::getSaveFileName( this, tr( "Export..." ), QDir::homePath() + "/" + folder->getTitle() + ".zip",
         tr( "Glossaries (*.zip)" ) );
     if( !exportFile.isEmpty() ) {
@@ -748,6 +742,7 @@ void VocabularyManagerFrame::updateCurrentVocab( VocabTreeItem* vocabItem ) {
     termListHeaders << QApplication::translate( "QObject", prefs.getFirstLanguage().toLatin1().data() );
     termListHeaders << QApplication::translate( "QObject", prefs.getTestLanguage().toLatin1().data() );
     termList->setHeaderLabels( termListHeaders );
+    termList->setSortingEnabled( false );
     termList->clear();
     for( Vocabulary::TermMap::Iterator it = vocab->begin(); it != vocab->end(); it++ ) {
         Term& term = *it; 
@@ -760,6 +755,8 @@ void VocabularyManagerFrame::updateCurrentVocab( VocabTreeItem* vocabItem ) {
             termItem->setFont( 1, prefs.getMediumFont( prefs.getTestLanguage() ) );
         }
     }
+    termList->sortItems( 0, Qt::AscendingOrder );
+    termList->setSortingEnabled( true );
     //termList->verticalScrollBar()->setValue( 0 );
     vocabItem->setOpen( true );
     addVocabButton->setEnabled( false );
@@ -826,19 +823,19 @@ void VocabularyManagerFrame::doRemoveItem( bool confirmBeforeRemove /*= true*/ )
     else
         response = QMessageBox::Yes;
 
-    cerr << "response=" << response << endl;
-    cerr << "eq? = " << ( response == QMessageBox::Yes ) << endl;
+    //cerr << "response=" << response << endl;
+    //cerr << "eq? = " << ( response == QMessageBox::Yes ) << endl;
     if( response == QMessageBox::Yes ) {
         TreeItem* currentItem = (TreeItem*)vocabTreeView->currentItem();
-        cerr << "currentItem=" << currentItem << endl;
+        //cerr << "currentItem=" << currentItem << endl;
         if( currentItem->isFolder() ) {
-            cerr << "f" << endl;
+            //cerr << "f" << endl;
             FolderTreeItem* folderItem = (FolderTreeItem*)currentItem;
             Folder* folder = folderItem->getFolder();
             folder->setMarkedForDeletion( true );
         }
         else {
-            cerr << "v" << endl;
+            //cerr << "v" << endl;
             VocabTreeItem* vocabItem = (VocabTreeItem*)currentItem;
             Vocabulary* vocab = vocabItem->getVocabulary();
             vocab->setMarkedForDeletion( true );

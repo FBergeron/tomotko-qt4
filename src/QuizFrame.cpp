@@ -20,48 +20,53 @@ void QuizFrame::init() {
 
     topPanel = new QWidget();
     topPanelLayout = new QHBoxLayout();
+    topPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     topPanel->setLayout( topPanelLayout );
 
-    topLeftPanel = new QWidget( /*topPanel, "TopLeftPanel"*/ );
+    topLeftPanel = new QWidget();
     topLeftPanelLayout = new QVBoxLayout();
+    topLeftPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     topLeftPanel->setLayout( topLeftPanelLayout );
-    topPanelLayout->addWidget( topLeftPanel );
+    topPanelLayout->addWidget( topLeftPanel, 1 );
 
-    firstLangPanel = new QGroupBox( QApplication::translate( "QObject", firstLang.toLatin1().data() )/*, topLeftPanel, "FirstLangPanel"*/ );
+    firstLangPanel = new QGroupBox( QApplication::translate( "QObject", firstLang.toLatin1().data() ) );
     firstLangPanelLayout = new QHBoxLayout();
+    firstLangPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     firstLangPanel->setLayout( firstLangPanelLayout );
     topLeftPanelLayout->addWidget( firstLangPanel );
 
-    testLangPanel = new QGroupBox( QApplication::translate( "QObject", testLang.toLatin1().data() ) );// ), topLeftPanel, "TestLangPanel" );
+    testLangPanel = new QGroupBox( QApplication::translate( "QObject", testLang.toLatin1().data() ) );
     testLangPanelLayout = new QVBoxLayout();
+    testLangPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     testLangPanel->setLayout( testLangPanelLayout );
     topLeftPanelLayout->addWidget( testLangPanel );
 
     controlPanel = new QWidget();
     controlPanelLayout = new QHBoxLayout();
+    controlPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     controlPanel->setLayout( controlPanelLayout );
-    //controlPanelLayout->setSpacing( 2 );
 
-    answerControlPanel = new QWidget();// controlPanel, "AnswerControlPanel" );
+    answerControlPanel = new QWidget();
     answerControlPanelLayout = new QHBoxLayout();
+    answerControlPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     answerControlPanel->setLayout( answerControlPanelLayout );
     controlPanelLayout->addWidget( answerControlPanel );
 
-    revealAllDataButton = new QPushButton( tr( "Reveal" ) );//, answerControlPanel, "RevealAllData" );
+    revealAllDataButton = new QPushButton( tr( "Reveal" ) );
     revealAllDataButton->setIcon( QIcon( ZPIXMAP( eye_xpm ) ) );
     revealAllDataButton->setEnabled( false );
     revealAllDataButton->installEventFilter( this );
     revealAllDataButton->setToolTip( tr( "Reveal" ) );
     connect( revealAllDataButton, SIGNAL( clicked() ), this, SLOT( reveal() ) );
 
-    rightAnswerButton = new QPushButton( tr( "RightAnswer" ) );//, answerControlPanel, "RightAnswer" );
+    rightAnswerButton = new QPushButton( tr( "RightAnswer" ) );
     rightAnswerButton->setIcon( QIcon( ZPIXMAP( goodAns_xpm ) ) ); 
     rightAnswerButton->setEnabled( false );
     rightAnswerButton->installEventFilter( this );
     rightAnswerButton->setToolTip( tr( "RightAnswer" ) );
     connect( rightAnswerButton, SIGNAL( clicked() ), this, SLOT( rightAnswer() ) );
 
-    wrongAnswerButton = new QPushButton( tr( "WrongAnswer" ) );//, answerControlPanel, "WrongAnswer" );
+    wrongAnswerButton = new QPushButton( tr( "WrongAnswer" ) );
     wrongAnswerButton->setIcon( QIcon( ZPIXMAP( badAns_xpm ) ) );
     wrongAnswerButton->setEnabled( false );
     wrongAnswerButton->installEventFilter( this );
@@ -72,7 +77,7 @@ void QuizFrame::init() {
     answerControlPanelLayout->addWidget( rightAnswerButton );
     answerControlPanelLayout->addWidget( wrongAnswerButton );
 
-    editionButton = new QPushButton( tr( "EditWord" ) );//, controlPanel, "EditData" );
+    editionButton = new QPushButton( tr( "EditWord" ) );
     editionButton->setIcon( QIcon( ZPIXMAP( editTerm_xpm ) ) ); 
     editionButton->setMinimumWidth( 100 );
     editionButton->setEnabled( false );
@@ -83,18 +88,17 @@ void QuizFrame::init() {
     controlPanelLayout->addWidget( answerControlPanel, 1 );
     controlPanelLayout->addWidget( editionButton, 0 );
     
-    firstLangTermPanel = new QWidget();// firstLangPanel, "FirstLangTermPanel" ); 
-    firstLangTermPanelLayout = new QHBoxLayout();// firstLangTermPanel );
+    firstLangTermPanel = new QWidget();
+    firstLangTermPanelLayout = new QHBoxLayout();
     firstLangTermPanel->setLayout( firstLangTermPanelLayout );
     firstLangPanelLayout->addWidget( firstLangTermPanel );
-//    //firstLangTermPanelLayout->setSpacing( 2 );
-    firstLangTermLabel = new QLabel( tr( "Word/Expr." ) );//, firstLangTermPanel, "FirstLangTermLabel" );
+    firstLangTermLabel = new QLabel( tr( "Word/Expr." ) );
 
-    firstLangTermStack = new QStackedWidget();// firstLangTermPanel, "FirstLangTermStack" );
+    firstLangTermStack = new QStackedWidget();
     firstLangTermLineEdit = new QLineEdit();//firstLangTermLineEdit = new ScrollableLineEdit( firstLangTermStack, "FirstLangTermLineEdit" );
     firstLangTermLineEdit->setReadOnly( true );
     firstLangTermLineEdit->installEventFilter( this );
-    firstLangTermButton = new QPushButton( tr( "???" ) );//, firstLangTermStack, "FirstLangTermButton" );
+    firstLangTermButton = new QPushButton( tr( "???" ) );
     firstLangTermButton->installEventFilter( this );
     firstLangTermStack->setToolTip( tr( "Reveal" ) );
     connect( firstLangTermButton, SIGNAL( clicked() ), this, SLOT( revealFirstLangTerm() ) );  
@@ -105,31 +109,30 @@ void QuizFrame::init() {
     firstLangTermPanelLayout->addWidget( firstLangTermLabel, 0 );
     firstLangTermPanelLayout->addWidget( firstLangTermStack, 1 );
     
-    testLangTopPanel = new QWidget();// testLangPanel, "TestLangTopPanel" );
+    testLangTopPanel = new QWidget();
     testLangPanelLayout->addWidget( testLangTopPanel );
-    testLangTopPanelLayout = new QHBoxLayout();// testLangTopPanel );
+    testLangTopPanelLayout = new QHBoxLayout();
     testLangTopPanel->setLayout( testLangTopPanelLayout );
-    //testLangTopPanelLayout->setSpacing( 2 );
 
-    testLangLabelsPanel = new QWidget();//VBox( testLangTopPanel, "TestLangLabelsPanel" );
-    testLangLabelsPanelLayout = new QVBoxLayout();// testLangTopPanel, "TestLangLabelsPanel" );
+    testLangLabelsPanel = new QWidget();
+    testLangLabelsPanelLayout = new QVBoxLayout();
+    testLangLabelsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     testLangLabelsPanel->setLayout( testLangLabelsPanelLayout );
-    //testLangLabelsPanel->setSpacing( 2 );
-    testLangTermAltLabel = new QLabel( tr( "Alt./Phon." ) );//, testLangLabelsPanel, "TestLangTermAltLabel" );
+    testLangTermAltLabel = new QLabel( tr( "Alt./Phon." ) );
     testLangLabelsPanelLayout->addWidget( testLangTermAltLabel );
-    testLangTermLabel = new QLabel( tr( "Word/Expr." ) );//, testLangLabelsPanel, "TestLangTermLabel" );
+    testLangTermLabel = new QLabel( tr( "Word/Expr." ) );
     testLangLabelsPanelLayout->addWidget( testLangTermLabel );
 
-    testLangFieldsPanel = new QWidget();//( testLangTopPanel, "TestLangFieldsPanel" );
-    testLangFieldsPanelLayout = new QVBoxLayout();// testLangTopPanel, "TestLangFieldsPanel" );
+    testLangFieldsPanel = new QWidget();
+    testLangFieldsPanelLayout = new QVBoxLayout();
+    testLangFieldsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     testLangFieldsPanel->setLayout( testLangFieldsPanelLayout );
-    //testLangFieldsPanel->setSpacing( 2 );
-    testLangTermAltStack = new QStackedWidget();// testLangFieldsPanel, "TestLangTermAltStack" );
+    testLangTermAltStack = new QStackedWidget();
     testLangFieldsPanelLayout->addWidget( testLangTermAltStack );
     testLangTermAltLineEdit = new QLineEdit();//ScrollableLineEdit( testLangTermAltStack, "TestLangTermAltLineEdit" );
     testLangTermAltLineEdit->setReadOnly( true );
     testLangTermAltLineEdit->installEventFilter( this );
-    testLangTermAltButton = new QPushButton( tr( "???" ) );//, testLangTermAltStack, "TestLangTermAltButton" );
+    testLangTermAltButton = new QPushButton( tr( "???" ) );
     testLangTermAltStack->installEventFilter( this );
     testLangTermAltButton->setToolTip( tr( "Reveal" ) );
     connect( testLangTermAltButton, SIGNAL( clicked() ), this, SLOT( revealAltTerm() ) );  
@@ -137,12 +140,12 @@ void QuizFrame::init() {
     testLangTermAltStack->addWidget( testLangTermAltButton );
     testLangTermAltStack->setMinimumSize( testLangTermAltButton->sizeHint() );
 
-    testLangTermStack = new QStackedWidget();//WidgetStack( testLangFieldsPanel, "TestLangTermStack" );
+    testLangTermStack = new QStackedWidget();
     testLangFieldsPanelLayout->addWidget( testLangTermStack );
     testLangTermLineEdit = new QLineEdit();//testLangTermLineEdit = new ScrollableLineEdit( testLangTermStack, "TestLangTermLineEdit" );
     testLangTermLineEdit->setReadOnly( true );
     testLangTermLineEdit->installEventFilter( this );
-    testLangTermButton = new QPushButton( tr( "???" ) );//, testLangTermStack, "TestLangTermButton" );
+    testLangTermButton = new QPushButton( tr( "???" ) );
     testLangTermStack->installEventFilter( this );
     testLangTermButton->setToolTip( tr( "Reveal" ) );
     connect( testLangTermButton, SIGNAL( clicked() ), this, SLOT( revealTestLangTerm() ) );  
@@ -154,18 +157,18 @@ void QuizFrame::init() {
     testLangTopPanelLayout->addWidget( testLangLabelsPanel );
     testLangTopPanelLayout->addWidget( testLangFieldsPanel, 1 );
 
-    commentBox = new QWidget();// this, "CommentBox" );
-    commentBoxLayout = new QVBoxLayout();// this, "CommentBox" );
+    commentBox = new QWidget();
+    commentBoxLayout = new QVBoxLayout();
+    commentBoxLayout->setContentsMargins( 0, 0, 0, 0 );
     commentBox->setLayout( commentBoxLayout );
-    //commentBox->setSpacing( 2 );
 
-    commentLabelPanel = new QWidget();// commentBox, "CommentLabelPanel" );
-    commentLabelPanelLayout = new QHBoxLayout();// commentLabelPanel );
+    commentLabelPanel = new QWidget();
+    commentLabelPanelLayout = new QHBoxLayout();
+    commentLabelPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     commentLabelPanel->setLayout( commentLabelPanelLayout );
     commentBoxLayout->addWidget( commentLabelPanel );
-    //commentLabelPanelLayout->setSpacing( 2 );
-    commentLabel = new QLabel( tr( "Examples/Comments" ) );//, commentLabelPanel, "TestLangCommentLabel" );
-    maximizeCommentButton = new QPushButton();// tr( "MaximizeComment" ) );//, commentLabelPanel, "MaximizeCommentButton" );
+    commentLabel = new QLabel( tr( "Examples/Comments" ) );
+    maximizeCommentButton = new QPushButton();
     maximizeCommentButton->setIcon( QIcon( ZPIXMAP( maximize_xpm ) ) );
     maximizeCommentButton->setCheckable( true );
     maximizeCommentButton->setMaximumHeight( commentLabel->sizeHint().height() > 24 ? commentLabel->sizeHint().height() : 24 );
@@ -177,7 +180,7 @@ void QuizFrame::init() {
     commentLabelPanelLayout->addStretch();
     commentLabelPanelLayout->addWidget( maximizeCommentButton );
 
-    commentStack = new QStackedWidget();// commentBox, "TestLangCommentStack" );
+    commentStack = new QStackedWidget();
     commentBoxLayout->addWidget( commentStack );
     //commentStack->setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Expanding ) );
 
@@ -186,20 +189,19 @@ void QuizFrame::init() {
     //commentMultiLineEdit->setWordWrap( QMultiLineEdit::WidgetWidth );
     commentMultiLineEdit->setReadOnly( true );
     commentMultiLineEdit->installEventFilter( this );
-    commentButton = new QPushButton( tr( "???" ) );//, commentStack, "TestLangCommentButton" );
+    commentButton = new QPushButton( tr( "???" ) );
     commentButton->installEventFilter( this );
     commentButton->setToolTip( tr( "Reveal" ) );
     connect( commentButton, SIGNAL( clicked() ), this, SLOT( revealComment() ) );  
     commentStack->addWidget( commentMultiLineEdit );
     commentStack->addWidget( commentButton );
 
-    //imageBox = new ImageBox( tr( "Image" ), tr( "???" ), tr( "Reveal" ), topPanel, "ImageBox" );
+    imageBox = new ImageBox( tr( "Image" ), tr( "???" ), tr( "Reveal" ) );
+    topPanelLayout->addWidget( imageBox );
 
-    //topLeftPanel->setMaximumHeight( topLeftPanel->maximumHeight() );
-    //imageBox->setMaximumHeight( topLeftPanel->maximumHeight() );
+    imageBox->setMaximumHeight( topLeftPanel->sizeHint().height() );
 
     mainLayout = new QVBoxLayout( this );
-    //mainLayout->setSpacing( 2 );
     mainLayout->addWidget( topPanel );
     mainLayout->addWidget( commentBox, 1 );
     mainLayout->addWidget( controlPanel );
@@ -277,12 +279,13 @@ void QuizFrame::setTerm( const Term& term ) {
     commentMultiLineEdit->setText( comment );
     //commentMultiLineEdit->setCursorPosition( 0, 0 );
 
-    //Folder* vocabTree = controller->getVocabTree();
-    //Vocabulary* vocab = vocabTree->getVocabulary( term.getVocabId() );
-    //if( vocab ) {
-    //    QString absPath = controller->getResolvedImagePath( term.getImagePath(), *vocab );
-    //    imageBox->setImage( absPath );
-    //}
+    Folder* vocabTree = controller->getVocabTree();
+    Vocabulary* vocab = vocabTree->getVocabulary( term.getVocabId() );
+    if( vocab ) {
+        QString absPath = controller->getResolvedImagePath( term.getImagePath(), *vocab );
+        cerr << "absPath for Quiz=" << qPrintable( absPath ) << endl;
+        imageBox->setImage( absPath );
+    }
 }
 
 void QuizFrame::concludeQuiz() {
@@ -433,10 +436,10 @@ void QuizFrame::reveal() {
                         break;
 
                     case Sequence::IMAGE :            
-                        //if( imageBox->containsValidImage() && !isImageRevealed() ) {
-                        //    revealImage(); 
-                        //    hasShownSomething = true;
-                        //}
+                        if( imageBox->containsValidImage() && !isImageRevealed() ) {
+                            revealImage(); 
+                            hasShownSomething = true;
+                        }
                         break;
                     
                     default:
@@ -561,7 +564,7 @@ void QuizFrame::hideAnswers() {
     testLangTermAltStack->setCurrentIndex( 1 );
     testLangTermStack->setCurrentIndex( 1 );
     commentStack->setCurrentIndex( 1 );
-    //imageBox->hideImage();
+    imageBox->hideImage();
 }
 
 void QuizFrame::setButtonsEnabled( bool isEnabled ) {
@@ -588,7 +591,7 @@ void QuizFrame::revealComment() {
 }
 
 void QuizFrame::revealImage() {
-    //imageBox->revealImage();
+    imageBox->revealImage();
 }
 
 void QuizFrame::toggleMaximizeComment( bool isOn ) {
@@ -615,8 +618,7 @@ bool QuizFrame::isCommentRevealed() const {
 }
 
 bool QuizFrame::isImageRevealed() const {
-    //return( imageBox->isImageRevealed() );
-    return( false );
+    return( imageBox->isImageRevealed() );
 }
 
 void QuizFrame::maximizeCommentField() {
@@ -625,7 +627,7 @@ void QuizFrame::maximizeCommentField() {
     maximizeCommentButton->setChecked( true );
     firstLangPanel->hide();
     testLangPanel->hide();
-    //imageBox->hide();
+    imageBox->hide();
     controlPanel->hide();
     revealComment();
     setUpdatesEnabled( true );
@@ -638,8 +640,8 @@ void QuizFrame::restoreCommentField() {
     firstLangPanel->show();
     testLangPanel->show();
 
-    //if( imageBox->containsValidImage() )
-    //    imageBox->show();
+    if( imageBox->containsValidImage() )
+        imageBox->show();
 
     if( !buttonsHidden )
         controlPanel->show();

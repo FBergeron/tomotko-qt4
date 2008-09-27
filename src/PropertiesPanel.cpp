@@ -2,7 +2,6 @@
 
 PropertiesPanel::PropertiesPanel( const Preferences& prefs, QWidget* parent ) 
     : QWidget( parent ), prefs( prefs ), editedVocab( NULL ), editedFolder( NULL ) {
-    //setSpacing( 2 );
     init();
 }
 
@@ -11,6 +10,7 @@ void PropertiesPanel::setVocabulary( Vocabulary* vocab ) {
 
     editedVocab = vocab;
 
+    mainLayout->setContentsMargins( 8, 8, 8, 8 );
     descriptionMultiLineEdit->setText( editedVocab->getDescription() );
     authorField->setText( editedVocab->getAuthor() );
     creationDateValueLabel->setText( editedVocab->getCreationDate().toString() );
@@ -26,6 +26,7 @@ void PropertiesPanel::setFolder( Folder* folder ) {
 
     editedFolder = folder;
 
+    mainLayout->setContentsMargins( 0, 0, 0, 0 );
     descriptionMultiLineEdit->setText( editedFolder->getDescription() );
     authorField->setText( editedFolder->getAuthor() );
     creationDateValueLabel->setText( editedFolder->getCreationDate().toString() );
@@ -132,16 +133,19 @@ void PropertiesPanel::init() {
 
     simplePropsPanel = new QWidget();
     simplePropsPanelLayout = new QHBoxLayout();
+    simplePropsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     simplePropsPanel->setLayout( simplePropsPanelLayout );
     //simplePropsPanel->setSpacing( 10 );
 
     simplePropsLabelsPanel = new QWidget();
     simplePropsLabelsPanelLayout = new QVBoxLayout();
+    simplePropsLabelsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     simplePropsLabelsPanel->setLayout( simplePropsLabelsPanelLayout );
     simplePropsPanelLayout->addWidget( simplePropsLabelsPanel );
 
     simplePropsFieldsPanel = new QWidget();
     simplePropsFieldsPanelLayout = new QVBoxLayout();
+    simplePropsFieldsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     simplePropsFieldsPanel->setLayout( simplePropsFieldsPanelLayout );
     simplePropsPanelLayout->addWidget( simplePropsFieldsPanel );
 

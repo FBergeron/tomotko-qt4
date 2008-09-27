@@ -1328,7 +1328,9 @@ QString Controller::getClipboardDataType() const {
 QString Controller::getResolvedImagePath( const QString& path, const Vocabulary& vocab ) const {
     if( path.isNull() )
         return( QString::null );
-    else if( path.left( 1 ) == "/" )
+
+    QFileInfo pathFileInfo( path );
+    if( pathFileInfo.isAbsolute() )
         return( path );
     else {
         QString absPath = getApplicationDirName() + "/" + vocab.getParent()->getPath() + "/v-" + QString::number( vocab.getId() ) + "/" + path;

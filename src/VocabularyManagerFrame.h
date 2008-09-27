@@ -17,6 +17,7 @@
 //#include <qmultilineedit.h>
 //#include <qpe/fileselector.h>
 #include <QPushButton>
+#include <QSplitter>
 #include <QStackedWidget>
 #include <QTabWidget>
 //#include <qtextstream.h>
@@ -151,7 +152,9 @@ private:
     //int                     currentTermId;
     //QValueList<int>         selectedTermIdList;
 
-    QHBoxLayout*            mainLayout;
+    QVBoxLayout*            mainLayout;
+
+    QSplitter*              splitter;
 
     QWidget*                treePanel;
     QVBoxLayout*            treePanelLayout;

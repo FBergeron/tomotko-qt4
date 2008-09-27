@@ -1,26 +1,31 @@
 #ifndef IMAGE_BOX_H
 #define IMAGE_BOX_H
 
-#include <iostream.h>
-#include <qfileinfo.h>
-#include <qlabel.h>
-#include <qlayout.h>
-#include <qmovie.h>
-#include <qpixmap.h>
-#include <qpushbutton.h>
-#include <qtooltip.h>
-#include <qvbox.h>
-#include <qvgroupbox.h>
-#include <qwidgetstack.h>
-#include "Util.h"
+#include <iostream>
+#include <QByteArray>
+#include <QFileInfo>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QMovie>
+#include <QPushButton>
+#include <QResizeEvent>
+#include <QSize>
+#include <QString>
+#include <QVBoxLayout>
+#include <QWidget>
+#include <QStackedWidget>
+#include "PixMap.h"
 
-class ImageBox : public QVGroupBox {
+using namespace std;
+
+class ImageBox : public QGroupBox {
 
     Q_OBJECT
 
 public:
 
-    ImageBox( const QString& title, const QString& hiddenLabel, const QString& hiddenTooltip, QWidget* parent = 0, const char* name = 0 );
+    ImageBox( const QString& title, const QString& hiddenLabel, const QString& hiddenTooltip, QWidget* parent = 0 );
     ~ImageBox();
 
     void setImage( const QString& path );
@@ -45,13 +50,19 @@ private slots:
 
 private:
 
-    int imageWidth;
-    int imageHeight;
+    void resizeImage();
 
-    QWidgetStack*               imageStack;
-    QVBox*                      imageWrapper;
+    int                         imageWidth;
+    int                         imageHeight;
+    QByteArray                  imageFormat;
+
+    QStackedWidget*             imageStack;
+    QWidget*                    imageWrapper;
+    QHBoxLayout*                imageWrapperLayout;
     QLabel*                     image;
     QPushButton*                imageButton;
+
+    QVBoxLayout*                mainLayout;
 
 };
 

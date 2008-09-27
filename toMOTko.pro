@@ -13,7 +13,7 @@ RESOURCES   =   toMOTko.qrc
 
 HEADERS     +=  src/Base.h \
                 src/Util.h \
-#               src/ImageBox.h \
+                src/ImageBox.h \
                 src/BilingualKey.h \
                 src/DigraphLineEdit.h \
 #               src/ScrollableLineEdit.h \
@@ -63,7 +63,7 @@ HEADERS     +=  src/Base.h \
                 src/zlib.h
 
 SOURCES     +=  src/Util.cpp \ 
-                #src/ImageBox.cpp \
+                src/ImageBox.cpp \
                 src/BilingualKey.cpp \
                 src/DigraphLineEdit.cpp \
                 #src/ScrollableLineEdit.cpp \
