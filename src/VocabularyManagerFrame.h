@@ -33,7 +33,7 @@
 //#include "DigraphMultiLineEdit.h"
 #include "PropertiesPanel.h"
 #include "SearchDialog.h"
-//#include "SmartListView.h"
+#include "SmartListView.h"
 #include "TranslationSelectionDialog.h"
 #include "TermDialog.h"
 #include "TermListItem.h"
@@ -194,7 +194,8 @@ private:
     PropertiesPanel*        vocabDetailsPropsPanel;
     QWidget*                vocabDetailsVocabTitlePanel;
     QHBoxLayout*            vocabDetailsVocabTitlePanelLayout;
-    QTreeWidget*            termList;//SmartListView*          termList;
+    //QTreeWidget*            termList;
+    SmartListView*          termList;
    
     QWidget*                termControlPanel;
     QHBoxLayout*            termControlPanelLayout;

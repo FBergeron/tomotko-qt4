@@ -15,7 +15,6 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include "Controller.h"
-//#include "SmartListView.h"
 
 class TranslationSelectionDialog : public QDialog {
 
@@ -42,7 +41,7 @@ private:
     void init( const QString& caption, const QString& message, const QStringList& languages, int selectionMode );
 
     QLabel*         messageLabel;
-    QTreeWidget*    languageList;//SmartListView*  languageList;
+    QTreeWidget*    languageList;
     QPushButton*    checkAllLanguagesButton;
 
     QVBoxLayout*    mainLayout;

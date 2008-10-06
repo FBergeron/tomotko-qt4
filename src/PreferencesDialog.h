@@ -199,7 +199,7 @@ private:
     QVBoxLayout*                keyboardAccelPanelLayout;
 
     QTreeWidgetItem*            grabAccelKeyFor;//QListViewItem*      grabAccelKeyFor;
-    QTreeWidget*                keyboardAccelListView;//SmartListView*      keyboardAccelListView;
+    QTreeWidget*                keyboardAccelListView;
     bool                        ignoreReturn;
     bool                        keyboardAccelModified;
 

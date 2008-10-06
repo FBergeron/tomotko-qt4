@@ -56,6 +56,8 @@ void PropertiesPanel::updateCounters() {
         QStringList values;
         values << tr( "Words" ) << QString::number( selectedTermCount ) << QString::number( checkedTermCount ) << QString::number( termCount );
         QTreeWidgetItem* termCountItem = new QTreeWidgetItem( contentListView, values );
+        for( int i = 1; i <= 3; i++ )
+            termCountItem->setTextAlignment( i, Qt::AlignRight );
         contentListView->addTopLevelItem( termCountItem );
     }
     else if( getType() == QString( "Folder" ) ) {
@@ -87,16 +89,22 @@ void PropertiesPanel::updateCounters() {
         QStringList termCountValues;
         termCountValues << tr( "Words" ) << QString::number( selectedTermCount ) << QString::number( checkedTermCount ) << QString::number( termCount );
         QTreeWidgetItem* termCountItem = new QTreeWidgetItem( contentListView, termCountValues );
+        for( int i = 1; i <= 3; i++ )
+            termCountItem->setTextAlignment( i, Qt::AlignRight );
         contentListView->addTopLevelItem( termCountItem );
 
         QStringList vocabCountValues;
         vocabCountValues << tr( "Glossaries" ) << QString::number( selectedVocabCount ) << QString::number( checkedVocabCount ) << QString::number( vocabCount );
         QTreeWidgetItem* vocabCountItem = new QTreeWidgetItem( contentListView, vocabCountValues );
+        for( int i = 1; i <= 3; i++ )
+            vocabCountItem->setTextAlignment( i, Qt::AlignRight );
         contentListView->addTopLevelItem( vocabCountItem );
 
         QStringList folderCountValues;
         folderCountValues << tr( "Folders" ) << QString::number( selectedFolderCount ) << QString::number( checkedFolderCount ) << QString::number( folderCount );
         QTreeWidgetItem* folderCountItem = new QTreeWidgetItem( contentListView, folderCountValues );
+        for( int i = 1; i <= 3; i++ )
+            folderCountItem->setTextAlignment( i, Qt::AlignRight );
         contentListView->addTopLevelItem( folderCountItem );
     }
     contentListView->updateGeometry();
@@ -120,16 +128,18 @@ void PropertiesPanel::init() {
     //setStretchFactor( descriptionMultiLineEdit, 1 );
 
     contentLabel = new QLabel( tr( "Content" ) );
-    contentListView = new QTreeWidget();//contentListView = new ContentListView( this, "ContentListView" );
-    //contentListView->setAllColumnsShowFocus( true );
+    //contentListView = new QTreeWidget();//contentListView = new ContentListView( this, "ContentListView" );
+    contentListView = new SmartListView();//contentListView = new ContentListView( this, "ContentListView" );
+    contentListView->setAllColumnsShowFocus( true );
     contentListView->setSelectionMode( QAbstractItemView::ExtendedSelection );
     QStringList headerLabels;
     headerLabels << tr( "Items" ) << tr( "Selected" ) << tr( "Checked" ) << tr( "Total" );
     contentListView->setHeaderLabels( headerLabels );
-    //contentListView->setColumnAlignment( colSelected, QListView::AlignRight );
-    //contentListView->setColumnAlignment( colChecked, QListView::AlignRight );
-    //contentListView->setColumnAlignment( colTotal, QListView::AlignRight );
+    contentListView->headerItem()->setTextAlignment( 1, Qt::AlignRight );
+    contentListView->headerItem()->setTextAlignment( 2, Qt::AlignRight );
+    contentListView->headerItem()->setTextAlignment( 3, Qt::AlignRight );
     //contentListView->setStretchColumn( 0 );
+    contentListView->setAllColumnsWide( true );
 
     simplePropsPanel = new QWidget();
     simplePropsPanelLayout = new QHBoxLayout();

@@ -18,6 +18,7 @@
 #include "DigraphMultiLineEdit.h"
 #include "Folder.h"
 #include "Preferences.h"
+#include "SmartListView.h"
 #include "Vocabulary.h"
 
 class PropertiesPanel : public QWidget/*QVBox*/ {
@@ -68,7 +69,8 @@ private:
     DigraphMultiLineEdit*   descriptionMultiLineEdit;
 
     QLabel*                 contentLabel;
-    QTreeWidget*            contentListView;//ContentListView*        contentListView;
+    //QTreeWidget*            contentListView;//ContentListView*        contentListView;
+    SmartListView*          contentListView;
 
     QLabel*                 authorLabel;
     DigraphLineEdit*        authorField;

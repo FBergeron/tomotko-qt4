@@ -1,7 +1,7 @@
 #include "VocabTreeView.h"
 
-VocabTreeView::VocabTreeView( Controller& controller/*, QWidget *parent = 0, const char* name = 0*/ )
-    : QTreeWidget/*SmartListView*/( /*parent, name*/ ), dirty( false ), controller( controller ) {
+VocabTreeView::VocabTreeView( Controller& controller )
+    : QTreeWidget(), dirty( false ), controller( controller ) {
 }
 
 VocabTreeView::~VocabTreeView() {

@@ -49,7 +49,8 @@ void SearchDialog::init() {
     resultsHeaderPanelLayout->addWidget( resultsHeaderFiller );
     resultsHeaderPanelLayout->addWidget( resultsCounterLabel );
 
-    resultsListView = new QTreeWidget();//new SmartListView( /*this, "ResultsListView"*/ );
+    //resultsListView = new QTreeWidget();//new SmartListView( /*this, "ResultsListView"*/ );
+    resultsListView = new SmartListView();//new SmartListView( /*this, "ResultsListView"*/ );
     resultsListView->setColumnCount( 4 );
     QStringList headerLabels;
     headerLabels << QApplication::translate( "QObject", controller->getPreferences().getFirstLanguage().toLatin1().data() );
@@ -62,8 +63,8 @@ void SearchDialog::init() {
     //resultsListView->setColumnWidthMode( colTestLanguage, QListView::Manual );
     //resultsListView->addColumn( tr( "Glossary" ) );
     //resultsListView->addColumn( tr( "Location" ) );
-    //resultsListView->setAllColumnsWide( true );
-    //resultsListView->setAllColumnsShowFocus( true );
+    resultsListView->setAllColumnsWide( true );
+    resultsListView->setAllColumnsShowFocus( true );
     //resultsListView->setStretchColumn( 1 );
     resultsListView->setSelectionMode( QAbstractItemView::ExtendedSelection );
     connect( resultsListView, SIGNAL( itemSelectionChanged() ), this, SLOT( updateUi() ) );

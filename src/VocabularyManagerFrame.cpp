@@ -134,7 +134,8 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
     vocabDetailsTermsPanel = new QWidget();
     vocabDetailsTermsPanelLayout = new QVBoxLayout();
     vocabDetailsTermsPanel->setLayout( vocabDetailsTermsPanelLayout );
-    termList = new QTreeWidget();
+    //termList = new QTreeWidget();
+    termList = new SmartListView();
     termList->setSortingEnabled( true );
     termList->setSelectionMode( QAbstractItemView::ExtendedSelection );
     termList->setColumnCount( 2 );
@@ -143,11 +144,7 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
     QStringList headerLabels = QStringList();
     headerLabels << QApplication::translate( "QObject", controller->getPreferences().getFirstLanguage().toLatin1().data() ) << QApplication::translate( "QObject", controller->getPreferences().getTestLanguage().toLatin1().data() );
     termList->setHeaderLabels( headerLabels );
-    //termList->header()->setResizeMode( 0, QHeaderView::Stretch ); 
-    //termList->header()->setResizeMode( 1, QHeaderView::Stretch ); 
-    //termList->setColumnWidthMode( colFirstLanguage, QListView::Manual );
-    //termList->setColumnWidthMode( colTestLanguage, QListView::Manual );
-    //termList->setAllColumnsWide( true );
+    termList->setAllColumnsWide( true );
     connect( termList, SIGNAL( itemSelectionChanged() ), this, SLOT( updateTermList() ) ); 
     connect( termList, SIGNAL( itemChanged( QTreeWidgetItem*, int ) ), this, SLOT( updateTermItemState( QTreeWidgetItem*, int ) ) );
 
@@ -1317,6 +1314,7 @@ uint VocabularyManagerFrame::getSelectedTermCount() const {
 void VocabularyManagerFrame::search() {
     if( !searchDialog ) {
         searchDialog = new SearchDialog( controller, this );
+        searchDialog->resize( size() );
         connect( searchDialog, SIGNAL( showTermRequested( const TermKey& ) ), this, SLOT( showTerm( const TermKey& ) ) ); 
         connect( searchDialog, SIGNAL( termsRemoved() ), this, SLOT( updateUi() ) );
     }

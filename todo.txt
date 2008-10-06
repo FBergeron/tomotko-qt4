@@ -1,6 +1,9 @@
 ToDo
 ----
 Fix the image resizing in Quiz (ImageBox + QuizFrame).
+Paste in TermDialog is bugged.
+Group label and textfield into a panel (comments) for better layout.
+Disable the column moving in termlist.
 Beware: When we do label->setMovie( &mov ), we must deallocate the movie.   The label doesn't take care of it as mentioned in the ref doc.
 There is a probleme with Comment field and line breaks.
 It's not possible to deselect a font size in the prefs.

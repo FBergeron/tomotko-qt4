@@ -18,7 +18,7 @@
 #include "Controller.h"
 #include "HistoryField.h"
 #include "ResultListItem.h"
-//#include "SmartListView.h"
+#include "SmartListView.h"
 #include "TermDialog.h"
 #include "TermKey.h"
 #include "TranslationSelectionDialog.h"
@@ -76,7 +76,8 @@ private:
     QWidget*                resultsHeaderFiller;
     QLabel*                 resultsCounterLabel;
 
-    QTreeWidget*            resultsListView;//SmartListView*          resultsListView;
+    //QTreeWidget*            resultsListView;
+    SmartListView*          resultsListView;
 
     QWidget*                resultsButtonsPanel;
     QHBoxLayout*            resultsButtonsPanelLayout;

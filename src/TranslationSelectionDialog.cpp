@@ -8,11 +8,9 @@ TranslationSelectionDialog::TranslationSelectionDialog( const QString& caption, 
 void TranslationSelectionDialog::init( const QString& caption, const QString& message, const QStringList& languages, int selectionMode ) {
     QFont mediumFont( controller->getPreferences().getMediumFont() );
 
-    messageLabel = new QLabel( message/*, this, "MessageLabel"*/ );
+    messageLabel = new QLabel( message );
 
-    languageList = new QTreeWidget();//new SmartListView( this, "LanguageList" ); 
-    //languageList->setStretchColumn( 0 );
-    //languageList->setAllColumnsShowFocus( true );
+    languageList = new QTreeWidget();
     languageList->setHeaderLabel( tr( "Languages" ) );
     for( QStringList::ConstIterator it = languages.begin(); it != languages.end(); it++ ) {
         QString lang = *it;

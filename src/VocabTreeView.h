@@ -12,16 +12,15 @@
 #include "Controller.h"
 #include "FolderTreeItem.h"
 #include "Preferences.h"
-//#include "SmartListView.h"
 #include "Util.h"
 #include "VocabTreeItem.h"
 #include "Vocabulary.h"
 
-class VocabTreeView : public QTreeWidget/*public SmartListView*/ {
+class VocabTreeView : public QTreeWidget {
 
 public:
 
-    VocabTreeView( Controller& controller/*, QWidget* parent = 0, const char* name = 0*/ );
+    VocabTreeView( Controller& controller );
     virtual ~VocabTreeView();
 
     VocabTreeItem* currentItem() const;
