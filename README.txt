@@ -1,6 +1,9 @@
 README
 ======
 
+Windows
+-------
+
 To build the Makefile :
 
 > qmake toMOTko.pro
@@ -9,9 +12,32 @@ To build the executable :
 
 > make 
 
+To extract localized string :
+
+> lupdate toMOTko.pro
+
+To generate the string files :
+
+> lrelease toMOTko.pro
+
+To deploy the required resources into debug and release directories :
+
+> bin\deploy.rb
+
 To run the executable :
 
 > debug\toMOTko.exe
+
+
+Linux
+-----
+Todo
+
+
+MacOS
+-----
+Todo
+
 
 
 The following information should be removed as it concerns the Zaurus version.  I keep it temporarily.
