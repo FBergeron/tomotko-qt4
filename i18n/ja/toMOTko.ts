@@ -1,69 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1">
 <context>
+    <name>HelpBrowser</name>
+    <message>
+        <location filename="../../src/HelpBrowser.cpp" line="8"/>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/HelpBrowser.cpp" line="9"/>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/HelpBrowser.cpp" line="10"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/HelpBrowser.cpp" line="34"/>
+        <source>Help: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="135"/>
+        <location filename="../../src/MainWindow.cpp" line="136"/>
         <source>Actions</source>
         <translation type="unfinished">機能</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="296"/>
+        <location filename="../../src/MainWindow.cpp" line="301"/>
         <source>StartQuiz</source>
         <translation type="unfinished">クイズを始める</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="297"/>
+        <location filename="../../src/MainWindow.cpp" line="302"/>
         <source>ManageGlossaries</source>
         <translation type="unfinished">用語集を管理する</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="298"/>
+        <location filename="../../src/MainWindow.cpp" line="303"/>
         <source>Import...</source>
         <translation type="unfinished">インポート...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="299"/>
+        <location filename="../../src/MainWindow.cpp" line="304"/>
         <source>Export...</source>
         <translation type="unfinished">エクスポート...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="301"/>
+        <location filename="../../src/MainWindow.cpp" line="306"/>
         <source>Preferences...</source>
         <translation type="unfinished">設定...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="302"/>
+        <location filename="../../src/MainWindow.cpp" line="307"/>
         <source>Quit</source>
         <translation type="unfinished">終了</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="300"/>
+        <location filename="../../src/MainWindow.cpp" line="305"/>
         <source>ShowAllGlossariesAndTerms</source>
         <translation type="unfinished">全ての用語集と言葉を表示する</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="168"/>
+        <location filename="../../src/MainWindow.cpp" line="169"/>
         <source>?</source>
         <translation type="unfinished">?</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="170"/>
+        <location filename="../../src/MainWindow.cpp" line="219"/>
         <source>About...</source>
         <translation type="unfinished">toMOTkoについて...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="245"/>
+        <location filename="../../src/MainWindow.cpp" line="250"/>
         <source>RestartQuiz</source>
         <translation type="unfinished">クイズを再び始める</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="363"/>
+        <location filename="../../src/MainWindow.cpp" line="368"/>
         <source>AboutToMOTko...</source>
         <translation type="unfinished">toMOTkoについて...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="363"/>
+        <location filename="../../src/MainWindow.cpp" line="368"/>
         <source>AboutMessage</source>
         <translation type="unfinished">&lt;html&gt;&lt;h2&gt;toMOTko v0.11.0&lt;/h2&gt;&lt;p&gt;Small application to learn&lt;br/&gt;new vocabulary.&lt;/p&gt;&lt;p&gt;Written by Frederic Bergeron&lt;br/&gt;(&lt;tt&gt;fbergeron@users.sourceforge.net&lt;/tt&gt;)&lt;br/&gt;Copyright (c) 2006-2008&lt;/p&gt;&lt;p&gt;This program is distributed&lt;br/&gt;under the terms of the GPL v2.&lt;/p&gt;&lt;p&gt;For more information:&lt;br/&gt;&lt;tt&gt;http://tomotko.sourceforge.net&lt;/tt&gt;&lt;/p&gt;</translation>
     </message>
@@ -83,57 +106,57 @@
         <translation type="obsolete">貼り付け</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="292"/>
+        <location filename="../../src/MainWindow.cpp" line="297"/>
         <source>Reveal</source>
         <translation type="unfinished">表す</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="293"/>
+        <location filename="../../src/MainWindow.cpp" line="298"/>
         <source>RightAnswer</source>
         <translation type="unfinished">正解</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="294"/>
+        <location filename="../../src/MainWindow.cpp" line="299"/>
         <source>WrongAnswer</source>
         <translation type="unfinished">不正解</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="295"/>
+        <location filename="../../src/MainWindow.cpp" line="300"/>
         <source>EditQuizTerm</source>
         <translation type="unfinished">クイズの言葉を編集する</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="303"/>
+        <location filename="../../src/MainWindow.cpp" line="308"/>
         <source>AddFolder</source>
         <translation type="unfinished">新しいフォルダーを作る</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="304"/>
+        <location filename="../../src/MainWindow.cpp" line="309"/>
         <source>AddGlossary</source>
         <translation type="unfinished">新しい用語集を作る</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="305"/>
+        <location filename="../../src/MainWindow.cpp" line="310"/>
         <source>RemoveItem</source>
         <translation type="unfinished">アイテムを消す</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="306"/>
+        <location filename="../../src/MainWindow.cpp" line="311"/>
         <source>AddTerm</source>
         <translation type="unfinished">言葉を追加する</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="307"/>
+        <location filename="../../src/MainWindow.cpp" line="312"/>
         <source>EditTerm</source>
         <translation type="unfinished">言葉を編集する</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="308"/>
+        <location filename="../../src/MainWindow.cpp" line="313"/>
         <source>RemoveTerm</source>
         <translation type="unfinished">言葉を消す</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="309"/>
+        <location filename="../../src/MainWindow.cpp" line="314"/>
         <source>CheckAllTerms</source>
         <translation type="unfinished">全ての言葉にチェックを入れる</translation>
     </message>
@@ -148,24 +171,29 @@
         <translation type="obsolete">いいえ</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="310"/>
+        <location filename="../../src/MainWindow.cpp" line="315"/>
         <source>InverseCheckedTerms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="311"/>
+        <location filename="../../src/MainWindow.cpp" line="316"/>
         <source>Maximize</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="312"/>
+        <location filename="../../src/MainWindow.cpp" line="317"/>
         <source>Search...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="157"/>
+        <location filename="../../src/MainWindow.cpp" line="158"/>
         <source>Edition</source>
         <translation type="unfinished">編集</translation>
+    </message>
+    <message>
+        <location filename="../../src/MainWindow.cpp" line="171"/>
+        <source>Help...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -397,62 +425,62 @@ Overwrite the current assignment?</source>
 <context>
     <name>PropertiesPanel</name>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="88"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="90"/>
         <source>Words</source>
         <translation type="unfinished">言葉</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="93"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="97"/>
         <source>Glossaries</source>
         <translation type="unfinished">用語集</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="98"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="104"/>
         <source>Folders</source>
         <translation type="unfinished">フォルダー</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="236"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="246"/>
         <source>Selected</source>
         <translation type="unfinished">クイズ</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="236"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="246"/>
         <source>Checked</source>
         <translation type="unfinished">チェック</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="233"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="243"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="234"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="244"/>
         <source>Content</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="236"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="246"/>
         <source>Items</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="236"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="246"/>
         <source>Total</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="238"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="248"/>
         <source>Author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="239"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="249"/>
         <source>CreationDate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="240"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="250"/>
         <source>ModificationDate</source>
         <translation type="unfinished"></translation>
     </message>
@@ -550,7 +578,7 @@ Overwrite the current assignment?</source>
         <translation type="unfinished">編集</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="314"/>
+        <location filename="../../src/MainWindow.cpp" line="319"/>
         <source>Cut</source>
         <translation type="unfinished">切り取り</translation>
     </message>
@@ -570,12 +598,12 @@ Overwrite the current assignment?</source>
         <translation type="unfinished">エラー</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="955"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="952"/>
         <source>Warning</source>
         <translation type="unfinished">注意</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="290"/>
+        <location filename="../../src/QuizFrame.cpp" line="293"/>
         <source>Information</source>
         <translation type="unfinished">情報</translation>
     </message>
@@ -595,7 +623,7 @@ Overwrite the current assignment?</source>
         <translation type="unfinished">新しい用語集を作る</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="358"/>
+        <location filename="../../src/MainWindow.cpp" line="363"/>
         <source>ErrorSavingData</source>
         <translation type="unfinished"></translation>
     </message>
@@ -605,12 +633,12 @@ Overwrite the current assignment?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="500"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="497"/>
         <source>OperationSuccessful</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="502"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="499"/>
         <source>OperationFailed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -623,62 +651,62 @@ Overwrite the current assignment?</source>
 <context>
     <name>QuizFrame</name>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="196"/>
+        <location filename="../../src/QuizFrame.cpp" line="199"/>
         <source>Reveal</source>
         <translation type="unfinished">表す</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="65"/>
+        <location filename="../../src/QuizFrame.cpp" line="66"/>
         <source>RightAnswer</source>
         <translation type="unfinished">正解</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="84"/>
+        <location filename="../../src/QuizFrame.cpp" line="85"/>
         <source>EditWord</source>
         <translation type="unfinished">言葉を編集する</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="122"/>
+        <location filename="../../src/QuizFrame.cpp" line="123"/>
         <source>Word/Expr.</source>
         <translation type="unfinished">言葉</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="196"/>
+        <location filename="../../src/QuizFrame.cpp" line="199"/>
         <source>???</source>
         <translation type="unfinished">???</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="120"/>
+        <location filename="../../src/QuizFrame.cpp" line="121"/>
         <source>Alt./Phon.</source>
         <translation type="unfinished">発音</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="167"/>
+        <location filename="../../src/QuizFrame.cpp" line="170"/>
         <source>Examples/Comments</source>
         <translation type="unfinished">例/コメント</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="72"/>
+        <location filename="../../src/QuizFrame.cpp" line="73"/>
         <source>WrongAnswer</source>
         <translation type="unfinished">不正解</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="224"/>
+        <location filename="../../src/QuizFrame.cpp" line="227"/>
         <source>NoTermsMarkedForStudy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="174"/>
+        <location filename="../../src/QuizFrame.cpp" line="177"/>
         <source>MaximizeComment</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="290"/>
+        <location filename="../../src/QuizFrame.cpp" line="293"/>
         <source>WellDone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="196"/>
+        <location filename="../../src/QuizFrame.cpp" line="199"/>
         <source>Image</source>
         <translation type="unfinished"></translation>
     </message>
@@ -704,72 +732,72 @@ Overwrite the current assignment?</source>
 <context>
     <name>SearchDialog</name>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="155"/>
+        <location filename="../../src/SearchDialog.cpp" line="156"/>
         <source>Glossary</source>
         <translation type="unfinished">用語集</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="277"/>
+        <location filename="../../src/SearchDialog.cpp" line="278"/>
         <source>Yes</source>
         <translation type="unfinished">はい</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="278"/>
+        <location filename="../../src/SearchDialog.cpp" line="279"/>
         <source>No</source>
         <translation type="unfinished">いいえ</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="149"/>
+        <location filename="../../src/SearchDialog.cpp" line="150"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="150"/>
+        <location filename="../../src/SearchDialog.cpp" line="151"/>
         <source>Results</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="155"/>
+        <location filename="../../src/SearchDialog.cpp" line="156"/>
         <source>Location</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="157"/>
+        <location filename="../../src/SearchDialog.cpp" line="158"/>
         <source>View Glossary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="158"/>
+        <location filename="../../src/SearchDialog.cpp" line="159"/>
         <source>Edit Term</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="159"/>
+        <location filename="../../src/SearchDialog.cpp" line="160"/>
         <source>Remove Term(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="163"/>
+        <location filename="../../src/SearchDialog.cpp" line="164"/>
         <source>Search...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="185"/>
+        <location filename="../../src/SearchDialog.cpp" line="186"/>
         <source>%1 term(s) found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="271"/>
+        <location filename="../../src/SearchDialog.cpp" line="272"/>
         <source>ConfirmRemoveSelectedTerms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="316"/>
+        <location filename="../../src/SearchDialog.cpp" line="317"/>
         <source>MultipleTranslationsDetectedForRemoveTermsCaption</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="316"/>
+        <location filename="../../src/SearchDialog.cpp" line="317"/>
         <source>MultipleTranslationsDetectedForRemoveTerms</source>
         <translation type="unfinished"></translation>
     </message>
@@ -918,22 +946,22 @@ Overwrite the current assignment?</source>
 <context>
     <name>TranslationSelectionDialog</name>
     <message>
-        <location filename="../../src/TranslationSelectionDialog.cpp" line="16"/>
+        <location filename="../../src/TranslationSelectionDialog.cpp" line="14"/>
         <source>Languages</source>
         <translation type="unfinished">言語</translation>
     </message>
     <message>
-        <location filename="../../src/TranslationSelectionDialog.cpp" line="39"/>
+        <location filename="../../src/TranslationSelectionDialog.cpp" line="37"/>
         <source>CheckAllLanguages</source>
         <translation type="unfinished">全ての言語にチェックを入れる</translation>
     </message>
     <message>
-        <location filename="../../src/TranslationSelectionDialog.cpp" line="46"/>
+        <location filename="../../src/TranslationSelectionDialog.cpp" line="44"/>
         <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/TranslationSelectionDialog.cpp" line="48"/>
+        <location filename="../../src/TranslationSelectionDialog.cpp" line="46"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -941,7 +969,7 @@ Overwrite the current assignment?</source>
 <context>
     <name>VocabularyManagerFrame</name>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="614"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="611"/>
         <source>Glossaries</source>
         <translation type="unfinished">用語集</translation>
     </message>
@@ -961,57 +989,57 @@ Overwrite the current assignment?</source>
         <translation>アイテムを消す</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="615"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="612"/>
         <source>Folder</source>
         <translation>フォルダー</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="618"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="615"/>
         <source>Title</source>
         <translation>題名</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="617"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="614"/>
         <source>Glossary</source>
         <translation>用語集</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="168"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="165"/>
         <source>CheckAllTerms</source>
         <translation>全ての言葉にチェックを入れる</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="173"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="170"/>
         <source>InverseCheckedTerms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="627"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="624"/>
         <source>AddTerm</source>
         <translation>言葉を追加する</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="628"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="625"/>
         <source>EditTerm</source>
         <translation>言葉を編集する</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="629"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="626"/>
         <source>RemoveTerm</source>
         <translation>言葉を消す</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="961"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="958"/>
         <source>Yes</source>
         <translation type="unfinished">はい</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="962"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="959"/>
         <source>No</source>
         <translation type="unfinished">いいえ</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="625"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="622"/>
         <source>Properties</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1021,97 +1049,97 @@ Overwrite the current assignment?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="626"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="623"/>
         <source>Words</source>
         <translation type="unfinished">言葉</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="381"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="378"/>
         <source>Import...</source>
         <translation type="unfinished">インポート...</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="495"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="492"/>
         <source>Export...</source>
         <translation type="unfinished">エクスポート...</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="812"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="809"/>
         <source>ConfirmRemoveItem</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="955"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="952"/>
         <source>ConfirmRemoveSelectedTerms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="1005"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="1002"/>
         <source>MultipleTranslationsDetectedForRemoveTermsCaption</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="1005"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="1002"/>
         <source>MultipleTranslationsDetectedForRemoveTerms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="496"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="493"/>
         <source>Glossaries (*.zip)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="381"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="378"/>
         <source>MultipleTranslationsDetectedForImport</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="426"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="423"/>
         <source>ImportSuccessful</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="428"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="425"/>
         <source>InvisibleImport</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="432"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="429"/>
         <source>ItemImportFailed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="435"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="432"/>
         <source>ItemImportFailedZipFileExpected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="458"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="455"/>
         <source>MultipleTranslationsDetectedForExport</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="474"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="471"/>
         <source>GlossaryExportSuccessful</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="476"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="473"/>
         <source>GlossaryExportFailed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="484"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="481"/>
         <source>MultipleTranslationsDetectedForFolderExport</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="500"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="497"/>
         <source>FolderExportSuccessful</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="502"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="499"/>
         <source>FolderExportFailed</source>
         <translation type="unfinished"></translation>
     </message>

@@ -2,5 +2,19 @@
 <qresource>
     <file>pics/SequenceMapLandscape.png</file>
     <file>pics/SequenceMapPortrait.png</file>
+    <file>help/en/html/toMOTko.html</file>
+    <file>help/en/html/toMOTko-Digraphs.html</file>
+    <file>help/en/html/toMOTko-GlossaryManager.html</file>
+    <file>help/en/html/toMOTko-Preferences.html</file>
+    <file>help/en/html/toMOTko-Quiz.html</file>
+    <file>help/en/html/img/glossaryManager.png</file>
+    <file>help/en/html/img/preferencesFonts.png</file>
+    <file>help/en/html/img/preferencesInterface.png</file>
+    <file>help/en/html/img/preferencesLanguages.png</file>
+    <file>help/en/html/img/preferencesQuiz.png</file>
+    <file>help/en/html/img/quiz.png</file>
+    <file>help/en/html/img/search.png</file>
+    <file>help/en/html/img/sequenceEditor.png</file>
+    <file>help/en/html/img/termEdition.png</file>
 </qresource>
 </RCC>

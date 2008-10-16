@@ -1,5 +1,6 @@
 #include "MainWindow.h"
 #include "icons/about.xpm"
+//#include "icons/help.xpm"
 #include "icons/startQuiz.xpm"
 #include "icons/glossaryManager.xpm"
 #include "icons/import.xpm"
@@ -167,8 +168,8 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
 
     helpMenu = new QMenu( tr( "?" ), this );
     menuBar()->addMenu( helpMenu );
-    aboutAction = Util::createAction( tr( "About..." ), about_xpm, this, SLOT( about() ) );
-    helpMenu->addAction( aboutAction );
+    helpAction = Util::createAction( tr( "Help..." ), about_xpm/*help_xpm*/, this, SLOT( help() ) );
+    helpMenu->addAction( helpAction );
     helpMenu->addSeparator();
     
     languageActionGroup = new QActionGroup( this ); 
@@ -214,6 +215,10 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
             langAction->setChecked( true );
     }
     
+    helpMenu->addSeparator();
+    aboutAction = Util::createAction( tr( "About..." ), about_xpm, this, SLOT( about() ) );
+    helpMenu->addAction( aboutAction );
+
     //connect( quizFrame, SIGNAL( quizShown() ), languageSelectorPanel, SLOT( hide() ) );
     //connect( quizFrame, SIGNAL( quizHidden() ), languageSelectorPanel, SLOT( show() ) );
     //connect( quizFrame, SIGNAL( quizHidden() ), control, SLOT( concludeQuiz() ) );
@@ -361,6 +366,10 @@ void MainWindow::closeEvent( QCloseEvent* ce ) {
 
 void MainWindow::about() {
     QMessageBox::about( this, tr( "AboutToMOTko..." ), tr( "AboutMessage" ) );
+}
+
+void MainWindow::help() {
+    HelpBrowser::showPage( "toMOTko.html" );
 }
 
 void MainWindow::startQuiz() {

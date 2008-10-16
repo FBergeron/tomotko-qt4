@@ -34,6 +34,7 @@
 #include <QStackedWidget>
 //#include <stdio.h>
 #include "Controller.h"
+#include "HelpBrowser.h"
 //#include "PixMap.h"
 #include "PreferencesDialog.h"
 #include "QuizFrame.h"
@@ -75,6 +76,7 @@ protected:
 private slots:
 
     void about();
+    void help();
     void startQuiz();
     void showQuiz();
 //    void resumeQuiz();
@@ -124,6 +126,7 @@ private:
     QAction*                pasteAction;
 
     QAction*                aboutAction;
+    QAction*                helpAction;
 
     QActionGroup*           languageActionGroup;
 
