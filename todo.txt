@@ -1,6 +1,7 @@
 ToDo
 ----
-Insert some padding in the online help of qt4.  Remove the link to SourceForge or make it work.  Remake screenshots (non-zaurus ones).  Check if the text is still correct.  Make help icon.
+Insert some padding in the online help of qt4.  Remove the link to SourceForge or make it work.  Remake screenshots (non-zaurus ones).  Check if the text is still correct.
+Icons are too small.  Use 32x32 version if possible.
 Add a FAQ (documenting the problems for dependency lib and fonts)
 Fix the image resizing in Quiz (ImageBox + QuizFrame).
 Paste in TermDialog is bugged.

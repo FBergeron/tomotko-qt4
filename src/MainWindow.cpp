@@ -1,6 +1,6 @@
 #include "MainWindow.h"
 #include "icons/about.xpm"
-//#include "icons/help.xpm"
+#include "icons/help.xpm"
 #include "icons/startQuiz.xpm"
 #include "icons/glossaryManager.xpm"
 #include "icons/import.xpm"
@@ -168,7 +168,7 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
 
     helpMenu = new QMenu( tr( "?" ), this );
     menuBar()->addMenu( helpMenu );
-    helpAction = Util::createAction( tr( "Help..." ), about_xpm/*help_xpm*/, this, SLOT( help() ) );
+    helpAction = Util::createAction( tr( "Help..." ), help_xpm, this, SLOT( help() ) );
     helpMenu->addAction( helpAction );
     helpMenu->addSeparator();
     
