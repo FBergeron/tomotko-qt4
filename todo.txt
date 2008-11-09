@@ -1,14 +1,17 @@
 ToDo
 ----
-Insert some padding in the online help of qt4.  Remove the link to SourceForge or make it work.  Remake screenshots (non-zaurus ones).  Check if the text is still correct.
+Insert some padding in the online help of qt4.  
+Remove the link to SourceForge in the online help or make it work.  
+Replace screenshots (non-zaurus ones) with Windows's ones.
+Check if the text of online help is still correct.
 Icons are too small.  Use 32x32 version if possible.
 Add a FAQ (documenting the problems for dependency lib and fonts)
 Fix the image resizing in Quiz (ImageBox + QuizFrame).
 Paste in TermDialog is bugged.
+When I delete a glossary, it reappears the next time I start toMOTko.
 Group label and textfield into a panel (comments) for better layout.
 Disable the column moving in termlist.
 Beware: When we do label->setMovie( &mov ), we must deallocate the movie.   The label doesn't take care of it as mentioned in the ref doc.
-There is a probleme with Comment field and line breaks.
 It's not possible to deselect a font size in the prefs.
 When the PrefDialog is very large, the revealing options section is resized.  Is it possible to make it keep its size compact.
 In TermScheduler, the code of operator>> is in comments because it provokes an error related to array assignment.  Maybe I should use a QT container instead of an array.
@@ -172,4 +175,4 @@ Improve the search:
 - Consider to perform the search from the selected folder to reduce the results set.  Maybe add a folder selector in the dialog.
 - If I implement Next result, consider what to do if the languages change.  Maybe the languages should be remembered when making a query (and the View all terms and glossaries option as well?)  Consider also that the presentation has an influence because we can sort the results.  Should the model be sorted as well?  Do we have to duplicate the data or is it possible to use MVC with a QListView in Qt 2.3.2?
 
-
+Could be interesting to integrate this? Tomoe - A handwriting recognition engine (http://tomoe.sourceforge.jp/cgi-bin/en/blog/index.rb)

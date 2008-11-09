@@ -23,7 +23,7 @@ bool FolderParser::startElement( const QString&, const QString&, const QString& 
 
 bool FolderParser::characters( const QString& characters ) {
     if( mustKeepText ) {
-        tempCh = characters.simplified();
+        tempCh = characters.trimmed();
         mustKeepText = false;
     }
     return( true );

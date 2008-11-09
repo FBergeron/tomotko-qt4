@@ -43,7 +43,7 @@ bool VocabParser::startElement( const QString&, const QString&, const QString& q
 
 bool VocabParser::characters( const QString& characters ) {
     if( mustKeepText ) {
-        tempCh = characters.simplified();
+        tempCh = characters.trimmed();
         mustKeepText = false;
     }
     return( true );
