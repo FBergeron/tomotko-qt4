@@ -214,12 +214,12 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
 
     loadData();
     updateTree();
-    vocabTreeRoot->setSelected( true );
+    vocabTreeView->setCurrentItem( vocabTreeRoot );
 
     detailsPanel->setCurrentIndex( panelFolderIndex );
 
-    //// We add the tree listener at the end to ignore events generated when creating
-    //// the text widgets.
+    // We add the tree listener at the end to ignore events generated when creating
+    // the text widgets.
     connect( vocabTreeView, SIGNAL( itemSelectionChanged() ), this, SLOT( updateUi() ) ); 
     connect( vocabTreeView, SIGNAL( itemChanged( QTreeWidgetItem*, int ) ), this, SLOT( updateTreeItemState( QTreeWidgetItem*, int ) ) );
     updateFonts();
@@ -234,7 +234,7 @@ void VocabularyManagerFrame::updateShownItems() {
     updateTree();
     restoreTreeSelection();
     updateUi();
-//    restoreVocabSelection();
+    restoreVocabSelection();
 }
 
 void VocabularyManagerFrame::updateTree() {
@@ -530,74 +530,76 @@ bool VocabularyManagerFrame::isDigraphEnabled() const {
 }
 
 void VocabularyManagerFrame::keepSelection() {
-    //currentFolderId = -1; 
-    //currentVocabId = -1; 
-    //currentTermId = -1;
-    //selectedTermIdList.clear();
+    currentFolderId = -1; 
+    currentVocabId = -1; 
+    currentTermId = -1;
+    selectedTermIdList.clear();
 
-    //TreeItem* currentItem = (TreeItem*)vocabTreeView->currentItem();
-    //if( currentItem ) {
-    //    if( currentItem->isFolder() ) {
-    //        FolderTreeItem* folderItem = (FolderTreeItem*)currentItem;
-    //        currentFolderId = folderItem->getFolder()->getId();
-    //    }
-    //    else {
-    //        VocabTreeItem* vocabItem = (VocabTreeItem*)currentItem;
-    //        currentVocabId = vocabItem->getVocabulary()->getId();
-    //        for( TermListItem* termItem = (TermListItem*)termList->firstChild(); termItem; termItem = (TermListItem*)termItem->nextSibling() ) {
-    //            if( termItem->isSelected() ) {
-    //                if( currentTermId == -1 )
-    //                    currentTermId = termItem->getTerm()->getId();
-    //                selectedTermIdList.append( termItem->getTerm()->getId() );
-    //            }
-    //        }
-    //    }
-    //}
+    TreeItem* currentItem = (TreeItem*)vocabTreeView->currentItem();
+    if( currentItem ) {
+        if( currentItem->isFolder() ) {
+            FolderTreeItem* folderItem = (FolderTreeItem*)currentItem;
+            currentFolderId = folderItem->getFolder()->getId();
+        }
+        else {
+            VocabTreeItem* vocabItem = (VocabTreeItem*)currentItem;
+            currentVocabId = vocabItem->getVocabulary()->getId();
+            for( int i = 0; i < termList->topLevelItemCount(); i++ ) {
+                TermListItem* termItem = (TermListItem*)termList->topLevelItem( i );
+                if( termItem->isSelected() ) {
+                    if( currentTermId == -1 )
+                        currentTermId = termItem->getTerm()->getId();
+                    selectedTermIdList.append( termItem->getTerm()->getId() );
+                }
+            }
+        }
+    }
 }
 
 void VocabularyManagerFrame::restoreTreeSelection() {
-//    bool isTreeItemFound = false;
-//    for( TreeItem* item = (TreeItem*)vocabTreeView->firstChild(); item; item = (TreeItem*)item->itemBelow() ) {
-//        if( item->isFolder() ) {
-//            FolderTreeItem* folderItem = (FolderTreeItem*)item;
-//            if( currentFolderId == folderItem->getFolder()->getId() ) {
-//                isTreeItemFound = true;
-//                vocabTreeView->ensureItemVisible( item );
-//                vocabTreeView->setSelected( item, true );
-//                break;
-//            }
-//        }
-//        else {
-//            VocabTreeItem* vocabItem = (VocabTreeItem*)item;
-//            if( currentVocabId == vocabItem->getVocabulary()->getId() ) {
-//                isTreeItemFound = true;
-//                vocabTreeView->ensureItemVisible( item );
-//                vocabTreeView->setSelected( item, true );
-//                break;
-//            }
-//        }
-//    }
-//    if( !isTreeItemFound ) {
-//        vocabTreeView->setSelected( vocabTreeRoot, true );
-//        vocabTreeView->ensureItemVisible( vocabTreeRoot );
-//    }
+    bool isTreeItemFound = false;
+    for( TreeItem* item = (TreeItem*)vocabTreeView->topLevelItem( 0 ); item; item = (TreeItem*)vocabTreeView->itemBelow( item ) ) {
+        if( item->isFolder() ) {
+            FolderTreeItem* folderItem = (FolderTreeItem*)item;
+            if( currentFolderId == folderItem->getFolder()->getId() ) {
+                isTreeItemFound = true;
+                vocabTreeView->scrollToItem( item );//vocabTreeView->ensureItemVisible( item );
+                item->setSelected( true );//vocabTreeView->setSelected( item, true );
+                break;
+            }
+        }
+        else {
+            VocabTreeItem* vocabItem = (VocabTreeItem*)item;
+            if( currentVocabId == vocabItem->getVocabulary()->getId() ) {
+                isTreeItemFound = true;
+                vocabTreeView->scrollToItem( item );//vocabTreeView->ensureItemVisible( item );
+                item->setSelected( true );//vocabTreeView->setSelected( item, true );
+                break;
+            }
+        }
+    }
+    if( !isTreeItemFound ) {
+        vocabTreeRoot->setSelected( true );//vocabTreeView->setSelected( vocabTreeRoot, true );
+        vocabTreeView->scrollToItem( vocabTreeRoot );//vocabTreeView->ensureItemVisible( vocabTreeRoot );
+    }
 }
 
 void VocabularyManagerFrame::restoreVocabSelection() {
-//    if( currentTermId != -1 ) {
-//        termList->clearSelection();
-//        for( TermListItem* termItem = (TermListItem*)termList->firstChild(); termItem; termItem = (TermListItem*)termItem->nextSibling() ) {
-//            int termItemId = termItem->getTerm()->getId();
-//            if( selectedTermIdList.contains( termItemId ) )
-//                termList->setSelected( termItem, true );
-//            if( currentTermId == termItemId ) {
-//                termList->ensureItemVisible( termItem );
-//                termList->setCurrentItem( termItem );
-//                updateTermList();
-//                break;
-//            }
-//        }
-//    }
+    if( currentTermId != -1 ) {
+        termList->clearSelection();
+        for( int i = 0; i < termList->topLevelItemCount(); i++ ) {
+            TermListItem* termItem = (TermListItem*)termList->topLevelItem( i );
+            int termItemId = termItem->getTerm()->getId();
+            if( selectedTermIdList.contains( termItemId ) )
+                termItem->setSelected( true );//termList->setSelected( termItem, true );
+            if( currentTermId == termItemId ) {
+                termList->scrollToItem( termItem );//termList->ensureItemVisible( termItem );
+                termItem->setSelected( true );//termList->setCurrentItem( termItem );
+                updateTermList();
+                break;
+            }
+        }
+    }
 }
 
 void VocabularyManagerFrame::setDigraphEnabled( bool isEnabled ) {
@@ -705,7 +707,7 @@ void VocabularyManagerFrame::updateUi() {
             updateCurrentVocab( vocabItem );
         }
     }
-    if( termList && termList->topLevelItemCount()/*childCount()*/ > 0 ) {
+    if( termList && termList->topLevelItemCount() > 0 ) {
         checkAllTermsButton->setEnabled( true );
         inverseCheckedTermsButton->setEnabled( true );
     }

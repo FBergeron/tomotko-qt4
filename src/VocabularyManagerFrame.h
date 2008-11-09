@@ -147,10 +147,10 @@ private:
 
     uint getSelectedTermCount() const;
 
-    //int                     currentFolderId;
-    //int                     currentVocabId;
-    //int                     currentTermId;
-    //QValueList<int>         selectedTermIdList;
+    int                     currentFolderId;
+    int                     currentVocabId;
+    int                     currentTermId;
+    QList<int>              selectedTermIdList;
 
     QVBoxLayout*            mainLayout;
 

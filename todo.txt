@@ -1,12 +1,10 @@
 ToDo
 ----
-Replace screenshots (non-zaurus ones) with Windows's ones.
-Check if the text of online help is still correct.
-Icons are too small.  Use 32x32 version if possible.
-Add a FAQ (documenting the problems for dependency lib and fonts)
+There is a problem if I import the same glossary twice in the same folder.  It's impossible to select the second one.  It seems to be because they have the same title.  In fact, creating two glossaries with the same name does the trick.
+When I delete a glossary, it reappears the next time I start toMOTko.  How to reproduce it?
+Add a FAQ in the website (documenting the problems for dependency lib and fonts)
 Fix the image resizing in Quiz (ImageBox + QuizFrame).
 Paste in TermDialog is bugged.
-When I delete a glossary, it reappears the next time I start toMOTko.
 Group label and textfield into a panel (comments) for better layout.
 Disable the column moving in termlist.
 Beware: When we do label->setMovie( &mov ), we must deallocate the movie.   The label doesn't take care of it as mentioned in the ref doc.
@@ -15,10 +13,10 @@ When the PrefDialog is very large, the revealing options section is resized.  Is
 In TermScheduler, the code of operator>> is in comments because it provokes an error related to array assignment.  Maybe I should use a QT container instead of an array.
 In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  Will it bring data incompatibility with previous versions? 
 Maybe SearchDialog::getSelectedTermCount() could be replaced by an existing method in Qt4?
-Bug: If you enter a character in the folder's title field as soon as the application starts, it crashes... (on Windows).
 Remove all filler widgets and replace them with layout->addStretch() instead.
 Probably that I don't need LanguageUpdateNotifier anymore.  Remove that.
 Make the setAccelKey work in the Prefs window.
+When we start a quiz, hide the language selector.
 I'm not sure that QTreeWidget is appropriate all the time...  Unless I could get rid of the |- lines on the left side of items.
 Maybe use QGridLayout with columnStretch for fontPreferences (check the QGridLayout doc for the example).
 Add more size for fonts preferences?
@@ -28,6 +26,10 @@ In Util::getLanguageCode(), the last line cause a warning because it returns a r
 I have reintroduced PixMap class that defines the ZPIXMAP macro.  If I don't need that for Desktop version, remove it.  
 In Util::getDefaultFontFamily(), the last else should return something better.
 Reread all the classes and remove obsolete comments.
+Replace screenshots (non-zaurus ones) with Windows's ones in online help.
+Check if the text of online help is still correct.
+Icons are too small.  Use 32x32 version if possible.
+Probably replace all setSelected( true ) by setCurrentItem() instead?
 
 
 Add symlinks for fr/es history pages.
