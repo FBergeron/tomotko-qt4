@@ -1,7 +1,5 @@
 ToDo
 ----
-Insert some padding in the online help of qt4.  
-Remove the link to SourceForge in the online help or make it work.  
 Replace screenshots (non-zaurus ones) with Windows's ones.
 Check if the text of online help is still correct.
 Icons are too small.  Use 32x32 version if possible.
