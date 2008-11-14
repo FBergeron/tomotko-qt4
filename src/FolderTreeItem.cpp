@@ -34,7 +34,7 @@ void FolderTreeItem::setOpen( bool isOpened ) {
     // Ignore close event for root.
     if( parent() || isOpened ) {
         setExpanded( isOpened );
-        setIcon( 0, QIcon( QPixmap( isOpened ? ZPIXMAP( openedFolder_xpm ) : ZPIXMAP( closedFolder_xpm ) ) ) );
+        updateIcon();
         prefs.setFolderOpen( folder->getId(), isOpened );
     }
 }
@@ -60,4 +60,8 @@ Folder* FolderTreeItem::getFolder() {
 void FolderTreeItem::update() {
     if( propsPanel )
         propsPanel->updateCounters();
+}
+
+void FolderTreeItem::updateIcon() {
+    setIcon( 0, QIcon( QPixmap( isExpanded() ? ZPIXMAP( openedFolder_xpm ) : ZPIXMAP( closedFolder_xpm ) ) ) );
 }

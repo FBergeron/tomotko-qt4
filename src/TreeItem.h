@@ -15,6 +15,7 @@ public:
 
     virtual bool isFolder() const;
     virtual void update();
+    virtual void setOpen( bool isOpened );
 
 };
 

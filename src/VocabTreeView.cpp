@@ -2,6 +2,8 @@
 
 VocabTreeView::VocabTreeView( Controller& controller )
     : QTreeWidget(), dirty( false ), controller( controller ) {
+    connect( this, SIGNAL( itemExpanded( QTreeWidgetItem* ) ), this, SLOT( updateTreeItemIcon( QTreeWidgetItem* ) ) );
+    connect( this, SIGNAL( itemCollapsed( QTreeWidgetItem* ) ), this, SLOT( updateTreeItemIcon( QTreeWidgetItem* ) ) );
 }
 
 VocabTreeView::~VocabTreeView() {
@@ -82,10 +84,11 @@ VocabTreeItem* VocabTreeView::addVocab( FolderTreeItem* parentFolderItem, Vocabu
 }
 
 void VocabTreeView::removeItem() {
-    if( currentItem() ) {
-        QTreeWidgetItem* itemToSelect = this->itemAbove( currentItem() );
-        delete( currentItem() );
-        itemToSelect->setSelected( true );//setSelected( itemToSelect, true );
+    QTreeWidgetItem* currItem = currentItem();
+    if( currItem ) {
+        QTreeWidgetItem* itemToSelect = this->itemAbove( currItem );
+        setCurrentItem( itemToSelect ? itemToSelect : topLevelItem( 0 ) );//itemToSelect->setSelected( true );//setSelected( itemToSelect, true );
+        delete( currItem );
     }
 }
 
@@ -148,4 +151,12 @@ int VocabTreeView::getMaxFolderId() const {
 
 int VocabTreeView::getMaxVocabId() const {
     return( getRootFolder()->getMaxVocabId() );
+}
+
+void VocabTreeView::updateTreeItemIcon( QTreeWidgetItem* item ) {
+    TreeItem* treeItem = (TreeItem*)item;
+    if( treeItem->isFolder() ) {
+        FolderTreeItem* folderItem = (FolderTreeItem*)treeItem;
+        folderItem->updateIcon();
+    }
 }

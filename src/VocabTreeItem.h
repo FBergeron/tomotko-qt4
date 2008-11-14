@@ -22,7 +22,7 @@ public:
     const char* className() const { return "VocabTreeItem"; }
 
     void setPropertiesPanel( PropertiesPanel* propsPanel );
-    void setOpen( bool isOpened );
+    virtual void setOpen( bool isOpened );
     virtual void setOn( bool isOn );
     virtual void setSelected( bool isSelected );
 

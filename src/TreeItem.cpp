@@ -17,3 +17,6 @@ bool TreeItem::isFolder() const {
 
 void TreeItem::update() {
 }
+
+void TreeItem::setOpen( bool isOpened ) {
+}

@@ -80,6 +80,7 @@ public slots:
     void exportFolder( Folder* folder );
 
     void updateUi();
+    void updateCurrentTreeItem( QTreeWidgetItem* currItem, QTreeWidgetItem* prevItem );
     void updateFonts();
     void setDigraphEnabled( bool isEnabled );
     void retranslateUi();

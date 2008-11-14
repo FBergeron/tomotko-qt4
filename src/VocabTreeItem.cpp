@@ -16,11 +16,8 @@ void VocabTreeItem::setPropertiesPanel( PropertiesPanel* propsPanel ) {
 }
 
 void VocabTreeItem::setOpen( bool isOpened ) {
-    // Ignore close event when selected.
-    if( !isSelected() || isOpened ) {
-        setExpanded( isOpened );
-        setIcon( 0, QIcon( QPixmap( isOpened ? ZPIXMAP( openedVocab_xpm ) : ZPIXMAP( closedVocab_xpm ) ) ) );
-    }
+    setExpanded( isOpened );
+    setIcon( 0, QIcon( QPixmap( isOpened ? ZPIXMAP( openedVocab_xpm ) : ZPIXMAP( closedVocab_xpm ) ) ) );
 }
 
 void VocabTreeItem::setOn( bool isOn ) {

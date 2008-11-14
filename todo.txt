@@ -1,6 +1,7 @@
 ToDo
 ----
-There is a problem if I import the same glossary twice in the same folder.  It's impossible to select the second one.  It seems to be because they have the same title.  In fact, creating two glossaries with the same name does the trick.
+Bug: I remove all the data.  I create a folder and a glossary.  I quit.  When I restart I have errors like : Could not load vocab file in directory M:/Documents and Settings/fred/.toMOTko/1/2/v-5.  What happens is that the vocabulary folder is created but it doesn't contain a vocab file because no words have been specified. The vocabulary folder should be discarded to prevent the problem. 
+There is the following problem if I setSortingEnabled for the VocabTreeView: Creating two glossaries with the same name and I cannot use the up/down arrow to select the glossary one after the other.  They are automatically reordered and it seems that the first glossary is always selected although it's not, it is just changed position.  If we remove the setIcon() line in VocabTreeItem::setOpen(), the problem doesn't occur.  Same thing if I setSortingEnabled( false ).  Look the SetIconBug project for details.
 When I delete a glossary, it reappears the next time I start toMOTko.  How to reproduce it?
 Add a FAQ in the website (documenting the problems for dependency lib and fonts)
 Fix the image resizing in Quiz (ImageBox + QuizFrame).
@@ -15,6 +16,7 @@ In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  W
 Maybe SearchDialog::getSelectedTermCount() could be replaced by an existing method in Qt4?
 Remove all filler widgets and replace them with layout->addStretch() instead.
 Probably that I don't need LanguageUpdateNotifier anymore.  Remove that.
+When I click on a folder, it expands automatically.  That should not be the case.
 Make the setAccelKey work in the Prefs window.
 When we start a quiz, hide the language selector.
 I'm not sure that QTreeWidget is appropriate all the time...  Unless I could get rid of the |- lines on the left side of items.
@@ -49,6 +51,7 @@ Remove code that remove marked.xml file.  Now obsolete.
 
 Refactor save and load methods.  They look alike, I think it's possible do unify the process in a common method using parameters.
 
+In all TreeView, setAnimated( true ) for a cute special effect.
 I passed prefs to SequenceDialog.  Remove it if unused.
 Use ASSERT(), CHECK_PTR() and qDebug(), qWarning() and qFatal() --> See Debugging Techniques page in documentation.
 When we quit toMOTko, we should delete all files [0-9]+.tar.gz and tree.dat.gz.  These files are not used anymore.

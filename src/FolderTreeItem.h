@@ -24,12 +24,13 @@ public:
 
     bool isFolder() const;
     void setPropertiesPanel( PropertiesPanel* propsPanel );
-    void setOpen( bool isOpened );
+    virtual void setOpen( bool isOpened );
     virtual void setOn( bool isOn );
 
     Folder* getFolder();
 
     virtual void update();
+    void updateIcon();
 
 private:
 

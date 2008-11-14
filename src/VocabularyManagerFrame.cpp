@@ -19,6 +19,7 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
     treePanelLayout->setContentsMargins( 0, 0, 0, 0 );
 
     vocabTreeView = new VocabTreeView( *controller );
+    //vocabTreeView->setAnimated( true );
     //vocabTreeView->setTreeStepSize( 24 );
     vocabTreeView->setHeaderLabel( tr( "Glossaries" ) );
     //vocabTreeView->setStretchColumn( 0 );
@@ -220,7 +221,8 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
 
     // We add the tree listener at the end to ignore events generated when creating
     // the text widgets.
-    connect( vocabTreeView, SIGNAL( itemSelectionChanged() ), this, SLOT( updateUi() ) ); 
+    connect( vocabTreeView, SIGNAL( currentItemChanged( QTreeWidgetItem*, QTreeWidgetItem* ) ), this, SLOT( updateCurrentTreeItem( QTreeWidgetItem*, QTreeWidgetItem* ) ) ); 
+    //connect( vocabTreeView, SIGNAL( itemSelectionChanged() ), this, SLOT( updateUi() ) ); 
     connect( vocabTreeView, SIGNAL( itemChanged( QTreeWidgetItem*, int ) ), this, SLOT( updateTreeItemState( QTreeWidgetItem*, int ) ) );
     updateFonts();
     updateUi();
@@ -243,10 +245,10 @@ void VocabularyManagerFrame::updateTree() {
         vocabTreeView->setUpdatesEnabled( false );
         vocabTreeView->clear();
     }
-    vocabTreeView->setSortingEnabled( false );
+//    vocabTreeView->setSortingEnabled( false );
     vocabTreeRoot = buildTreeRec( vocabTreeView, NULL, controller->getVocabTree() );
     vocabTreeView->sortItems( 0, Qt::AscendingOrder );
-    vocabTreeView->setSortingEnabled( true );
+//    vocabTreeView->setSortingEnabled( true );
 
     //vocabTreeView->setSelected( vocabTreeRoot, true );
     //if( currentFolderId != -1 || currentVocabId != -1 )
@@ -412,13 +414,13 @@ void VocabularyManagerFrame::importData() {
                     }
                     if( newTreeItem ) {
                         vocabTreeView->scrollToItem( newTreeItem );
-                        newTreeItem->setSelected( true ); //vocabTreeView->setSelected( newTreeItem, true );
+                        vocabTreeView->setCurrentItem( newTreeItem ); //newTreeItem->setSelected( true ); //vocabTreeView->setSelected( newTreeItem, true );
                         newTreeItem->setExpanded( true );
                     }
                     else {
                         // This happens when the imported data is from a different language pair
                         // than the current one.  We reselect the selectedItem in this case.
-                        selectedItem->setSelected( true );// vocabTreeView->setSelected( selectedItem, true );
+                        vocabTreeView->setCurrentItem( selectedItem ); //selectedItem->setSelected( true );// vocabTreeView->setSelected( selectedItem, true );
                     }
                     QString msg = tr( "ImportSuccessful" );
                     if( !newTreeItem )
@@ -564,7 +566,7 @@ void VocabularyManagerFrame::restoreTreeSelection() {
             if( currentFolderId == folderItem->getFolder()->getId() ) {
                 isTreeItemFound = true;
                 vocabTreeView->scrollToItem( item );//vocabTreeView->ensureItemVisible( item );
-                item->setSelected( true );//vocabTreeView->setSelected( item, true );
+                vocabTreeView->setCurrentItem( item ); //item->setSelected( true );//vocabTreeView->setSelected( item, true );
                 break;
             }
         }
@@ -573,13 +575,13 @@ void VocabularyManagerFrame::restoreTreeSelection() {
             if( currentVocabId == vocabItem->getVocabulary()->getId() ) {
                 isTreeItemFound = true;
                 vocabTreeView->scrollToItem( item );//vocabTreeView->ensureItemVisible( item );
-                item->setSelected( true );//vocabTreeView->setSelected( item, true );
+                vocabTreeView->setCurrentItem( item ); //item->setSelected( true );//vocabTreeView->setSelected( item, true );
                 break;
             }
         }
     }
     if( !isTreeItemFound ) {
-        vocabTreeRoot->setSelected( true );//vocabTreeView->setSelected( vocabTreeRoot, true );
+        vocabTreeView->setCurrentItem( vocabTreeRoot ); //vocabTreeRoot->setSelected( true );//vocabTreeView->setSelected( vocabTreeRoot, true );
         vocabTreeView->scrollToItem( vocabTreeRoot );//vocabTreeView->ensureItemVisible( vocabTreeRoot );
     }
 }
@@ -692,7 +694,6 @@ void VocabularyManagerFrame::toggleMaximizeDetails( bool isOn ) {
 //    // We do this because the state may be inconsistent because of QuizFrame.
 //    action[ ACTION_MAXIMIZE ]->setOn( folderDetailsFolderMaximizeDetailsButton->isOn() );  
 //}
-
 void VocabularyManagerFrame::updateUi() {
     removeListeners();
     TreeItem* selectedItem = (TreeItem*)vocabTreeView->currentItem();
@@ -717,6 +718,19 @@ void VocabularyManagerFrame::updateUi() {
     }
     emit( selectionChanged( selectedItem ) );
     addListeners();
+}
+
+void VocabularyManagerFrame::updateCurrentTreeItem( QTreeWidgetItem* currItem, QTreeWidgetItem* prevItem ) {
+    if( prevItem ) {
+        TreeItem* treeItem = (TreeItem*)prevItem;
+        if( !treeItem->isFolder() )
+            treeItem->setOpen( false );
+    }
+    if( currItem ) {
+        TreeItem* treeItem = (TreeItem*)currItem;
+        treeItem->setOpen( true );
+    }
+    updateUi();
 }
 
 void VocabularyManagerFrame::updateCurrentFolder( FolderTreeItem* folderItem ) {
@@ -822,19 +836,14 @@ void VocabularyManagerFrame::doRemoveItem( bool confirmBeforeRemove /*= true*/ )
     else
         response = QMessageBox::Yes;
 
-    //cerr << "response=" << response << endl;
-    //cerr << "eq? = " << ( response == QMessageBox::Yes ) << endl;
     if( response == QMessageBox::Yes ) {
         TreeItem* currentItem = (TreeItem*)vocabTreeView->currentItem();
-        //cerr << "currentItem=" << currentItem << endl;
         if( currentItem->isFolder() ) {
-            //cerr << "f" << endl;
             FolderTreeItem* folderItem = (FolderTreeItem*)currentItem;
             Folder* folder = folderItem->getFolder();
             folder->setMarkedForDeletion( true );
         }
         else {
-            //cerr << "v" << endl;
             VocabTreeItem* vocabItem = (VocabTreeItem*)currentItem;
             Vocabulary* vocab = vocabItem->getVocabulary();
             vocab->setMarkedForDeletion( true );
@@ -1245,7 +1254,7 @@ void VocabularyManagerFrame::pasteVocabulary() {
     in >> vocabToPaste;
 
     VocabTreeItem* newVocabItem = addVocab( &vocabToPaste );
-    newVocabItem->setSelected( true ); //vocabTreeView->setSelected( newVocabItem, true ); 
+    vocabTreeView->setCurrentItem( newVocabItem ); //newVocabItem->setSelected( true ); //vocabTreeView->setSelected( newVocabItem, true ); 
 }
 
 void VocabularyManagerFrame::pasteFolder() {
@@ -1263,7 +1272,7 @@ void VocabularyManagerFrame::pasteFolder() {
     // will open when we call ensureItemVisible().  This way, the tree is updated
     // properly.
     newFolderItem->parent()->setExpanded( false );
-    newFolderItem->setSelected( true );// vocabTreeView->setSelected( newFolderItem, true );
+    vocabTreeView->setCurrentItem( newFolderItem ); //newFolderItem->setSelected( true );// vocabTreeView->setSelected( newFolderItem, true );
     vocabTreeView->scrollToItem( newFolderItem );
 }
 
@@ -1329,7 +1338,7 @@ void VocabularyManagerFrame::showTerm( const TermKey& termKey ) {
     VocabTreeItem* vocabTreeItem = vocabTreeView->getVocabTreeItem( termKey.getVocabId() );
     if( vocabTreeItem ) {
         vocabTreeView->scrollToItem( vocabTreeItem );
-        vocabTreeItem->setSelected( true );//vocabTreeView->setSelected( vocabTreeItem, true );
+        vocabTreeView->setCurrentItem( vocabTreeItem ); //vocabTreeItem->setSelected( true );//vocabTreeView->setSelected( vocabTreeItem, true );
         detailsPanel->setCurrentIndex( panelVocabIndex );
         vocabDetailsTabWidget->setCurrentWidget( vocabDetailsTermsPanel );
         for( int i = 0; i < termList->topLevelItemCount(); i++ ) {

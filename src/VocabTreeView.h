@@ -18,6 +18,8 @@
 
 class VocabTreeView : public QTreeWidget {
 
+    Q_OBJECT
+
 public:
 
     VocabTreeView( Controller& controller );
@@ -40,12 +42,16 @@ public:
     int getMaxFolderId() const;
     int getMaxVocabId() const;
 
+private slots:
+
+    void updateTreeItemIcon( QTreeWidgetItem* item );
+
 private:
 
     VocabTreeItem* getVocabTreeItemRec( TreeItem* item, int id );
 
     void getAllChildrenVocabRec( TreeItem* item, IdList& vocabList ) const;
-    
+
     bool dirty;
 
     Controller& controller;
