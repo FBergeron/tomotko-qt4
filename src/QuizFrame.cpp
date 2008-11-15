@@ -353,7 +353,6 @@ bool QuizFrame::areButtonsHidden() const {
 }
 
 void QuizFrame::showEvent( QShowEvent* showEvt ) {
-    cerr << "showEvent for quiz" << endl;
     QWidget::showEvent( showEvt );
     // We set the state of maximize action because it VocabularyManagerFrame may have changed it.
     action[ ACTION_MAXIMIZE ]->setChecked( maximizeCommentButton->isChecked() );  
@@ -361,7 +360,6 @@ void QuizFrame::showEvent( QShowEvent* showEvt ) {
 }
 
 void QuizFrame::hideEvent( QHideEvent* hideEvt ) {
-    cerr << "hideEvent for quiz" << endl;
     QWidget::hideEvent( hideEvt );
     emit( quizHidden() );
 }

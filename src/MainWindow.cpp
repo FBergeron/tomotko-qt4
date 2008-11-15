@@ -526,7 +526,7 @@ void MainWindow::updateLanguageSelector( QComboBox* comboBox ) {
     sortedLanguages.sort(); 
 
     comboBox->clear();
-    comboBox->addItem( QString::null );
+    comboBox->addItem( QString( "" ) );
     for( QStringList::ConstIterator it = sortedLanguages.begin(); it != sortedLanguages.end(); it++ ) {
         QString lang( *it );
         comboBox->addItem( lang );
@@ -535,7 +535,7 @@ void MainWindow::updateLanguageSelector( QComboBox* comboBox ) {
 
 void MainWindow::setFirstLanguage( const QString& lang ) {
     if( lang == QApplication::translate( "Object", control->getPreferences().getTestLanguage().toLatin1().data() ) && 
-            control->getPreferences().getTestLanguage() != QString::null )
+            control->getPreferences().getTestLanguage() != QString( "" ) )
         switchFirstAndTestLanguages();
     else
         control->getPreferences().setFirstLanguage( Util::getLanguageCode( lang ) );
@@ -546,7 +546,7 @@ void MainWindow::setFirstLanguage( const QString& lang ) {
 
 void MainWindow::setTestLanguage( const QString& lang ) {
     if( lang == QApplication::translate( "Object", control->getPreferences().getFirstLanguage().toLatin1().data() ) && 
-            control->getPreferences().getFirstLanguage() != QString::null )
+            control->getPreferences().getFirstLanguage() != QString( "" ) )
         switchFirstAndTestLanguages();
     else
         control->getPreferences().setTestLanguage( Util::getLanguageCode( lang ) );

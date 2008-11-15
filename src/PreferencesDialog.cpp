@@ -20,7 +20,6 @@ PreferencesDialog::PreferencesDialog( QWidget* parent, Preferences* prefs )
 }
 
 PreferencesDialog::~PreferencesDialog() {
-    delete languageUpdateNotifier;
 }
 
 void PreferencesDialog::init() {
@@ -159,7 +158,8 @@ void PreferencesDialog::init() {
     fontOverridesPanelLayout = new QVBoxLayout();
     fontOverridesPanel->setLayout( fontOverridesPanelLayout );
     fontsPanelLayout->addWidget( fontOverridesPanel );
-    fontOverridesScrollView = new QScrollArea();//fontOverridesScrollView = new QScrollView( fontOverridesPanel, "FontOverridesScrollView" );
+    fontOverridesScrollView = new QScrollArea();
+    fontOverridesScrollView->setWidgetResizable( true );
     fontOverridesPanelLayout->addWidget( fontOverridesScrollView );
     //fontOverridesScrollView->setResizePolicy( QScrollView::AutoOneFit );
     fontOverridesBox = new QWidget();
@@ -273,11 +273,9 @@ void PreferencesDialog::init() {
     //studyLanguagesListView->setStretchColumn( 0 );
     //languagesPanel->setStretchFactor( studyLanguagesListView, 1 );
    
-    languageUpdateNotifier = new LanguageUpdateNotifier();
-    connect( languageUpdateNotifier, SIGNAL( languageAdded( const QString& ) ), this, SLOT( addFontOverride( const QString& ) ) );
-    connect( languageUpdateNotifier, SIGNAL( languageRemoved( const QString& ) ), this, SLOT( removeFontOverride( const QString& ) ) );
-
     initStudyLanguageValues();
+
+    connect( studyLanguagesListView, SIGNAL( itemChanged( QTreeWidgetItem*, int ) ), this, SLOT( updateFontOverride( QTreeWidgetItem*, int ) ) );
 
     //languagesRightPanel = new QWidget();
     //languagesRightPanelLayout = new QVBoxLayout();
@@ -327,14 +325,14 @@ void PreferencesDialog::initFontFamilyValues( QComboBox* comboBox, bool withEmpt
     QFontDatabase fontDatabase;
     QStringList families = fontDatabase.families();
     if( withEmptyEntry ) 
-        comboBox->addItem( QString::null );
+        comboBox->addItem( QString( "" ) );
     comboBox->addItems( families );
 }
 
 void PreferencesDialog::initFontSizeValues( QComboBox* comboBox, bool withEmptyEntry /*= false*/ ) const {
     int fontSizeNameListLength = sizeof( fontSizeNameList ) / sizeof( QString );
     if( withEmptyEntry ) 
-        comboBox->addItem( QString::null );
+        comboBox->addItem( QString( "" ) );
     for( int i = 0; i < fontSizeNameListLength; i++ )
         comboBox->addItem( tr( fontSizeNameList[ i ].toLatin1().data() ) );
 }
@@ -343,22 +341,20 @@ void PreferencesDialog::initFontOverrides() {
     QList<QString> lang( prefs->getStudyLanguages() );
     for( int i = 0; i < lang.count(); i++ ) {
         QString language = lang.at( i );
-        QWidget* fontOverrideBox = new QWidget();//HBox( fontOverridesBox );
-        QHBoxLayout* fontOverrideBoxLayout = new QHBoxLayout();//( fontOverridesBox );
+        QWidget* fontOverrideBox = new QWidget();
+        QHBoxLayout* fontOverrideBoxLayout = new QHBoxLayout();
         fontOverrideBox->setLayout( fontOverrideBoxLayout );
-        //fontOverridesBoxLayout->addWidget( fontOverrideBox );
         //    fontOverrideBoxLayout->setSpacing( 2 );
         //    fontOverrideBox->setMargin( 2 );
-        QLabel* fontOverrideLabel = new QLabel( QApplication::translate( "QObject", language.toLatin1().data() ) );//, fontOverrideBox );
-        QComboBox* fontOverrideFamilyComboBox = new QComboBox();// fontOverrideBox );
+        QLabel* fontOverrideLabel = new QLabel( QApplication::translate( "QObject", language.toLatin1().data() ) );
+        QComboBox* fontOverrideFamilyComboBox = new QComboBox();
         initFontFamilyValues( fontOverrideFamilyComboBox, true );
         if( prefs->isFontOverrideFamilyDefined( language ) ) 
             selectFontFamily( fontOverrideFamilyComboBox, prefs->getFontOverrideFamily( language ) );
-        QComboBox* fontOverrideSizeComboBox = new QComboBox();// fontOverrideBox );
+        QComboBox* fontOverrideSizeComboBox = new QComboBox();
         initFontSizeValues( fontOverrideSizeComboBox, true );
         if( prefs->isFontOverrideSizeDefined( language ) ) 
             selectFontSize( fontOverrideSizeComboBox, prefs->getFontOverrideSize( language ), true );
-    //    fontOverrideBox->setStretchFactor( fontOverrideLabel, 1 );
         fontOverrideBoxLayout->addWidget( fontOverrideLabel );
         fontOverrideBoxLayout->addWidget( fontOverrideFamilyComboBox );
         fontOverrideBoxLayout->addWidget( fontOverrideSizeComboBox );
@@ -370,7 +366,7 @@ void PreferencesDialog::initFontOverrides() {
 
         fontOverridesBoxLayout->addWidget( fontOverrideBox, 0 );
     }
-    fontOverridesBoxFiller = new QWidget();// fontOverridesBox );
+    fontOverridesBoxFiller = new QWidget();
     fontOverridesBoxLayout->addWidget( fontOverridesBoxFiller, 1 );
 }
 
@@ -387,7 +383,7 @@ void PreferencesDialog::initStudyLanguageValues() const {
     int studyLanguageListLength = sizeof( studyLanguageList ) / sizeof( QString );
     for( int i = 0; i < studyLanguageListLength; i++ ) {
         bool isStudied( prefs->isStudyLanguage( studyLanguageList[ i ] ) );
-        StudyLanguageItem* lang = new StudyLanguageItem( studyLanguagesListView, languageUpdateNotifier );
+        QTreeWidgetItem* lang = new QTreeWidgetItem( studyLanguagesListView );
         lang->setCheckState( 0, isStudied ? Qt::Checked : Qt::Unchecked );//lang->setOn( isStudied );
         lang->setText( 0, QApplication::translate( "QObject", studyLanguageList[ i ].toLatin1().data() ) );
         studyLanguagesListView->addTopLevelItem( lang );
@@ -468,7 +464,7 @@ void PreferencesDialog::accept() {
     bool testLanguageExists = false;
     prefs->clearStudyLanguages();
     for( int i = 0; i < studyLanguagesListView->topLevelItemCount(); i++ ) {
-        StudyLanguageItem* item = (StudyLanguageItem*)studyLanguagesListView->topLevelItem( i );
+        QTreeWidgetItem* item = studyLanguagesListView->topLevelItem( i );
         bool isChecked = ( item->checkState( 0 ) != Qt::Unchecked );
         if( isChecked ) {
             QString langCode( Util::getLanguageCode( item->text( 0 ) ) );
@@ -480,9 +476,9 @@ void PreferencesDialog::accept() {
         }
     }
     if( !firstLanguageExists )
-        prefs->setFirstLanguage( QString::null );
+        prefs->setFirstLanguage( QString( "" ) );
     if( !testLanguageExists )
-        prefs->setTestLanguage( QString::null );
+        prefs->setTestLanguage( QString( "" ) );
 
     bool isDigraphEnabled = ( digraphCheckBox->checkState() != Qt::Unchecked );
     prefs->setDigraphEnabled( isDigraphEnabled );
@@ -533,7 +529,7 @@ bool PreferencesDialog::isRevealingSequenceDefined( const QString& seqStr ) cons
 bool PreferencesDialog::isStudyLanguageSelectionValid() const {
     int checkedLangCount = 0;
     for( int i = 0; i < studyLanguagesListView->topLevelItemCount(); i++ ) {
-        StudyLanguageItem* item = (StudyLanguageItem*)studyLanguagesListView->topLevelItem( i );
+        QTreeWidgetItem* item = studyLanguagesListView->topLevelItem( i );
         bool isChecked = ( item->checkState( 0 ) != Qt::Unchecked );
         if( isChecked )
             checkedLangCount++;
@@ -559,52 +555,68 @@ void PreferencesDialog::resetDefaultFont() {
 }
 
 void PreferencesDialog::addFontOverride( const QString& language ) {
-    //// Do nothing if the font override already exists.
-    //int fontOverrideCount = fontOverrideLabels.count();
-    //for( int i = 0; i < fontOverrideCount; i++ ) {
-    //    if( fontOverrideLabels.at( i )->text() == QObject::tr( language ) )
-    //        return;
-    //}
-    //
-    //QHBox* fontOverrideBox = new QHBox( fontOverridesBox );
+    // Do nothing if the font override already exists.
+    int fontOverrideCount = fontOverrideLabels.count();
+    for( int i = 0; i < fontOverrideCount; i++ ) {
+        if( fontOverrideLabels.at( i )->text() == QApplication::translate( "QObject", language.toLatin1().data() ) )
+            return;
+    }
+    
+    QWidget* fontOverrideBox = new QWidget();
+    QHBoxLayout* fontOverrideBoxLayout = new QHBoxLayout();
+    fontOverrideBox->setLayout( fontOverrideBoxLayout );
     //fontOverrideBoxLayout->setSpacing( 2 );
-    //fontOverrideBox->setMargin( 2 );
-    //QLabel* fontOverrideLabel = new QLabel( QObject::tr( language ), fontOverrideBox );
-    //QComboBox* fontOverrideFamilyComboBox = new QComboBox( fontOverrideBox );
-    //initFontFamilyValues( fontOverrideFamilyComboBox, true );
-    //if( prefs->isFontOverrideFamilyDefined( language ) ) 
-    //    selectFontFamily( fontOverrideFamilyComboBox, prefs->getFontOverrideFamily( language ) );
-    //QComboBox* fontOverrideSizeComboBox = new QComboBox( fontOverrideBox );
-    //initFontSizeValues( fontOverrideSizeComboBox, true );
-    //if( prefs->isFontOverrideSizeDefined( language ) ) 
-    //    selectFontSize( fontOverrideSizeComboBox, prefs->getFontOverrideSize( language ), true );
-    //fontOverrideBox->setStretchFactor( fontOverrideLabel, 1 );
+    //fontOverrideBoxLayout->setMargin( 2 );
 
-    //fontOverrideBoxes.append( fontOverrideBox );
-    //fontOverrideLabels.append( fontOverrideLabel );
-    //fontOverrideFamilyComboBoxes.append( fontOverrideFamilyComboBox );
-    //fontOverrideSizeComboBoxes.append( fontOverrideSizeComboBox );
+    QLabel* fontOverrideLabel = new QLabel( QApplication::translate( "QObject", language.toLatin1().data() ) );
+    QComboBox* fontOverrideFamilyComboBox = new QComboBox();
+    initFontFamilyValues( fontOverrideFamilyComboBox, true );
+    if( prefs->isFontOverrideFamilyDefined( language ) ) 
+        selectFontFamily( fontOverrideFamilyComboBox, prefs->getFontOverrideFamily( language ) );
 
-    //int indexOfFiller = fontOverridesBoxLayout->findWidget( fontOverridesBoxFiller );
-    //fontOverridesBoxLayout->insertWidget( indexOfFiller, fontOverrideBox ); 
+    QComboBox* fontOverrideSizeComboBox = new QComboBox();
+    initFontSizeValues( fontOverrideSizeComboBox, true );
+    if( prefs->isFontOverrideSizeDefined( language ) ) 
+        selectFontSize( fontOverrideSizeComboBox, prefs->getFontOverrideSize( language ), true );
+
+    fontOverrideBoxLayout->addWidget( fontOverrideLabel );
+    fontOverrideBoxLayout->addWidget( fontOverrideFamilyComboBox );
+    fontOverrideBoxLayout->addWidget( fontOverrideSizeComboBox );
+
+    fontOverrideBoxes.append( fontOverrideBox );
+    fontOverrideLabels.append( fontOverrideLabel );
+    fontOverrideFamilyComboBoxes.append( fontOverrideFamilyComboBox );
+    fontOverrideSizeComboBoxes.append( fontOverrideSizeComboBox );
+
+    int indexOfFiller = fontOverridesBoxLayout->indexOf( fontOverridesBoxFiller );
+    fontOverridesBoxLayout->insertWidget( indexOfFiller, fontOverrideBox ); 
 }
 
 void PreferencesDialog::removeFontOverride( const QString& language ) {
-    //int fontOverrideCount = fontOverrideLabels.count();
-    //for( int i = 0; i < fontOverrideCount; i++ ) {
-    //    if( fontOverrideLabels.at( i )->text() == QObject::tr( language ) ) {
-    //        QHBox* fontOverrideBox = fontOverrideBoxes.at( i );
+    int fontOverrideCount = fontOverrideLabels.count();
+    for( int i = 0; i < fontOverrideCount; i++ ) {
+        if( fontOverrideLabels.at( i )->text() == QApplication::translate( "QObject", language.toLatin1().data() ) ) {
+            QWidget* fontOverrideBox = fontOverrideBoxes.at( i );
 
-    //        fontOverrideLabels.remove( i );
-    //        fontOverrideFamilyComboBoxes.remove( i );
-    //        fontOverrideSizeComboBoxes.remove( i );
-    //        fontOverrideBoxes.remove( i );
-    //        
-    //        fontOverridesBox->removeChild( fontOverrideBox );
+            fontOverrideLabels.removeAt( i );
+            fontOverrideFamilyComboBoxes.removeAt( i );
+            fontOverrideSizeComboBoxes.removeAt( i );
+            fontOverrideBoxes.removeAt( i );
 
-    //        break;
-    //    }
-    //}
+            delete( fontOverrideBox );
+
+            return;
+        }
+    }
+}
+
+void PreferencesDialog::updateFontOverride( QTreeWidgetItem* item, int column ) {
+    QString lang( Util::getLanguageCode( item->text( 0 ) ) );
+    bool isChecked = ( item->checkState( 0 ) == Qt::Checked );
+    if( isChecked ) 
+        addFontOverride( lang );
+    else 
+        removeFontOverride( lang );
 }
 
 void PreferencesDialog::setAccelKey() {

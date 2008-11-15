@@ -137,6 +137,7 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
     vocabDetailsTermsPanel->setLayout( vocabDetailsTermsPanelLayout );
     //termList = new QTreeWidget();
     termList = new SmartListView();
+    termList->header()->setMovable( false );
     termList->setSortingEnabled( true );
     termList->setSelectionMode( QAbstractItemView::ExtendedSelection );
     termList->setColumnCount( 2 );

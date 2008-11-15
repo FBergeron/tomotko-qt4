@@ -51,8 +51,6 @@ HEADERS     +=  src/Base.h \
                 src/TreeItem.h \
                 src/VocabTreeItem.h \
                 src/FolderTreeItem.h \
-                src/LanguageUpdateNotifier.h \
-                src/StudyLanguageItem.h \
                 src/FolderParser.h \
                 src/VocabParser.h \
                 src/Vocabulary.h \
@@ -102,8 +100,6 @@ SOURCES     +=  src/Util.cpp \
                 src/TreeItem.cpp \
                 src/VocabTreeItem.cpp \
                 src/FolderTreeItem.cpp \
-                src/LanguageUpdateNotifier.cpp \
-                src/StudyLanguageItem.cpp \
                 src/FolderParser.cpp \
                 src/VocabParser.cpp \
                 src/Vocabulary.cpp \

@@ -235,13 +235,7 @@ void SearchDialog::removeResultTerms() {
 }
 
 uint SearchDialog::getSelectedTermCount() const {
-    uint count = 0;
-    for( int i = 0; i < resultsListView->topLevelItemCount(); i++ ) {
-        ResultListItem* termItem = (ResultListItem*)resultsListView->topLevelItem( i );
-        if( termItem->isSelected() )
-            count++;
-    }
-    return( count );
+    return( resultsListView->selectedItems().count() );
 }
 
 void SearchDialog::doRemoveTerms( bool allowSelectTrans /* = true */, bool confirmBeforeRemove /* = true */ ) {

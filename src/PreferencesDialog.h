@@ -37,7 +37,6 @@
 #include "SequenceDialog.h"
 #include "SequenceListItem.h"
 //#include "SmartListView.h"
-#include "StudyLanguageItem.h"
 //#include "TermScheduler.h"
 #include "Util.h"
 
@@ -75,6 +74,7 @@ private slots:
     void resetDefaultFont();
     void addFontOverride( const QString& language );
     void removeFontOverride( const QString& language );
+    void updateFontOverride( QTreeWidgetItem* item, int column );
     void clearAccelKey();
     void setAccelKey();
     void resetAccelKey();
@@ -101,7 +101,6 @@ private:
     void keyPressEvent( QKeyEvent *evt );
 
     Preferences*                prefs;
-    LanguageUpdateNotifier*     languageUpdateNotifier;
 
     QVBoxLayout*                mainLayout;
     QTabWidget*                 tab;
