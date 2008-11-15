@@ -10,7 +10,7 @@
 #include "icons/maximize.xpm"
 
 VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget* parent /*= 0*/ )
-    : QWidget( parent ), controller( controller ) {
+    : QWidget( parent ), searchDialog( NULL ), controller( controller ) {
 
     mainLayout = new QVBoxLayout();
 

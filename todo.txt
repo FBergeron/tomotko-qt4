@@ -1,6 +1,7 @@
 ToDo
 ----
 Bug: I remove all the data.  I create a folder and a glossary.  I quit.  When I restart I have errors like : Could not load vocab file in directory M:/Documents and Settings/fred/.toMOTko/1/2/v-5.  What happens is that the vocabulary folder is created but it doesn't contain a vocab file because no words have been specified. The vocabulary folder should be discarded to prevent the problem. 
+Edit word doesn't work during a quiz.
 There is the following problem if I setSortingEnabled for the VocabTreeView: Creating two glossaries with the same name and I cannot use the up/down arrow to select the glossary one after the other.  They are automatically reordered and it seems that the first glossary is always selected although it's not, it is just changed position.  If we remove the setIcon() line in VocabTreeItem::setOpen(), the problem doesn't occur.  Same thing if I setSortingEnabled( false ).  Look the SetIconBug project for details.
 When I delete a glossary, it reappears the next time I start toMOTko.  How to reproduce it?
 Add a FAQ in the website (documenting the problems for dependency lib and fonts)
