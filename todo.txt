@@ -1,10 +1,6 @@
 ToDo
 ----
-Bug: I remove all the data.  I create a folder and a glossary.  I quit.  When I restart I have errors like : Could not load vocab file in directory M:/Documents and Settings/fred/.toMOTko/1/2/v-5.  What happens is that the vocabulary folder is created but it doesn't contain a vocab file because no words have been specified. The vocabulary folder should be discarded to prevent the problem. 
-Edit word doesn't work during a quiz.
-There is the following problem if I setSortingEnabled for the VocabTreeView: Creating two glossaries with the same name and I cannot use the up/down arrow to select the glossary one after the other.  They are automatically reordered and it seems that the first glossary is always selected although it's not, it is just changed position.  If we remove the setIcon() line in VocabTreeItem::setOpen(), the problem doesn't occur.  Same thing if I setSortingEnabled( false ).  Look the SetIconBug project for details.
 When I delete a glossary, it reappears the next time I start toMOTko.  How to reproduce it?
-Add a FAQ in the website (documenting the problems for dependency lib and fonts)
 Fix the image resizing in Quiz (ImageBox + QuizFrame).
 Paste in TermDialog is bugged.
 Group label and textfield into a panel (comments) for better layout.
@@ -19,7 +15,6 @@ Remove all filler widgets and replace them with layout->addStretch() instead.
 Probably that I don't need LanguageUpdateNotifier anymore.  Remove that.
 When I click on a folder, it expands automatically.  That should not be the case.
 Make the setAccelKey work in the Prefs window.
-When we start a quiz, hide the language selector.
 I'm not sure that QTreeWidget is appropriate all the time...  Unless I could get rid of the |- lines on the left side of items.
 Maybe use QGridLayout with columnStretch for fontPreferences (check the QGridLayout doc for the example).
 Add more size for fonts preferences?
@@ -33,6 +28,8 @@ Replace screenshots (non-zaurus ones) with Windows's ones in online help.
 Check if the text of online help is still correct.
 Icons are too small.  Use 32x32 version if possible.
 Probably replace all setSelected( true ) by setCurrentItem() instead?
+There is the following problem if I setSortingEnabled for the VocabTreeView: Creating two glossaries with the same name and I cannot use the up/down arrow to select the glossary one after the other.  They are automatically reordered and it seems that the first glossary is always selected although it's not, it is just changed position.  If we remove the setIcon() line in VocabTreeItem::setOpen(), the problem doesn't occur.  Same thing if I setSortingEnabled( false ).  Look the SetIconBug project for details.
+Add a FAQ in the website (documenting the problems for dependency lib and fonts)
 
 
 Add symlinks for fr/es history pages.
@@ -175,6 +172,7 @@ Make toMOTko interoperable with other applications.  For example, Ctop made the 
 Bug : On linux (in the emulator), if I use right key to scrollRight() a Quiz Field, then I make a selection and copy it.  It won't be copied in the clipboard.  As it seems to work on the zaurus, I will fix that later maybe.
 Controller::importData() could be refactored a little bit in order to reduce duplicated code when creating new Vocabulary.  As it would make the code a little harder to read, I think it's not worth it.
 Implement license field with dialog on import.  Implement this only if needed.
+Bug: I remove all the data.  I create a folder and a glossary.  I quit.  In such a case, a folder for the vocabulary is created and left empty.  Ideally, it should be deleted. 
 Improve the search:
 - Consider to perform the search from the selected folder to reduce the results set.  Maybe add a folder selector in the dialog.
 - If I implement Next result, consider what to do if the languages change.  Maybe the languages should be remembered when making a query (and the View all terms and glossaries option as well?)  Consider also that the presentation has an influence because we can sort the results.  Should the model be sorted as well?  Do we have to duplicate the data or is it possible to use MVC with a QListView in Qt 2.3.2?

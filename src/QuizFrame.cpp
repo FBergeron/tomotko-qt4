@@ -353,6 +353,7 @@ bool QuizFrame::areButtonsHidden() const {
 }
 
 void QuizFrame::showEvent( QShowEvent* showEvt ) {
+    cerr << "showEvent for quiz" << endl;
     QWidget::showEvent( showEvt );
     // We set the state of maximize action because it VocabularyManagerFrame may have changed it.
     action[ ACTION_MAXIMIZE ]->setChecked( maximizeCommentButton->isChecked() );  
@@ -360,6 +361,7 @@ void QuizFrame::showEvent( QShowEvent* showEvt ) {
 }
 
 void QuizFrame::hideEvent( QHideEvent* hideEvt ) {
+    cerr << "hideEvent for quiz" << endl;
     QWidget::hideEvent( hideEvt );
     emit( quizHidden() );
 }
@@ -649,37 +651,37 @@ void QuizFrame::restoreCommentField() {
 }
 
 void QuizFrame::editCurrentTerm() {
-//    if( controller->isQuizInProgress() ) {
-//        Folder* vocabTree = controller->getVocabTree();
-//        Term* term = controller->getCurrentTerm();
-//        if( !term ) {
-//            QMessageBox::warning( this, QObject::tr( "Information" ), tr( "DissociatedWord" ) );
-//            return;
-//        }
-//
-//        Vocabulary* vocab = vocabTree->getVocabulary( term->getVocabId() );
-//        if( vocab == NULL || !vocab->isTermExists( term->getId() ) ) {
-//            QMessageBox::warning( this, QObject::tr( "Information" ), tr( "DissociatedWord" ) );
-//            return;
-//        }
-//
-//        TermDialog dialog( *vocab, controller, this, *term );
-//        dialog.showMaximized();
-//        int result = dialog.exec();
-//        if( result ) { 
-//            QString firstLang( controller->getQuizFirstLanguage() );
-//            QString testLang( controller->getQuizTestLanguage() );
-//            Term newTerm = dialog.getTerm();
-//            Translation firstLangTrans = newTerm.getTranslation( firstLang );
-//            Translation testLangTrans = newTerm.getTranslation( testLang );
-//            term->addTranslation( firstLangTrans );
-//            term->addTranslation( testLangTrans );
-//            BilingualKey commentKey( firstLang, testLang );
-//            term->addComment( commentKey, newTerm.getComment( commentKey ) );
-//            term->setImagePath( newTerm.getImagePath() );
-//            vocab->setModificationDate( QDateTime::currentDateTime() );
-//            vocab->setDirty( true );
-//            setTerm( newTerm );
-//        }
-//    }
+    if( controller->isQuizInProgress() ) {
+        Folder* vocabTree = controller->getVocabTree();
+        Term* term = controller->getCurrentTerm();
+        if( !term ) {
+            QMessageBox::warning( this, QObject::tr( "Information" ), tr( "DissociatedWord" ) );
+            return;
+        }
+
+        Vocabulary* vocab = vocabTree->getVocabulary( term->getVocabId() );
+        if( vocab == NULL || !vocab->isTermExists( term->getId() ) ) {
+            QMessageBox::warning( this, QObject::tr( "Information" ), tr( "DissociatedWord" ) );
+            return;
+        }
+
+        TermDialog dialog( *vocab, controller, this, *term );
+        dialog.show();
+        int result = dialog.exec();
+        if( result ) { 
+            QString firstLang( controller->getQuizFirstLanguage() );
+            QString testLang( controller->getQuizTestLanguage() );
+            Term newTerm = dialog.getTerm();
+            Translation firstLangTrans = newTerm.getTranslation( firstLang );
+            Translation testLangTrans = newTerm.getTranslation( testLang );
+            term->addTranslation( firstLangTrans );
+            term->addTranslation( testLangTrans );
+            BilingualKey commentKey( firstLang, testLang );
+            term->addComment( commentKey, newTerm.getComment( commentKey ) );
+            term->setImagePath( newTerm.getImagePath() );
+            vocab->setModificationDate( QDateTime::currentDateTime() );
+            vocab->setDirty( true );
+            setTerm( newTerm );
+        }
+    }
 }

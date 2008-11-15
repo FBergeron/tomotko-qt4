@@ -311,7 +311,7 @@ Vocabulary* Controller::loadVocabulary( const QString& parentDir ) {
     Vocabulary* vocab = NULL;
     QDir dir( parentDir );
     QString vocabDirName = dir.dirName();
-    int indexOfDash = vocabDirName.indexOf( "-" );//vocabDirName.find( "-" );
+    int indexOfDash = vocabDirName.indexOf( "-" );
     if( indexOfDash > 0 ) {
         bool isOk;
         QString strVocabId = vocabDirName.right( vocabDirName.length() - indexOfDash - 1 );
@@ -323,11 +323,10 @@ Vocabulary* Controller::loadVocabulary( const QString& parentDir ) {
             if( !vocab->load( filename ) ) {
                 delete( vocab );
                 vocab = NULL;
+                cerr << "Could not load vocab file in directory " << qPrintable( parentDir ) << endl;
             }
         }
     }
-    if( vocab == NULL )
-        cerr << "Could not load vocab file in directory " << qPrintable( parentDir ) << endl;
     return( vocab );
 }
 

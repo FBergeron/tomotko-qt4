@@ -79,7 +79,6 @@ private slots:
     void help();
     void startQuiz();
     void showQuiz();
-//    void resumeQuiz();
     void invokeVocabularyManager();
     void importData();
     void exportData();
@@ -131,6 +130,7 @@ private:
     QActionGroup*           languageActionGroup;
 
     QWidget*                languageSelectorPanel;
+    QAction*                languageSelectorAction;
     QHBoxLayout*            languageSelectorPanelLayout;
     QComboBox*              firstLanguageComboBox;
     QLabel*                 languageSelectorLabel;

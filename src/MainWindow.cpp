@@ -74,7 +74,7 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
     progressBar->setVisible( false );
     //progressBar->setCenterIndicator( true );
 
-    toolBar->addWidget( languageSelectorPanel );
+    languageSelectorAction = toolBar->addWidget( languageSelectorPanel );
     toolBar->addSeparator();
     toolBar->addAction( copyAction );
     toolBar->addAction( cutAction );
@@ -219,9 +219,7 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
     aboutAction = Util::createAction( tr( "About..." ), about_xpm, this, SLOT( about() ) );
     helpMenu->addAction( aboutAction );
 
-    //connect( quizFrame, SIGNAL( quizShown() ), languageSelectorPanel, SLOT( hide() ) );
-    //connect( quizFrame, SIGNAL( quizHidden() ), languageSelectorPanel, SLOT( show() ) );
-    //connect( quizFrame, SIGNAL( quizHidden() ), control, SLOT( concludeQuiz() ) );
+    connect( quizFrame, SIGNAL( quizHidden() ), control, SLOT( concludeQuiz() ) );
 
     mainPanel->addWidget( quizFrame );
     mainPanel->addWidget( vocabManagerFrame );
@@ -377,19 +375,19 @@ void MainWindow::startQuiz() {
         quizFrame->restartQuiz();
     else {
         bool resumeQuiz = false;
-//        if( control->isResumableQuizAvailable() ) {
-//            QMessageBox msgBox( QObject::tr( "Information" ), tr( "ConfirmResumeQuiz" ),
-//                QMessageBox::Warning,
-//                QMessageBox::Yes | QMessageBox::Default | QMessageBox::Escape,
-//                QMessageBox::No,
-//                QMessageBox::NoButton,
-//                this );
-//            msgBox.setButtonText( QMessageBox::Yes, tr( "Yes" ) );
-//            msgBox.setButtonText( QMessageBox::No, tr( "No" ) );
-//        
-//            int response = msgBox.exec();
-//            resumeQuiz = ( response == QMessageBox::Yes );
-//        }
+        if( control->isResumableQuizAvailable() ) {
+            QMessageBox msgBox( QObject::tr( "Information" ), tr( "ConfirmResumeQuiz" ),
+                QMessageBox::Warning,
+                QMessageBox::Yes | QMessageBox::Default | QMessageBox::Escape,
+                QMessageBox::No,
+                QMessageBox::NoButton,
+                this );
+            msgBox.setButtonText( QMessageBox::Yes, tr( "Yes" ) );
+            msgBox.setButtonText( QMessageBox::No, tr( "No" ) );
+        
+            int response = msgBox.exec();
+            resumeQuiz = ( response == QMessageBox::Yes );
+        }
         showQuiz();
         if( resumeQuiz )
             quizFrame->resumeQuiz();
@@ -398,38 +396,21 @@ void MainWindow::startQuiz() {
     }
 }
 
-//void MainWindow::resumeQuiz() {
-//    if( control->resumeQuiz() )
-//        quizFrame->resumeQuiz();
-//    else
-//        QMessageBox::warning( this, QObject::tr( "Information" ), QObject::tr( "NoResumableQuizAvailable" ) );
-//}
-
 void MainWindow::showQuiz() {
     mainPanel->setCurrentIndex( frameQuizIndex );
     updateMenus( NULL );
-    cutAction->setVisible( false );//removeFrom( toolBar );
-    copyAction->setVisible( false );//removeFrom( toolBar );
-    pasteAction->setVisible( false );//removeFrom( toolBar );
-
+    toolBar->setVisible( false );
     progressBar->setVisible( true );
-    languageSelectorPanel->setVisible( false );
-
+    languageSelectorAction->setVisible( false );
     quizFrame->setFocus();
 }
 
 void MainWindow::invokeVocabularyManager() {
     mainPanel->setCurrentIndex( frameVocabManagerIndex );
-//    updateMenus( NULL );
-//    cutAction->addTo( toolBar );
-//    copyAction->addTo( toolBar );
-//    pasteAction->addTo( toolBar );
-    cutAction->setVisible( true );//removeFrom( toolBar );
-    copyAction->setVisible( true );//removeFrom( toolBar );
-    pasteAction->setVisible( true );//removeFrom( toolBar );
-
+    updateMenus( NULL );
+    toolBar->setVisible( true );
     progressBar->setVisible( false );
-    languageSelectorPanel->setVisible( true );
+    languageSelectorAction->setVisible( true );
 }
 
 void MainWindow::importData() {
