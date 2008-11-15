@@ -283,7 +283,7 @@ bool Folder::load( const QString& filename ) {
         return( false );
     }
 
-    in.setVersion( 3 );
+    in.setVersion( QDataStream::Qt_2_1 );
     in >> tempFolder;
 
     dataFile.close();
@@ -343,7 +343,7 @@ bool Folder::loadMetadata( const QString& filename ) {
         return( false );
     }
 
-    in.setVersion( 3 );
+    in.setVersion( QDataStream::Qt_2_1 );
     in >> tempId >> tempTitle >> tempDescription >> tempAuthor >> tempCreationDate >> tempModificationDate;
 
     dataFile.close();
@@ -362,7 +362,7 @@ bool Folder::saveMetadata( const QString& filename ) const {
     QByteArray data;
 
     QDataStream out( &data, QIODevice::WriteOnly );
-    out.setVersion( 3 /* QDataStream::Qt_3 ? */ );
+    out.setVersion( QDataStream::Qt_2_1 );
 
     // 0x0010 means 0.10.x version.
     out << qint32( Folder::magicNumber ) << qint16( 0x0010 );

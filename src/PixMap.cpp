@@ -12,8 +12,5 @@ int small_display_p () {
 
 QPixmap small_pixmap( const char *xpm[] ) {
     QImage qim( xpm );
-    //QPixmap pm;
-    //pm.convertFromImage( qim.scaled( 12, 12 )/*qim.smoothScale( 12, 12 )*/ );
-    //return pm;
     return( QPixmap::fromImage( qim.scaled( 12, 12 ) ) );
 }

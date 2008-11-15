@@ -960,7 +960,7 @@ bool Controller::saveMarkedItems( Folder* folder ) {
     QByteArray data;
 
     QDataStream out( &data, QIODevice::WriteOnly );
-    out.setVersion( 3 /* QDataStream::Qt_3 ? */ );
+    out.setVersion( QDataStream::Qt_2_1 );
 
     // 0x0011 means 0.11.x version.
     out << qint32( Preferences::magicNumber ) << qint16( 0x0011 );
@@ -1047,7 +1047,7 @@ void Controller::loadMarkedItems( Folder* folder ) {
         if( tempVersion > 0x0011 )
             cerr << "Marked data file is from a more recent version.  Upgrade toMOTko." << endl;
 
-        in.setVersion( 3 );
+        in.setVersion( QDataStream::Qt_2_1 );
         in >> tempFolderIds >> tempVocabIds >> tempTermIds; 
 
         markedFile.close();

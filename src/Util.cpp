@@ -149,10 +149,8 @@ QAction* Util::createAction( const QString& name, const char** icon, QObject* re
     QAction *a;
     if( icon == NULL )
         a = new QAction( name, receiver );
-        //a = new QAction( name, name, 0, receiver, 0, toggle );
     else
-        a = new QAction( QIcon( QPixmap( icon ) ), name, receiver );
-        //a = new QAction( name, QIconSet( ZPIXMAP( icon ) ), name, 0, receiver, 0, toggle );
+        a = new QAction( QIcon( ZPIXMAP( icon ) ), name, receiver );
     if( toggle ) {
         a->setCheckable( true );
         QObject::connect( a, SIGNAL( toggled( bool ) ), receiver, slot );

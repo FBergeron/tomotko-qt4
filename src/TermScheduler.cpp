@@ -47,7 +47,7 @@ bool TermScheduler::load( const BilingualKey& key ) {
         return( false );
     }
 
-    in.setVersion( 3 );
+    in.setVersion( QDataStream::Qt_2_1 );
 
     TermScheduler tempScheduler( prefs );
     in >> tempScheduler;
@@ -70,7 +70,7 @@ bool TermScheduler::save() {
     QByteArray data;
 
     QDataStream out( &data, QIODevice::WriteOnly );
-    out.setVersion( 3 /* QDataStream::Qt_3 ? */ );
+    out.setVersion( QDataStream::Qt_2_1 );
 
     // 0x0009 means 0.9.x version.  
     out << qint32( TermScheduler::magicNumber ) << qint16( 0x0009 ) << *this;
@@ -334,47 +334,49 @@ QDataStream& operator<<( QDataStream& out, const TermScheduler& scheduler ) {
 }
 
 QDataStream& operator>>( QDataStream& in, TermScheduler& scheduler ) {
-    //QString tempFirstLanguage;
-    //QString tempTestLanguage;
-    //QList<TermKey> tempTermPool[ TermScheduler::poolCount ];
-    //QList<StandbyTerm> tempStandbyPool;
-    //QList<TermKey> tempAllTerms;
-    //int tempInitQuizLength;
-    //int tempInitTermCount;
-    //int tempCurrTermPool;
-    //TermKey tempCurrTerm;
+    QString tempFirstLanguage;
+    QString tempTestLanguage;
+    QList<TermKey> tempTermPool[ TermScheduler::poolCount ];
+    QList<StandbyTerm> tempStandbyPool;
+    QList<TermKey> tempAllTerms;
+    int tempInitQuizLength;
+    int tempInitTermCount;
+    int tempCurrTermPool;
+    TermKey tempCurrTerm;
 
-    //in >> tempFirstLanguage >> tempTestLanguage;
-    //for( int i = 0; i < TermScheduler::poolCount; i++ ) {
-    //    for( ;; ) {
-    //        TermKey tempTermKey;
-    //        in >> tempTermKey;
-    //        if( tempTermKey.getTermId() == 0 && tempTermKey.getVocabId() == 0 )
-    //            break;
-    //        tempTermPool[ i ].append( tempTermKey );
-    //    }
-    //}
+    in >> tempFirstLanguage >> tempTestLanguage;
+    for( int i = 0; i < TermScheduler::poolCount; i++ ) {
+        for( ;; ) {
+            TermKey tempTermKey;
+            in >> tempTermKey;
+            if( tempTermKey.getTermId() == 0 && tempTermKey.getVocabId() == 0 )
+                break;
+            tempTermPool[ i ].append( tempTermKey );
+        }
+    }
 
-    //for( ;; ) {
-    //    StandbyTerm tempStandbyTerm;
-    //    in >> tempStandbyTerm;
-    //    if( tempStandbyTerm.getPool() == 0 && tempStandbyTerm.getKey().getTermId() == 0 && tempStandbyTerm.getKey().getVocabId() == 0 )
-    //        break;
-    //    tempStandbyPool.append( tempStandbyTerm );
-    //}
+    for( ;; ) {
+        StandbyTerm tempStandbyTerm;
+        in >> tempStandbyTerm;
+        if( tempStandbyTerm.getPool() == 0 && tempStandbyTerm.getKey().getTermId() == 0 && tempStandbyTerm.getKey().getVocabId() == 0 )
+            break;
+        tempStandbyPool.append( tempStandbyTerm );
+    }
 
-    //in >> tempAllTerms;
-    //in >> tempInitQuizLength >> tempInitTermCount >> tempCurrTermPool >> tempCurrTerm;
+    in >> tempAllTerms;
+    in >> tempInitQuizLength >> tempInitTermCount >> tempCurrTermPool >> tempCurrTerm;
 
-    //scheduler.quizFirstLang = tempFirstLanguage;
-    //scheduler.quizTestLang = tempTestLanguage;
+    scheduler.quizFirstLang = tempFirstLanguage;
+    scheduler.quizTestLang = tempTestLanguage;
     //scheduler.termPool = tempTermPool;
-    //scheduler.standbyPool = tempStandbyPool;
-    //scheduler.allTerms = tempAllTerms;
-    //scheduler.initQuizLength = tempInitQuizLength;
-    //scheduler.initTermCount = tempInitTermCount;
-    //scheduler.currTermPool = tempCurrTermPool;
-    //scheduler.currTerm = tempCurrTerm;
+    for( int i = 0; i < TermScheduler::poolCount; i++ )
+        scheduler.termPool[ i ] = tempTermPool[ i ]; 
+    scheduler.standbyPool = tempStandbyPool;
+    scheduler.allTerms = tempAllTerms;
+    scheduler.initQuizLength = tempInitQuizLength;
+    scheduler.initTermCount = tempInitTermCount;
+    scheduler.currTermPool = tempCurrTermPool;
+    scheduler.currTerm = tempCurrTerm;
 
     return( in );
 }

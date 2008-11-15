@@ -12,6 +12,7 @@
 #include <QStringList>
 #include <QTextDocument>
 #include <QTextStream>
+#include "PixMap.h"
 #include "Term.h"
 
 using namespace std;

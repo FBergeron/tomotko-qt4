@@ -4,7 +4,7 @@ Sometimes, when I delete a glossary, it reappears the next time I start toMOTko.
 Fix the image resizing in Quiz (ImageBox + QuizFrame).
 Group label and textfield into a panel (comments) for better layout.
 Beware: When we do label->setMovie( &mov ), we must deallocate the movie.   The label doesn't take care of it as mentioned in the ref doc.
-In TermScheduler, the code of operator>> is in comments because it provokes an error related to array assignment.  Maybe I should use a QT container instead of an array.
+In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  Will it bring data incompatibility with previous versions? I think so.  If there seems to be incompatibilities, it may also be caused by the TermScheduler's tempTermPool handling in operator>>.  Test that!
 
 Release 0.11.x for Windows
 
@@ -28,7 +28,6 @@ Probably replace all setSelected( true ) by setCurrentItem() instead?
 
 There is the following problem if I setSortingEnabled for the VocabTreeView: Creating two glossaries with the same name and I cannot use the up/down arrow to select the glossary one after the other.  They are automatically reordered and it seems that the first glossary is always selected although it's not, it is just changed position.  If we remove the setIcon() line in VocabTreeItem::setOpen(), the problem doesn't occur.  Same thing if I setSortingEnabled( false ).  Look the SetIconBug project for details.
 Add a FAQ in the website (documenting the problems for dependency lib and fonts)
-In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  Will it bring data incompatibility with previous versions? 
 Add more size for fonts preferences?
 
 

@@ -1,5 +1,6 @@
 #ifndef ZPIXMAP_H
 #define ZPIXMAP_H
+
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QImage>

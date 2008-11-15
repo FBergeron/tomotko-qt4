@@ -232,7 +232,7 @@ bool Vocabulary::load( const QString& filename ) {
         return( false );
     }
 
-    in.setVersion( 3 );
+    in.setVersion( QDataStream::Qt_2_1 );
     in >> tempVocab;
 
     dataFile.close();
@@ -256,7 +256,7 @@ bool Vocabulary::save( const QString& filename ) const {
     QByteArray data;
 
     QDataStream out( &data, QIODevice::WriteOnly );
-    out.setVersion( 3 /* QDataStream::Qt_3 ? */ );
+    out.setVersion( QDataStream::Qt_2_1 );
 
     // 0x0010 means 0.10.x version.  
     out << qint32( Vocabulary::magicNumber ) << qint16( 0x0010 ) << *this;
