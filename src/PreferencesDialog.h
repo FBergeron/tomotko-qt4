@@ -7,27 +7,21 @@
 #ifndef PREFERENCES_DIALOG_H
 #define PREFERENCES_DIALOG_H 
 
-//#include <iostream.h>
 #include <QAction>
 #include <QCheckBox>
 #include <QComboBox>
 #include <QDialog>
-//#include <qfontdatabase.h>
 #include <QGridLayout>
-//#include <qheader.h>
 #include <QHBoxLayout>
 #include <QHeaderView>
-//#include <QKeyEvent>
 #include <QLabel>
 #include <QList>
 #include <QMessageBox>
-//#include <qobjectlist.h>
 #include <QPushButton>
 #include <QResizeEvent>
 #include <QScrollArea>
 #include <QSlider>
 #include <QString>
-//#include <qstringlist.h>
 #include <QTabWidget>
 #include <QTreeWidget>
 #include <QVBoxLayout>
@@ -36,8 +30,7 @@
 #include "Preferences.h"
 #include "SequenceDialog.h"
 #include "SequenceListItem.h"
-//#include "SmartListView.h"
-//#include "TermScheduler.h"
+#include "TermScheduler.h"
 #include "Util.h"
 
 extern QAction* action[ ACTION_COUNT ];
@@ -79,7 +72,6 @@ private slots:
     void setAccelKey();
     void resetAccelKey();
     void cancelSetAccelKey();
-    void keyActionClicked( QTreeWidgetItem* );
     void addSequence();
     void removeSequence();
     void updateUi();
@@ -199,7 +191,6 @@ private:
 
     QTreeWidgetItem*            grabAccelKeyFor;//QListViewItem*      grabAccelKeyFor;
     QTreeWidget*                keyboardAccelListView;
-    bool                        ignoreReturn;
     bool                        keyboardAccelModified;
 
     QWidget*                    keyboardAccelButtonPanel;

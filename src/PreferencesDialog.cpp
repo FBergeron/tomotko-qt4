@@ -15,7 +15,7 @@ const QString PreferencesDialog::studyLanguageList[] = {
 };
 
 PreferencesDialog::PreferencesDialog( QWidget* parent, Preferences* prefs ) 
-    : QDialog( parent/*, 0, true*/ ), prefs( prefs ), grabAccelKeyFor( NULL ), ignoreReturn( false ), keyboardAccelModified( false )  {
+    : QDialog( parent/*, 0, true*/ ), prefs( prefs ), grabAccelKeyFor( NULL ), keyboardAccelModified( false )  {
     init();
 }
 
@@ -32,7 +32,7 @@ void PreferencesDialog::init() {
     quizLengthOptionsPanel->setLayout( quizLengthOptionsPanelLayout );
 
     revealingOptionsPanel = new QGroupBox( tr( "RevealingOrders" ) );
-    //revealingOptionsPanel->setSizePolicy( QSizePolicy( QSizePolicy::Preferred, QSizePolicy::Minimum ) );
+    revealingOptionsPanel->setSizePolicy( QSizePolicy( QSizePolicy::Preferred, QSizePolicy::Maximum ) );
     revealingOptionsPanelLayout = new QHBoxLayout();
     revealingOptionsPanel->setLayout( revealingOptionsPanelLayout );
   
@@ -42,16 +42,15 @@ void PreferencesDialog::init() {
     revealingOptionsPanelLayout->addWidget( sequencesViewPanel );
     //sequencesViewPanelLayout->setSpacing( 2 );
     sequencesView = new QTreeWidget();
+    sequencesView->headerItem()->setHidden( true );
     sequencesViewPanelLayout->addWidget( sequencesView );
-    //sequencesView->addColumn( QString::null );
-    //sequencesView->header()->hide();
     sequencesViewButtons = new QWidget();
     sequencesViewButtonsLayout = new QHBoxLayout();
     sequencesViewButtons->setLayout( sequencesViewButtonsLayout );
     sequencesViewPanelLayout->addWidget( sequencesViewButtons );
     //sequencesViewButtonsLayout->setSpacing( 2 );
-    //sequencesViewButtonsFiller = new QWidget( sequencesViewButtons, "SequenceViewButtonsFiller" ); 
     addSequenceButton = new QPushButton( "+" );
+    //sequencesViewButtonsLayout->addStretch();
     sequencesViewButtonsLayout->addWidget( addSequenceButton );
     addSequenceButton->setToolTip( tr( "Add revealing sequence" ) );
     connect( addSequenceButton, SIGNAL( clicked() ), this, SLOT( addSequence() ) );
@@ -59,7 +58,6 @@ void PreferencesDialog::init() {
     sequencesViewButtonsLayout->addWidget( removeSequenceButton );
     removeSequenceButton->setToolTip( tr( "Remove revealing sequence" ) );
     connect( removeSequenceButton, SIGNAL( clicked() ), this, SLOT( removeSequence() ) );
-    //sequencesViewButtons->setStretchFactor( sequencesViewButtonsFiller, 1 );
 
     initSequences();
     connect( sequencesView, SIGNAL( itemSelectionChanged() ), this, SLOT( updateUi() ) );
@@ -74,11 +72,9 @@ void PreferencesDialog::init() {
     sequencesLabelBoxLayout->addWidget( sequencesLabel );
     sequencesLabel->setPixmap( QPixmap( ":/pics/SequenceMapLandscape.png" ) );
 
-    //sequencesViewPanel->setMaximumHeight( sequencesLabelBox->sizeHint().height() );
-
     quizLengthSlider = new QSlider( Qt::Horizontal );
     quizLengthSlider->setMinimum( 0 );
-    quizLengthSlider->setMaximum( 4/*TermScheduler::poolCount - 1*/ );
+    quizLengthSlider->setMaximum( TermScheduler::poolCount - 1 );
     quizLengthSlider->setTickInterval( 1 );
     quizLengthSlider->setTickPosition( QSlider::TicksBothSides );
     quizLengthSlider->setFocusPolicy( Qt::StrongFocus );
@@ -121,7 +117,7 @@ void PreferencesDialog::init() {
     labelsFontLabel = new QLabel( tr( "LabelsFont" ) );
     labelsFontFamilyComboBox = new QComboBox();
     labelsFontSizeComboBox = new QComboBox();
-    resetDefaultLabelsFontButton = new QPushButton( tr( "ResetDefaultValue" )/*, labelsFontPanel, "ResetDefaultLabelsFontButton"*/ );
+    resetDefaultLabelsFontButton = new QPushButton( tr( "ResetDefaultValue" ) );
     connect( resetDefaultLabelsFontButton, SIGNAL( clicked() ), this, SLOT( resetDefaultLabelsFont() ) );
     labelsFontPanelLayout->addWidget( labelsFontLabel );
     labelsFontPanelLayout->addWidget( labelsFontFamilyComboBox );
@@ -161,9 +157,8 @@ void PreferencesDialog::init() {
     fontOverridesScrollView = new QScrollArea();
     fontOverridesScrollView->setWidgetResizable( true );
     fontOverridesPanelLayout->addWidget( fontOverridesScrollView );
-    //fontOverridesScrollView->setResizePolicy( QScrollView::AutoOneFit );
     fontOverridesBox = new QWidget();
-    fontOverridesBoxLayout = new QVBoxLayout();// fontOverridesBox );
+    fontOverridesBoxLayout = new QVBoxLayout();
     fontOverridesBox->setLayout( fontOverridesBoxLayout );
     initFontOverrides();
     fontOverridesScrollView->setWidget( fontOverridesBox );
@@ -183,7 +178,7 @@ void PreferencesDialog::init() {
     digraphPanel = new QGroupBox( tr( "BuiltInSupportForAccents" ) );
     digraphPanelLayout = new QVBoxLayout();
     digraphPanel->setLayout( digraphPanelLayout );
-    digraphCheckBox = new QCheckBox( tr( "DigraphesEnabled" ) );//, digraphPanel, "DigraphCheckBox" );
+    digraphCheckBox = new QCheckBox( tr( "DigraphesEnabled" ) );
     digraphCheckBox->setCheckState( prefs->isDigraphEnabled() ? Qt::Checked : Qt::Unchecked );
     digraphPanelLayout->addWidget( digraphCheckBox );
 
@@ -213,14 +208,8 @@ void PreferencesDialog::init() {
     keyboardAccelListView->setColumnCount( 2 );
     QStringList headerLabels;
     headerLabels << tr( "Action" ) << tr( "Key" ); 
-    //keyboardAccelListView->addColumn( tr( "Action" ), 280 );
-    //keyboardAccelListView->addColumn( tr( "Key" ), 140 );
-    //keyboardAccelListView->setSorting( -1 );
-    //keyboardAccelListView->setAllColumnsShowFocus( true );
-    //keyboardAccelListView->setStretchColumn( 0 );
     keyboardAccelListView->setHeaderLabels( headerLabels );
     keyboardAccelListView->header()->setResizeMode( 0, QHeaderView::Stretch );
-    //keyboardAccelListView->header()->setResizeMode( 1, QHeaderView::Stretch );
     int actionCount = sizeof( action ) / sizeof( QAction* );
     for( int i = actionCount - 1; i >= 0; i-- ) {
         KeyActionListViewItem* actionItem = new KeyActionListViewItem( keyboardAccelListView, action[ i ], (Action)i );
@@ -228,9 +217,8 @@ void PreferencesDialog::init() {
         actionItem->setIcon( 0, action[ i ]->icon() );
         keyboardAccelListView->addTopLevelItem( actionItem );
     }
-    //connect( keyboardAccelListView, SIGNAL( returnPressed( QListViewItem* ) ), this, SLOT( keyActionClicked( QListViewItem* ) ) );
-    connect( keyboardAccelListView, SIGNAL( currentItemChanged( QTreeWidgetItem*, QTreeWidgetItem* )/*currentChanged( QListViewItem* )*/ ), this, SLOT( cancelSetAccelKey() ) );
-    connect( tab, SIGNAL( currentChanged( int )/*selected( const QString& )*/ ), this, SLOT( cancelSetAccelKey() ) );
+    connect( keyboardAccelListView, SIGNAL( currentItemChanged( QTreeWidgetItem*, QTreeWidgetItem* ) ), this, SLOT( cancelSetAccelKey() ) );
+    connect( tab, SIGNAL( currentChanged( int ) ), this, SLOT( cancelSetAccelKey() ) );
     keyboardAccelPanelLayout->addWidget( keyboardAccelListView );
 
     keyboardAccelButtonPanel = new QWidget();
@@ -250,13 +238,10 @@ void PreferencesDialog::init() {
     connect( setAccelKeyButton, SIGNAL( clicked() ), this, SLOT( setAccelKey() ) );
     connect( resetAccelKeyButton, SIGNAL( clicked() ), this, SLOT( resetAccelKey() ) );
 
-    //interfacePageFiller = new QWidget();
-
     interfacePageLayout = new QVBoxLayout( interfacePage );
     //interfacePageLayout->setSpacing( 2 );
     interfacePageLayout->addWidget( miscInterfaceOptionsPanel );
     interfacePageLayout->addWidget( keyboardAccelPanel, 1 );
-    //interfacePageLayout->addWidget( interfacePageFiller, 1 );
 
     languagePage = new QWidget();
 
@@ -268,31 +253,16 @@ void PreferencesDialog::init() {
     studyLanguagesListView = new QTreeWidget();
     studyLanguagesListView->setColumnCount( 1 );
     languagesPanelLayout->addWidget( studyLanguagesListView );
-    //studyLanguagesListView->setAllColumnsShowFocus( true );
     studyLanguagesListView->setHeaderLabel( tr( "StudyLanguages" ) );
-    //studyLanguagesListView->setStretchColumn( 0 );
-    //languagesPanel->setStretchFactor( studyLanguagesListView, 1 );
    
     initStudyLanguageValues();
 
     connect( studyLanguagesListView, SIGNAL( itemChanged( QTreeWidgetItem*, int ) ), this, SLOT( updateFontOverride( QTreeWidgetItem*, int ) ) );
 
-    //languagesRightPanel = new QWidget();
-    //languagesRightPanelLayout = new QVBoxLayout();
-    //languagesRightPanel->setLayout( languagesRightPanelLayout );
-    //languagesPanelLayout->addWidget( languagesRightPanel );
-
-    //languagesRightPanelFiller = new QWidget();
-
-    //languagesRightPanelLayout->addWidget( languagesRightPanelFiller, 1 );
-
-    //languagePageFiller = new QWidget();
-
     languageLayout = new QVBoxLayout();
     languagePage->setLayout( languageLayout );
     //languageLayout->setSpacing( 2 );
     languageLayout->addWidget( languagesPanel, 1 );
-    //languageLayout->addWidget( languagePageFiller, 1 );
     tab->addTab( quizPage, tr( "Quiz" ) );
     tab->addTab( languagePage, tr( "Languages" ) );
     tab->addTab( fontPage, tr( "Fonts" ) );
@@ -438,12 +408,12 @@ void PreferencesDialog::accept() {
         prefs->addRevealingSequence( item->getSequence() );
     }
 
-    prefs->setLabelsFontFamily( labelsFontFamilyComboBox->currentText() );//labelsFontFamilyComboBox->text( labelsFontFamilyComboBox->currentItem() ) );
+    prefs->setLabelsFontFamily( labelsFontFamilyComboBox->currentText() );
     int fontSizeNameListLength = sizeof( fontSizeNameList ) / sizeof( QString );
     int labelsFontSizeModifier =  labelsFontSizeComboBox->currentIndex() - ( fontSizeNameListLength - 1 ) / 2;
     prefs->setLabelsFontSizeModifier( labelsFontSizeModifier );
 
-    prefs->setFontFamily( fontFamilyComboBox->currentText() );//fontFamilyComboBox->text( fontFamilyComboBox->currentItem() ) );
+    prefs->setFontFamily( fontFamilyComboBox->currentText() );
     int fontSizeModifier =  fontSizeComboBox->currentIndex() - ( fontSizeNameListLength - 1 ) / 2;
     prefs->setFontSizeModifier( fontSizeModifier );
 
@@ -657,11 +627,6 @@ void PreferencesDialog::cancelSetAccelKey() {
     }
 }
 
-void PreferencesDialog::keyActionClicked( QTreeWidgetItem* ) {
-    ignoreReturn = true;
-    setAccelKey();
-}
-
 void PreferencesDialog::keyPressEvent( QKeyEvent* evt ) {
     if( grabAccelKeyFor != NULL ) {
         switch (evt->key()) {
@@ -676,27 +641,16 @@ void PreferencesDialog::keyPressEvent( QKeyEvent* evt ) {
                 evt->ignore();
                 break;
             default:
-                if( ignoreReturn && evt->key() == Qt::Key_Return ) {
-                    evt->ignore();
-                    break;
-                }
-                //      printf( "key: %x modif: %x\n", evt->key(), evt->state() );
-
                 KeyActionListViewItem *ka = (KeyActionListViewItem*)grabAccelKeyFor;
 
-                // This part needs some adapdation for Qt4.  Look the code in the Zaurus version. - FB
-                QKeySequence keyCode = evt->key();
-                if( (evt->modifiers() & Qt::Key_Shift) != 0 )
-                    //keyCode = |= SHIFT;
-                    cerr << "Shift was pressed." << endl;
-                if( (evt->modifiers() & Qt::Key_Alt) != 0 )
-                    //keyCode |= ALT;
-                    cerr << "Alt was pressed." << endl;
-                if( (evt->modifiers() & Qt::Key_Control) != 0 )
-                    //keyCode |= CTRL;      
-                    cerr << "Ctrl was pressed." << endl;
+                QKeySequence keyCode( evt->key() );
+                if( (evt->modifiers() & Qt::ShiftModifier) != 0 )
+                    keyCode = keyCode | Qt::SHIFT;
+                if( (evt->modifiers() & Qt::AltModifier) != 0 )
+                    keyCode = keyCode | Qt::ALT;
+                if( (evt->modifiers() & Qt::ControlModifier ) != 0 )
+                    keyCode = keyCode | Qt::CTRL;      
 
-                //    printf( "keycode: %x\n", keyCode );
                 releaseKeyboard();
 
                 // Check for duplicate key codes
@@ -724,6 +678,7 @@ void PreferencesDialog::keyPressEvent( QKeyEvent* evt ) {
                 else {
                     ka->setKey( keyCode );
                     keyboardAccelModified = true;
+                    ka->updateText();
                 }
 
                 grabAccelKeyFor = NULL;
@@ -731,9 +686,9 @@ void PreferencesDialog::keyPressEvent( QKeyEvent* evt ) {
                 break;
         }
     }
-    ignoreReturn = false;
-
-    QDialog::keyPressEvent( evt );
+    else if( evt->key() == Qt::Key_Return ) {
+        setAccelKey();
+    }
 }
 
 void PreferencesDialog::addSequence() {
@@ -751,9 +706,9 @@ void PreferencesDialog::addSequence() {
 }
 
 void PreferencesDialog::removeSequence() {
-    //QListViewItem* currSeqItem = sequencesView->currentItem();
-    //if( currSeqItem ) {
-    //    delete( currSeqItem );
-    //    updateUi();
-    //}
+    QTreeWidgetItem* currSeqItem = sequencesView->currentItem();
+    if( currSeqItem ) {
+        delete( currSeqItem );
+        updateUi();
+    }
 }

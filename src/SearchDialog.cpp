@@ -19,12 +19,12 @@ void SearchDialog::init() {
     queryPanel->setLayout( queryPanelLayout );
     //queryPanelLayout->setSpacing( 2 );
 
-    resetButton = new QPushButton( /*queryPanel, "ResetButton"*/ );
+    resetButton = new QPushButton();
     resetButton->setIcon( QIcon( QPixmap( ZPIXMAP( resetQueryForm_xpm ) ) ) );
     connect( resetButton, SIGNAL( clicked() ), this, SLOT( reset() ) );
-    queryField = new HistoryField( /*queryPanel, "QueryField"*/ );
+    queryField = new HistoryField();
     queryField->setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Expanding ) );
-    searchButton = new QPushButton( ZPIXMAP( search_xpm ), tr( "Search" )/*, queryPanel, "SearchButton"*/ );
+    searchButton = new QPushButton( ZPIXMAP( search_xpm ), tr( "Search" ) );
     searchButton->setDefault( true );
     connect( searchButton, SIGNAL( clicked() ), queryField->lineEdit(), SIGNAL( returnPressed() ) );
     connect( searchButton, SIGNAL( clicked() ), this, SLOT( search() ) );
@@ -41,31 +41,22 @@ void SearchDialog::init() {
     resultsHeaderPanelLayout = new QHBoxLayout();
     resultsHeaderPanel->setLayout( resultsHeaderPanelLayout );
     //resultsHeaderPanel->setSpacing( 2 );
-    resultsHeaderLabel = new QLabel( tr( "Results" )/*, resultsHeaderPanel*/ );
-    resultsHeaderFiller = new QWidget( /*resultsHeaderPanel, "ResultsHeaderFiller"*/ );
-    resultsCounterLabel = new QLabel( /*resultsHeaderPanel*/ );
+    resultsHeaderLabel = new QLabel( tr( "Results" ) );
+    resultsCounterLabel = new QLabel();
     resultsCounterLabel->setAlignment( Qt::AlignRight );
     resultsHeaderPanelLayout->addWidget( resultsHeaderLabel );
-    resultsHeaderPanelLayout->addWidget( resultsHeaderFiller );
+    resultsHeaderPanelLayout->addStretch();
     resultsHeaderPanelLayout->addWidget( resultsCounterLabel );
 
-    //resultsListView = new QTreeWidget();//new SmartListView( /*this, "ResultsListView"*/ );
-    resultsListView = new SmartListView();//new SmartListView( /*this, "ResultsListView"*/ );
+    resultsListView = new SmartListView();
     resultsListView->setColumnCount( 4 );
     QStringList headerLabels;
     headerLabels << QApplication::translate( "QObject", controller->getPreferences().getFirstLanguage().toLatin1().data() );
     headerLabels << QApplication::translate( "QObject", controller->getPreferences().getTestLanguage().toLatin1().data() );
     headerLabels << tr( "Glossary" ) << tr( "Location" );
     resultsListView->setHeaderLabels( headerLabels );
-    //int colFirstLanguage = resultsListView->addColumn( QObject::tr( controller->getPreferences().getFirstLanguage() ) );
-    //int colTestLanguage = resultsListView->addColumn( QObject::tr( controller->getPreferences().getTestLanguage() ) );
-    //resultsListView->setColumnWidthMode( colFirstLanguage, QListView::Manual );
-    //resultsListView->setColumnWidthMode( colTestLanguage, QListView::Manual );
-    //resultsListView->addColumn( tr( "Glossary" ) );
-    //resultsListView->addColumn( tr( "Location" ) );
     resultsListView->setAllColumnsWide( true );
     resultsListView->setAllColumnsShowFocus( true );
-    //resultsListView->setStretchColumn( 1 );
     resultsListView->setSelectionMode( QAbstractItemView::ExtendedSelection );
     connect( resultsListView, SIGNAL( itemSelectionChanged() ), this, SLOT( updateUi() ) );
 
@@ -73,11 +64,11 @@ void SearchDialog::init() {
     resultsButtonsPanelLayout = new QHBoxLayout();
     resultsButtonsPanel->setLayout( resultsButtonsPanelLayout );
     //resultsButtonsPanel->setSpacing( 2 );
-    goResultVocabButton = new QPushButton( QIcon( ZPIXMAP( goVocab_xpm ) ), tr( "View Glossary" )/*, resultsButtonsPanel, "GoResultVocabButton"*/ );
+    goResultVocabButton = new QPushButton( QIcon( ZPIXMAP( goVocab_xpm ) ), tr( "View Glossary" ) );
     connect( goResultVocabButton, SIGNAL( clicked() ), this, SLOT( goResultVocab() ) );
-    editResultTermButton = new QPushButton( QIcon( ZPIXMAP( editTerm_xpm ) ), tr( "Edit Term" )/*, resultsButtonsPanel, "EditResultTermButton"*/ );
+    editResultTermButton = new QPushButton( QIcon( ZPIXMAP( editTerm_xpm ) ), tr( "Edit Term" ) );
     connect( editResultTermButton, SIGNAL( clicked() ), this, SLOT( editResultTerm() ) );
-    removeResultTermButton = new QPushButton( QIcon( ZPIXMAP( removeTerm_xpm ) ), tr( "Remove Term(s)" )/*, resultsButtonsPanel, "RemoveTermButton"*/ );
+    removeResultTermButton = new QPushButton( QIcon( ZPIXMAP( removeTerm_xpm ) ), tr( "Remove Term(s)" ) );
     connect( removeResultTermButton, SIGNAL( clicked() ), this, SLOT( removeResultTerms() ) );
 
     resultsButtonsPanelLayout->addWidget( goResultVocabButton );

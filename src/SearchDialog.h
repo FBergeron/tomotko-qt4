@@ -73,10 +73,8 @@ private:
     QHBoxLayout*            resultsHeaderPanelLayout;
     
     QLabel*                 resultsHeaderLabel;
-    QWidget*                resultsHeaderFiller;
     QLabel*                 resultsCounterLabel;
 
-    //QTreeWidget*            resultsListView;
     SmartListView*          resultsListView;
 
     QWidget*                resultsButtonsPanel;

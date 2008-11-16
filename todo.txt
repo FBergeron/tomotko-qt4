@@ -5,14 +5,13 @@ Fix the image resizing in Quiz (ImageBox + QuizFrame).
 Group label and textfield into a panel (comments) for better layout.
 Beware: When we do label->setMovie( &mov ), we must deallocate the movie.   The label doesn't take care of it as mentioned in the ref doc.
 In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  Will it bring data incompatibility with previous versions? I think so.  If there seems to be incompatibilities, it may also be caused by the TermScheduler's tempTermPool handling in operator>>.  Test that!
-
+In SearchDialog, enter key should provoke a search.
 Release 0.11.x for Windows
 
+There is a font sampler in the Qt's demo that could be useful.
 When the PrefDialog is very large, the revealing options section is resized.  Is it possible to make it keep its size compact.
-Remove all filler widgets and replace them with layout->addStretch() instead.
 
 When I click on a folder, it expands automatically.  That should not be the case.
-Make the setAccelKey work in the Prefs window.
 Maybe use QGridLayout with columnStretch for fontPreferences (check the QGridLayout doc for the example).
 Test remove terms (multiple selection).  It's probably buggy because of nextTermItem management...
 I wonder if it would not be nicer if we had a column just for the checkbox in the termlist?
