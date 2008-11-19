@@ -1,11 +1,21 @@
 ToDo
 ----
+Fix the image resizing in TermDialog.  In QuizFrame, the problem is fixed.  The TermDialog should not resize when affecting an image.  Only the imageBox should. 
+
+I think the solution is here : http://docs.huihoo.com/qt/4.2/desktop-screenshot.html.  That's what I did for QuizFrame and it works.
+Probably that I don't need sizepolicy or maximumHeight at all, just to call something like updateScreenshotLabel() to reaffect the image scaled.  That's it, that's all.
+
+Things to test to verify that image resizing is ok : When clear/set, when quiz, when changing font.  Also the size of the TermDialog must stay the same.
+
+The actual code works almost perfectly except when we change the font.  But it's not clean.  I would like something cleaner.  Maybe I will have to have my own AutoWidthLabel which will adjust its sizeHint() (a little bit like the icon component in my book).
+
 Sometimes, when I delete a glossary, it reappears the next time I start toMOTko.  How to reproduce it?
-Fix the image resizing in Quiz (ImageBox + QuizFrame).
 Group label and textfield into a panel (comments) for better layout.
 Beware: When we do label->setMovie( &mov ), we must deallocate the movie.   The label doesn't take care of it as mentioned in the ref doc.
 In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  Will it bring data incompatibility with previous versions? I think so.  If there seems to be incompatibilities, it may also be caused by the TermScheduler's tempTermPool handling in operator>>.  Test that!
 In SearchDialog, enter key should provoke a search.
+Edit menu should not be there during quiz.  Or at least, Search option should be hidden. 
+Use InstallJammer for installer.
 Release 0.11.x for Windows
 
 There is a font sampler in the Qt's demo that could be useful.

@@ -12,10 +12,12 @@
 //#include <qlayout.h>
 #include <QLineEdit>
 #include <QMessageBox>
+#include <QMovie>
 //#include <qmultilineedit.h>
 //#include <qobjectlist.h>
 //#include <qpushbutton.h>
 //#include <qsizepolicy.h>
+#include <QResizeEvent>
 #include <QStackedWidget>
 //#include <qstringlist.h>
 #include <QTextEdit>
@@ -24,7 +26,6 @@
 //#include <qvgroupbox.h>
 #include <QWidget>
 #include "Controller.h"
-#include "ImageBox.h"
 //#include "ScrollableLineEdit.h"
 //#include "ScrollableMultiLineEdit.h"
 #include "Term.h"
@@ -60,6 +61,7 @@ protected:
     void showEvent( QShowEvent* showEvt );
     void hideEvent( QHideEvent* hideEvt );
     bool event( QEvent* evt );
+    void resizeEvent( QResizeEvent* evt );
 
 public slots:
 
@@ -67,6 +69,8 @@ public slots:
 
     //void scrollLeft();
     //void scrollRight();
+
+    void setImage( const QString& imagePath );
 
     void updateFonts();
     void retranslateUi();
@@ -89,8 +93,11 @@ private slots:
     void revealTestLangTerm();
     void revealComment();
     void revealImage();
+    bool containsValidImage() const;
 
     void editCurrentTerm();
+
+    void resizeImageBox();
 
 private:
 
@@ -166,8 +173,14 @@ private:
     QTextEdit*                  commentMultiLineEdit;//ScrollableMultiLineEdit*    commentMultiLineEdit;
     QPushButton*                commentButton;
 
-    ImageBox*                   imageBox;
+    QGroupBox*                  imageBox;
+    QVBoxLayout*                imageBoxLayout;
+    QStackedWidget*             imageStack;
     QPushButton*                imageButton;
+    QLabel*                     image;
+
+    QPixmap*                    pixmap;
+    QMovie*                     movie;
 
     bool                        buttonsHidden;
 

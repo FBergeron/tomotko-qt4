@@ -876,7 +876,6 @@ void VocabularyManagerFrame::addTerm() {
         if( vocabItem ) {
             Vocabulary* vocab = vocabItem->getVocabulary();
             TermDialog dialog( *vocab, controller, this );
-            dialog.show();
             int result = dialog.exec();
             if( result ) {
                 Term newTerm( dialog.getTerm() );

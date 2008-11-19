@@ -6,7 +6,7 @@
 #include "icons/maximize.xpm"
 
 QuizFrame::QuizFrame( Controller* controller, QWidget* parent /*= 0*/ )
-    : QWidget( parent ), controller( controller ) {
+    : QWidget( parent ), controller( controller ), pixmap( NULL ), movie( NULL ) {
     init();
 }
 
@@ -24,6 +24,7 @@ void QuizFrame::init() {
     topPanel->setLayout( topPanelLayout );
 
     topLeftPanel = new QWidget();
+    topLeftPanel->setSizePolicy( QSizePolicy( QSizePolicy::Preferred, QSizePolicy::Maximum ) ); 
     topLeftPanelLayout = new QVBoxLayout();
     topLeftPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     topLeftPanel->setLayout( topLeftPanelLayout );
@@ -92,6 +93,7 @@ void QuizFrame::init() {
     firstLangTermPanelLayout = new QHBoxLayout();
     firstLangTermPanel->setLayout( firstLangTermPanelLayout );
     firstLangPanelLayout->addWidget( firstLangTermPanel );
+
     firstLangTermLabel = new QLabel( tr( "Word/Expr." ) );
 
     firstLangTermStack = new QStackedWidget();
@@ -104,7 +106,7 @@ void QuizFrame::init() {
     connect( firstLangTermButton, SIGNAL( clicked() ), this, SLOT( revealFirstLangTerm() ) );  
     firstLangTermStack->addWidget( firstLangTermLineEdit );
     firstLangTermStack->addWidget( firstLangTermButton );
-    firstLangTermStack->setMinimumSize( firstLangTermButton->sizeHint() );
+    //firstLangTermStack->setMinimumSize( firstLangTermButton->sizeHint() );
 
     firstLangTermPanelLayout->addWidget( firstLangTermLabel, 0 );
     firstLangTermPanelLayout->addWidget( firstLangTermStack, 1 );
@@ -118,6 +120,7 @@ void QuizFrame::init() {
     testLangLabelsPanelLayout = new QVBoxLayout();
     testLangLabelsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     testLangLabelsPanel->setLayout( testLangLabelsPanelLayout );
+
     testLangTermAltLabel = new QLabel( tr( "Alt./Phon." ) );
     testLangLabelsPanelLayout->addWidget( testLangTermAltLabel );
     testLangTermLabel = new QLabel( tr( "Word/Expr." ) );
@@ -138,7 +141,7 @@ void QuizFrame::init() {
     connect( testLangTermAltButton, SIGNAL( clicked() ), this, SLOT( revealAltTerm() ) );  
     testLangTermAltStack->addWidget( testLangTermAltLineEdit );
     testLangTermAltStack->addWidget( testLangTermAltButton );
-    testLangTermAltStack->setMinimumSize( testLangTermAltButton->sizeHint() );
+    //testLangTermAltStack->setMinimumSize( testLangTermAltButton->sizeHint() );
 
     testLangTermStack = new QStackedWidget();
     testLangFieldsPanelLayout->addWidget( testLangTermStack );
@@ -152,7 +155,7 @@ void QuizFrame::init() {
 
     testLangTermStack->addWidget( testLangTermLineEdit );
     testLangTermStack->addWidget( testLangTermButton );
-    testLangTermStack->setMinimumSize( testLangTermButton->sizeHint() );
+    //testLangTermStack->setMinimumSize( testLangTermButton->sizeHint() );
 
     testLangTopPanelLayout->addWidget( testLangLabelsPanel );
     testLangTopPanelLayout->addWidget( testLangFieldsPanel, 1 );
@@ -196,10 +199,20 @@ void QuizFrame::init() {
     commentStack->addWidget( commentMultiLineEdit );
     commentStack->addWidget( commentButton );
 
-    imageBox = new ImageBox( tr( "Image" ), tr( "???" ), tr( "Reveal" ) );
-    topPanelLayout->addWidget( imageBox );
+    imageBox = new QGroupBox( tr( "Image" ) );
+    imageBoxLayout = new QVBoxLayout();
+    imageBox->setLayout( imageBoxLayout );
 
-    imageBox->setMaximumHeight( topLeftPanel->sizeHint().height() );
+    imageStack = new QStackedWidget();
+    imageBoxLayout->addWidget( imageStack );
+    imageButton = new QPushButton( tr( "???" ) );
+    imageButton->setToolTip( tr( "Reveal" ) );
+    connect( imageButton, SIGNAL( clicked() ), this, SLOT( revealImage() ) );
+    image = new QLabel();
+    imageStack->addWidget( image );
+    imageStack->addWidget( imageButton );
+
+    topPanelLayout->addWidget( imageBox );
 
     mainLayout = new QVBoxLayout( this );
     mainLayout->addWidget( topPanel );
@@ -214,6 +227,14 @@ void QuizFrame::init() {
 }
 
 QuizFrame::~QuizFrame() {
+    if( pixmap ) {
+        delete( pixmap );
+        pixmap = NULL;
+    }
+    if( movie ) {
+        delete( movie );
+        movie = NULL;
+    }
 }
 
 void QuizFrame::startQuiz() {
@@ -284,8 +305,60 @@ void QuizFrame::setTerm( const Term& term ) {
     if( vocab ) {
         QString absPath = controller->getResolvedImagePath( term.getImagePath(), *vocab );
         cerr << "absPath for Quiz=" << qPrintable( absPath ) << endl;
-        imageBox->setImage( absPath );
+        setImage( absPath ); 
+             
+        
     }
+}
+
+bool QuizFrame::containsValidImage() const {
+    return( pixmap );
+}
+
+void QuizFrame::setImage( const QString& path ) {
+    if( path.isNull() ) {
+        if( pixmap ) {
+            delete( pixmap );
+            pixmap = NULL;
+        }
+        if( movie ) {
+            delete( movie );
+            movie = NULL;
+        }
+        image->clear();
+        imageBox->setVisible( false );
+    }
+    else {
+        QFileInfo info( path );
+        if( info.exists() ) {
+            QByteArray imageFormat = QImageReader::imageFormat( path );
+            if( imageFormat == "gif" || imageFormat == "png" ) {
+                // Even for animated gif, we create a pixmap.  
+                // It will be used to determine the size of the movie.
+                pixmap = new QPixmap( path );
+                if( imageFormat == "gif" )
+                    movie = new QMovie( path );
+                resizeImageBox();
+                imageBox->setVisible( true );
+                //if( movie )
+                //    movie->start();
+            }
+        }
+    }
+}
+
+void QuizFrame::resizeImageBox() {
+    imageBox->resize( imageBox->width(), topLeftPanel->height() );
+    if( movie ) {
+        // Use the pixmap to compute the scaled size.
+        int proportionalWidth = image->height() * pixmap->width() / pixmap->height();
+        movie->setScaledSize( QSize( proportionalWidth, image->height() ) );
+        image->setMovie( movie );
+        movie->start();
+    }
+    else if( pixmap )
+        image->setPixmap( pixmap->scaledToHeight( image->height(), Qt::SmoothTransformation ) ); 
+    imageStack->updateGeometry(); // To resize the imageButton.
 }
 
 void QuizFrame::concludeQuiz() {
@@ -364,6 +437,11 @@ void QuizFrame::hideEvent( QHideEvent* hideEvt ) {
     emit( quizHidden() );
 }
 
+void QuizFrame::resizeEvent( QResizeEvent* evt ) {
+    QWidget::resizeEvent( evt );
+    resizeImageBox();
+}
+
 // Reimplemented to prevent resizing bug.
 bool QuizFrame::event( QEvent* evt ) {
     ////cout << "event evt=" << evt->type() << " h=" << testLangPanel->height() << " sh->h=" << testLangPanel->sizeHint().height() << endl;
@@ -436,7 +514,7 @@ void QuizFrame::reveal() {
                         break;
 
                     case Sequence::IMAGE :            
-                        if( imageBox->containsValidImage() && !isImageRevealed() ) {
+                        if( containsValidImage() && !isImageRevealed() ) {
                             revealImage(); 
                             hasShownSomething = true;
                         }
@@ -543,7 +621,8 @@ void QuizFrame::updateFonts() {
     //testLangFieldsPanel->updateGeometry();
     //testLangFieldsPanel->layout()->invalidate();
 
-    //updateGeometry();
+    update();
+    updateGeometry();
     //layout()->invalidate();
 }
 
@@ -564,7 +643,8 @@ void QuizFrame::hideAnswers() {
     testLangTermAltStack->setCurrentIndex( 1 );
     testLangTermStack->setCurrentIndex( 1 );
     commentStack->setCurrentIndex( 1 );
-    imageBox->hideImage();
+    //imageBox->hideImage();
+    imageStack->setCurrentIndex( 1 );
 }
 
 void QuizFrame::setButtonsEnabled( bool isEnabled ) {
@@ -591,7 +671,10 @@ void QuizFrame::revealComment() {
 }
 
 void QuizFrame::revealImage() {
-    imageBox->revealImage();
+    //imageBox->revealImage();
+    imageStack->setCurrentIndex( 0 );
+    if( movie )
+        movie->start();
 }
 
 void QuizFrame::toggleMaximizeComment( bool isOn ) {
@@ -618,7 +701,8 @@ bool QuizFrame::isCommentRevealed() const {
 }
 
 bool QuizFrame::isImageRevealed() const {
-    return( imageBox->isImageRevealed() );
+    //return( imageBox->isImageRevealed() );
+    return( imageStack->currentWidget() == imageStack->widget( 0 ) );
 }
 
 void QuizFrame::maximizeCommentField() {
@@ -640,7 +724,7 @@ void QuizFrame::restoreCommentField() {
     firstLangPanel->show();
     testLangPanel->show();
 
-    if( imageBox->containsValidImage() )
+    if( containsValidImage() )
         imageBox->show();
 
     if( !buttonsHidden )
