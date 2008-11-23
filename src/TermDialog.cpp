@@ -2,15 +2,14 @@
 #include "icons/editcut.xpm"
 #include "icons/editcopy.xpm"
 #include "icons/editpaste.xpm"
-#include "icons/void.xpm"
 
 TermDialog::TermDialog( Vocabulary& vocab, Controller* controller, QWidget* parent ) 
-    : QDialog( parent ), vocab( vocab ), controller( controller ), editedTerm( new Term( vocab.getMaxTermId() + 1, vocab.getId() ) ) {
+    : QDialog( parent ), vocab( vocab ), controller( controller ), editedTerm( new Term( vocab.getMaxTermId() + 1, vocab.getId() ) ), pixmap( NULL ), movie( NULL ) {
     init();
 }
 
 TermDialog::TermDialog( Vocabulary& vocab, Controller* controller, QWidget* parent, const Term& term ) 
-    : QDialog( parent ), vocab( vocab ), controller( controller ), editedTerm( new Term( term ) ) {
+    : QDialog( parent ), vocab( vocab ), controller( controller ), editedTerm( new Term( term ) ), pixmap( NULL ), movie( NULL ) {
     init();
 }
 
@@ -49,6 +48,7 @@ void TermDialog::init() {
     topPanel->setLayout( topPanelLayout );
 
     topLeftPanel = new QWidget();
+    topLeftPanel->setSizePolicy( QSizePolicy( QSizePolicy::Preferred, QSizePolicy::Maximum ) ); 
     topLeftPanelLayout = new QVBoxLayout();
     topLeftPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     topLeftPanel->setLayout( topLeftPanelLayout );
@@ -120,27 +120,11 @@ void TermDialog::init() {
 
     imageBox = new QGroupBox( tr( "Image" ) );
     imageBoxLayout = new QVBoxLayout();
-    imageBoxLayout->setContentsMargins( 0, 0, 0, 0 );
     imageBox->setLayout( imageBoxLayout );
     topPanelLayout->addWidget( imageBox );
 
-    imagePanel = new QWidget();
-    imagePanelLayout = new QVBoxLayout();
-    imagePanel->setLayout( imagePanelLayout );
-    imageBoxLayout->addWidget( imagePanel );
-    imageWrapper = new QWidget();
-    imageWrapperLayout = new QHBoxLayout();
-    imageWrapperLayout->setContentsMargins( 0, 0, 0, 0 );
-    imageWrapper->setLayout( imageWrapperLayout );
-
     image = new QLabel();
-    imageWrapperLayout->addStretch();
-    imageWrapperLayout->addWidget( image );
-    imageWrapperLayout->addStretch();
-    image->setSizePolicy( QSizePolicy( QSizePolicy::Preferred, QSizePolicy::Expanding ) );
     image->setAlignment( Qt::AlignCenter );
-
-    imageBox->setMaximumHeight( topLeftPanel->sizeHint().height() );
 
     imageButtonsPanel = new QWidget();
     imageButtonsPanelLayout = new QHBoxLayout();
@@ -154,8 +138,9 @@ void TermDialog::init() {
     imageButtonsPanelLayout->addWidget( clearImageButton );
     clearImageButton->setToolTip( tr( "clearImageTooltip" ) );
     connect( clearImageButton, SIGNAL( clicked() ), this, SLOT( clearImage() ) );
-    imagePanelLayout->addWidget( imageWrapper, 1 );
-    imagePanelLayout->addWidget( imageButtonsPanel );
+
+    imageBoxLayout->addWidget( image, 1 );
+    imageBoxLayout->addWidget( imageButtonsPanel );
 
     bottomButtonsPanel = new QWidget();
     bottomButtonsPanelLayout = new QHBoxLayout();
@@ -183,11 +168,14 @@ void TermDialog::init() {
 }
 
 TermDialog::~TermDialog() {
-}
-
-void TermDialog::show() {
-    QDialog::show();
-    resizeImage();
+    if( pixmap ) {
+        delete( pixmap );
+        pixmap = NULL;
+    }
+    if( movie ) {
+        delete( movie );
+        movie = NULL;
+    }
 }
 
 void TermDialog::updateModel() {
@@ -211,7 +199,6 @@ void TermDialog::updateModel() {
         "/v-" + QString::number( vocab.getId() ) + "/";
     QString imagePath = tempImagePath.left( vocabLocation.length() ) == vocabLocation ? 
             tempImagePath.right( tempImagePath.length() - vocabLocation.length() ) : tempImagePath;
-    //cerr << "imagePath=" << qPrintable( imagePath ) << endl;
     editedTerm->setImagePath( imagePath );
 }
 
@@ -251,50 +238,64 @@ void TermDialog::setImage() {
         dir = QFileInfo( tempImagePath ).dir();
 
     QString imageFile = QFileDialog::getOpenFileName( this, tr( "SetImage..." ), dir.path(), tr( "Images (*.png *.gif)" ) );
-    if( !imageFile.isEmpty() )
+    if( !imageFile.isEmpty() ) {
         initImage( imageFile );
+        resizeImageBox();
+    }
 }
 
 void TermDialog::clearImage() {
-    image->setPixmap( ZPIXMAP( void_xpm ) );
+    image->clear();
     tempImagePath = QString::null;
-    imageFormat = QByteArray();
+    if( pixmap ) {
+        delete( pixmap );
+        pixmap = NULL;
+    }
+    if( movie ) {
+        delete( movie );
+        movie = NULL;
+    }
 }
 
-void TermDialog::initImage( const QString& imagePath ) {
+void TermDialog::initImage( const QString& path ) {
     clearImage();
-    if( !imagePath.isNull() ) {
-        QFileInfo info( imagePath );
+    if( !path.isNull() ) {
+        QFileInfo info( path );
         if( info.exists() ) {
-            imageFormat = QImageReader::imageFormat( imagePath );
+            QByteArray imageFormat = QImageReader::imageFormat( path );
             if( imageFormat == "gif" || imageFormat == "png" ) {
-                tempImagePath = imagePath;
-                if( imageFormat == "gif" ) {
-                    //QMovie* movie = new QMovie( imagePath );
-                    QMovie* movie = new QMovie( imagePath );
-                    image->setMovie( movie );
-                    movie->setScaledSize( image->size() );
-                    movie->start();
-                }
-                else if( imageFormat == "png" ) {
-                    QPixmap pixmap( imagePath );
-                    image->setScaledContents( true );
-                    image->setPixmap( pixmap );
-                    resizeImage();
-                }
+                tempImagePath = path;
+                // Even for animated gif, we create a pixmap.  
+                // It will be used to determine the size of the movie.
+                pixmap = new QPixmap( path );
+                if( imageFormat == "gif" )
+                    movie = new QMovie( path );
             }
         }
     }
 }
 
-void TermDialog::resizeImage() const {
-    if( !tempImagePath.isNull() ) {
-        if( imageFormat == "gif" ) {
-            // Nothing to do for this format.  The default behavior works fine.
+void TermDialog::resizeEvent( QResizeEvent* evt ) {
+    resizeImageBox();
+}
+
+void TermDialog::resizeImageBox() const {
+    imageBox->setMaximumHeight( topLeftPanel->sizeHint().height() );
+    imageBoxLayout->activate();
+    if( movie || pixmap ) {
+        int left, top, right, bottom;
+        imageBoxLayout->getContentsMargins( &left, &top, &right, &bottom );
+        int imageHeight = imageBoxLayout->contentsRect().height() - top - bottom - imageButtonsPanel->sizeHint().height();
+        if( movie ) {
+            // Use the pixmap to compute the scaled size.
+            int proportionalWidth = imageHeight * pixmap->width() / pixmap->height(); 
+            movie->setScaledSize( QSize( proportionalWidth, imageHeight ) ); 
+            image->setMovie( movie );
+            movie->start();
         }
-        else if( imageFormat == "png" ) {
-            int proportionalWidth = image->height() * image->pixmap()->width() / image->pixmap()->height();
-            image->setMaximumWidth( proportionalWidth );
+        else if( pixmap ) {
+            QPixmap scaledPixmap( pixmap->scaledToHeight( imageHeight, Qt::SmoothTransformation ) );
+            image->setPixmap( scaledPixmap );
         }
     }
 }
@@ -302,6 +303,10 @@ void TermDialog::resizeImage() const {
 const Term& TermDialog::getTerm() {
     updateModel();
     return( *editedTerm );
+}
+
+QSize TermDialog::sizeHint() const {
+    return( QSize( 640, 480 ) );
 }
 
 void TermDialog::updateUi() {
@@ -326,7 +331,6 @@ void TermDialog::updateUi() {
         }
 
         QString absPath = controller->getResolvedImagePath( editedTerm->getImagePath(), vocab );
-        //cerr << "absPath=" << qPrintable( absPath ) << endl;
         initImage( absPath );
     }
 }

@@ -912,7 +912,6 @@ void VocabularyManagerFrame::editTerm() {
             TermListItem* termItem = (TermListItem*)termList->topLevelItem( i );
             if( termItem->isSelected() ) {
                 TermDialog dialog( *vocab, controller, this, *termItem->getTerm() );
-                dialog.show();
                 int result = dialog.exec();
                 if( result ) { 
                     Term newTerm = dialog.getTerm();

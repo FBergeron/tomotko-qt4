@@ -5,6 +5,7 @@
 #include <QApplication>
 #include <QDialog>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QGroupBox>
 #include <QImageReader>
 #include <QLabel>
@@ -15,9 +16,9 @@
 #include <QMovie>
 #include <QPixmap>
 #include <QPushButton>
+#include <QResizeEvent>
 #include <QString>
 #include <QTextEdit>
-//#include <qtooltip.h>
 #include <QVBoxLayout>
 #include <QWidget>
 #include "Controller.h"
@@ -39,10 +40,11 @@ public:
     ~TermDialog(); 
 
     const Term& getTerm();
+    virtual QSize sizeHint() const;
 
-public slots:
+protected:
 
-    void show();
+    void resizeEvent( QResizeEvent* evt );
 
 private slots:
     
@@ -59,8 +61,8 @@ private:
     void updateUi();
     void updateModel();
 
-    void initImage( const QString& imagePath );
-    void resizeImage() const;
+    void initImage( const QString& path );
+    void resizeImageBox() const;
 
     QMenuBar*               menuBar;
 
@@ -99,10 +101,6 @@ private:
 
     QGroupBox*              imageBox;
     QVBoxLayout*            imageBoxLayout;
-    QWidget*                imagePanel;
-    QVBoxLayout*            imagePanelLayout;
-    QWidget*                imageWrapper;
-    QHBoxLayout*            imageWrapperLayout;
     QLabel*                 image;
     QWidget*                imageButtonsPanel;
     QHBoxLayout*            imageButtonsPanelLayout;
@@ -123,7 +121,9 @@ private:
     QAction*                pasteAction;
 
     QString                 tempImagePath; // Contains absolute path.
-    QByteArray              imageFormat;
+    QPixmap*                pixmap;
+    QMovie*                 movie;
+
 
 };
 

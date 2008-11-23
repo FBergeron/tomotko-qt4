@@ -204,7 +204,6 @@ void SearchDialog::editResultTerm() {
         if( term ) {
             Vocabulary* vocab = controller->getVocabTree()->getVocabulary( term->getVocabId() );
             TermDialog dialog( *vocab, controller, this, *term );
-            dialog.show();
             int result = dialog.exec();
             if( result ) { 
                 Term newTerm = dialog.getTerm();

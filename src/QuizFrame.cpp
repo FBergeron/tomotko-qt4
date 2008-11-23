@@ -253,26 +253,26 @@ void QuizFrame::startQuiz() {
 }
 
 void QuizFrame::restartQuiz() {
-//    setButtonsEnabled( false );
-//    controller->restartQuiz();
-//    controller->prepareQuiz();
-//    updateLanguageLabels();
-//    updateFonts();
-//
-//    if( !controller->isQuizInProgress() ) {
-//        QMessageBox::warning( this, QObject::tr( "Information" ), tr( "NoTermsMarkedForStudy" ) );
-//        return;
-//    }
-//
-//    askNextTerm();
+    setButtonsEnabled( false );
+    controller->restartQuiz();
+    controller->prepareQuiz();
+    updateLanguageLabels();
+    updateFonts();
+
+    if( !controller->isQuizInProgress() ) {
+        QMessageBox::warning( this, QObject::tr( "Information" ), tr( "NoTermsMarkedForStudy" ) );
+        return;
+    }
+
+    askNextTerm();
 }
 
 void QuizFrame::resumeQuiz() {
-//    controller->resumeQuiz();
-//    controller->prepareQuiz();
-//    updateLanguageLabels();
-//    updateFonts();
-//    askCurrentTerm();
+    controller->resumeQuiz();
+    controller->prepareQuiz();
+    updateLanguageLabels();
+    updateFonts();
+    askCurrentTerm();
 }
 
 void QuizFrame::setTerm( const Term& term ) {
@@ -304,10 +304,7 @@ void QuizFrame::setTerm( const Term& term ) {
     Vocabulary* vocab = vocabTree->getVocabulary( term.getVocabId() );
     if( vocab ) {
         QString absPath = controller->getResolvedImagePath( term.getImagePath(), *vocab );
-        cerr << "absPath for Quiz=" << qPrintable( absPath ) << endl;
         setImage( absPath ); 
-             
-        
     }
 }
 
@@ -340,8 +337,6 @@ void QuizFrame::setImage( const QString& path ) {
                     movie = new QMovie( path );
                 resizeImageBox();
                 imageBox->setVisible( true );
-                //if( movie )
-                //    movie->start();
             }
         }
     }
@@ -356,8 +351,10 @@ void QuizFrame::resizeImageBox() {
         image->setMovie( movie );
         movie->start();
     }
-    else if( pixmap )
-        image->setPixmap( pixmap->scaledToHeight( image->height(), Qt::SmoothTransformation ) ); 
+    else if( pixmap ) {
+        QPixmap scaledPixmap( pixmap->scaledToHeight( image->height(), Qt::SmoothTransformation ) );
+        image->setPixmap( scaledPixmap  ); 
+    }
     imageStack->updateGeometry(); // To resize the imageButton.
 }
 
@@ -748,7 +745,6 @@ void QuizFrame::editCurrentTerm() {
         }
 
         TermDialog dialog( *vocab, controller, this, *term );
-        dialog.show();
         int result = dialog.exec();
         if( result ) { 
             QString firstLang( controller->getQuizFirstLanguage() );

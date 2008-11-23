@@ -12,7 +12,6 @@ QT          +=  xml
 RESOURCES   =   toMOTko.qrc
 
 HEADERS     +=  src/Base.h \
-                src/TermImage.h \
                 src/Util.h \
                 src/BilingualKey.h \
                 src/DigraphLineEdit.h \
@@ -62,7 +61,6 @@ HEADERS     +=  src/Base.h \
                 src/zlib.h
 
 SOURCES     +=  src/Util.cpp \ 
-                src/TermImage.cpp \
                 src/BilingualKey.cpp \
                 src/DigraphLineEdit.cpp \
                 src/HelpBrowser.cpp \
