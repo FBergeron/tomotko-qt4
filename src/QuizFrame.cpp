@@ -97,7 +97,7 @@ void QuizFrame::init() {
     firstLangTermLabel = new QLabel( tr( "Word/Expr." ) );
 
     firstLangTermStack = new QStackedWidget();
-    firstLangTermLineEdit = new QLineEdit();//firstLangTermLineEdit = new ScrollableLineEdit( firstLangTermStack, "FirstLangTermLineEdit" );
+    firstLangTermLineEdit = new ScrollableLineEdit();
     firstLangTermLineEdit->setReadOnly( true );
     firstLangTermLineEdit->installEventFilter( this );
     firstLangTermButton = new QPushButton( tr( "???" ) );
@@ -132,7 +132,7 @@ void QuizFrame::init() {
     testLangFieldsPanel->setLayout( testLangFieldsPanelLayout );
     testLangTermAltStack = new QStackedWidget();
     testLangFieldsPanelLayout->addWidget( testLangTermAltStack );
-    testLangTermAltLineEdit = new QLineEdit();//ScrollableLineEdit( testLangTermAltStack, "TestLangTermAltLineEdit" );
+    testLangTermAltLineEdit = new ScrollableLineEdit();
     testLangTermAltLineEdit->setReadOnly( true );
     testLangTermAltLineEdit->installEventFilter( this );
     testLangTermAltButton = new QPushButton( tr( "???" ) );
@@ -145,7 +145,7 @@ void QuizFrame::init() {
 
     testLangTermStack = new QStackedWidget();
     testLangFieldsPanelLayout->addWidget( testLangTermStack );
-    testLangTermLineEdit = new QLineEdit();//testLangTermLineEdit = new ScrollableLineEdit( testLangTermStack, "TestLangTermLineEdit" );
+    testLangTermLineEdit = new ScrollableLineEdit();
     testLangTermLineEdit->setReadOnly( true );
     testLangTermLineEdit->installEventFilter( this );
     testLangTermButton = new QPushButton( tr( "???" ) );
@@ -187,7 +187,7 @@ void QuizFrame::init() {
     commentBoxLayout->addWidget( commentStack );
     //commentStack->setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Expanding ) );
 
-    commentMultiLineEdit = new QTextEdit();//ScrollableMultiLineEdit( commentStack, "TestLangCommentMultiLineEdit" );
+    commentMultiLineEdit = new ScrollableMultiLineEdit();
     //commentMultiLineEdit->setWrapPolicy( QMultiLineEdit::Anywhere );
     //commentMultiLineEdit->setWordWrap( QMultiLineEdit::WidgetWidth );
     commentMultiLineEdit->setReadOnly( true );
@@ -387,6 +387,7 @@ Term* QuizFrame::askNextTerm() {
         concludeQuiz();
         return( NULL );
     }
+    cerr << "hasFocus=" << hasFocus() << endl;
 }
 
 void QuizFrame::askTerm( const Term& term ) {
@@ -395,6 +396,7 @@ void QuizFrame::askTerm( const Term& term ) {
     setTerm( term );
     reveal();
     setButtonsEnabled( true );
+    cerr << "hasFocus=" << hasFocus() << endl;
 }
 
 void QuizFrame::updateLanguageLabels() {
@@ -440,7 +442,7 @@ void QuizFrame::resizeEvent( QResizeEvent* evt ) {
 }
 
 // Reimplemented to prevent resizing bug.
-bool QuizFrame::event( QEvent* evt ) {
+//bool QuizFrame::event( QEvent* evt ) {
     ////cout << "event evt=" << evt->type() << " h=" << testLangPanel->height() << " sh->h=" << testLangPanel->sizeHint().height() << endl;
     //if( evt->type() == QEvent::LayoutHint ) {
     //    if( firstLangPanel->height() != firstLangPanel->sizeHint().height() )
@@ -448,8 +450,8 @@ bool QuizFrame::event( QEvent* evt ) {
     //    if( testLangPanel->height() != testLangPanel->sizeHint().height() )
     //        testLangPanel->setFixedHeight( testLangPanel->sizeHint().height() );
     //}
-    return( QWidget::event( evt ) );
-}
+//    return( QWidget::event( evt ) );
+//}
 
 void QuizFrame::rightAnswer() {
     if( controller->isQuizInProgress() ) {
@@ -544,45 +546,45 @@ void QuizFrame::revealAll() {
     //QApplication::flushX();
 }
 
-//bool QuizFrame::eventFilter( QObject*, QEvent* evt ) {
-//    if( evt->type() == QEvent::KeyPress ) {
-//        QKeyEvent* keyEvt = (QKeyEvent*)evt;
-//        switch( keyEvt->key() ) {
-//
-//            case Qt::Key_Up : 
-//                if( keyEvt->state() == Qt::ControlButton )
-//                    commentMultiLineEdit->scrollPageUp();
-//                else
-//                    commentMultiLineEdit->scrollUp();
-//                return( true );
-//
-//            case Qt::Key_Down : 
-//                if( keyEvt->state() == Qt::ControlButton )
-//                    commentMultiLineEdit->scrollPageDown();
-//                else
-//                    commentMultiLineEdit->scrollDown();
-//                return( true );
-//
-//            case Qt::Key_Left :  scrollLeft(); return( true );
-//
-//            case Qt::Key_Right : scrollRight(); return( true );
-//
-//        }
-//    }
-//    return( false );
-//}
-//
-//void QuizFrame::scrollLeft() {
-//    firstLangTermLineEdit->scrollLeft();
-//    testLangTermLineEdit->scrollLeft();
-//    testLangTermAltLineEdit->scrollLeft();
-//}
-//
-//void QuizFrame::scrollRight() {
-//    firstLangTermLineEdit->scrollRight();
-//    testLangTermLineEdit->scrollRight();
-//    testLangTermAltLineEdit->scrollRight();
-//}
+bool QuizFrame::eventFilter( QObject*, QEvent* evt ) {
+    if( evt->type() == QEvent::KeyPress ) {
+        QKeyEvent* keyEvt = (QKeyEvent*)evt;
+        switch( keyEvt->key() ) {
+
+            case Qt::Key_Up : 
+                if( keyEvt->modifiers() == Qt::ControlModifier )
+                    commentMultiLineEdit->scrollPageUp();
+                else
+                    commentMultiLineEdit->scrollUp();
+                return( true );
+
+            case Qt::Key_Down : 
+                if( keyEvt->modifiers() == Qt::ControlModifier )
+                    commentMultiLineEdit->scrollPageDown();
+                else
+                    commentMultiLineEdit->scrollDown();
+                return( true );
+
+            case Qt::Key_Left :  scrollLeft(); return( true );
+
+            case Qt::Key_Right : scrollRight(); return( true );
+
+        }
+    }
+    return( false );
+}
+
+void QuizFrame::scrollLeft() {
+    firstLangTermLineEdit->scrollLeft();
+    testLangTermLineEdit->scrollLeft();
+    testLangTermAltLineEdit->scrollLeft();
+}
+
+void QuizFrame::scrollRight() {
+    firstLangTermLineEdit->scrollRight();
+    testLangTermLineEdit->scrollRight();
+    testLangTermAltLineEdit->scrollRight();
+}
 
 void QuizFrame::updateFonts() {
     //QFont largeFont( controller->getPreferences().getLargeFont() );

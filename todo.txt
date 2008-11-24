@@ -6,10 +6,12 @@ Beware: When we do label->setMovie( &mov ), we must deallocate the movie.   The 
 In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  Will it bring data incompatibility with previous versions? I think so.  If there seems to be incompatibilities, it may also be caused by the TermScheduler's tempTermPool handling in operator>>.  Test that!
 In SearchDialog, enter key should provoke a search.
 Edit menu should not be there during quiz.  Or at least, Search option should be hidden. 
-Use InstallJammer for installer.
+Use InstallJammer for installer:  I made a project in etc/InstallJammer and build an installer.  Try it on a test machine.
+The columns of the prop tables don't resize properly.
 Release 0.11.x for Windows
-
-There is a font sampler in the Qt's demo that could be useful.
+The QuizFrame doesn't react to right/left/up/down keys.  Probably a focus-related problem.  Also, if we click maximize button, same prob.  Afterward, the focus is lost and the QuizFrame will stop responding to arrow keys.
+In Scrollable.*LineEdit, scrollUp() and scrollDown() should be smarter : for example, for scrollDown(), the cursor should go at the last visible line and go down one line.  Otherwise, it may feels like it's doing nothing. 
+There is a font sampler in the Qt's demo that could be useful and a QFontDialog.
 When the PrefDialog is very large, the revealing options section is resized.  Is it possible to make it keep its size compact.
 
 When I click on a folder, it expands automatically.  That should not be the case.

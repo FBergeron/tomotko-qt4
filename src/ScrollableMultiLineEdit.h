@@ -1,20 +1,21 @@
 #ifndef SCROLLABLE_MULTILINEEDIT_H
 #define SCROLLABLE_MULTILINEEDIT_H
 
-#include <iostream.h>
-#include <qmultilineedit.h>
+#include <iostream>
+#include <QTextEdit>
 
-class ScrollableMultiLineEdit : public QMultiLineEdit {
+using namespace std;
+
+class ScrollableMultiLineEdit : public QTextEdit {
    
    Q_OBJECT
 
 public:
 
-    ScrollableMultiLineEdit( QWidget *parent, const char *name=0 );
+    ScrollableMultiLineEdit( QWidget* parent = 0 );
    ~ScrollableMultiLineEdit();
 
 public slots:
-
 
     void scrollUp();
     void scrollDown();

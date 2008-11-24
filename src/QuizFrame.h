@@ -13,7 +13,6 @@
 #include <QLineEdit>
 #include <QMessageBox>
 #include <QMovie>
-//#include <qmultilineedit.h>
 //#include <qobjectlist.h>
 //#include <qpushbutton.h>
 //#include <qsizepolicy.h>
@@ -26,8 +25,8 @@
 //#include <qvgroupbox.h>
 #include <QWidget>
 #include "Controller.h"
-//#include "ScrollableLineEdit.h"
-//#include "ScrollableMultiLineEdit.h"
+#include "ScrollableLineEdit.h"
+#include "ScrollableMultiLineEdit.h"
 #include "Term.h"
 #include "TermDialog.h"
 #include "Translation.h"
@@ -60,15 +59,15 @@ protected:
 
     void showEvent( QShowEvent* showEvt );
     void hideEvent( QHideEvent* hideEvt );
-    bool event( QEvent* evt );
+    //bool event( QEvent* evt );
     void resizeEvent( QResizeEvent* evt );
 
 public slots:
 
-    //virtual bool eventFilter( QObject* obj, QEvent* evt );
+    virtual bool eventFilter( QObject* obj, QEvent* evt );
 
-    //void scrollLeft();
-    //void scrollRight();
+    void scrollLeft();
+    void scrollRight();
 
     void setImage( const QString& imagePath );
 
@@ -143,7 +142,7 @@ private:
     
     QLabel*                     firstLangTermLabel;
     QStackedWidget*             firstLangTermStack;
-    QLineEdit*                  firstLangTermLineEdit;//ScrollableLineEdit*         firstLangTermLineEdit;
+    ScrollableLineEdit*         firstLangTermLineEdit;
     QPushButton*                firstLangTermButton;
 
     QWidget*                    testLangTopPanel;
@@ -155,12 +154,12 @@ private:
     
     QLabel*                     testLangTermLabel;
     QStackedWidget*             testLangTermStack;
-    QLineEdit*                  testLangTermLineEdit;//ScrollableLineEdit*         testLangTermLineEdit;
+    ScrollableLineEdit*         testLangTermLineEdit;
     QPushButton*                testLangTermButton;
 
     QLabel*                     testLangTermAltLabel;
     QStackedWidget*             testLangTermAltStack;
-    QLineEdit*                  testLangTermAltLineEdit;//ScrollableLineEdit*         testLangTermAltLineEdit;
+    ScrollableLineEdit*         testLangTermAltLineEdit;
     QPushButton*                testLangTermAltButton;
    
     QWidget*                    commentBox;
@@ -170,7 +169,7 @@ private:
     QLabel*                     commentLabel;
     QPushButton*                maximizeCommentButton;
     QStackedWidget*             commentStack;
-    QTextEdit*                  commentMultiLineEdit;//ScrollableMultiLineEdit*    commentMultiLineEdit;
+    ScrollableMultiLineEdit*    commentMultiLineEdit;
     QPushButton*                commentButton;
 
     QGroupBox*                  imageBox;

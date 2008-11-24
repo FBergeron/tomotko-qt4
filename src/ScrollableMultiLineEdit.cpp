@@ -1,24 +1,24 @@
 #include "ScrollableMultiLineEdit.h"
 
-ScrollableMultiLineEdit::ScrollableMultiLineEdit( QWidget *parent, const char *name )
-    : QMultiLineEdit( parent, name ) {
+ScrollableMultiLineEdit::ScrollableMultiLineEdit( QWidget* parent /* = 0 */ )
+    : QTextEdit( parent ) {
 }
 
 ScrollableMultiLineEdit::~ScrollableMultiLineEdit() {
 }
 
 void ScrollableMultiLineEdit::scrollUp() {
-    setCursorPosition( QMAX( topCell() - 1, 0 ), 0 );
+    moveCursor( QTextCursor::Up );
 }
 
 void ScrollableMultiLineEdit::scrollDown() {
-    setCursorPosition( QMIN( lastRowVisible() + 1, numLines() ), 0 );
+    moveCursor( QTextCursor::Down );
 }
 
 void ScrollableMultiLineEdit::scrollPageUp() {
-    pageUp();
+    moveCursor( QTextCursor::PreviousBlock );
 }
 
 void ScrollableMultiLineEdit::scrollPageDown() {
-    pageDown();
+    moveCursor( QTextCursor::NextBlock );
 }
