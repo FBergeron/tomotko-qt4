@@ -8,7 +8,6 @@ DigraphMultiLineEdit::~DigraphMultiLineEdit() {
 }
 
 void DigraphMultiLineEdit::keyPressEvent( QKeyEvent* event ) {
-    //cout << "txt='" << qPrintable( event->text() ) << "'; k=" << event->key() << " count=" << event->count() << " modifiers=" << event->modifiers() << endl;
     if( digraphEnabled ) {
         // We consider only printable keys.  Control keys are processed normally.
         // I'm not sure if this test covers all the cases though.

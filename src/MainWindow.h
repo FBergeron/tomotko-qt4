@@ -118,8 +118,10 @@ private:
     QToolBar*               toolBar;
 
     QMenu*                  actionsMenu;
+    QAction*                helpMenuAction;
     QMenu*                  helpMenu;
 
+    QAction*                editionMenuAction;
     QAction*                copyAction;
     QAction*                cutAction;
     QAction*                pasteAction;

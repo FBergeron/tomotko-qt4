@@ -1,11 +1,12 @@
 ToDo
 ----
+Bug: In DigraphEdit objects, if we do e backspace ', a é accent appears.  However, if we then press right arrow, another é appears...  
+Bug: In DigraphMultiEdit object, for the word: this is a very long..., if I try to input a digraph after the question mark of the line : How to reproduce, it doesn't work.
 Sometimes, when I delete a glossary, it reappears the next time I start toMOTko.  How to reproduce it?
 Group label and textfield into a panel (comments) for better layout.
 Beware: When we do label->setMovie( &mov ), we must deallocate the movie.   The label doesn't take care of it as mentioned in the ref doc.
 In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  Will it bring data incompatibility with previous versions? I think so.  If there seems to be incompatibilities, it may also be caused by the TermScheduler's tempTermPool handling in operator>>.  Test that!
 In SearchDialog, enter key should provoke a search.
-Edit menu should not be there during quiz.  Or at least, Search option should be hidden. 
 Use InstallJammer for installer:  I made a project in etc/InstallJammer and build an installer.  Try it on a test machine.
 The columns of the prop tables don't resize properly.
 Release 0.11.x for Windows

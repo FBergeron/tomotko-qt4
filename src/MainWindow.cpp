@@ -156,7 +156,7 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
     actionsMenu->addAction( action[ ACTION_QUIT ] );
 
     editionMenu = new QMenu( tr( "Edition" ), this );
-    menuBar()->addMenu( editionMenu );
+    editionMenuAction = menuBar()->addMenu( editionMenu );
 
     editionMenu->addAction( cutAction );
     editionMenu->addAction( copyAction );
@@ -167,7 +167,7 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
     editionMenu->addAction( action[ ACTION_SEARCH ] );
 
     helpMenu = new QMenu( tr( "?" ), this );
-    menuBar()->addMenu( helpMenu );
+    helpMenuAction = menuBar()->addMenu( helpMenu );
     helpAction = Util::createAction( tr( "Help..." ), help_xpm, this, SLOT( help() ) );
     helpMenu->addAction( helpAction );
     helpMenu->addSeparator();
@@ -246,20 +246,16 @@ Controller* MainWindow::controller() {
 
 void MainWindow::updateMenus( QTreeWidgetItem* ) {
     action[ ACTION_START_QUIZ ]->setText( mainPanel->currentWidget() == quizFrame ? tr( "RestartQuiz" ) : tr( "StartQuiz" ) );
-    //action[ ACTION_START_QUIZ ]->setMenuText( mainPanel->currentWidget() == quizFrame ? tr( "RestartQuiz" ) : tr( "StartQuiz" ) );
     action[ ACTION_MANAGE_GLOSSARIES ]->setEnabled( mainPanel->currentWidget() != vocabManagerFrame ); 
     if( mainPanel->currentWidget() == vocabManagerFrame ) {
-        //if( menuBar()->indexOf( editionMenuId ) == -1 )
-        //    editionMenuId = menuBar()->insertItem( QObject::tr( "Edition" ), editionMenu, -1, 1 );
+        if( !menuBar()->actions().contains( editionMenuAction ) )
+            menuBar()->insertAction( helpMenuAction, editionMenuAction );
         action[ ACTION_SHOW_ALL_GLOSSARIES_AND_TERMS ]->setEnabled( true );
         action[ ACTION_IMPORT ]->setEnabled( vocabManagerFrame->isImportAllowed() );
         action[ ACTION_EXPORT ]->setEnabled( vocabManagerFrame->isExportAllowed() );
     }
     else {
-        //if( editionMenu->parent() ) {
-        //    if( menuBar()->indexOf( editionMenuId ) != -1 )
-        //        menuBar()->removeItem( editionMenuId );
-        //}
+        menuBar()->removeAction( editionMenuAction );
         action[ ACTION_SHOW_ALL_GLOSSARIES_AND_TERMS ]->setEnabled( false );
         action[ ACTION_IMPORT ]->setEnabled( false );
         action[ ACTION_EXPORT ]->setEnabled( false );
