@@ -27,6 +27,7 @@ void DigraphLineEdit::keyPressEvent( QKeyEvent* event ) {
                 }
             }
             else {
+                // Shift key is required to input some digraphs so it's a special case.
                 if( !buffer.isNull() && event->key() != Qt::Key_Shift ) {
                     buffer += event->text();
                     const QString newChar( Util::getDigraph( buffer ) );
@@ -35,6 +36,7 @@ void DigraphLineEdit::keyPressEvent( QKeyEvent* event ) {
                     else {
                         QKeyEvent* digraphEvent = new QKeyEvent( QEvent::KeyPress, 0, Qt::NoModifier, newChar, event->isAutoRepeat(), 0 );
                         QLineEdit::keyPressEvent( digraphEvent );
+                        buffer = QString::null;
                         return;
                     }
                 }

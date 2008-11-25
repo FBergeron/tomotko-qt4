@@ -1,7 +1,5 @@
 ToDo
 ----
-Bug: In DigraphEdit objects, if we do e backspace ', a é accent appears.  However, if we then press right arrow, another é appears...  
-Bug: In DigraphMultiEdit object, for the word: this is a very long..., if I try to input a digraph after the question mark of the line : How to reproduce, it doesn't work.
 Sometimes, when I delete a glossary, it reappears the next time I start toMOTko.  How to reproduce it?
 Group label and textfield into a panel (comments) for better layout.
 Beware: When we do label->setMovie( &mov ), we must deallocate the movie.   The label doesn't take care of it as mentioned in the ref doc.

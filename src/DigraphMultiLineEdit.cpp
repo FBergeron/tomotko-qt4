@@ -13,10 +13,10 @@ void DigraphMultiLineEdit::keyPressEvent( QKeyEvent* event ) {
         // I'm not sure if this test covers all the cases though.
         if( event->count() > 0 ) {
             if( event->key() == Qt::Key_Backspace ) {
-                int col = textCursor().columnNumber();
+                int col = textCursor().position();
                 if( col > 0 ) {
                     if( buffer.isNull() ) {
-                        QString charToDelete( textCursor().block().text().mid( col - 1, col ) );
+                        QString charToDelete( toPlainText().mid( col - 1, 1 ) );
                         buffer = charToDelete;
                     }
                     else 
@@ -24,6 +24,7 @@ void DigraphMultiLineEdit::keyPressEvent( QKeyEvent* event ) {
                 }
             }
             else {
+                // Shift key is required to input some digraphs so it's a special case.
                 if( !buffer.isNull() && event->key() != Qt::Key_Shift ) {
                     buffer += event->text();
                     const QString newChar( Util::getDigraph( buffer ) );
@@ -32,6 +33,7 @@ void DigraphMultiLineEdit::keyPressEvent( QKeyEvent* event ) {
                     else {
                         QKeyEvent* digraphEvent = new QKeyEvent( QEvent::KeyPress, 0, Qt::NoModifier, newChar, event->isAutoRepeat(), 0 );
                         QTextEdit::keyPressEvent( digraphEvent );
+                        buffer = QString::null;
                         return;
                     }
                 }
