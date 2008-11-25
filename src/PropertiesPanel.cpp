@@ -128,8 +128,7 @@ void PropertiesPanel::init() {
     //setStretchFactor( descriptionMultiLineEdit, 1 );
 
     contentLabel = new QLabel( tr( "Content" ) );
-    //contentListView = new QTreeWidget();//contentListView = new ContentListView( this, "ContentListView" );
-    contentListView = new SmartListView();//contentListView = new ContentListView( this, "ContentListView" );
+    contentListView = new ContentListView();
     contentListView->setAllColumnsShowFocus( true );
     contentListView->setSelectionMode( QAbstractItemView::ExtendedSelection );
     QStringList headerLabels;

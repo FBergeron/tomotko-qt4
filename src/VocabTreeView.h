@@ -1,7 +1,7 @@
 #ifndef VOCAB_TREEVIEW_H
 #define VOCAB_TREEVIEW_H
 
-//#include <iostream.h>
+#include <iostream>
 //#include <qapplication.h>
 #include <QTreeWidget>
 //#include <qpaintdevice.h>
@@ -15,6 +15,8 @@
 #include "Util.h"
 #include "VocabTreeItem.h"
 #include "Vocabulary.h"
+
+using namespace std;
 
 class VocabTreeView : public QTreeWidget {
 

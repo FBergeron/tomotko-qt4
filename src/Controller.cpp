@@ -735,9 +735,7 @@ bool Controller::importImageFromZip( const QString& imagePath, zipFile inputFile
 }
 
 void Controller::loadData() {
-cerr << "applicationDirName=" << qPrintable( applicationDirName ) << endl;
     vocabTree = loadFolder( applicationDirName );
-cerr << "vocabTree=" << vocabTree << endl;
     if( !vocabTree ) {
         Folder* folder = new Folder( 1, QObject::tr( "MyGlossaries" ) );
         folder->setMarkedForStudy( true );

@@ -1,25 +1,24 @@
 #ifndef VOCAB_PARSER_H
 #define VOCAB_PARSER_H
 
-//#include <iostream.h>
-//#include <qfile.h>
+#include <iostream>
 #include <QMessageBox>
 #include <QString>
 #include <QStringList>
 #include <QXmlAttributes>
 #include <QXmlParseException>
-//#include <stdlib.h>
-//#include <string.h>
 #include "BilingualKey.h"
 #include "Term.h"
 #include "Translation.h"
 #include "Vocabulary.h"
 
+using namespace std;
+
 class VocabParser : public QXmlDefaultHandler {
 
 public:
 
-    VocabParser( Vocabulary& vocabulary, const QStringList& languages/*, const QString& location = QString::null*/ );
+    VocabParser( Vocabulary& vocabulary, const QStringList& languages );
     bool startDocument();
     bool startElement( const QString&, const QString&, const QString&, const QXmlAttributes& attribs );
     bool characters( const QString& characters );
@@ -47,7 +46,6 @@ private:
     Vocabulary& vocabulary;
     const QStringList& languages;
     bool isVocabFile;
-    //const QString& location;
 
 };
 

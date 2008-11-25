@@ -1,7 +1,7 @@
 #ifndef VOCAB_MANAGER_H
 #define VOCAB_MANAGER_H
 
-//#include <iostream.h>
+#include <iostream>
 //#include <qclipboard.h>
 //#include <qpe/qcopenvelope_qws.h>
 //#include <qpe/qpeapplication.h>
@@ -41,6 +41,8 @@
 #include "VocabTreeView.h"
 #include "VocabTreeItem.h"
 //#include "ZFileDialog.h"
+
+using namespace std;
 
 extern QAction* action[ ACTION_COUNT ];
 

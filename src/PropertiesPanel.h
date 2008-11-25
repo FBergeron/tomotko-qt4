@@ -13,7 +13,7 @@
 #include <QString>
 #include <QVBoxLayout>
 #include <QWidget>
-//#include "ContentListView.h"
+#include "ContentListView.h"
 #include "DigraphLineEdit.h"
 #include "DigraphMultiLineEdit.h"
 #include "Folder.h"

@@ -1,6 +1,6 @@
 #include "VocabParser.h"
 
-VocabParser::VocabParser( Vocabulary& vocab, const QStringList& languages/*, const QString& location*/ ) : vocabulary( vocab ), languages( languages ), isVocabFile( false )/*, location( location )*/ {
+VocabParser::VocabParser( Vocabulary& vocab, const QStringList& languages/*, const QString& location*/ ) : vocabulary( vocab ), languages( languages ), isVocabFile( false ) {
 }
 
 bool VocabParser::startDocument() {
@@ -32,7 +32,7 @@ bool VocabParser::startElement( const QString&, const QString&, const QString& q
         QString imagePath = attribs.value( QString( "imagePath" ) );
         term = Term( id, vocabulary.getId() );
         if( !imagePath.isNull() )
-            term.setImagePath( /*location + "/" +*/ imagePath );
+            term.setImagePath( imagePath );
     }
     else if( qname == QString( "desc" ) ) {
         mustKeepText = true;
