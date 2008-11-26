@@ -101,6 +101,7 @@ private slots:
 private:
 
     void init();
+    void clearImage();
 
     void hideAnswers();
     void setButtonsEnabled( bool isEnabled );

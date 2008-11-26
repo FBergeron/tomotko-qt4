@@ -312,19 +312,22 @@ bool QuizFrame::containsValidImage() const {
     return( pixmap );
 }
 
-void QuizFrame::setImage( const QString& path ) {
-    if( path.isNull() ) {
-        if( pixmap ) {
-            delete( pixmap );
-            pixmap = NULL;
-        }
-        if( movie ) {
-            delete( movie );
-            movie = NULL;
-        }
-        image->clear();
-        imageBox->setVisible( false );
+void QuizFrame::clearImage() {
+    if( pixmap ) {
+        delete( pixmap );
+        pixmap = NULL;
     }
+    if( movie ) {
+        delete( movie );
+        movie = NULL;
+    }
+    image->clear();
+}
+
+void QuizFrame::setImage( const QString& path ) {
+    clearImage();
+    if( path.isNull() )
+        imageBox->setVisible( false );
     else {
         QFileInfo info( path );
         if( info.exists() ) {
@@ -670,7 +673,6 @@ void QuizFrame::revealComment() {
 }
 
 void QuizFrame::revealImage() {
-    //imageBox->revealImage();
     imageStack->setCurrentIndex( 0 );
     if( movie )
         movie->start();
