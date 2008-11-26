@@ -405,7 +405,10 @@ void PreferencesDialog::accept() {
     prefs->clearRevealingSequences();
     for( int i = 0; i < sequencesView->topLevelItemCount(); i++ ) {
         SequenceListItem* item = (SequenceListItem*)sequencesView->topLevelItem( i );
-        prefs->addRevealingSequence( item->getSequence() );
+        bool isChecked = ( item->checkState( 0 ) != Qt::Unchecked );
+        Sequence seq = item->getSequence();
+        seq.setEnabled( isChecked );
+        prefs->addRevealingSequence( seq );
     }
 
     prefs->setLabelsFontFamily( labelsFontFamilyComboBox->currentText() );
