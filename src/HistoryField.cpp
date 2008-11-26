@@ -11,9 +11,3 @@ void HistoryField::activate() {
     insertItem( c, currentText() );
     setCurrentIndex( c );  
 }
-
-void HistoryField::keyPressEvent( QKeyEvent* e ) {
-    if( e->key() == Qt::Key_Return )
-        emit returnPressed();
-    QComboBox::keyPressEvent(e);
-}

@@ -2,62 +2,57 @@ ToDo
 ----
 Sometimes, when I delete a glossary, it reappears the next time I start toMOTko.  How to reproduce it?
 In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  Will it bring data incompatibility with previous versions? I think so.  If there seems to be incompatibilities, it may also be caused by the TermScheduler's tempTermPool handling in operator>>.  Test that!
-In SearchDialog, enter key should provoke a search.
 Use InstallJammer for installer:  I made a project in etc/InstallJammer and build an installer.  Try it on a test machine.
 The columns of the prop tables don't resize properly.
-Release 0.11.x for Windows
 The QuizFrame doesn't react to right/left/up/down keys.  Probably a focus-related problem.  Also, if we click maximize button, same prob.  Afterward, the focus is lost and the QuizFrame will stop responding to arrow keys.
 In Scrollable.*LineEdit, scrollUp() and scrollDown() should be smarter : for example, for scrollDown(), the cursor should go at the last visible line and go down one line.  Otherwise, it may feels like it's doing nothing. 
-There is a font sampler in the Qt's demo that could be useful and a QFontDialog.
-When the PrefDialog is very large, the revealing options section is resized.  Is it possible to make it keep its size compact.
-
 When I click on a folder, it expands automatically.  That should not be the case.
-Maybe use QGridLayout with columnStretch for fontPreferences (check the QGridLayout doc for the example).
 Test remove terms (multiple selection).  It's probably buggy because of nextTermItem management...
-I wonder if it would not be nicer if we had a column just for the checkbox in the termlist?
-In Util::getLanguageCode(), the last line cause a warning because it returns a reference to a local variable.  Clean that.
-I have reintroduced PixMap class that defines the ZPIXMAP macro.  If I don't need that for Desktop version, remove it.  
 In Util::getDefaultFontFamily(), the last else should return something better.
 Reread all the classes and remove obsolete comments.
 Replace screenshots (non-zaurus ones) with Windows's ones in online help.
 Check if the text of online help is still correct.
 Icons are too small.  Use 32x32 version if possible.
 Probably replace all setSelected( true ) by setCurrentItem() instead?
+Release 0.11.x for Windows
 
-
-There is the following problem if I setSortingEnabled for the VocabTreeView: Creating two glossaries with the same name and I cannot use the up/down arrow to select the glossary one after the other.  They are automatically reordered and it seems that the first glossary is always selected although it's not, it is just changed position.  If we remove the setIcon() line in VocabTreeItem::setOpen(), the problem doesn't occur.  Same thing if I setSortingEnabled( false ).  Look the SetIconBug project for details.
 Add a FAQ in the website (documenting the problems for dependency lib and fonts)
-Add more size for fonts preferences?
 
-
-Add symlinks for fr/es history pages.
-Mention that hoyahoya glossary has been added.
-Most probably that dependency to Controller in VocabTreeView could be removed.  Code depending on controller should be relocated to VocabularyManagerFrame.
-Refactor the code in editResultTerm() and editTerm().  The code is similar.  Maybe using signal/slot approach could work. There is a good example of that in page 18 of my Qt book for the FindDialog.
 Remove prefs.xml file and remove PreferencesPaser now obsolete.
 Remove marked.xml file and remove MarkedItemParser now obsolete. 
 Remove Controller::deleteObsoleteData().
 Remove xml handling of pref data file.
-Try to use pictureflow (http://code.google.com/p/pictureflow/).
-Add an image preview in ZFileDialog.
-Release 0.12.0
-
 Remove code that remove prefs.xml file.  Now obsolete.
 Remove code that remove marked.xml file.  Now obsolete.
-
-Refactor save and load methods.  They look alike, I think it's possible do unify the process in a common method using parameters.
+When we quit toMOTko, we should delete all files [0-9]+.tar.gz and tree.dat.gz.  These files are not used anymore.
 
 In all TreeView, setAnimated( true ) for a cute special effect.
 I passed prefs to SequenceDialog.  Remove it if unused.
+
+There is a font sampler in the Qt's demo that could be useful and a QFontDialog.
+Maybe use QGridLayout with columnStretch for fontPreferences (check the QGridLayout doc for the example).
+I wonder if it would not be nicer if we had a column just for the checkbox in the termlist?
+There is the following problem if I setSortingEnabled for the VocabTreeView: Creating two glossaries with the same name and I cannot use the up/down arrow to select the glossary one after the other.  They are automatically reordered and it seems that the first glossary is always selected although it's not, it is just changed position.  If we remove the setIcon() line in VocabTreeItem::setOpen(), the problem doesn't occur.  Same thing if I setSortingEnabled( false ).  Look the SetIconBug project for details.
+Add more size for fonts preferences?
+
+Add symlinks for fr/es history pages.
+Most probably that dependency to Controller in VocabTreeView could be removed.  Code depending on controller should be relocated to VocabularyManagerFrame.
+Refactor the code in editResultTerm() and editTerm().  The code is similar.  Maybe using signal/slot approach could work. There is a good example of that in page 18 of my Qt book for the FindDialog.
+
+Try to use pictureflow (http://code.google.com/p/pictureflow/).
+Add an image preview in ZFileDialog.
+
+Release 0.12.0
+
+Refactor save and load methods.  They look alike, I think it's possible do unify the process in a common method using parameters.
+
 Use ASSERT(), CHECK_PTR() and qDebug(), qWarning() and qFatal() --> See Debugging Techniques page in documentation.
-When we quit toMOTko, we should delete all files [0-9]+.tar.gz and tree.dat.gz.  These files are not used anymore.
 Verify licence for KanjiDrill4Top's images.
 Port to Windows? Linux? NCurses? Or big refactoring (reduce memory footprint + separate GUI from backend)?
 In the same way that Controller::getResolvedImagePath(), I should have the opposite function that takes an absolute path and reduce it to a relative path.  Maybe rename the functions with better names.
 In Controller.makeCopy(), verify if we should create the termCopy at all if we don't add translation.  A term with no translations should not exist.  If the term has no translations, delete it and don't add it to vocabCopy.
 Same thing for VocabularyManagerFrame.copyTerms().
 Concerning SearchDialog, refactor, if possible, ResultListItem and TermListItem.  I think I can have a common base class (edit:really?) so that doRemoveTerms() don't have to be duplicated in SearchDialog and VocabularyManagerFrame.  Other code could be refactored too like getFont(), setFont(), etc.  The doRemoveTerms() of SearchDialog is a little bit more general so start from it.  The vocabDetailsPropsPanel should be probably be a parameter.  If not null, we should updateCounters().  Maybe I will have to use multiple inheritance to do that maybe using a TermItem class?
-
 
 Should I deallocate sequences in Preferences's destructor?
 copyTerms(), pasteTerms() should be relocated (partially) into Controller.  Most probably that copy*() and paste*() too.
@@ -145,7 +140,6 @@ When building tree at parsing step, use VocabTree methods if possible.
 Remove checkbox for root item or remove root item or remove header.
 Implement clean undo (Command and Memento patterns?)
 Could add a small icon in the term list to indicate if a picture is associated to a word.  Could count images too in stats.  Low priority.
-In order to strech gif that are not movies, maybe we could load the image first, check somehow if it's a movie (isNull() or something else).  If not, scale the image.
 Implement the concept of referenced/shared term (shortcut/alias).  For this, I think I will need to affect GUID (the file /opt/Qtopia/include/qpe/quuid.h may be interesting) for termId because they are separated in different files.  Also, I may need to have a special file just for referenced terms.  In this case, the regular data file will just link to an id to a shared term.  This way, we don't need to duplicate the data.  We must think about the import about that in the eventuality we want to share a data file with someone...  All this so we can have a same term in several glossaries.
 Remove unneeded comments everywhere.  Now that I use filesystem to store data, maybe I could use Linux's symbolic links to implement that.  Of course, this would probably not work on Windows though.  And when I think of it, it's probably not very safe and takes too double memory.  No...  Not a good idea.
 Put licence in header of source files.  Low priority.

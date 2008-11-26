@@ -24,7 +24,7 @@ void SearchDialog::init() {
     connect( resetButton, SIGNAL( clicked() ), this, SLOT( reset() ) );
     queryField = new HistoryField();
     queryField->setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Expanding ) );
-    searchButton = new QPushButton( ZPIXMAP( search_xpm ), tr( "Search" ) );
+    searchButton = new QPushButton( ZPIXMAP( search_xpm ), tr( "Search" ), this ); // Passing this inits autoDefault property.
     searchButton->setDefault( true );
     connect( searchButton, SIGNAL( clicked() ), queryField->lineEdit(), SIGNAL( returnPressed() ) );
     connect( searchButton, SIGNAL( clicked() ), this, SLOT( search() ) );

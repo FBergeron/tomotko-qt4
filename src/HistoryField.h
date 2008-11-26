@@ -8,9 +8,11 @@
 
 #ifndef HISTORY_FIELD_H
 #define HISTORY_FIELD_H
+
+using namespace std;
+
 #include <iostream>
 #include <QComboBox>
-#include <QKeyEvent>
 #include <QWidget>
 
 class HistoryField : public QComboBox {
@@ -21,14 +23,6 @@ public:
 
     HistoryField( QWidget* parent = 0 );
     void activate();
-
-protected:
-
-    void keyPressEvent( QKeyEvent* e );
-
-signals:
-
-    void returnPressed();
 
 };
 
