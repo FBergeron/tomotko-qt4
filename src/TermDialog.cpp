@@ -110,13 +110,17 @@ void TermDialog::init() {
     testLangTopPanelLayout->addWidget( testLangLabelsPanel );
     testLangTopPanelLayout->addWidget( testLangFieldsPanel, 1 );
 
+    commentBox = new QWidget();
+    commentBoxLayout = new QVBoxLayout();
+    commentBoxLayout->setContentsMargins( 0, 0, 0, 0 );
+    commentBox->setLayout( commentBoxLayout );
+
     commentLabel = new QLabel( tr( "Examples/Comments" ) );
     commentMultiLineEdit = new DigraphMultiLineEdit();
-    //commentMultiLineEdit->setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Expanding ) );
-    //commentMultiLineEdit->setWrapPolicy( QMultiLineEdit::Anywhere );
-    //commentMultiLineEdit->setWordWrap( QMultiLineEdit::WidgetWidth );
     commentMultiLineEdit->setFont( prefs.getBestFont( firstLang, testLang ) );
     commentMultiLineEdit->setDigraphEnabled( isDigraphEnabled );
+    commentBoxLayout->addWidget( commentLabel );
+    commentBoxLayout->addWidget( commentMultiLineEdit, 1 );
 
     imageBox = new QGroupBox( tr( "Image" ) );
     imageBoxLayout = new QVBoxLayout();
@@ -144,6 +148,7 @@ void TermDialog::init() {
 
     bottomButtonsPanel = new QWidget();
     bottomButtonsPanelLayout = new QHBoxLayout();
+    bottomButtonsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     bottomButtonsPanel->setLayout( bottomButtonsPanelLayout );
 
     acceptButton = new QPushButton( tr( "Ok" ) );
@@ -157,8 +162,7 @@ void TermDialog::init() {
 
     mainLayout->setMenuBar( menuBar );
     mainLayout->addWidget( topPanel );
-    mainLayout->addWidget( commentLabel );
-    mainLayout->addWidget( commentMultiLineEdit, 1 );
+    mainLayout->addWidget( commentBox, 1 );
     mainLayout->addWidget( bottomButtonsPanel );
     mainLayout->activate();
 
@@ -324,10 +328,8 @@ void TermDialog::updateUi() {
             testLangTermAltLineEdit->setText( testLangTranslation.getAlt() );
             testLangTermAltLineEdit->setCursorPosition( 0 );
             BilingualKey commentKey( controller->getPreferences().getFirstLanguage(), controller->getPreferences().getTestLanguage() );
-            if( editedTerm->isCommentExists( commentKey ) ) {
+            if( editedTerm->isCommentExists( commentKey ) )
                 commentMultiLineEdit->setText( editedTerm->getComment( commentKey ) );
-                //commentMultiLineEdit->setCursorPosition( 0 );
-            }
         }
 
         QString absPath = controller->getResolvedImagePath( editedTerm->getImagePath(), vocab );

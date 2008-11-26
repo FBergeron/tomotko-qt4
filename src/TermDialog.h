@@ -12,7 +12,6 @@
 #include <QLineEdit>
 #include <QMenu>
 #include <QMenuBar>
-//#include <qmessagebox.h>
 #include <QMovie>
 #include <QPixmap>
 #include <QPushButton>
@@ -96,6 +95,8 @@ private:
     QLabel*                 testLangTermAltLabel;
     DigraphLineEdit*        testLangTermAltLineEdit;
     
+    QWidget*                commentBox;
+    QVBoxLayout*            commentBoxLayout;
     QLabel*                 commentLabel;
     DigraphMultiLineEdit*   commentMultiLineEdit;
 
@@ -123,7 +124,6 @@ private:
     QString                 tempImagePath; // Contains absolute path.
     QPixmap*                pixmap;
     QMovie*                 movie;
-
 
 };
 

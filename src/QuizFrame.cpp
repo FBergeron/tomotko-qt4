@@ -106,7 +106,6 @@ void QuizFrame::init() {
     connect( firstLangTermButton, SIGNAL( clicked() ), this, SLOT( revealFirstLangTerm() ) );  
     firstLangTermStack->addWidget( firstLangTermLineEdit );
     firstLangTermStack->addWidget( firstLangTermButton );
-    //firstLangTermStack->setMinimumSize( firstLangTermButton->sizeHint() );
 
     firstLangTermPanelLayout->addWidget( firstLangTermLabel, 0 );
     firstLangTermPanelLayout->addWidget( firstLangTermStack, 1 );
@@ -141,7 +140,6 @@ void QuizFrame::init() {
     connect( testLangTermAltButton, SIGNAL( clicked() ), this, SLOT( revealAltTerm() ) );  
     testLangTermAltStack->addWidget( testLangTermAltLineEdit );
     testLangTermAltStack->addWidget( testLangTermAltButton );
-    //testLangTermAltStack->setMinimumSize( testLangTermAltButton->sizeHint() );
 
     testLangTermStack = new QStackedWidget();
     testLangFieldsPanelLayout->addWidget( testLangTermStack );
@@ -155,7 +153,6 @@ void QuizFrame::init() {
 
     testLangTermStack->addWidget( testLangTermLineEdit );
     testLangTermStack->addWidget( testLangTermButton );
-    //testLangTermStack->setMinimumSize( testLangTermButton->sizeHint() );
 
     testLangTopPanelLayout->addWidget( testLangLabelsPanel );
     testLangTopPanelLayout->addWidget( testLangFieldsPanel, 1 );
@@ -185,11 +182,8 @@ void QuizFrame::init() {
 
     commentStack = new QStackedWidget();
     commentBoxLayout->addWidget( commentStack );
-    //commentStack->setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Expanding ) );
 
     commentMultiLineEdit = new ScrollableMultiLineEdit();
-    //commentMultiLineEdit->setWrapPolicy( QMultiLineEdit::Anywhere );
-    //commentMultiLineEdit->setWordWrap( QMultiLineEdit::WidgetWidth );
     commentMultiLineEdit->setReadOnly( true );
     commentMultiLineEdit->installEventFilter( this );
     commentButton = new QPushButton( tr( "???" ) );
@@ -298,7 +292,6 @@ void QuizFrame::setTerm( const Term& term ) {
     testLangTermLineEdit->setCursorPosition( 0 );
 
     commentMultiLineEdit->setText( comment );
-    //commentMultiLineEdit->setCursorPosition( 0, 0 );
 
     Folder* vocabTree = controller->getVocabTree();
     Vocabulary* vocab = vocabTree->getVocabulary( term.getVocabId() );
@@ -390,7 +383,6 @@ Term* QuizFrame::askNextTerm() {
         concludeQuiz();
         return( NULL );
     }
-    cerr << "hasFocus=" << hasFocus() << endl;
 }
 
 void QuizFrame::askTerm( const Term& term ) {
@@ -399,7 +391,6 @@ void QuizFrame::askTerm( const Term& term ) {
     setTerm( term );
     reveal();
     setButtonsEnabled( true );
-    cerr << "hasFocus=" << hasFocus() << endl;
 }
 
 void QuizFrame::updateLanguageLabels() {
@@ -443,18 +434,6 @@ void QuizFrame::resizeEvent( QResizeEvent* evt ) {
     QWidget::resizeEvent( evt );
     resizeImageBox();
 }
-
-// Reimplemented to prevent resizing bug.
-//bool QuizFrame::event( QEvent* evt ) {
-    ////cout << "event evt=" << evt->type() << " h=" << testLangPanel->height() << " sh->h=" << testLangPanel->sizeHint().height() << endl;
-    //if( evt->type() == QEvent::LayoutHint ) {
-    //    if( firstLangPanel->height() != firstLangPanel->sizeHint().height() )
-    //        firstLangPanel->setFixedHeight( firstLangPanel->sizeHint().height() );
-    //    if( testLangPanel->height() != testLangPanel->sizeHint().height() )
-    //        testLangPanel->setFixedHeight( testLangPanel->sizeHint().height() );
-    //}
-//    return( QWidget::event( evt ) );
-//}
 
 void QuizFrame::rightAnswer() {
     if( controller->isQuizInProgress() ) {
@@ -590,54 +569,62 @@ void QuizFrame::scrollRight() {
 }
 
 void QuizFrame::updateFonts() {
-    //QFont largeFont( controller->getPreferences().getLargeFont() );
-    //QFont mediumFont( controller->getPreferences().getMediumFont() );
-    //QFont labelsFont( controller->getPreferences().getLabelsFont() );
-    //QString firstLang( controller->getQuizFirstLanguage() );
-    //QString testLang( controller->getQuizTestLanguage() );
+    QFont largeFont( controller->getPreferences().getLargeFont() );
+    QFont mediumFont( controller->getPreferences().getMediumFont() );
+    QFont labelsFont( controller->getPreferences().getLabelsFont() );
+    QString firstLang( controller->getQuizFirstLanguage() );
+    QString testLang( controller->getQuizTestLanguage() );
 
-    //firstLangTermLabel->setFont( labelsFont );
-    //firstLangTermLineEdit->setFont( controller->getPreferences().getMediumFont( firstLang ) );
-    //firstLangTermButton->setFont( labelsFont );
-    //firstLangPanel->setFont( labelsFont );
+    firstLangTermLabel->setFont( labelsFont );
+    firstLangTermLineEdit->setFont( controller->getPreferences().getMediumFont( firstLang ) );
+    firstLangTermButton->setFont( labelsFont );
+    firstLangPanel->setFont( labelsFont );
 
-    //testLangTermAltLabel->setFont( labelsFont );
-    //testLangTermAltLineEdit->setFont( controller->getPreferences().getMediumFont( testLang ) );
-    //testLangTermLabel->setFont( labelsFont );
+    testLangTermAltLabel->setFont( labelsFont );
+    testLangTermAltLineEdit->setFont( controller->getPreferences().getMediumFont( testLang ) );
+    testLangTermLabel->setFont( labelsFont );
 
-    //testLangTermLineEdit->setFont( controller->getPreferences().getLargeFont( testLang ) );
+    testLangTermLineEdit->setFont( controller->getPreferences().getLargeFont( testLang ) );
 
-    //testLangPanel->setFont( labelsFont );
+    testLangPanel->setFont( labelsFont );
 
-    //commentLabel->setFont( labelsFont );
-    //commentMultiLineEdit->setFont( controller->getPreferences().getBestFont( firstLang, testLang ) );
+    commentLabel->setFont( labelsFont );
+    commentMultiLineEdit->setFont( controller->getPreferences().getBestFont( firstLang, testLang ) );
 
-    //firstLangTermPanel->updateGeometry();
-    //firstLangTermPanel->layout()->invalidate();
+    firstLangTermPanel->updateGeometry();
+    firstLangTermPanel->layout()->invalidate();
 
-    //firstLangTermStack->updateGeometry();
+    firstLangTermStack->updateGeometry();
    
-    //testLangLabelsPanel->updateGeometry();
-    //testLangLabelsPanel->layout()->invalidate();
+    testLangLabelsPanel->updateGeometry();
+    testLangLabelsPanel->layout()->invalidate();
 
-    //testLangFieldsPanel->updateGeometry();
-    //testLangFieldsPanel->layout()->invalidate();
+    testLangFieldsPanel->updateGeometry();
+    testLangFieldsPanel->layout()->invalidate();
+
+    revealAllDataButton->setFont( labelsFont );
+    rightAnswerButton->setFont( labelsFont );
+    wrongAnswerButton->setFont( labelsFont );
+    editionButton->setFont( labelsFont );
 
     update();
     updateGeometry();
-    //layout()->invalidate();
 }
 
 void QuizFrame::retranslateUi() {
-    //updateLanguageLabels();
-    //firstLangTermLabel->setText( tr( "Word/Expr." ) );
-    //firstLangTermButton->setText( tr( "???" ) );
-    //testLangTermAltLabel->setText( tr( "Alt./Phon." ) );
-    //testLangTermLabel->setText( tr( "Word/Expr." ) );
-    //testLangTermAltButton->setText( tr( "???" ) );
-    //testLangTermButton->setText( tr( "???" ) );
-    //commentLabel->setText( tr( "Examples/Comments" ) );
-    //commentButton->setText( tr( "???" ) );
+    updateLanguageLabels();
+    firstLangTermLabel->setText( tr( "Word/Expr." ) );
+    firstLangTermButton->setText( tr( "???" ) );
+    testLangTermAltLabel->setText( tr( "Alt./Phon." ) );
+    testLangTermLabel->setText( tr( "Word/Expr." ) );
+    testLangTermAltButton->setText( tr( "???" ) );
+    testLangTermButton->setText( tr( "???" ) );
+    commentLabel->setText( tr( "Examples/Comments" ) );
+    commentButton->setText( tr( "???" ) );
+    revealAllDataButton->setText( tr( "Reveal" ) );
+    rightAnswerButton->setText( tr( "RightAnswer" ) );
+    wrongAnswerButton->setText( tr( "WrongAnswer" ) );
+    editionButton->setText( tr( "EditWord" ) );
 }
 
 void QuizFrame::hideAnswers() {
@@ -645,7 +632,6 @@ void QuizFrame::hideAnswers() {
     testLangTermAltStack->setCurrentIndex( 1 );
     testLangTermStack->setCurrentIndex( 1 );
     commentStack->setCurrentIndex( 1 );
-    //imageBox->hideImage();
     imageStack->setCurrentIndex( 1 );
 }
 
@@ -702,7 +688,6 @@ bool QuizFrame::isCommentRevealed() const {
 }
 
 bool QuizFrame::isImageRevealed() const {
-    //return( imageBox->isImageRevealed() );
     return( imageStack->currentWidget() == imageStack->widget( 0 ) );
 }
 

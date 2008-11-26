@@ -2,27 +2,13 @@
 #define QUIZ_H
 
 #include <QApplication>
-//#include <qevent.h>
 #include <QFont>
-//#include <qframe.h>
-//#include <qhbox.h>
-//#include <qhgroupbox.h>
-//#include <qiconset.h>
-//#include <qlabel.h>
-//#include <qlayout.h>
 #include <QLineEdit>
 #include <QMessageBox>
 #include <QMovie>
-//#include <qobjectlist.h>
-//#include <qpushbutton.h>
-//#include <qsizepolicy.h>
 #include <QResizeEvent>
 #include <QStackedWidget>
-//#include <qstringlist.h>
 #include <QTextEdit>
-//#include <qtooltip.h>
-//#include <qvbox.h>
-//#include <qvgroupbox.h>
 #include <QWidget>
 #include "Controller.h"
 #include "ScrollableLineEdit.h"
@@ -59,7 +45,6 @@ protected:
 
     void showEvent( QShowEvent* showEvt );
     void hideEvent( QHideEvent* hideEvt );
-    //bool event( QEvent* evt );
     void resizeEvent( QResizeEvent* evt );
 
 public slots:

@@ -1,7 +1,6 @@
 ToDo
 ----
 Sometimes, when I delete a glossary, it reappears the next time I start toMOTko.  How to reproduce it?
-Group label and textfield into a panel (comments) for better layout.
 In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  Will it bring data incompatibility with previous versions? I think so.  If there seems to be incompatibilities, it may also be caused by the TermScheduler's tempTermPool handling in operator>>.  Test that!
 In SearchDialog, enter key should provoke a search.
 Use InstallJammer for installer:  I made a project in etc/InstallJammer and build an installer.  Try it on a test machine.
