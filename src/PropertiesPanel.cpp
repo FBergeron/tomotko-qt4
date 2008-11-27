@@ -121,11 +121,8 @@ void PropertiesPanel::init() {
 
     descriptionLabel = new QLabel( tr( "Description" ) );
     descriptionMultiLineEdit = new DigraphMultiLineEdit();
-    //descriptionMultiLineEdit->setWrapPolicy( QMultiLineEdit::Anywhere );
-    //descriptionMultiLineEdit->setWordWrap( QMultiLineEdit::WidgetWidth );
     descriptionMultiLineEdit->setFont( mediumFont );
     descriptionMultiLineEdit->setDigraphEnabled( isDigraphEnabled );
-    //setStretchFactor( descriptionMultiLineEdit, 1 );
 
     contentLabel = new QLabel( tr( "Content" ) );
     contentListView = new ContentListView();

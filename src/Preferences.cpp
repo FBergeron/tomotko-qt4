@@ -1,8 +1,7 @@
 #include "Preferences.h"
 
 const qint32 Preferences::magicNumber = qint32( 0x77556644 );
-//const uint Preferences::fontSizeList[] = { 10, 12, 16, 18, 24, 32, 48, 72 };
-const uint Preferences::fontSizeList[] = { 8, 9, 10, 12, 14, 18, 24, 32 };
+const uint Preferences::fontSizeList[] = { 8, 9, 10, 12, 14, 18, 24, 36 };
 
 Preferences::Preferences() 
     : quizLength( MEDIUM ), interfaceLanguage( QString( "en" ) ), digraphEnabled( false ), quizButtonsHidden( false ), altInTermListShown( false ),
@@ -171,7 +170,7 @@ int Preferences::getRevealingSequence( const QString& seqStr ) {
 }
 
 void Preferences::removeRevealingSequence( int index ) {
-    sequences.removeAt( index );// sequences.remove( sequences.at( index ) );
+    sequences.removeAt( index );
 }
 
 void Preferences::removeRevealingSequence( const QString& seqStr ) {

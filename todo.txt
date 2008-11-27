@@ -2,7 +2,6 @@ ToDo
 ----
 Sometimes, when I delete a glossary, it reappears the next time I start toMOTko.  How to reproduce it?
 In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  Will it bring data incompatibility with previous versions? I think so.  If there seems to be incompatibilities, it may also be caused by the TermScheduler's tempTermPool handling in operator>>.  Test that!
-Use InstallJammer for installer:  I made a project in etc/InstallJammer and build an installer.  Try it on a test machine.
 The columns of the prop tables don't resize properly.
 The QuizFrame doesn't react to right/left/up/down keys.  Probably a focus-related problem.  Also, if we click maximize button, same prob.  Afterward, the focus is lost and the QuizFrame will stop responding to arrow keys.
 In Scrollable.*LineEdit, scrollUp() and scrollDown() should be smarter : for example, for scrollDown(), the cursor should go at the last visible line and go down one line.  Otherwise, it may feels like it's doing nothing. 
@@ -14,6 +13,10 @@ Replace screenshots (non-zaurus ones) with Windows's ones in online help.
 Check if the text of online help is still correct.
 Icons are too small.  Use 32x32 version if possible.
 Probably replace all setSelected( true ) by setCurrentItem() instead?
+Complete l10n in es/ja/en/fr.
+Make the executable/installable version doesn't use the console.
+Disable Import/Export when appropriate otherwise, it feels like it's not working as nothing happens.
+Could I make the links in About dialog work?
 Release 0.11.x for Windows
 
 Add a FAQ in the website (documenting the problems for dependency lib and fonts)

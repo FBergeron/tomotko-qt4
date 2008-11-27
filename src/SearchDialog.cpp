@@ -14,10 +14,12 @@ SearchDialog::~SearchDialog() {
 }
 
 void SearchDialog::init() {
+    setWindowFlags( Qt::Dialog | Qt::WindowMaximizeButtonHint );
+    setModal( true );
     queryPanel = new QWidget();
     queryPanelLayout = new QHBoxLayout();
+    queryPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     queryPanel->setLayout( queryPanelLayout );
-    //queryPanelLayout->setSpacing( 2 );
 
     resetButton = new QPushButton();
     resetButton->setIcon( QIcon( QPixmap( ZPIXMAP( resetQueryForm_xpm ) ) ) );
@@ -39,8 +41,8 @@ void SearchDialog::init() {
 
     resultsHeaderPanel = new QWidget();
     resultsHeaderPanelLayout = new QHBoxLayout();
+    resultsHeaderPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     resultsHeaderPanel->setLayout( resultsHeaderPanelLayout );
-    //resultsHeaderPanel->setSpacing( 2 );
     resultsHeaderLabel = new QLabel( tr( "Results" ) );
     resultsCounterLabel = new QLabel();
     resultsCounterLabel->setAlignment( Qt::AlignRight );
@@ -62,8 +64,8 @@ void SearchDialog::init() {
 
     resultsButtonsPanel = new QWidget();
     resultsButtonsPanelLayout = new QHBoxLayout();
+    resultsButtonsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     resultsButtonsPanel->setLayout( resultsButtonsPanelLayout );
-    //resultsButtonsPanel->setSpacing( 2 );
     goResultVocabButton = new QPushButton( QIcon( ZPIXMAP( goVocab_xpm ) ), tr( "View Glossary" ) );
     connect( goResultVocabButton, SIGNAL( clicked() ), this, SLOT( goResultVocab() ) );
     editResultTermButton = new QPushButton( QIcon( ZPIXMAP( editTerm_xpm ) ), tr( "Edit Term" ) );
@@ -80,8 +82,6 @@ void SearchDialog::init() {
     editResultTermButton->setMaximumHeight( prefHeight );
 
     mainLayout = new QVBoxLayout( this );
-    //mainLayout->setMargin( 6 );
-    //mainLayout->setSpacing( 2 );
     mainLayout->addWidget( queryPanel );
     mainLayout->addWidget( resultsHeaderPanel );
     mainLayout->addWidget( resultsListView, 1 );

@@ -107,10 +107,7 @@ private:
     QWidget*                    languagesPanel;
     QVBoxLayout*                languagesPanelLayout;
 
-    //QWidget*                    languagesRightPanel;
-    //QVBoxLayout*                languagesRightPanelLayout;
-
-    QTreeWidget*                studyLanguagesListView; //SmartListView*      studyLanguagesListView;
+    QTreeWidget*                studyLanguagesListView;
 
     QVBoxLayout*                quizLayout;
 
@@ -121,7 +118,7 @@ private:
 
     QWidget*                    sequencesViewPanel;
     QVBoxLayout*                sequencesViewPanelLayout;
-    QTreeWidget*                sequencesView;//SmartListView*      sequencesView;
+    QTreeWidget*                sequencesView;
     QWidget*                    sequencesViewButtons;
     QHBoxLayout*                sequencesViewButtonsLayout;
     QPushButton*                addSequenceButton;
@@ -161,7 +158,7 @@ private:
 
     QGroupBox*                  fontOverridesPanel;
     QVBoxLayout*                fontOverridesPanelLayout;
-    QScrollArea*                fontOverridesScrollView;//QScrollView*        fontOverridesScrollView;
+    QScrollArea*                fontOverridesScrollView;
     QWidget*                    fontOverridesBox;
     QVBoxLayout*                fontOverridesBoxLayout;
     QWidget*                    fontOverridesBoxFiller;
@@ -189,7 +186,7 @@ private:
     QGroupBox*                  keyboardAccelPanel;
     QVBoxLayout*                keyboardAccelPanelLayout;
 
-    QTreeWidgetItem*            grabAccelKeyFor;//QListViewItem*      grabAccelKeyFor;
+    QTreeWidgetItem*            grabAccelKeyFor;
     QTreeWidget*                keyboardAccelListView;
     bool                        keyboardAccelModified;
 

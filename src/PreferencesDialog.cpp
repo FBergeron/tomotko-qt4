@@ -23,6 +23,9 @@ PreferencesDialog::~PreferencesDialog() {
 }
 
 void PreferencesDialog::init() {
+    setWindowFlags( Qt::Dialog );
+    setModal( true ); 
+
     tab = new QTabWidget();
 
     quizPage = new QWidget();
@@ -38,17 +41,17 @@ void PreferencesDialog::init() {
   
     sequencesViewPanel = new QWidget(); 
     sequencesViewPanelLayout = new QVBoxLayout();
+    sequencesViewPanelLayout->setContentsMargins( 0, 10, 0, 0 );
     sequencesViewPanel->setLayout( sequencesViewPanelLayout );
     revealingOptionsPanelLayout->addWidget( sequencesViewPanel );
-    //sequencesViewPanelLayout->setSpacing( 2 );
     sequencesView = new QTreeWidget();
     sequencesView->headerItem()->setHidden( true );
     sequencesViewPanelLayout->addWidget( sequencesView );
     sequencesViewButtons = new QWidget();
     sequencesViewButtonsLayout = new QHBoxLayout();
+    sequencesViewButtonsLayout->setContentsMargins( 0, 0, 0, 0 );
     sequencesViewButtons->setLayout( sequencesViewButtonsLayout );
     sequencesViewPanelLayout->addWidget( sequencesViewButtons );
-    //sequencesViewButtonsLayout->setSpacing( 2 );
     addSequenceButton = new QPushButton( "+" );
     //sequencesViewButtonsLayout->addStretch();
     sequencesViewButtonsLayout->addWidget( addSequenceButton );
@@ -61,8 +64,6 @@ void PreferencesDialog::init() {
 
     initSequences();
     connect( sequencesView, SIGNAL( itemSelectionChanged() ), this, SLOT( updateUi() ) );
-
-    //revealingOptionsPanel->addSpace( 6 );
 
     sequencesLabelBox = new QGroupBox( tr( "QuizWindow" ) );
     sequencesLabelBoxLayout = new QVBoxLayout();
@@ -82,6 +83,7 @@ void PreferencesDialog::init() {
     quizLengthOptionsPanelLayout->addWidget( quizLengthSlider );
     quizLengthLabelsPanel = new QWidget();
     quizLengthLabelsPanelLayout = new QHBoxLayout();
+    quizLengthLabelsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     quizLengthLabelsPanel->setLayout( quizLengthLabelsPanelLayout );
     quizLengthOptionsPanelLayout->addWidget( quizLengthLabelsPanel );
 
@@ -106,14 +108,14 @@ void PreferencesDialog::init() {
 
     fontsPanel = new QWidget();
     fontsPanelLayout = new QVBoxLayout();
+    fontsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     fontsPanel->setLayout( fontsPanelLayout );
-    //fontsPanelLayout->setSpacing( 2 );
 
     labelsFontPanel = new QWidget();
     labelsFontPanelLayout = new QHBoxLayout();
+    labelsFontPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     labelsFontPanel->setLayout( labelsFontPanelLayout );
     fontsPanelLayout->addWidget( labelsFontPanel );
-    //labelsFontPanelLayout->setSpacing( 2 );
     labelsFontLabel = new QLabel( tr( "LabelsFont" ) );
     labelsFontFamilyComboBox = new QComboBox();
     labelsFontSizeComboBox = new QComboBox();
@@ -131,9 +133,9 @@ void PreferencesDialog::init() {
 
     fontPanel = new QWidget();
     fontPanelLayout = new QHBoxLayout();
+    fontPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     fontPanel->setLayout( fontPanelLayout );
     fontsPanelLayout->addWidget( fontPanel );
-    //fontPanelLayout->setSpacing( 2 );
     fontLabel = new QLabel( tr( "FieldsFont" ) );
     fontFamilyComboBox = new QComboBox();
     fontSizeComboBox = new QComboBox();
@@ -164,7 +166,6 @@ void PreferencesDialog::init() {
     fontOverridesScrollView->setWidget( fontOverridesBox );
 
     fontPageLayout = new QVBoxLayout();
-    //fontPageLayoutLayout->setSpacing( 2 );
     fontPageLayout->addWidget( fontsPanel );
     fontPageLayout->addStretch();
     fontPage->setLayout( fontPageLayout );
@@ -173,6 +174,7 @@ void PreferencesDialog::init() {
 
     miscInterfaceOptionsPanel = new QWidget();
     miscInterfaceOptionsPanelLayout = new QGridLayout();
+    miscInterfaceOptionsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     miscInterfaceOptionsPanel->setLayout( miscInterfaceOptionsPanelLayout );
 
     digraphPanel = new QGroupBox( tr( "BuiltInSupportForAccents" ) );
@@ -228,7 +230,7 @@ void PreferencesDialog::init() {
     resetAccelKeyButton = new QPushButton( tr( "Reset key" ) );
     
     keyboardAccelButtonPanelLayout = new QHBoxLayout( keyboardAccelButtonPanel );
-    //keyboardAccelButtonPanelLayoutLayout->setSpacing( 2 );
+    keyboardAccelButtonPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     keyboardAccelButtonPanelLayout->addStretch();
     keyboardAccelButtonPanelLayout->addWidget( clearAccelKeyButton );
     keyboardAccelButtonPanelLayout->addWidget( setAccelKeyButton );
@@ -239,7 +241,6 @@ void PreferencesDialog::init() {
     connect( resetAccelKeyButton, SIGNAL( clicked() ), this, SLOT( resetAccelKey() ) );
 
     interfacePageLayout = new QVBoxLayout( interfacePage );
-    //interfacePageLayout->setSpacing( 2 );
     interfacePageLayout->addWidget( miscInterfaceOptionsPanel );
     interfacePageLayout->addWidget( keyboardAccelPanel, 1 );
 
@@ -247,8 +248,8 @@ void PreferencesDialog::init() {
 
     languagesPanel = new QWidget();
     languagesPanelLayout = new QVBoxLayout();
+    languagesPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     languagesPanel->setLayout( languagesPanelLayout );
-    //languagesPanelLayout->setSpacing( 2 );
 
     studyLanguagesListView = new QTreeWidget();
     studyLanguagesListView->setColumnCount( 1 );
@@ -261,7 +262,6 @@ void PreferencesDialog::init() {
 
     languageLayout = new QVBoxLayout();
     languagePage->setLayout( languageLayout );
-    //languageLayout->setSpacing( 2 );
     languageLayout->addWidget( languagesPanel, 1 );
     tab->addTab( quizPage, tr( "Quiz" ) );
     tab->addTab( languagePage, tr( "Languages" ) );
@@ -270,6 +270,7 @@ void PreferencesDialog::init() {
 
     bottomButtonsPanel = new QWidget();
     bottomButtonsPanelLayout = new QHBoxLayout();
+    bottomButtonsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     bottomButtonsPanel->setLayout( bottomButtonsPanelLayout );
 
     acceptButton = new QPushButton( tr( "Ok" ) );
@@ -314,8 +315,6 @@ void PreferencesDialog::initFontOverrides() {
         QWidget* fontOverrideBox = new QWidget();
         QHBoxLayout* fontOverrideBoxLayout = new QHBoxLayout();
         fontOverrideBox->setLayout( fontOverrideBoxLayout );
-        //    fontOverrideBoxLayout->setSpacing( 2 );
-        //    fontOverrideBox->setMargin( 2 );
         QLabel* fontOverrideLabel = new QLabel( QApplication::translate( "QObject", language.toLatin1().data() ) );
         QComboBox* fontOverrideFamilyComboBox = new QComboBox();
         initFontFamilyValues( fontOverrideFamilyComboBox, true );
@@ -354,7 +353,7 @@ void PreferencesDialog::initStudyLanguageValues() const {
     for( int i = 0; i < studyLanguageListLength; i++ ) {
         bool isStudied( prefs->isStudyLanguage( studyLanguageList[ i ] ) );
         QTreeWidgetItem* lang = new QTreeWidgetItem( studyLanguagesListView );
-        lang->setCheckState( 0, isStudied ? Qt::Checked : Qt::Unchecked );//lang->setOn( isStudied );
+        lang->setCheckState( 0, isStudied ? Qt::Checked : Qt::Unchecked );
         lang->setText( 0, QApplication::translate( "QObject", studyLanguageList[ i ].toLatin1().data() ) );
         studyLanguagesListView->addTopLevelItem( lang );
     }
@@ -538,8 +537,6 @@ void PreferencesDialog::addFontOverride( const QString& language ) {
     QWidget* fontOverrideBox = new QWidget();
     QHBoxLayout* fontOverrideBoxLayout = new QHBoxLayout();
     fontOverrideBox->setLayout( fontOverrideBoxLayout );
-    //fontOverrideBoxLayout->setSpacing( 2 );
-    //fontOverrideBoxLayout->setMargin( 2 );
 
     QLabel* fontOverrideLabel = new QLabel( QApplication::translate( "QObject", language.toLatin1().data() ) );
     QComboBox* fontOverrideFamilyComboBox = new QComboBox();
