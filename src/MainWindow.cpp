@@ -240,6 +240,10 @@ MainWindow::~MainWindow() {
     delete( control );
 }
 
+QSize MainWindow::sizeHint() const {
+    return( QSize( 800, 600 ) );
+}
+
 Controller* MainWindow::controller() {
     return( control );
 }

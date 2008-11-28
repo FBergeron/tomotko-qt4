@@ -1,7 +1,7 @@
 #include "SequenceListItem.h"
 
 SequenceListItem::SequenceListItem( QTreeWidget* parent, const QString& text, Sequence sequence )
-    : QTreeWidgetItem( parent/*, text, QCheckListItem::CheckBox*/ ), sequence( sequence ) {
+    : QTreeWidgetItem( parent ), sequence( sequence ) {
     setText( 0, text );
 }
 

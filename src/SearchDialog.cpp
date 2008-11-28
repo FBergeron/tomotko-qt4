@@ -23,10 +23,13 @@ void SearchDialog::init() {
 
     resetButton = new QPushButton();
     resetButton->setIcon( QIcon( QPixmap( ZPIXMAP( resetQueryForm_xpm ) ) ) );
+    resetButton->setToolTip( tr( "Reset" ) );
     connect( resetButton, SIGNAL( clicked() ), this, SLOT( reset() ) );
     queryField = new HistoryField();
     queryField->setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Expanding ) );
-    searchButton = new QPushButton( ZPIXMAP( search_xpm ), tr( "Search" ), this ); // Passing this inits autoDefault property.
+    searchButton = new QPushButton( /*tr( "Search" ),*/ this ); // Passing this inits autoDefault property.
+    searchButton->setIcon( QIcon( ZPIXMAP( search_xpm ) ) );
+    searchButton->setIconSize( QSize( 32, 32 ) );
     searchButton->setDefault( true );
     connect( searchButton, SIGNAL( clicked() ), queryField->lineEdit(), SIGNAL( returnPressed() ) );
     connect( searchButton, SIGNAL( clicked() ), this, SLOT( search() ) );
@@ -37,7 +40,6 @@ void SearchDialog::init() {
 
     int prefHeight = resetButton->sizeHint().height();
     queryField->setMaximumHeight( prefHeight );
-    searchButton->setMaximumHeight( prefHeight ); 
 
     resultsHeaderPanel = new QWidget();
     resultsHeaderPanelLayout = new QHBoxLayout();
@@ -66,11 +68,20 @@ void SearchDialog::init() {
     resultsButtonsPanelLayout = new QHBoxLayout();
     resultsButtonsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     resultsButtonsPanel->setLayout( resultsButtonsPanelLayout );
-    goResultVocabButton = new QPushButton( QIcon( ZPIXMAP( goVocab_xpm ) ), tr( "View Glossary" ) );
+    goResultVocabButton = new QPushButton( tr( "View Glossary" ) );
+    goResultVocabButton->setIcon( QIcon( ZPIXMAP( goVocab_xpm ) ) );
+    goResultVocabButton->setIconSize( QSize( 32, 32 ) );
+    goResultVocabButton->setToolTip( tr( "View Glossary" ) );
     connect( goResultVocabButton, SIGNAL( clicked() ), this, SLOT( goResultVocab() ) );
-    editResultTermButton = new QPushButton( QIcon( ZPIXMAP( editTerm_xpm ) ), tr( "Edit Term" ) );
+    editResultTermButton = new QPushButton( tr( "Edit Term" ) );
+    editResultTermButton->setIcon( QIcon( ZPIXMAP( editTerm_xpm ) ) );
+    editResultTermButton->setIconSize( QSize( 32, 32 ) );
+    editResultTermButton->setToolTip( tr( "Edit Term" ) );
     connect( editResultTermButton, SIGNAL( clicked() ), this, SLOT( editResultTerm() ) );
-    removeResultTermButton = new QPushButton( QIcon( ZPIXMAP( removeTerm_xpm ) ), tr( "Remove Term(s)" ) );
+    removeResultTermButton = new QPushButton( tr( "Remove Term(s)" ) );
+    removeResultTermButton->setIcon( QIcon( ZPIXMAP( removeTerm_xpm ) ) );
+    removeResultTermButton->setIconSize( QSize( 32, 32 ) );
+    removeResultTermButton->setToolTip( tr( "Remove Term(s)" ) );
     connect( removeResultTermButton, SIGNAL( clicked() ), this, SLOT( removeResultTerms() ) );
 
     resultsButtonsPanelLayout->addWidget( goResultVocabButton );

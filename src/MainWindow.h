@@ -4,42 +4,28 @@
 #include <iostream>
 #include <QActionGroup>
 #include <QApplication>
-//#include <qclipboard.h>
 #include <QCloseEvent>
 #include <QComboBox>
 #include <QDir>
-//#include <qfile.h>
-//#include <qfont.h>
-//#include <qfontdatabase.h>
 #include <QKeySequence>
 #include <QLabel>
-//#include <qlistview.h>
-//#include <qpixmap.h>
 #include <QProgressBar>
 #include <QMainWindow> 
 #include <QMap>
 #include <QMenu>
 #include <QMenuBar>
 #include <QMessageBox>
-//#include <qpe/fileselector.h>
-//#include <qpe/resource.h>
-//#include <qpixmap.h>
-//#include <qpushbutton.h>
 #include <QStatusBar>
 #include <QString>
 #include <QStringList>
-//#include <qthread.h>
 #include <QToolBar>
 #include <QTranslator>
 #include <QStackedWidget>
-//#include <stdio.h>
 #include "Controller.h"
 #include "HelpBrowser.h"
-//#include "PixMap.h"
 #include "PreferencesDialog.h"
 #include "QuizFrame.h"
 #include "VocabularyManagerFrame.h"
-//#include "Term.h"
 
 extern QAction* action[ ACTION_COUNT ];
 
@@ -55,6 +41,8 @@ public:
 
     MainWindow( QApplication& app, Controller* controller );
     ~MainWindow();
+
+    QSize sizeHint() const;
 
     Controller* controller();
 

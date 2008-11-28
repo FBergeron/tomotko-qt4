@@ -32,18 +32,21 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
     treePanelLayout->addWidget( treeButtonPanel );
     treePanel->setLayout( treePanelLayout );
 
-    addFolderButton = new QPushButton( tr( "AddFolder" ) );
+    addFolderButton = new QPushButton( /*tr( "AddFolder" )*/ );
     addFolderButton->setIcon( QIcon( QPixmap( addFolder_xpm ) ) );
+    addFolderButton->setIconSize( QSize( 32, 32 ) );
     addFolderButton->setToolTip( tr( "AddFolder" ) );
     connect( addFolderButton, SIGNAL( clicked() ), this, SLOT( addFolder() ) );
 
-    addVocabButton = new QPushButton( tr( "AddGlossary" ) );
+    addVocabButton = new QPushButton( /*tr( "AddGlossary" )*/ );
     addVocabButton->setIcon( QIcon( QPixmap( addVocab_xpm ) ) );
+    addVocabButton->setIconSize( QSize( 32, 32 ) );
     addVocabButton->setToolTip( tr( "AddGlossary" ) );
     connect( addVocabButton, SIGNAL( clicked() ), this, SLOT( addVocab() ) );
 
-    removeItemButton = new QPushButton( tr( "RemoveItem" ) );
+    removeItemButton = new QPushButton( /*tr( "RemoveItem" )*/ );
     removeItemButton->setIcon( QIcon( QPixmap( removeItem_xpm ) ) );
+    removeItemButton->setIconSize( QSize( 32, 32 ) );
     removeItemButton->setToolTip( tr( "RemoveItem" ) );
     connect( removeItemButton, SIGNAL( clicked() ), this, SLOT( removeItem() ) );
 
@@ -77,6 +80,7 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
 
     folderDetailsFolderMaximizeDetailsButton = new QPushButton();
     folderDetailsFolderMaximizeDetailsButton->setIcon( QIcon( QPixmap( maximize_xpm ) ) );
+    folderDetailsFolderMaximizeDetailsButton->setIconSize( QSize( 32, 32 ) );
     folderDetailsFolderMaximizeDetailsButton->setToolTip( tr( "MaximizeDetails" ) );
     folderDetailsFolderMaximizeDetailsButton->setCheckable( true );
     folderDetailsFolderMaximizeDetailsButton->setMaximumHeight( 
@@ -115,6 +119,7 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
 
     vocabDetailsVocabMaximizeDetailsButton = new QPushButton();
     vocabDetailsVocabMaximizeDetailsButton->setIcon( QIcon( QPixmap( maximize_xpm ) ) );
+    vocabDetailsVocabMaximizeDetailsButton->setIconSize( QSize( 32, 32 ) );
     vocabDetailsVocabMaximizeDetailsButton->setToolTip( tr( "MaximizeDetails" ) );
     vocabDetailsVocabMaximizeDetailsButton->setCheckable( true );
     vocabDetailsVocabMaximizeDetailsButton->setMaximumHeight( 
@@ -164,11 +169,13 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
 
     checkAllTermsButton = new QPushButton();
     checkAllTermsButton->setIcon( QIcon( QPixmap( checkAllTerms_xpm ) ) ); 
+    checkAllTermsButton->setIconSize( QSize( 32, 32 ) );
     checkAllTermsButton->setToolTip( tr( "CheckAllTerms" ) );
     connect( checkAllTermsButton, SIGNAL( clicked() ), this, SLOT( checkAllTerms() ) );
 
     inverseCheckedTermsButton = new QPushButton();
     inverseCheckedTermsButton->setIcon( QIcon( QPixmap( inverseCheckedTerms_xpm ) ) ); 
+    inverseCheckedTermsButton->setIconSize( QSize( 32, 32 ) );
     inverseCheckedTermsButton->setToolTip( tr( "InverseCheckedTerms" ) );
     connect( inverseCheckedTermsButton, SIGNAL( clicked() ), this, SLOT( inverseCheckedTerms() ) );
 
@@ -180,18 +187,21 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
     addRemoveTermPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     addRemoveTermPanel->setLayout( addRemoveTermPanelLayout );
 
-    addTermButton = new QPushButton( tr( "AddTerm" ) );
+    addTermButton = new QPushButton( /*tr( "AddTerm" )*/ );
     addTermButton->setIcon( QIcon( QPixmap( addTerm_xpm ) ) ); 
+    addTermButton->setIconSize( QSize( 32, 32 ) );
     addTermButton->setToolTip( tr( "AddTerm" ) );
     connect( addTermButton, SIGNAL( clicked() ), this, SLOT( addTerm() ) );
 
-    editTermButton = new QPushButton( tr( "EditTerm" ) );
+    editTermButton = new QPushButton( /*tr( "EditTerm" )*/ );
     editTermButton->setIcon( QIcon( QPixmap( editTerm_xpm ) ) ); 
+    editTermButton->setIconSize( QSize( 32, 32 ) );
     editTermButton->setToolTip( tr( "EditTerm" ) );
     connect( editTermButton, SIGNAL( clicked() ), this, SLOT( editTerm() ) );
 
-    removeTermButton = new QPushButton( tr( "RemoveTerm" ) );
+    removeTermButton = new QPushButton( /*tr( "RemoveTerm" )*/ );
     removeTermButton->setIcon( QIcon( QPixmap( removeTerm_xpm ) ) );
+    removeTermButton->setIconSize( QSize( 32, 32 ) );
     removeTermButton->setToolTip( tr( "RemoveTerm" ) );
     connect( removeTermButton, SIGNAL( clicked() ), this, SLOT( removeTerms() ) );
   
@@ -626,9 +636,12 @@ void VocabularyManagerFrame::retranslateUi() {
     vocabDetailsPropsPanel->retranslateUi();
     vocabDetailsTabWidget->setTabText( 0, tr( "Properties" ) );
     vocabDetailsTabWidget->setTabText( 1, tr( "Words" ) );
-    addTermButton->setText( tr( "AddTerm" ) );
-    editTermButton->setText( tr( "EditTerm" ) );
-    removeTermButton->setText( tr( "RemoveTerm" ) );
+    //addFolderButtton->setText( tr( "AddFolder" ) );
+    //addVocabButton->setText( tr( "AddGlossary" ) );
+    //removeItemButton->setText( tr( "RemoveItem" ) );
+    //addTermButton->setText( tr( "AddTerm" ) );
+    //editTermButton->setText( tr( "EditTerm" ) );
+    //removeTermButton->setText( tr( "RemoveTerm" ) );
     if( searchDialog )
         searchDialog->retranslateUi();
     updateUi();

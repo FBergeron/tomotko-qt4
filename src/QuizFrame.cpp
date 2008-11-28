@@ -53,22 +53,25 @@ void QuizFrame::init() {
     answerControlPanel->setLayout( answerControlPanelLayout );
     controlPanelLayout->addWidget( answerControlPanel );
 
-    revealAllDataButton = new QPushButton( tr( "Reveal" ) );
+    revealAllDataButton = new QPushButton( /*tr( "Reveal" )*/ );
     revealAllDataButton->setIcon( QIcon( ZPIXMAP( eye_xpm ) ) );
+    revealAllDataButton->setIconSize( QSize( 32, 32 ) );
     revealAllDataButton->setEnabled( false );
     revealAllDataButton->installEventFilter( this );
     revealAllDataButton->setToolTip( tr( "Reveal" ) );
     connect( revealAllDataButton, SIGNAL( clicked() ), this, SLOT( reveal() ) );
 
-    rightAnswerButton = new QPushButton( tr( "RightAnswer" ) );
+    rightAnswerButton = new QPushButton( /*tr( "RightAnswer" )*/ );
     rightAnswerButton->setIcon( QIcon( ZPIXMAP( goodAns_xpm ) ) ); 
+    rightAnswerButton->setIconSize( QSize( 32, 32 ) );
     rightAnswerButton->setEnabled( false );
     rightAnswerButton->installEventFilter( this );
     rightAnswerButton->setToolTip( tr( "RightAnswer" ) );
     connect( rightAnswerButton, SIGNAL( clicked() ), this, SLOT( rightAnswer() ) );
 
-    wrongAnswerButton = new QPushButton( tr( "WrongAnswer" ) );
+    wrongAnswerButton = new QPushButton( /*tr( "WrongAnswer" )*/ );
     wrongAnswerButton->setIcon( QIcon( ZPIXMAP( badAns_xpm ) ) );
+    wrongAnswerButton->setIconSize( QSize( 32, 32 ) );
     wrongAnswerButton->setEnabled( false );
     wrongAnswerButton->installEventFilter( this );
     wrongAnswerButton->setToolTip( tr( "WrongAnswer" ) );
@@ -78,8 +81,9 @@ void QuizFrame::init() {
     answerControlPanelLayout->addWidget( rightAnswerButton );
     answerControlPanelLayout->addWidget( wrongAnswerButton );
 
-    editionButton = new QPushButton( tr( "EditWord" ) );
+    editionButton = new QPushButton( /*tr( "EditWord" )*/ );
     editionButton->setIcon( QIcon( ZPIXMAP( editTerm_xpm ) ) ); 
+    editionButton->setIconSize( QSize( 32, 32 ) );
     editionButton->setMinimumWidth( 100 );
     editionButton->setEnabled( false );
     editionButton->installEventFilter( this );
@@ -170,6 +174,7 @@ void QuizFrame::init() {
     commentLabel = new QLabel( tr( "Examples/Comments" ) );
     maximizeCommentButton = new QPushButton();
     maximizeCommentButton->setIcon( QIcon( ZPIXMAP( maximize_xpm ) ) );
+    maximizeCommentButton->setIconSize( QSize( 32, 32 ) );
     maximizeCommentButton->setCheckable( true );
     maximizeCommentButton->setMaximumHeight( commentLabel->sizeHint().height() > 24 ? commentLabel->sizeHint().height() : 24 );
     maximizeCommentButton->setMaximumWidth( maximizeCommentButton->maximumHeight() );
@@ -621,10 +626,10 @@ void QuizFrame::retranslateUi() {
     testLangTermButton->setText( tr( "???" ) );
     commentLabel->setText( tr( "Examples/Comments" ) );
     commentButton->setText( tr( "???" ) );
-    revealAllDataButton->setText( tr( "Reveal" ) );
-    rightAnswerButton->setText( tr( "RightAnswer" ) );
-    wrongAnswerButton->setText( tr( "WrongAnswer" ) );
-    editionButton->setText( tr( "EditWord" ) );
+    //revealAllDataButton->setText( tr( "Reveal" ) );
+    //rightAnswerButton->setText( tr( "RightAnswer" ) );
+    //wrongAnswerButton->setText( tr( "WrongAnswer" ) );
+    //editionButton->setText( tr( "EditWord" ) );
 }
 
 void QuizFrame::hideAnswers() {
