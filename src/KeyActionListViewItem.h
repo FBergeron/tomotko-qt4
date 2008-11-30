@@ -17,7 +17,9 @@
 class KeyActionListViewItem : public QTreeWidgetItem {
 
 public:
-    KeyActionListViewItem( QTreeWidget *parent, QAction *action, Action actionIndex ) : QTreeWidgetItem( parent ), action( action ), actionIndex( actionIndex ) {
+
+    KeyActionListViewItem( QTreeWidget *parent, QAction *action, Action actionIndex ) 
+        : QTreeWidgetItem( parent ), action( action ), actionIndex( actionIndex ) {
         keyCode = action->shortcut();
         updateText();
     }

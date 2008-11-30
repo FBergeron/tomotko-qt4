@@ -9,7 +9,7 @@ ApplicationID
 7E448185-8AA1-4565-A3B5-58FAB4478551
 
 ApplicationURL
-{}
+http://tomotko.sourceforge.net
 
 AutoRefreshFiles
 Yes
@@ -27,7 +27,7 @@ CommandLineFailureAction
 {Fail (recommended)}
 
 Company
-{Your Company Name}
+{}
 
 CompressionLevel
 6
@@ -36,7 +36,7 @@ CompressionMethod
 zlib
 
 Copyright
-{}
+2006-2009
 
 CreateDesktopShortcut
 Yes
@@ -468,6 +468,9 @@ Yes
 
 4F692A59-1896-46A2-8FA2-6CBF2C2B877C,Filename
 <%ProgramExecutable%>
+
+506AE043-EBDD-471A-B352-5B731EF15C6B,Conditions
+{0 conditions}
 
 506AE043-EBDD-471A-B352-5B731EF15C6B,Text,subst
 1

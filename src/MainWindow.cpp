@@ -134,7 +134,7 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
         this, SLOT( search() ), prefs.getAccelerator( ACTION_SEARCH ) );
 
     actionsMenu = new QMenu( tr( "Actions" ), this );
-    menuBar()->addMenu( actionsMenu );
+    actionsMenuAction = menuBar()->addMenu( actionsMenu );
    
     actionsMenu->addAction( action[ ACTION_START_QUIZ ] );
 
@@ -287,9 +287,8 @@ void MainWindow::setDigraphEnabled( bool isEnabled ) {
 }
 
 void MainWindow::retranslateUi() {
-    //menuBar()->changeItem( menuBar()->idAt( 0 ), tr( "Actions" ) );
-    //if( mainPanel->currentWidget() == vocabManagerFrame )
-    //    menuBar()->changeItem( menuBar()->idAt( 1 ), QObject::tr( "Edition" ) );
+    actionsMenuAction->setText( tr( "Actions" ) );
+    editionMenuAction->setText( tr( "Edition" ) );
 
     // Could use a loop here.
     action[ ACTION_REVEAL ]->setText( tr( "Reveal" ) );
@@ -318,7 +317,7 @@ void MainWindow::retranslateUi() {
     copyAction->setText( QObject::tr( "Copy" ) );
     pasteAction->setText( QObject::tr( "Paste" ) );
 
-    //helpMenu->changeItem( helpMenu->idAt( 0 ), tr( "About..." ) );
+    aboutAction->setText( tr( "About..." ) );
     
     updateFirstLanguageValues();
     updateTestLanguageValues();

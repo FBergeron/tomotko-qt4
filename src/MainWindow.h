@@ -106,6 +106,7 @@ private:
     QToolBar*               toolBar;
 
     QMenu*                  actionsMenu;
+    QAction*                actionsMenuAction;
     QAction*                helpMenuAction;
     QMenu*                  helpMenu;
 

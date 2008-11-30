@@ -106,7 +106,7 @@ void QuizFrame::init() {
     firstLangTermLineEdit->installEventFilter( this );
     firstLangTermButton = new QPushButton( tr( "???" ) );
     firstLangTermButton->installEventFilter( this );
-    firstLangTermStack->setToolTip( tr( "Reveal" ) );
+    firstLangTermButton->setToolTip( tr( "Reveal" ) );
     connect( firstLangTermButton, SIGNAL( clicked() ), this, SLOT( revealFirstLangTerm() ) );  
     firstLangTermStack->addWidget( firstLangTermLineEdit );
     firstLangTermStack->addWidget( firstLangTermButton );
@@ -627,9 +627,20 @@ void QuizFrame::retranslateUi() {
     commentLabel->setText( tr( "Examples/Comments" ) );
     commentButton->setText( tr( "???" ) );
     //revealAllDataButton->setText( tr( "Reveal" ) );
+    revealAllDataButton->setToolTip( tr( "Reveal" ) );
     //rightAnswerButton->setText( tr( "RightAnswer" ) );
+    rightAnswerButton->setToolTip( tr( "RightAnswer" ) );
     //wrongAnswerButton->setText( tr( "WrongAnswer" ) );
+    wrongAnswerButton->setToolTip( tr( "WrongAnswer" ) );
     //editionButton->setText( tr( "EditWord" ) );
+    editionButton->setToolTip( tr( "EditWord" ) );
+
+    firstLangTermButton->setToolTip( tr( "Reveal" ) );
+    testLangTermAltButton->setToolTip( tr( "Reveal" ) );
+    testLangTermButton->setToolTip( tr( "Reveal" ) );
+    commentButton->setToolTip( tr( "Reveal" ) );
+    imageButton->setToolTip( tr( "Reveal" ) );
+    maximizeCommentButton->setToolTip( tr( "MaximizeComment" ) );
 }
 
 void QuizFrame::hideAnswers() {

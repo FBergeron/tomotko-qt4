@@ -636,12 +636,22 @@ void VocabularyManagerFrame::retranslateUi() {
     vocabDetailsPropsPanel->retranslateUi();
     vocabDetailsTabWidget->setTabText( 0, tr( "Properties" ) );
     vocabDetailsTabWidget->setTabText( 1, tr( "Words" ) );
-    //addFolderButtton->setText( tr( "AddFolder" ) );
+    //addFolderButton->setText( tr( "AddFolder" ) );
+    addFolderButton->setToolTip( tr( "AddFolder" ) );
     //addVocabButton->setText( tr( "AddGlossary" ) );
+    addVocabButton->setToolTip( tr( "AddGlossary" ) );
     //removeItemButton->setText( tr( "RemoveItem" ) );
+    removeItemButton->setToolTip( tr( "RemoveItem" ) );
     //addTermButton->setText( tr( "AddTerm" ) );
+    addTermButton->setToolTip( tr( "AddTerm" ) );
     //editTermButton->setText( tr( "EditTerm" ) );
+    editTermButton->setToolTip( tr( "EditTerm" ) );
     //removeTermButton->setText( tr( "RemoveTerm" ) );
+    removeTermButton->setToolTip( tr( "RemoveTerm" ) );
+    folderDetailsFolderMaximizeDetailsButton->setToolTip( tr( "MaximizeDetails" ) ); 
+    vocabDetailsVocabMaximizeDetailsButton->setToolTip( tr( "MaximizeDetails" ) );
+    checkAllTermsButton->setToolTip( tr( "CheckAllTerms" ) );
+    inverseCheckedTermsButton->setToolTip( tr( "InverseCheckedTerms" ) );
     if( searchDialog )
         searchDialog->retranslateUi();
     updateUi();

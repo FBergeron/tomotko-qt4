@@ -1,7 +1,6 @@
 ToDo
 ----
 Is it possible to configure the installer so that the application has a proper icon?
-Translate tooltips in retranslateUi() everywhere.
 Sometimes, when I delete a glossary, it reappears the next time I start toMOTko.  How to reproduce it?
 In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  Will it bring data incompatibility with previous versions? I think so.  If there seems to be incompatibilities, it may also be caused by the TermScheduler's tempTermPool handling in operator>>.  Test that!
 The columns of the prop tables don't resize properly.

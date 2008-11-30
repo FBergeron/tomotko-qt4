@@ -30,6 +30,7 @@ void SearchDialog::init() {
     searchButton = new QPushButton( /*tr( "Search" ),*/ this ); // Passing this inits autoDefault property.
     searchButton->setIcon( QIcon( ZPIXMAP( search_xpm ) ) );
     searchButton->setIconSize( QSize( 32, 32 ) );
+    searchButton->setToolTip( tr( "Search" ) );
     searchButton->setDefault( true );
     connect( searchButton, SIGNAL( clicked() ), queryField->lineEdit(), SIGNAL( returnPressed() ) );
     connect( searchButton, SIGNAL( clicked() ), this, SLOT( search() ) );
@@ -149,7 +150,9 @@ void SearchDialog::updateUi() {
 }
 
 void SearchDialog::retranslateUi() {
-    searchButton->setText( tr( "Search" ) );
+    resetButton->setToolTip( tr( "Reset" ) );
+    //searchButton->setText( tr( "Search" ) );
+    searchButton->setToolTip( tr( "Search" ) );
     resultsHeaderLabel->setText( tr( "Results" ) );
     resultsCounterLabel->setText( tr( "%1 term(s) found" ).arg( controller->getSearchResultsCount() ) );
     QStringList headerLabels;
@@ -158,8 +161,11 @@ void SearchDialog::retranslateUi() {
     headerLabels << tr( "Glossary" ) << tr( "Location" );
     resultsListView->setHeaderLabels( headerLabels );
     goResultVocabButton->setText( tr( "View Glossary" ) );
+    goResultVocabButton->setToolTip( tr( "View Glossary" ) );
     editResultTermButton->setText( tr( "Edit Term" ) );
+    editResultTermButton->setToolTip( tr( "Edit Term" ) );
     removeResultTermButton->setText( tr( "Remove Term(s)" ) );
+    removeResultTermButton->setToolTip( tr( "Remove Term(s)" ) );
     goResultVocabButton->adjustSize();
     editResultTermButton->adjustSize();
     removeResultTermButton->adjustSize();

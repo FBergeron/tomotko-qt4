@@ -212,6 +212,7 @@ void PreferencesDialog::init() {
     headerLabels << tr( "Action" ) << tr( "Key" ); 
     keyboardAccelListView->setHeaderLabels( headerLabels );
     keyboardAccelListView->header()->setResizeMode( 0, QHeaderView::Stretch );
+    keyboardAccelListView->setIconSize( QSize( 24, 24 ) );
     int actionCount = sizeof( action ) / sizeof( QAction* );
     for( int i = actionCount - 1; i >= 0; i-- ) {
         KeyActionListViewItem* actionItem = new KeyActionListViewItem( keyboardAccelListView, action[ i ], (Action)i );
