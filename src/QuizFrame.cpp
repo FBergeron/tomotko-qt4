@@ -57,7 +57,7 @@ void QuizFrame::init() {
     revealAllDataButton->setIcon( QIcon( ZPIXMAP( eye_xpm ) ) );
     revealAllDataButton->setIconSize( QSize( 32, 32 ) );
     revealAllDataButton->setEnabled( false );
-    revealAllDataButton->installEventFilter( this );
+    //revealAllDataButton->installEventFilter( this );
     revealAllDataButton->setToolTip( tr( "Reveal" ) );
     connect( revealAllDataButton, SIGNAL( clicked() ), this, SLOT( reveal() ) );
 
@@ -65,7 +65,7 @@ void QuizFrame::init() {
     rightAnswerButton->setIcon( QIcon( ZPIXMAP( goodAns_xpm ) ) ); 
     rightAnswerButton->setIconSize( QSize( 32, 32 ) );
     rightAnswerButton->setEnabled( false );
-    rightAnswerButton->installEventFilter( this );
+    //rightAnswerButton->installEventFilter( this );
     rightAnswerButton->setToolTip( tr( "RightAnswer" ) );
     connect( rightAnswerButton, SIGNAL( clicked() ), this, SLOT( rightAnswer() ) );
 
@@ -73,7 +73,7 @@ void QuizFrame::init() {
     wrongAnswerButton->setIcon( QIcon( ZPIXMAP( badAns_xpm ) ) );
     wrongAnswerButton->setIconSize( QSize( 32, 32 ) );
     wrongAnswerButton->setEnabled( false );
-    wrongAnswerButton->installEventFilter( this );
+    //wrongAnswerButton->installEventFilter( this );
     wrongAnswerButton->setToolTip( tr( "WrongAnswer" ) );
     connect( wrongAnswerButton, SIGNAL( clicked() ), this, SLOT( wrongAnswer() ) );
 
@@ -86,7 +86,7 @@ void QuizFrame::init() {
     editionButton->setIconSize( QSize( 32, 32 ) );
     editionButton->setMinimumWidth( 100 );
     editionButton->setEnabled( false );
-    editionButton->installEventFilter( this );
+    //editionButton->installEventFilter( this );
     editionButton->setToolTip( tr( "EditWord" ) );
     connect( editionButton, SIGNAL( clicked() ), this, SLOT( editCurrentTerm() ) );
 
@@ -103,9 +103,9 @@ void QuizFrame::init() {
     firstLangTermStack = new QStackedWidget();
     firstLangTermLineEdit = new ScrollableLineEdit();
     firstLangTermLineEdit->setReadOnly( true );
-    firstLangTermLineEdit->installEventFilter( this );
+    //firstLangTermLineEdit->installEventFilter( this );
     firstLangTermButton = new QPushButton( tr( "???" ) );
-    firstLangTermButton->installEventFilter( this );
+    //firstLangTermButton->installEventFilter( this );
     firstLangTermButton->setToolTip( tr( "Reveal" ) );
     connect( firstLangTermButton, SIGNAL( clicked() ), this, SLOT( revealFirstLangTerm() ) );  
     firstLangTermStack->addWidget( firstLangTermLineEdit );
@@ -137,9 +137,9 @@ void QuizFrame::init() {
     testLangFieldsPanelLayout->addWidget( testLangTermAltStack );
     testLangTermAltLineEdit = new ScrollableLineEdit();
     testLangTermAltLineEdit->setReadOnly( true );
-    testLangTermAltLineEdit->installEventFilter( this );
+    //testLangTermAltLineEdit->installEventFilter( this );
     testLangTermAltButton = new QPushButton( tr( "???" ) );
-    testLangTermAltStack->installEventFilter( this );
+    //testLangTermAltStack->installEventFilter( this );
     testLangTermAltButton->setToolTip( tr( "Reveal" ) );
     connect( testLangTermAltButton, SIGNAL( clicked() ), this, SLOT( revealAltTerm() ) );  
     testLangTermAltStack->addWidget( testLangTermAltLineEdit );
@@ -149,9 +149,9 @@ void QuizFrame::init() {
     testLangFieldsPanelLayout->addWidget( testLangTermStack );
     testLangTermLineEdit = new ScrollableLineEdit();
     testLangTermLineEdit->setReadOnly( true );
-    testLangTermLineEdit->installEventFilter( this );
+    //testLangTermLineEdit->installEventFilter( this );
     testLangTermButton = new QPushButton( tr( "???" ) );
-    testLangTermStack->installEventFilter( this );
+    //testLangTermStack->installEventFilter( this );
     testLangTermButton->setToolTip( tr( "Reveal" ) );
     connect( testLangTermButton, SIGNAL( clicked() ), this, SLOT( revealTestLangTerm() ) );  
 
@@ -178,7 +178,7 @@ void QuizFrame::init() {
     maximizeCommentButton->setCheckable( true );
     maximizeCommentButton->setMaximumHeight( commentLabel->sizeHint().height() > 24 ? commentLabel->sizeHint().height() : 24 );
     maximizeCommentButton->setMaximumWidth( maximizeCommentButton->maximumHeight() );
-    maximizeCommentButton->installEventFilter( this );
+    //maximizeCommentButton->installEventFilter( this );
     maximizeCommentButton->setToolTip( tr( "MaximizeComment" ) );
     connect( maximizeCommentButton, SIGNAL( toggled( bool ) ), this, SLOT( toggleMaximizeComment( bool ) ) );
     commentLabelPanelLayout->addWidget( commentLabel );
@@ -190,9 +190,9 @@ void QuizFrame::init() {
 
     commentMultiLineEdit = new ScrollableMultiLineEdit();
     commentMultiLineEdit->setReadOnly( true );
-    commentMultiLineEdit->installEventFilter( this );
+    //commentMultiLineEdit->installEventFilter( this );
     commentButton = new QPushButton( tr( "???" ) );
-    commentButton->installEventFilter( this );
+    //commentButton->installEventFilter( this );
     commentButton->setToolTip( tr( "Reveal" ) );
     connect( commentButton, SIGNAL( clicked() ), this, SLOT( revealComment() ) );  
     commentStack->addWidget( commentMultiLineEdit );
@@ -212,6 +212,36 @@ void QuizFrame::init() {
     imageStack->addWidget( imageButton );
 
     topPanelLayout->addWidget( imageBox );
+
+    scrollLeftAction = new QAction( this );
+    scrollLeftAction->setShortcut( QKeySequence( QKeySequence::MoveToPreviousChar ) );
+    connect( scrollLeftAction, SIGNAL( triggered() ), this, SLOT( scrollLeft() ) );
+    addAction( scrollLeftAction );
+
+    scrollRightAction = new QAction( this );
+    scrollRightAction->setShortcut( QKeySequence( QKeySequence::MoveToNextChar ) );
+    connect( scrollRightAction, SIGNAL( triggered() ), this, SLOT( scrollRight() ) );
+    addAction( scrollRightAction );
+
+    scrollUpAction = new QAction( this );
+    scrollUpAction->setShortcut( QKeySequence( QKeySequence::MoveToPreviousLine ) );
+    connect( scrollUpAction, SIGNAL( triggered() ), this, SLOT( scrollUp() ) );
+    addAction( scrollUpAction );
+
+    scrollDownAction = new QAction( this );
+    scrollDownAction->setShortcut( QKeySequence( QKeySequence::MoveToNextLine ) );
+    connect( scrollDownAction, SIGNAL( triggered() ), this, SLOT( scrollDown() ) );
+    addAction( scrollDownAction );
+
+    scrollPageUpAction = new QAction( this );
+    scrollPageUpAction->setShortcut( QKeySequence( QKeySequence::MoveToPreviousPage ) );
+    connect( scrollPageUpAction, SIGNAL( triggered() ), this, SLOT( scrollPageUp() ) );
+    addAction( scrollPageUpAction );
+
+    scrollPageDownAction = new QAction( this );
+    scrollPageDownAction->setShortcut( QKeySequence( QKeySequence::MoveToNextPage ) );
+    connect( scrollPageDownAction, SIGNAL( triggered() ), this, SLOT( scrollPageDown() ) );
+    addAction( scrollPageDownAction );
 
     mainLayout = new QVBoxLayout( this );
     mainLayout->addWidget( topPanel );
@@ -533,33 +563,33 @@ void QuizFrame::revealAll() {
     //QApplication::flushX();
 }
 
-bool QuizFrame::eventFilter( QObject*, QEvent* evt ) {
-    if( evt->type() == QEvent::KeyPress ) {
-        QKeyEvent* keyEvt = (QKeyEvent*)evt;
-        switch( keyEvt->key() ) {
-
-            case Qt::Key_Up : 
-                if( keyEvt->modifiers() == Qt::ControlModifier )
-                    commentMultiLineEdit->scrollPageUp();
-                else
-                    commentMultiLineEdit->scrollUp();
-                return( true );
-
-            case Qt::Key_Down : 
-                if( keyEvt->modifiers() == Qt::ControlModifier )
-                    commentMultiLineEdit->scrollPageDown();
-                else
-                    commentMultiLineEdit->scrollDown();
-                return( true );
-
-            case Qt::Key_Left :  scrollLeft(); return( true );
-
-            case Qt::Key_Right : scrollRight(); return( true );
-
-        }
-    }
-    return( false );
-}
+//bool QuizFrame::eventFilter( QObject*, QEvent* evt ) {
+//    if( evt->type() == QEvent::KeyPress ) {
+//        QKeyEvent* keyEvt = (QKeyEvent*)evt;
+//        switch( keyEvt->key() ) {
+//
+//            case Qt::Key_Up : 
+//                if( keyEvt->modifiers() == Qt::ControlModifier )
+//                    commentMultiLineEdit->scrollPageUp();
+//                else
+//                    commentMultiLineEdit->scrollUp();
+//                return( true );
+//
+//            case Qt::Key_Down : 
+//                if( keyEvt->modifiers() == Qt::ControlModifier )
+//                    commentMultiLineEdit->scrollPageDown();
+//                else
+//                    commentMultiLineEdit->scrollDown();
+//                return( true );
+//
+//            case Qt::Key_Left :  scrollLeft(); return( true );
+//
+//            case Qt::Key_Right : scrollRight(); return( true );
+//
+//        }
+//    }
+//    return( false );
+//}
 
 void QuizFrame::scrollLeft() {
     firstLangTermLineEdit->scrollLeft();
@@ -571,6 +601,22 @@ void QuizFrame::scrollRight() {
     firstLangTermLineEdit->scrollRight();
     testLangTermLineEdit->scrollRight();
     testLangTermAltLineEdit->scrollRight();
+}
+
+void QuizFrame::scrollUp() {
+    commentMultiLineEdit->scrollUp();
+}
+
+void QuizFrame::scrollDown() {
+    commentMultiLineEdit->scrollDown();
+}
+
+void QuizFrame::scrollPageUp() {
+    commentMultiLineEdit->scrollPageUp();
+}
+
+void QuizFrame::scrollPageDown() {
+    commentMultiLineEdit->scrollPageDown();
 }
 
 void QuizFrame::updateFonts() {

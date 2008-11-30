@@ -49,10 +49,12 @@ protected:
 
 public slots:
 
-    virtual bool eventFilter( QObject* obj, QEvent* evt );
-
     void scrollLeft();
     void scrollRight();
+    void scrollUp();
+    void scrollDown();
+    void scrollPageUp();
+    void scrollPageDown();
 
     void setImage( const QString& imagePath );
 
@@ -163,6 +165,13 @@ private:
     QStackedWidget*             imageStack;
     QPushButton*                imageButton;
     QLabel*                     image;
+
+    QAction*                    scrollLeftAction;
+    QAction*                    scrollRightAction;
+    QAction*                    scrollUpAction;
+    QAction*                    scrollDownAction;
+    QAction*                    scrollPageUpAction;
+    QAction*                    scrollPageDownAction;
 
     QPixmap*                    pixmap;
     QMovie*                     movie;
