@@ -704,13 +704,12 @@ bool Controller::importImageFromZip( const QString& imagePath, zipFile inputFile
         if( isOk ) {
             isOk = imageFile.open( QIODevice::WriteOnly );
             if( isOk ) {
-                QTextStream ts( &imageFile );
-
+                QDataStream ts( &imageFile );
                 int readStatus;
                 for( ;; ) {
                     readStatus = unzReadCurrentFile( inputFile, buf, size_buf );
                     if( readStatus > 0 )
-                        ts << buf;
+                        ts.writeRawData( buf, readStatus );
                     else
                         break;
                 }
