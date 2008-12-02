@@ -1,5 +1,6 @@
 ToDo
 ----
+When first starting toMOTko (with no data, just empty .toMOTko folder) and we do View all items => crash! 
 Make the executable/installable version doesn't use the console.
 Test remove terms (multiple selection).  It's probably buggy because of nextTermItem management...
 In Util::getDefaultFontFamily(), the last else should return something better.

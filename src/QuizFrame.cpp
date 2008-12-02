@@ -351,6 +351,11 @@ void QuizFrame::setImage( const QString& path ) {
                 // Even for animated gif, we create a pixmap.  
                 // It will be used to determine the size of the movie.
                 pixmap = new QPixmap( path );
+                if( pixmap && pixmap->isNull() ) {
+                    // For some reasons, the image cannot be read, so ignore it.
+                    pixmap = NULL;
+                    return;
+                }
                 if( imageFormat == "gif" )
                     movie = new QMovie( path );
                 resizeImageBox();
