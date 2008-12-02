@@ -190,7 +190,6 @@ void SearchDialog::search() {
             resultItem->setFont( 1, prefs.getMediumFont( prefs.getTestLanguage() ) );
         }
     }
-    //resultsListView->verticalScrollBar()->setValue( 0 );
     resultsCounterLabel->setText( tr( "%1 term(s) found" ).arg( results.count() ) );
 }
 

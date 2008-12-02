@@ -1,6 +1,6 @@
 ToDo
 ----
-When I click on a folder, it expands automatically.  That should not be the case.
+Make the executable/installable version doesn't use the console.
 Test remove terms (multiple selection).  It's probably buggy because of nextTermItem management...
 In Util::getDefaultFontFamily(), the last else should return something better.
 Reread all the classes and remove obsolete comments.
@@ -8,15 +8,15 @@ Replace screenshots (non-zaurus ones) with Windows's ones in online help.
 Check if the text of online help is still correct.
 Probably replace all setSelected( true ) by setCurrentItem() instead?
 In Scrollable.*LineEdit, scrollUp() and scrollDown() should be smarter : for example, for scrollDown(), the cursor should go at the last visible line and go down one line.  Otherwise, it may feels like it's doing nothing.  Same thing for ScrollableMultiLineEdit wit scrollUp(), scrollDown(), scrollPageUp(), and scrollPageDown().
+Setting the 2 language selectors to the same language should not be allowed, I think.
 Complete l10n in es/ja/en/fr.
-Make the executable/installable version doesn't use the console.
-Disable Import/Export when appropriate otherwise, it feels like it's not working as nothing happens.
 The columns of the prop tables don't resize properly.
-Is it possible to configure the installer so that the application has a proper icon?
+Change some strings in the Installer: copyright and license.
 Sometimes, when I delete a glossary, it reappears the next time I start toMOTko.  How to reproduce it?
 In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  Will it bring data incompatibility with previous versions? I think so.  If there seems to be incompatibilities, it may also be caused by the TermScheduler's tempTermPool handling in operator>>.  Test that!
 Release 0.11.x for Windows
 
+The Search field doesn't accept digraphs.
 Apparently, on MacOS, the application icon is ugly, resolution should be better.  64x64?
 Add a FAQ in the website (documenting the problems for dependency lib and fonts)
 

@@ -1,8 +1,6 @@
 #ifndef STANDBY_TERM_H
 #define STANDBY_TERM_H
 
-//#include <iostream>
-//#include <stdlib>
 #include <QDataStream>
 #include "TermKey.h"
 

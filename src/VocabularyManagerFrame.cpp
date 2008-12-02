@@ -20,9 +20,7 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
 
     vocabTreeView = new VocabTreeView( *controller );
     //vocabTreeView->setAnimated( true );
-    //vocabTreeView->setTreeStepSize( 24 );
     vocabTreeView->setHeaderLabel( tr( "Glossaries" ) );
-    //vocabTreeView->setStretchColumn( 0 );
 
     treeButtonPanel = new QWidget();
     treeButtonPanelLayout = new QHBoxLayout();
@@ -140,14 +138,11 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
     vocabDetailsTermsPanel = new QWidget();
     vocabDetailsTermsPanelLayout = new QVBoxLayout();
     vocabDetailsTermsPanel->setLayout( vocabDetailsTermsPanelLayout );
-    //termList = new QTreeWidget();
     termList = new SmartListView();
     termList->header()->setMovable( false );
     termList->setSortingEnabled( true );
     termList->setSelectionMode( QAbstractItemView::ExtendedSelection );
     termList->setColumnCount( 2 );
-    //termList->setAllColumnsShowFocus( true );
-    //termList->setSelectionMode( QAbstractItemView::ExtendedSelection );
     QStringList headerLabels = QStringList();
     headerLabels << QApplication::translate( "QObject", controller->getPreferences().getFirstLanguage().toLatin1().data() ) << QApplication::translate( "QObject", controller->getPreferences().getTestLanguage().toLatin1().data() );
     termList->setHeaderLabels( headerLabels );
@@ -576,8 +571,8 @@ void VocabularyManagerFrame::restoreTreeSelection() {
             FolderTreeItem* folderItem = (FolderTreeItem*)item;
             if( currentFolderId == folderItem->getFolder()->getId() ) {
                 isTreeItemFound = true;
-                vocabTreeView->scrollToItem( item );//vocabTreeView->ensureItemVisible( item );
-                vocabTreeView->setCurrentItem( item ); //item->setSelected( true );//vocabTreeView->setSelected( item, true );
+                vocabTreeView->scrollToItem( item );
+                vocabTreeView->setCurrentItem( item );
                 break;
             }
         }
@@ -585,15 +580,15 @@ void VocabularyManagerFrame::restoreTreeSelection() {
             VocabTreeItem* vocabItem = (VocabTreeItem*)item;
             if( currentVocabId == vocabItem->getVocabulary()->getId() ) {
                 isTreeItemFound = true;
-                vocabTreeView->scrollToItem( item );//vocabTreeView->ensureItemVisible( item );
-                vocabTreeView->setCurrentItem( item ); //item->setSelected( true );//vocabTreeView->setSelected( item, true );
+                vocabTreeView->scrollToItem( item );
+                vocabTreeView->setCurrentItem( item );
                 break;
             }
         }
     }
     if( !isTreeItemFound ) {
-        vocabTreeView->setCurrentItem( vocabTreeRoot ); //vocabTreeRoot->setSelected( true );//vocabTreeView->setSelected( vocabTreeRoot, true );
-        vocabTreeView->scrollToItem( vocabTreeRoot );//vocabTreeView->ensureItemVisible( vocabTreeRoot );
+        vocabTreeView->setCurrentItem( vocabTreeRoot );
+        vocabTreeView->scrollToItem( vocabTreeRoot );
     }
 }
 
@@ -606,7 +601,7 @@ void VocabularyManagerFrame::restoreVocabSelection() {
             if( selectedTermIdList.contains( termItemId ) )
                 termItem->setSelected( true );//termList->setSelected( termItem, true );
             if( currentTermId == termItemId ) {
-                termList->scrollToItem( termItem );//termList->ensureItemVisible( termItem );
+                termList->scrollToItem( termItem );
                 termItem->setSelected( true );//termList->setCurrentItem( termItem );
                 updateTermList();
                 break;
@@ -675,49 +670,6 @@ void VocabularyManagerFrame::toggleMaximizeDetails( bool isOn ) {
         restoreDetailsPanel();
 }
 
-//void VocabularyManagerFrame::updateGeometry() {
-//    QSize size( width(), height() );
-//    if( size.width() > size.height() ) {
-//        int treePanelWidth = ( treePanel->isVisible() ? (int)( size.width() / 2.5 ) : 0 );
-//        int detailsPanelWidth = size.width() - treePanelWidth;
-//
-//        if( treePanel->isVisible() )
-//            treePanel->setGeometry( 0, 0, treePanelWidth, size.height() );
-//        detailsPanel->setGeometry( treePanelWidth, 0, detailsPanelWidth, size.height() );
-//    }
-//    else {
-//        int treePanelHeight = ( treePanel->isVisible() ? 170 : 0 );
-//        int detailsPanelHeight = size.height() - treePanelHeight;
-//        if( treePanel->isVisible() )
-//            treePanel->setGeometry( 0, 0, size.width(), treePanelHeight );
-//        detailsPanel->setGeometry( 0, treePanelHeight, size.width(), detailsPanelHeight );
-//    }
-//}
-//
-//void VocabularyManagerFrame::resizeEvent( QResizeEvent* ) {
-//    updateGeometry();
-//    TreeItem* selectedItem = (TreeItem*)vocabTreeView->currentItem();
-//    if( selectedItem ) {
-//        if( selectedItem->isFolder() ) {
-//            VocabTreeItem* vocabItem = (VocabTreeItem*)selectedItem;
-//            vocabTreeView->ensureItemVisible( vocabItem );
-//
-//            for( TermListItem* termItem = (TermListItem*)termList->firstChild(); termItem; termItem = (TermListItem*)termItem->nextSibling() ) {
-//                if( termItem->isSelected() ) {
-//                    termList->ensureItemVisible( termItem );
-//                    break;
-//                }
-//            }
-//        }
-//    }
-//}
-//
-//void VocabularyManagerFrame::showEvent( QShowEvent* showEvt ) {
-//    QWidget::showEvent( showEvt );
-//    // Both folder and vocab maximize buttons should have the same state so we use the folder's one.
-//    // We do this because the state may be inconsistent because of QuizFrame.
-//    action[ ACTION_MAXIMIZE ]->setOn( folderDetailsFolderMaximizeDetailsButton->isOn() );  
-//}
 void VocabularyManagerFrame::updateUi() {
     removeListeners();
     TreeItem* selectedItem = (TreeItem*)vocabTreeView->currentItem();
@@ -752,7 +704,8 @@ void VocabularyManagerFrame::updateCurrentTreeItem( QTreeWidgetItem* currItem, Q
     }
     if( currItem ) {
         TreeItem* treeItem = (TreeItem*)currItem;
-        treeItem->setOpen( true );
+        if( !treeItem->isFolder() )
+            treeItem->setOpen( true );
     }
     updateUi();
 }
@@ -794,7 +747,6 @@ void VocabularyManagerFrame::updateCurrentVocab( VocabTreeItem* vocabItem ) {
     }
     termList->sortItems( 0, Qt::AscendingOrder );
     termList->setSortingEnabled( true );
-    //termList->verticalScrollBar()->setValue( 0 );
     vocabItem->setOpen( true );
     addVocabButton->setEnabled( false );
     addFolderButton->setEnabled( false );
@@ -803,7 +755,6 @@ void VocabularyManagerFrame::updateCurrentVocab( VocabTreeItem* vocabItem ) {
 }
 
 void VocabularyManagerFrame::updateTermList() {
-    //termList->updateColumnsWidth();
     uint selectedTermCount = getSelectedTermCount();
     editTermButton->setEnabled( selectedTermCount == 1 );
     removeTermButton->setEnabled( selectedTermCount > 0 );
@@ -968,7 +919,7 @@ void VocabularyManagerFrame::doRemoveTerms( bool allowSelectTrans /*= true*/, bo
             selectedItemCount++;
             Term* term = termItem->getTerm();
             for( Term::TranslationMap::ConstIterator it = term->translationsBegin(); it != term->translationsEnd(); it++ ) {
-                const Translation& trans = *it;//.data();
+                const Translation& trans = *it;
                 if( !translationLanguages.contains( trans.getLanguage() ) )
                     translationLanguages.append( trans.getLanguage() );
             }
@@ -1000,10 +951,8 @@ void VocabularyManagerFrame::doRemoveTerms( bool allowSelectTrans /*= true*/, bo
             VocabTreeItem* vocabItem = (VocabTreeItem*)vocabTreeView->currentItem();
             Vocabulary* vocab = vocabItem->getVocabulary();
 
-            //for( TermListItem* termItem = (TermListItem*)termList->firstChild(); termItem; ) {
-            for( int i = 0; i < termList->topLevelItemCount() /*- 1*/; i++ ) {
+            for( int i = 0; i < termList->topLevelItemCount(); i++ ) {
                 TermListItem* termItem = (TermListItem*)termList->topLevelItem( i );
-                //TermListItem* nextTermItem = (TermListItem*)termItem->nextSibling();
                 if( termItem->isSelected()/*termList->isSelected( termItem )*/ ) {
                     Term* term = termItem->getTerm();
                     //if( !term->getImagePath().isNull() && term->getImagePath().left( 1 ) != "/" ) {
@@ -1018,7 +967,6 @@ void VocabularyManagerFrame::doRemoveTerms( bool allowSelectTrans /*= true*/, bo
                     vocab->removeTerm( term->getId() );
                     delete( termItem );
                 }
-                //termItem = nextTermItem;
             }
 
             vocab->setModificationDate( QDateTime::currentDateTime() );
@@ -1051,12 +999,10 @@ void VocabularyManagerFrame::doRemoveTerms( bool allowSelectTrans /*= true*/, bo
         VocabTreeItem* vocabItem = (VocabTreeItem*)vocabTreeView->currentItem();
         Vocabulary* vocab = vocabItem->getVocabulary();
 
-        //for( TermListItem* termItem = (TermListItem*)termList->firstChild(); termItem; ) {
         for( int i = 0; i < termList->topLevelItemCount(); i++ ) {
             TermListItem* termItem = (TermListItem*)termList->topLevelItem( i );
-            //TermListItem* nextTermItem = (TermListItem*)termItem->nextSibling();
 
-            if( termItem->isSelected()/*termList->isSelected( termItem )*/ ) {
+            if( termItem->isSelected() ) {
                 Term* term = termItem->getTerm();
 
                 for( QStringList::ConstIterator it = selectedLanguages.begin(); it != selectedLanguages.end(); it++ ) {
@@ -1078,8 +1024,6 @@ void VocabularyManagerFrame::doRemoveTerms( bool allowSelectTrans /*= true*/, bo
                     delete( termItem );
                 }
             }
-
-            //termItem = nextTermItem;
         }
 
         vocab->setModificationDate( QDateTime::currentDateTime() );
@@ -1178,7 +1122,6 @@ void VocabularyManagerFrame::copyTerms() const {
 
     for( int i = 0; i < termList->topLevelItemCount(); i++ ) {
         TermListItem* termItem = (TermListItem*)termList->topLevelItem( i );
-        //if( termList->isSelected( termItem ) ) 
         if( termItem->isSelected() ) {
             Term* term = termItem->getTerm();
             Term* termCopy = new Term( 0, 0 ); // Don't need to copy ids.
@@ -1333,14 +1276,6 @@ void VocabularyManagerFrame::restoreDetailsPanel() {
 }
 
 uint VocabularyManagerFrame::getSelectedTermCount() const {
-    //uint count = 0;
-    //TermListItem* termItem = (TermListItem*)termList->firstChild();
-    //while( termItem ) {
-    //    if( termList->isSelected( termItem ) )
-    //        count++;
-    //    termItem = (TermListItem*)termItem->nextSibling();
-    //}
-    //return( count );
     return( termList->selectedItems().size() );
 }
 
@@ -1360,7 +1295,7 @@ void VocabularyManagerFrame::showTerm( const TermKey& termKey ) {
     VocabTreeItem* vocabTreeItem = vocabTreeView->getVocabTreeItem( termKey.getVocabId() );
     if( vocabTreeItem ) {
         vocabTreeView->scrollToItem( vocabTreeItem );
-        vocabTreeView->setCurrentItem( vocabTreeItem ); //vocabTreeItem->setSelected( true );//vocabTreeView->setSelected( vocabTreeItem, true );
+        vocabTreeView->setCurrentItem( vocabTreeItem );
         detailsPanel->setCurrentIndex( panelVocabIndex );
         vocabDetailsTabWidget->setCurrentWidget( vocabDetailsTermsPanel );
         for( int i = 0; i < termList->topLevelItemCount(); i++ ) {

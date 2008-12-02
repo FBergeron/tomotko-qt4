@@ -2,15 +2,14 @@
 #define TREE_ITEM_H
 
 #include <QString>
-//#include <QStringList>
 #include <QTreeWidgetItem>
 
-class TreeItem : public QTreeWidgetItem/*QCheckListItem*/ {
+class TreeItem : public QTreeWidgetItem {
 
 public:
 
-    TreeItem( QTreeWidget* parent/*QListView* parent*//*, const QStringList& texts*//*, QCheckListItem::Type type*/ );
-    TreeItem( QTreeWidgetItem* parent/*ListViewItem* parent*//*, const QStringList& texts*//*, QCheckListItem::Type type*/ );
+    TreeItem( QTreeWidget* parent );
+    TreeItem( QTreeWidgetItem* parent );
     ~TreeItem();
 
     virtual bool isFolder() const;

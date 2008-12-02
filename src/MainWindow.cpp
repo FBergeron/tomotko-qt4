@@ -43,7 +43,7 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
         cerr << "Could not load translation files in directory " << qPrintable( transDir ) << endl;
 
     toolBar = new QToolBar();
-    //toolBar->setMovable( false );
+    toolBar->setMovable( false );
     addToolBar( toolBar );
 
     languageSelectorPanel = new QWidget();
@@ -72,7 +72,6 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
     progressBar->setMaximumWidth( 160 );
     connect( controller, SIGNAL( progressChanged( int ) ), progressBar, SLOT( setValue( int ) ) );
     progressBar->setVisible( false );
-    //progressBar->setCenterIndicator( true );
 
     languageSelectorAction = toolBar->addWidget( languageSelectorPanel );
     toolBar->addSeparator();
@@ -85,9 +84,9 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
 
     mainPanel = new QStackedWidget();
 
-    quizFrame = new QuizFrame( control/*, mainPanel*/ );
+    quizFrame = new QuizFrame( control );
 
-    vocabManagerFrame = new VocabularyManagerFrame( control/*, mainPanel*/ );
+    vocabManagerFrame = new VocabularyManagerFrame( control );
     vocabManagerFrame->setDigraphEnabled( prefs.isDigraphEnabled() ); 
 
     action[ ACTION_REVEAL ] = Util::createAction( tr( "Reveal" ), eye_xpm, 
@@ -133,8 +132,6 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
     action[ ACTION_SEARCH ] = Util::createAction( tr( "Search..." ), search_xpm, 
         this, SLOT( search() ), prefs.getAccelerator( ACTION_SEARCH ) );
 
-
-
     // Accelerators that are not driven by menus/actions must be added to their widgets to work.
     vocabManagerFrame->addAction( action[ ACTION_CHECK_ALL_TERMS ] );
     vocabManagerFrame->addAction( action[ ACTION_INVERSE_CHECKED_TERMS ] );
@@ -158,7 +155,7 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
 
     actionsMenu->addAction( action[ ACTION_MANAGE_GLOSSARIES ] );
 
-    actionsMenu->addSeparator();//showAllVocabSeparatorId = actionsMenu->insertSeparator();
+    actionsMenu->addSeparator();
     actionsMenu->addAction( action[ ACTION_SHOW_ALL_GLOSSARIES_AND_TERMS ] );
 
     actionsMenu->addSeparator();
@@ -242,7 +239,7 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
     mainPanel->addWidget( quizFrame );
     mainPanel->addWidget( vocabManagerFrame );
 
-    //connect( vocabManagerFrame, SIGNAL( selectionChanged( QListViewItem* ) ), this, SLOT( updateMenus( QListViewItem* ) ) );
+    connect( vocabManagerFrame, SIGNAL( selectionChanged( QTreeWidgetItem* ) ), this, SLOT( updateMenus( QTreeWidgetItem* ) ) );
     setCentralWidget( mainPanel );
     setLanguageFilterEnabled( controller->getPreferences().isLanguageFilterEnabled() );
     invokeVocabularyManager();
@@ -266,7 +263,7 @@ Controller* MainWindow::controller() {
     return( control );
 }
 
-void MainWindow::updateMenus( QTreeWidgetItem* ) {
+void MainWindow::updateMenus( QTreeWidgetItem* /* currItem */ ) {
     action[ ACTION_START_QUIZ ]->setText( mainPanel->currentWidget() == quizFrame ? tr( "RestartQuiz" ) : tr( "StartQuiz" ) );
     action[ ACTION_MANAGE_GLOSSARIES ]->setEnabled( mainPanel->currentWidget() != vocabManagerFrame ); 
     if( mainPanel->currentWidget() == vocabManagerFrame ) {
@@ -442,7 +439,6 @@ void MainWindow::exportData() {
 }
 
 void MainWindow::preferences() {
-    // Would it be possible not to pass the size of the array?
     PreferencesDialog dialog( this, &(control->getPreferences()) );
     dialog.show();
     int result = dialog.exec();

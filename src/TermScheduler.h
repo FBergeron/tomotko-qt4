@@ -2,8 +2,6 @@
 #define TERM_SCHEDULER_H
 
 #include <iostream>
-//#include <stdlib>
-//#include <time>
 #include <QList>
 #include "BilingualKey.h"
 #include "Folder.h"

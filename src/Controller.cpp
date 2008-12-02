@@ -1,7 +1,5 @@
 #include "Controller.h"
 
-const QString Controller::vocabTreeFilename = QString( "tree" ); 
-
 Controller::Controller() : vocabTree( NULL ), scheduler( prefs ) {
     applicationDirName = QDir::homePath() + QString( "/.toMOTko" );
     markedFilename = applicationDirName + QString( "/marked.dat.z" );
@@ -286,7 +284,6 @@ Folder* Controller::makeCopy( Folder* folder, const QString& firstLang, const QS
     folderCopy->setAuthor( folder->getAuthor() );
     folderCopy->setCreationDate( folder->getCreationDate() );
     folderCopy->setModificationDate( folder->getModificationDate() );
-    //for( Base* folderChild = folder->first(); folderChild; folderChild = folder->next() ) { 
     for( int i = 0; i < folder->getChildrenCount(); i++ ) {
         Base* folderChild = folder->childAt( i );
         if( strcmp( folderChild->className(), "Folder" ) == 0 ) {
@@ -842,19 +839,6 @@ bool Controller::saveFolder( Folder* folder, const QString& parentDir ) const {
 
     return( true );
 }
-//
-//void Controller::writeVocabulariesInXml( Folder* folder, int depth, QTextStream& ts, QStringList* languages ) {
-//    if( !folder->isEmpty() ) {
-//        for( Base* folderChild = folder->first(); folderChild; folderChild = folder->next() ) {
-//            if( strcmp( folderChild->className(), "Folder" ) == 0 )
-//                writeVocabulariesInXml( (Folder*)folderChild, depth, ts, languages );
-//            else if( strcmp( folderChild->className(), "Vocabulary" ) == 0 ) {
-//                Vocabulary* vocab = (Vocabulary*)folderChild;
-//                writeVocabularyInXml( ts, *vocab, languages, false, depth );
-//            }
-//        }
-//    }
-//}
 
 bool Controller::deleteItemsMarkedForDeletion( Folder* folder ) {
     for( int i = 0; i < folder->getChildrenCount(); i++ ) {
@@ -1130,7 +1114,6 @@ bool Controller::exportVocabularyIntoZip( Vocabulary* vocab, zipFile outputFile,
 
     QByteArray buffer;
     QTextStream ts( &buffer, QIODevice::WriteOnly );
-    //ts.setEncoding( QTextStream::UnicodeUTF8 );
     ts.setCodec( "UTF-8" );
     writeVocabularyInXml( ts, *vocab, languages );
     int err = writeFileIntoZipFile( outputFile, filenameInZip, buffer.data(), buffer.size() );
@@ -1168,7 +1151,6 @@ bool Controller::exportFolderRecIntoZip( Folder* folder, zipFile outputFile, QSt
             return( false );
     }
 
-    //for( Base* child = folder->first(); child; child = folder->next() ) { 
     for( int i = 0; i < folder->getChildrenCount(); i++ ) {
         Base* child = folder->childAt( i );
         if( strcmp( child->className(), "Vocabulary" ) == 0 ) {
@@ -1308,19 +1290,6 @@ QByteArray Controller::getClipboardData() const {
 QString Controller::getClipboardDataType() const {
     return( clipboardDataType );
 }
-
-//bool Controller::isImagePathValid( const QString& path, const Vocabulary& vocab ) const {
-//    if( !path.isNull() ) {
-//        QString absPath = getResolvedImagePath( path, vocab );
-//        QFileInfo info( absPath );
-//        if( info.exists() ) {
-//            QString format = QPixmap::imageFormat( absPath );
-//            if( format == "GIF" || format == "PNG" ) 
-//                return( true );
-//        }
-//    }
-//    return( false );
-//}
 
 QString Controller::getResolvedImagePath( const QString& path, const Vocabulary& vocab ) const {
     if( path.isNull() )

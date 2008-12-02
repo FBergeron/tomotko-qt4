@@ -2,12 +2,7 @@
 #define VOCAB_TREEVIEW_H
 
 #include <iostream>
-//#include <qapplication.h>
 #include <QTreeWidget>
-//#include <qpaintdevice.h>
-//#include <qobject.h>
-//#include <qstring.h>
-//#include <qpe/resource.h>
 #include "Base.h"
 #include "Controller.h"
 #include "FolderTreeItem.h"
@@ -35,7 +30,6 @@ public:
     VocabTreeItem* addVocab( FolderTreeItem* parentFolderItem, Vocabulary* vocab = NULL );
     void removeItem();
 
-    //Vocabulary* getVocabulary( int id );
     VocabTreeItem* getVocabTreeItem( int id );
 
     IdList getAllChildrenVocab( TreeItem* item ) const;

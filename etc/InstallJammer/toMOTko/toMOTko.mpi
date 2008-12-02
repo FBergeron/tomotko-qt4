@@ -72,7 +72,7 @@ InstallVersion
 0.11.1.0
 
 Language,de
-Yes
+No
 
 Language,en
 Yes
@@ -84,22 +84,22 @@ Language,fr
 Yes
 
 Language,hu
-Yes
+No
 
 Language,it
-Yes
+No
 
 Language,nl
-Yes
+No
 
 Language,pl
-Yes
+No
 
 Language,pt_br
-Yes
+No
 
 Language,ru
-Yes
+No
 
 LaunchApplication
 Yes
@@ -229,6 +229,7 @@ File ::35C86842-4DE3-4AF3-AF10-378BBFC3F714 -name toMOTko.qm -parent 9DF9150C-60
 File ::4F1D83E4-B4DC-4CE5-85C0-0D9DF4D9BA3D -type dir -name zh -parent 475EF220-5955-47B0-A180-1432597EC5DE
 File ::40414FC5-C0AB-40CF-85E5-597700BB7402 -name toMOTko.qm -parent 4F1D83E4-B4DC-4CE5-85C0-0D9DF4D9BA3D
 File ::BF632405-E26C-44ED-8913-66BD9CEB8A61 -name toMOTko.ico -parent E7D708CE-C646-4A8F-802E-B94C3BA82C51
+File ::4FF601D1-88A7-41A7-B040-B48C1179BA81 -name LICENSE.txt -parent E7D708CE-C646-4A8F-802E-B94C3BA82C51
 Component ::4D98AF43-AB02-405A-9ABA-EB0BE09BD051 -setup Install -active Yes -platforms {AIX-ppc FreeBSD-4-x86 FreeBSD-x86 HPUX-hppa Linux-x86 Solaris-sparc Windows} -name {Default Component} -parent Components
 SetupType ::DCF67D3E-F208-40F6-8100-1D98940825F8 -setup Install -active Yes -platforms {AIX-ppc FreeBSD-4-x86 FreeBSD-x86 HPUX-hppa Linux-x86 Solaris-sparc Windows} -name Typical -parent SetupTypes
 SetupType ::F9500C19-2A1A-49F7-845F-DCAD4ADD6FE9 -setup Install -active Yes -platforms {AIX-ppc FreeBSD-4-x86 FreeBSD-x86 HPUX-hppa Linux-x86 Solaris-sparc Windows} -name Custom -parent SetupTypes
@@ -345,7 +346,7 @@ array set Properties {
 <%InstallDir%>
 
 04D6EF01-FDA5-44E9-8068-9FE793743640,FileSize
-15695010
+15713386
 
 04D6EF01-FDA5-44E9-8068-9FE793743640,Name
 {Program Files}

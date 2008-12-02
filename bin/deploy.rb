@@ -16,7 +16,10 @@ $RELEASE_DIR = 'release'
         File.copy( "i18n/#{ lang }/toMOTko.qm", "#{ destDir }/toMOTko.qm" )
     }
 
-    File.copy( "lib/toMOTko/digraphs.conf", "#{ deployDir }" );
+    [ "lib/toMOTko/digraphs.conf", "pics/toMOTko.ico", "LICENSE.txt" ].each {
+        | file |
+        File.copy( file, deployDir );
+    }
 }
 
 [ 'mingwm10.dll', 'QtCored4.dll', 'QtGuid4.dll', 'QtXmld4.dll' ].each {

@@ -50,7 +50,7 @@ public:
 
 public slots:
 
-    void updateMenus( QTreeWidgetItem* item );
+    void updateMenus( QTreeWidgetItem* currItem );
     void updateFonts();
     void setDigraphEnabled( bool isEnabled );
     void retranslateUi();
@@ -92,9 +92,6 @@ private:
 
     QMap<QString,QString>   availableLanguages;
 
-//    int                     editionMenuId;
-//    int                     showAllVocabSeparatorId;
-//
     QApplication&           app;
     Controller*             control;
 
@@ -127,7 +124,6 @@ private:
     QLabel*                 languageSelectorLabel;
     QComboBox*              testLanguageComboBox;
 
-    //QStatusBar*             statusBar;
     QProgressBar*           progressBar;
 
     QMenu*                  editionMenu;

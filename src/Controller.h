@@ -26,8 +26,6 @@ class Controller : public QObject {
 
 public:
 
-    static const QString vocabTreeFilename; // Should be removed in version 0.11.x.
-
     Controller();
 
     bool init();
@@ -83,8 +81,6 @@ public:
     void writeFolderDataInXml( QTextStream& ts, const Folder& folder ) const;
     void writeVocabularyInXml( QTextStream& ts, const Vocabulary& vocab, QStringList* languages, bool writeXmlDirective = true, int depth = 0 ) const;
 
-//    void loadLegacyVocabulary( Folder* folder );
-
     QStringList getTranslationLanguagesFromFile( const QString& filename ) const;
     Base* importData( Folder* rootFolder, const QString& filename, const QStringList& languages );
 
@@ -92,13 +88,10 @@ public:
 
     void initRevealingSequence();
 
-//    void writeVocabulariesInXml( Folder* folder, int depth, QTextStream& ts, QStringList* languages );
-
     void setClipboardData( const QString& type, const QByteArray& data );
     QByteArray getClipboardData() const;
     QString getClipboardDataType() const;
 
-//    bool isImagePathValid( const QString& path, const Vocabulary& vocab ) const;
     QString getResolvedImagePath( const QString& path, const Vocabulary& vocab ) const;
 
     void clearSearch();

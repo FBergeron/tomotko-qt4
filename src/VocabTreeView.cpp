@@ -87,7 +87,7 @@ void VocabTreeView::removeItem() {
     QTreeWidgetItem* currItem = currentItem();
     if( currItem ) {
         QTreeWidgetItem* itemToSelect = this->itemAbove( currItem );
-        setCurrentItem( itemToSelect ? itemToSelect : topLevelItem( 0 ) );//itemToSelect->setSelected( true );//setSelected( itemToSelect, true );
+        setCurrentItem( itemToSelect ? itemToSelect : topLevelItem( 0 ) );
         delete( currItem );
     }
 }
@@ -95,11 +95,6 @@ void VocabTreeView::removeItem() {
 VocabTreeItem* VocabTreeView::getVocabTreeItem( int id ) {
     return( getVocabTreeItemRec( (TreeItem*)topLevelItem( 0 ), id ) );
 }
-
-//Vocabulary* VocabTreeView::getVocabulary( int id ) {
-//    VocabTreeItem* vocabTreeItem = getVocabTreeItemRec( (TreeItem*)topLevelItem( 0 ), id );
-//    return( vocabTreeItem ? vocabTreeItem->getVocabulary() : NULL );
-//}
 
 VocabTreeItem* VocabTreeView::getVocabTreeItemRec( TreeItem* item, int id ) {
     if( item ) {

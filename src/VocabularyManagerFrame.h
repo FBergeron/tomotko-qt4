@@ -2,35 +2,18 @@
 #define VOCAB_MANAGER_H
 
 #include <iostream>
-//#include <qclipboard.h>
-//#include <qpe/qcopenvelope_qws.h>
-//#include <qpe/qpeapplication.h>
-//#include <qdialog.h>
 #include <QHBoxLayout>
-//#include <qheader.h>
-//#include <qinputdialog.h>
 #include <QLabel>
-//#include <qlayout.h>
 #include <QLineEdit>
 #include <QMessageBox>
-//#include <qmime.h>
-//#include <qmultilineedit.h>
-//#include <qpe/fileselector.h>
 #include <QPushButton>
 #include <QSplitter>
 #include <QStackedWidget>
 #include <QTabWidget>
-//#include <qtextstream.h>
-//#include <qtooltip.h>
-//#include <qurloperator.h>
-//#include <qvaluelist.h>
 #include <QVBoxLayout>
 #include <QWidget>
-//#include <qpe/resource.h>
-//#include "BilingualKey.h"
 #include "Controller.h"
 #include "DigraphLineEdit.h"
-//#include "DigraphMultiLineEdit.h"
 #include "PropertiesPanel.h"
 #include "SearchDialog.h"
 #include "SmartListView.h"
@@ -40,7 +23,6 @@
 #include "Util.h"
 #include "VocabTreeView.h"
 #include "VocabTreeItem.h"
-//#include "ZFileDialog.h"
 
 using namespace std;
 
@@ -89,16 +71,10 @@ public slots:
 
     bool areDetailsMaximized() const;
     void toggleMaximizeDetails( bool isOn );
-    //void updateGeometry();
 
 signals:
 
     void selectionChanged( QTreeWidgetItem* item );
-
-protected:
-
-    //virtual void resizeEvent( QResizeEvent* event );
-    //void showEvent( QShowEvent* showEvt );
 
 private slots:
 

@@ -368,7 +368,6 @@ QDataStream& operator>>( QDataStream& in, TermScheduler& scheduler ) {
 
     scheduler.quizFirstLang = tempFirstLanguage;
     scheduler.quizTestLang = tempTestLanguage;
-    //scheduler.termPool = tempTermPool;
     for( int i = 0; i < TermScheduler::poolCount; i++ )
         scheduler.termPool[ i ] = tempTermPool[ i ]; 
     scheduler.standbyPool = tempStandbyPool;
