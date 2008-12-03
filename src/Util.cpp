@@ -26,16 +26,13 @@ int Util::getDefaultLabelsFontSizeModifier() {
 }
 
 QString Util::getDefaultFontFamily() {
-    QFontDatabase fontDatabase;
-    QStringList families = fontDatabase.families();
-    bool isUnifontAvailable = families.contains( QString( "unifont" ) );
-    bool isLcfontAvailable = families.contains( QString( "lcfont" ) );
-    if( isUnifontAvailable )
-        return( QString( "unifont" ) );
-    else if( isLcfontAvailable )
-        return( QString( "lcfontCount" ) );
-    else
-        return( QString::null );
+    //QFontDatabase fontDatabase;
+    //QStringList families = fontDatabase.families();
+    //if( families.contains( "MS Sans Serif" ) )
+    //    return( QString( "MS Sans Serif" ) ); // For Windows.
+    //else
+    //    return( qApp->font().defaultFamily() );
+    return( qApp->font().defaultFamily() );
 }
 
 int Util::getDefaultFontSizeModifier() {

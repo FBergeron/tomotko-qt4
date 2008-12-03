@@ -1,9 +1,11 @@
 ToDo
 ----
+As soon as I stard the application (with no or few data), when I click on French in the languages pref dialog, then click Ok => crash!
+I'm currently working on SearchDialog when deleting images.  The if has been done, now remains the else part.
+Try to understand why the png file in Christianson doesn't work.
 When first starting toMOTko (with no data, just empty .toMOTko folder) and we do View all items => crash! 
-Make the executable/installable version doesn't use the console.
+Make the executable/installable version doesn't use the console.  Use exceptions maybe?
 Test remove terms (multiple selection).  It's probably buggy because of nextTermItem management...
-In Util::getDefaultFontFamily(), the last else should return something better.
 Reread all the classes and remove obsolete comments.
 Replace screenshots (non-zaurus ones) with Windows's ones in online help.
 Check if the text of online help is still correct.
@@ -171,5 +173,5 @@ Bug: I remove all the data.  I create a folder and a glossary.  I quit.  In such
 Improve the search:
 - Consider to perform the search from the selected folder to reduce the results set.  Maybe add a folder selector in the dialog.
 - If I implement Next result, consider what to do if the languages change.  Maybe the languages should be remembered when making a query (and the View all terms and glossaries option as well?)  Consider also that the presentation has an influence because we can sort the results.  Should the model be sorted as well?  Do we have to duplicate the data or is it possible to use MVC with a QListView in Qt 2.3.2?
-
+If InstallJammer is too troublesome, maybe give a try to IzPack (http://izpack.org)
 Could be interesting to integrate this? Tomoe - A handwriting recognition engine (http://tomoe.sourceforge.jp/cgi-bin/en/blog/index.rb)
