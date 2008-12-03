@@ -148,7 +148,6 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
     termList->setHeaderLabels( headerLabels );
     termList->setAllColumnsWide( true );
     connect( termList, SIGNAL( itemSelectionChanged() ), this, SLOT( updateTermList() ) ); 
-    connect( termList, SIGNAL( itemChanged( QTreeWidgetItem*, int ) ), this, SLOT( updateTermItemState( QTreeWidgetItem*, int ) ) );
 
     termControlPanel = new QWidget();
     termControlPanelLayout = new QHBoxLayout();
@@ -227,9 +226,9 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
 
     // We add the tree listener at the end to ignore events generated when creating
     // the text widgets.
-    connect( vocabTreeView, SIGNAL( currentItemChanged( QTreeWidgetItem*, QTreeWidgetItem* ) ), this, SLOT( updateCurrentTreeItem( QTreeWidgetItem*, QTreeWidgetItem* ) ) ); 
+    addListeners();
+
     //connect( vocabTreeView, SIGNAL( itemSelectionChanged() ), this, SLOT( updateUi() ) ); 
-    connect( vocabTreeView, SIGNAL( itemChanged( QTreeWidgetItem*, int ) ), this, SLOT( updateTreeItemState( QTreeWidgetItem*, int ) ) );
     updateFonts();
     updateUi();
 }
@@ -1245,6 +1244,7 @@ void VocabularyManagerFrame::addListeners() {
     connect( folderDetailsFolderTitleLineEdit, SIGNAL( textChanged( const QString& ) ), this, SLOT( updateCurrentFolderTitle( const QString& ) ) );
     connect( vocabDetailsVocabTitleLineEdit, SIGNAL( textChanged( const QString& ) ), this, SLOT( updateCurrentVocabTitle( const QString& ) ) );
     connect( termList, SIGNAL( itemChanged( QTreeWidgetItem*, int ) ), this, SLOT( updateTermItemState( QTreeWidgetItem*, int ) ) );
+    connect( vocabTreeView, SIGNAL( currentItemChanged( QTreeWidgetItem*, QTreeWidgetItem* ) ), this, SLOT( updateCurrentTreeItem( QTreeWidgetItem*, QTreeWidgetItem* ) ) ); 
     connect( vocabTreeView, SIGNAL( itemChanged( QTreeWidgetItem*, int ) ), this, SLOT( updateTreeItemState( QTreeWidgetItem*, int ) ) );
 }
 
@@ -1252,6 +1252,7 @@ void VocabularyManagerFrame::removeListeners() {
     disconnect( folderDetailsFolderTitleLineEdit, SIGNAL( textChanged( const QString& ) ), this, SLOT( updateCurrentFolderTitle( const QString& ) ) );
     disconnect( vocabDetailsVocabTitleLineEdit, SIGNAL( textChanged( const QString& ) ), this, SLOT( updateCurrentVocabTitle( const QString& ) ) );
     disconnect( termList, SIGNAL( itemChanged( QTreeWidgetItem*, int ) ), this, SLOT( updateTermItemState( QTreeWidgetItem*, int ) ) );
+    disconnect( vocabTreeView, SIGNAL( currentItemChanged( QTreeWidgetItem*, QTreeWidgetItem* ) ), this, SLOT( updateCurrentTreeItem( QTreeWidgetItem*, QTreeWidgetItem* ) ) ); 
     disconnect( vocabTreeView, SIGNAL( itemChanged( QTreeWidgetItem*, int ) ), this, SLOT( updateTreeItemState( QTreeWidgetItem*, int ) ) );
 }
 
