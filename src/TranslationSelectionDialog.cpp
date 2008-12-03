@@ -1,7 +1,7 @@
 #include "TranslationSelectionDialog.h"
 
 TranslationSelectionDialog::TranslationSelectionDialog( const QString& caption, const QString& message, const QStringList& languages, int selectionMode, Controller* controller, QWidget* parent ) 
-    : QDialog( parent/*, 0, TRUE*/ ), controller( controller ) {
+    : QDialog( parent ), controller( controller ) {
     init( caption, message, languages, selectionMode );
 }
 
@@ -9,16 +9,16 @@ void TranslationSelectionDialog::init( const QString& caption, const QString& me
     QFont mediumFont( controller->getPreferences().getMediumFont() );
 
     messageLabel = new QLabel( message );
+    messageLabel->setWordWrap( true );
 
     languageList = new QTreeWidget();
     languageList->setHeaderLabel( tr( "Languages" ) );
     for( QStringList::ConstIterator it = languages.begin(); it != languages.end(); it++ ) {
         QString lang = *it;
-        //QCheckListItem* item = new QCheckListItem( languageList, QObject::tr( lang ), QCheckListItem::CheckBox );
-        QTreeWidgetItem* item = new QTreeWidgetItem( /*languageList, *//*QApplication::translate( "QObject", lang.toLatin1().data() )*/ );
+        QTreeWidgetItem* item = new QTreeWidgetItem();
         item->setText( 0, QApplication::translate( "QObject", lang.toLatin1().data() ) );
-        //item->setCheckable( true );
         languageList->addTopLevelItem( item );
+        item->setCheckState( 0, Qt::Unchecked );
         switch( selectionMode ) {
             case selectionModeTargetLanguage : 
                 if( lang == controller->getPreferences().getTestLanguage() )
@@ -34,11 +34,12 @@ void TranslationSelectionDialog::init( const QString& caption, const QString& me
         }
         languageList->addTopLevelItem( item );
     }
-    checkAllLanguagesButton = new QPushButton( tr( "CheckAllLanguages" )/*, this, "CheckAllLanguagesButton"*/ );
+    checkAllLanguagesButton = new QPushButton( tr( "CheckAllLanguages" ) );
     connect( checkAllLanguagesButton, SIGNAL( clicked() ), this, SLOT( checkAllLanguages() ) );
 
     bottomButtonsPanel = new QWidget();
     bottomButtonsPanelLayout = new QHBoxLayout();
+    bottomButtonsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     bottomButtonsPanel->setLayout( bottomButtonsPanelLayout );
 
     acceptButton = new QPushButton( tr( "Ok" ) );
@@ -51,8 +52,6 @@ void TranslationSelectionDialog::init( const QString& caption, const QString& me
     bottomButtonsPanelLayout->addWidget( cancelButton );
 
     mainLayout = new QVBoxLayout( this );
-    mainLayout->setMargin( 10 );
-    mainLayout->setSpacing( 2 );
     mainLayout->addWidget( messageLabel );
     mainLayout->addWidget( languageList, 1 );
     mainLayout->addWidget( checkAllLanguagesButton );

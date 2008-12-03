@@ -629,7 +629,7 @@ les droits d&apos;accès aux
 fichiers.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="936"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="935"/>
         <source>Warning</source>
         <translation type="unfinished">Avertissement</translation>
     </message>
@@ -639,17 +639,17 @@ fichiers.</translation>
         <translation type="unfinished">Information</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="505"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="504"/>
         <source>OperationSuccessful</source>
         <translation type="unfinished">Opération réussie</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="507"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="506"/>
         <source>OperationFailed</source>
         <translation type="unfinished">Opération échouée</translation>
     </message>
     <message>
-        <location filename="../../src/Controller.cpp" line="737"/>
+        <location filename="../../src/Controller.cpp" line="736"/>
         <source>MyGlossaries</source>
         <translation type="unfinished">Mes glossaires</translation>
     </message>
@@ -859,18 +859,14 @@ mot(s) sélectionné(s)?</translation>
         <translation type="unfinished">Non</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="317"/>
+        <location filename="../../src/SearchDialog.cpp" line="320"/>
         <source>MultipleTranslationsDetectedForRemoveTermsCaption</source>
         <translation type="unfinished">Suppression de mots</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="317"/>
+        <location filename="../../src/SearchDialog.cpp" line="320"/>
         <source>MultipleTranslationsDetectedForRemoveTerms</source>
-        <translation type="unfinished">Certains des mots
-sélectionnés contiennent des
-traductions dans plusieurs
-langues.  Indiquez les traductions
-à effacer.</translation>
+        <translation type="unfinished">Certains des mots sélectionnés contiennent des traductions dans plusieurs langues.  Indiquez les traductions à effacer.</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="153"/>
@@ -1026,7 +1022,7 @@ opérateur d&apos;union.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/TermDialog.cpp" line="279"/>
+        <location filename="../../src/TermDialog.cpp" line="277"/>
         <source>CannotReadImage</source>
         <translation type="unfinished">Impossible de lire l&apos;image sélectionnée.</translation>
     </message>
@@ -1034,7 +1030,7 @@ opérateur d&apos;union.</translation>
 <context>
     <name>TranslationSelectionDialog</name>
     <message>
-        <location filename="../../src/TranslationSelectionDialog.cpp" line="14"/>
+        <location filename="../../src/TranslationSelectionDialog.cpp" line="15"/>
         <source>Languages</source>
         <translation type="unfinished">Langues</translation>
     </message>
@@ -1044,12 +1040,12 @@ opérateur d&apos;union.</translation>
         <translation type="unfinished">Cocher toutes les langues</translation>
     </message>
     <message>
-        <location filename="../../src/TranslationSelectionDialog.cpp" line="44"/>
+        <location filename="../../src/TranslationSelectionDialog.cpp" line="45"/>
         <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/TranslationSelectionDialog.cpp" line="46"/>
+        <location filename="../../src/TranslationSelectionDialog.cpp" line="47"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1057,119 +1053,109 @@ opérateur d&apos;union.</translation>
 <context>
     <name>VocabularyManagerFrame</name>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="983"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="982"/>
         <source>MultipleTranslationsDetectedForRemoveTermsCaption</source>
         <translation type="unfinished">Suppression de mots</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="983"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="982"/>
         <source>MultipleTranslationsDetectedForRemoveTerms</source>
-        <translation type="unfinished">Certains des mots
-sélectionnés contiennent des
-traductions dans plusieurs
-langues.  Indiquez les traductions
-à effacer.</translation>
+        <translation type="unfinished">Certains des mots sélectionnés contiennent des traductions dans plusieurs langues.  Indiquez les traductions à effacer.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="386"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="385"/>
         <source>MultipleTranslationsDetectedForImport</source>
-        <translation type="unfinished">Le fichier contient des mots
-traduits dans plusieurs langues.  
-Veuillez indiquer les traductions
-à importer.</translation>
+        <translation type="unfinished">Le fichier contient des mots traduits dans plusieurs langues.  Veuillez indiquer les traductions à importer.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="463"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="462"/>
         <source>MultipleTranslationsDetectedForExport</source>
-        <translation type="unfinished">Le glossaire contient des mots
-traduits dans plusieurs langues.  
-Veuillez indiquer les traductions
-à exporter.</translation>
+        <translation type="unfinished">Le glossaire contient des mots traduits dans plusieurs langues.  Veuillez indiquer les traductions à exporter.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="942"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="941"/>
         <source>Yes</source>
         <translation type="unfinished">Oui</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="943"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="942"/>
         <source>No</source>
         <translation type="unfinished">Non</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="625"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="624"/>
         <source>Title</source>
         <translation>Titre</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="621"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="620"/>
         <source>Glossaries</source>
         <translation type="unfinished">Glossaires</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="635"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="634"/>
         <source>AddFolder</source>
         <translation>Ajouter dossier</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="637"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="636"/>
         <source>AddGlossary</source>
         <translation>Ajouter glossaire</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="639"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="638"/>
         <source>RemoveItem</source>
         <translation>Effacer l&apos;item</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="622"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="621"/>
         <source>Folder</source>
         <translation>Dossier</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="624"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="623"/>
         <source>Glossary</source>
         <translation>Glossaire</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="648"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="647"/>
         <source>CheckAllTerms</source>
         <translation>Cocher tous les mots</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="649"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="648"/>
         <source>InverseCheckedTerms</source>
         <translation>Inverser la sélection des mots cochés</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="641"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="640"/>
         <source>AddTerm</source>
         <translation>Ajouter un mot</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="643"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="642"/>
         <source>EditTerm</source>
         <translation>Éditer le mot</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="645"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="644"/>
         <source>RemoveTerm</source>
         <translation>Effacer un mot</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="479"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="478"/>
         <source>GlossaryExportSuccessful</source>
         <translation type="unfinished">Le glossaire a été exporté avec succès.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="437"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="436"/>
         <source>ItemImportFailed</source>
         <translation type="unfinished">Une erreur est survenue. Les
 données n&apos;ont pas pu
 être importées.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="440"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="439"/>
         <source>ItemImportFailedZipFileExpected</source>
         <translation type="unfinished">Format de fichier invalide.
 Un fichier .zip était attendu.
@@ -1177,72 +1163,69 @@ Les données n&apos;ont pas pu être
 importées.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="481"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="480"/>
         <source>GlossaryExportFailed</source>
         <translation type="unfinished">Une erreur est survenue. Le
 glossaire n&apos;a pas pu être
 exporté.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="800"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="799"/>
         <source>ConfirmRemoveItem</source>
         <translation type="unfinished">Êtes-vous certain de
 vouloir effacer cet item?</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="936"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="935"/>
         <source>ConfirmRemoveSelectedTerms</source>
         <translation type="unfinished">Êtes-vous certain de
 vouloir effacer le(s)
 mot(s) sélectionné(s)?</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="632"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="631"/>
         <source>Properties</source>
         <translation>Propriétés</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="647"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="646"/>
         <source>MaximizeDetails</source>
         <translation>Agrandir</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="633"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="632"/>
         <source>Words</source>
         <translation>Mots</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="489"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="488"/>
         <source>MultipleTranslationsDetectedForFolderExport</source>
-        <translation type="unfinished">Le dossier contient des mots
-traduits dans plusieurs langues.
-Veuillez indiquer les traductions
-à exporter.</translation>
+        <translation type="unfinished">Le dossier contient des mots traduits dans plusieurs langues.  Veuillez indiquer les traductions à exporter.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="505"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="504"/>
         <source>FolderExportSuccessful</source>
         <translation type="unfinished">Le dossier a été exporté avec succès.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="507"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="506"/>
         <source>FolderExportFailed</source>
         <translation type="unfinished">Une erreur est survenue. Le
 dossier n&apos;a pas pu être
 exporté.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="386"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="385"/>
         <source>Import...</source>
         <translation type="unfinished">Importer...</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="431"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="430"/>
         <source>ImportSuccessful</source>
         <translation type="unfinished">Les données ont été importées avec succès.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="433"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="432"/>
         <source>InvisibleImport</source>
         <translation type="unfinished">
 
@@ -1254,12 +1237,12 @@ cocher l&apos;option &quot;Voir tous
 les glossaires/mots&quot; du menu Actions.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="500"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="499"/>
         <source>Export...</source>
         <translation type="unfinished">Exporter...</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="501"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="500"/>
         <source>Glossaries (*.zip)</source>
         <translation type="unfinished"></translation>
     </message>

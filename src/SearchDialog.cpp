@@ -289,13 +289,16 @@ void SearchDialog::doRemoveTerms( bool allowSelectTrans /* = true */, bool confi
                 if( termItem->isSelected() ) {
                     Term* term = termItem->getTerm();
                     Vocabulary* vocab = controller->getVocabTree()->getVocabulary( term->getVocabId() );
-                    if( !term->getImagePath().isNull() && term->getImagePath().left( 1 ) != "/" ) {
-                        const QString& imagePath = controller->getApplicationDirName() + "/" + vocab->getParent()->getPath() +
-                            "/v-" + QString::number( vocab->getId() ) + "/" + term->getImagePath();
-                        QFile imageFile( imagePath );
-                        if( imageFile.exists() ) {
-                            if( !imageFile.remove() )
-                                cerr << "Could not remove image " << qPrintable( imagePath ) << endl;
+                    if( !term->getImagePath().isNull() ) {
+                        QDir imagePath( term->getImagePath() );
+                        if( imagePath.isRelative() ) {
+                            const QString& imagePath = controller->getApplicationDirName() + "/" + vocab->getParent()->getPath() +
+                                "/v-" + QString::number( vocab->getId() ) + "/" + term->getImagePath();
+                            QFile imageFile( imagePath );
+                            if( imageFile.exists() ) {
+                                if( !imageFile.remove() )
+                                    cerr << "Could not remove image " << qPrintable( imagePath ) << endl;
+                            }
                         }
                     }
                     vocab->removeTerm( term->getId() );
@@ -343,15 +346,18 @@ void SearchDialog::doRemoveTerms( bool allowSelectTrans /* = true */, bool confi
                 }
                 
                 if( term->getTranslationCount() == 0 ) {
-                    //if( !term->getImagePath().isNull() && term->getImagePath().left( 1 ) != "/" ) {
-                    //    const QString& imagePath = controller->getApplicationDirName() + "/" + vocab->getParent()->getPath() +
-                    //        "/v-" + QString::number( vocab->getId() ) + "/" + term->getImagePath();
-                    //    QFile imageFile( imagePath );
-                    //    if( imageFile.exists() ) {
-                    //        if( !imageFile.remove() )
-                    //            cerr << "Could not remove image " << qPrintable( imagePath ) << endl;
-                    //    }
-                    //}
+                    if( !term->getImagePath().isNull() ) {
+                        QDir imagePath( term->getImagePath() );
+                        if( imagePath.isRelative() ) {
+                            const QString& imagePath = controller->getApplicationDirName() + "/" + vocab->getParent()->getPath() +
+                                "/v-" + QString::number( vocab->getId() ) + "/" + term->getImagePath();
+                            QFile imageFile( imagePath );
+                            if( imageFile.exists() ) {
+                                if( !imageFile.remove() )
+                                    cerr << "Could not remove image " << qPrintable( imagePath ) << endl;
+                            }
+                        }
+                    }
                     vocab->removeTerm( term->getId() );
                     delete( termItem );
                     vocab->setModificationDate( QDateTime::currentDateTime() );

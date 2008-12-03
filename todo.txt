@@ -1,9 +1,6 @@
 ToDo
 ----
-As soon as I stard the application (with no or few data), when I click on French in the languages pref dialog, then click Ok => crash!
-I'm currently working on SearchDialog when deleting images.  The if has been done, now remains the else part.
 Try to understand why the png file in Christianson doesn't work.
-When first starting toMOTko (with no data, just empty .toMOTko folder) and we do View all items => crash! 
 Make the executable/installable version doesn't use the console.  Use exceptions maybe?
 Test remove terms (multiple selection).  It's probably buggy because of nextTermItem management...
 Reread all the classes and remove obsolete comments.

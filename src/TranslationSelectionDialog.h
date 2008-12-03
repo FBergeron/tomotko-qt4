@@ -2,11 +2,7 @@
 #define TRANSLATION_SELECTION_DIALOG_H 
 
 #include <QDialog>
-//#include <qfont.h>
-//#include <qhbox.h>
 #include <QLabel>
-//#include <qlayout.h>
-//#include <qlistview.h>
 #include <QPushButton>
 #include <QString>
 #include <QStringList>
