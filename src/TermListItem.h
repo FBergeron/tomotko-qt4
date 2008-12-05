@@ -22,7 +22,6 @@ public:
     virtual void setOn( bool isOn );
     void setFont( int column, const QFont& font ); 
     QFont font( int column ) const;
-    //virtual void paintCell( QPainter * p, const QColorGroup & cg, int column, int width, int align );
 
 private:
 

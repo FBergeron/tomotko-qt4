@@ -17,9 +17,12 @@ void TermListItem::updateUi() {
         if( term->isTranslationExists( firstLanguage ) ) {
             const Translation& firstLangTranslation = term->getTranslation( firstLanguage );
             setText( 0, firstLangTranslation.getWord() );
+            setForeground( 0, QBrush( treeWidget()->palette().color( QPalette::Active, QPalette::WindowText ) ) );
         }
-        else
+        else {
             setText( 0, QApplication::translate( "QObject", "Undefined" ) );
+            setForeground( 0, QBrush( treeWidget()->palette().color( QPalette::Disabled, QPalette::WindowText ) ) );
+        }
 
         if( term->isTranslationExists( testLanguage ) ) {
             const Translation& testLangTranslation = term->getTranslation( testLanguage );
@@ -27,14 +30,16 @@ void TermListItem::updateUi() {
             if( altShown && testLangTranslation.getAlt().length() > 0 )
                 testLangStr += " [" + testLangTranslation.getAlt() + "]";
             setText( 1, testLangStr );
+            setForeground( 1, QBrush( treeWidget()->palette().color( QPalette::Active, QPalette::WindowText ) ) );
         }
-        else
+        else {
             setText( 1, QApplication::translate( "QObject", "Undefined" ) );
+            setForeground( 1, QBrush( treeWidget()->palette().color( QPalette::Disabled, QPalette::WindowText ) ) );
+        }
     }
 }
 
 void TermListItem::setOn( bool isOn ) {
-    //setCheckState( 0, isOn ? Qt::Checked : Qt::Unchecked );
     term->setMarkedForStudy( isOn );
 }
 
@@ -52,30 +57,3 @@ QFont TermListItem::font( int column ) const {
     else
         return( treeWidget()->font() );
 }
-
-//void TermListItem::paintCell( QPainter* p, const QColorGroup& cg, int column, int width, int align ) {
-//    if( !p )
-//        return;
-//
-//    QFont oldFont = p->font();
-//    p->setFont( font( column ) );
-//
-//    QTreeWidgetItem::paintCell( p, cg, column, width, align );
-//
-//    QColorGroup colorGroup( cg );
-//    switch( column ) {
-//        case 0 : 
-//            if( term && !term->isTranslationExists( firstLanguage ) )
-//                colorGroup.setColor( QColorGroup::Text, listView()->palette().color( QPalette::Disabled, QColorGroup::Text ) );
-//            break;
-//
-//        case 1 :
-//            if( term && !term->isTranslationExists( testLanguage ) )
-//                colorGroup.setColor( QColorGroup::Text, listView()->palette().color( QPalette::Disabled, QColorGroup::Text ) );
-//            break;
-//    }
-//
-//    QListViewItem::paintCell( p, colorGroup, column, width, align );
-//
-//    p->setFont( oldFont );
-//}
