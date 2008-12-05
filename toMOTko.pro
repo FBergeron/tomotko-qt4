@@ -10,6 +10,7 @@ INCLUDEPATH +=  . src
 LIBS        +=  -lstdc++
 QT          +=  xml
 RESOURCES   =   toMOTko.qrc
+RC_FILE     =   toMOTko.rc
 
 HEADERS     +=  src/Base.h \
                 src/Util.h \
