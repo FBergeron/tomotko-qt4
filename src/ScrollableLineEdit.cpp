@@ -8,9 +8,9 @@ ScrollableLineEdit::~ScrollableLineEdit() {
 }
 
 void ScrollableLineEdit::scrollLeft() {
-    cursorWordBackward( false );
+    setCursorPosition( cursorPositionAt( QPoint( 0, 0 ) ) - 1 );
 }
 
 void ScrollableLineEdit::scrollRight() {
-    cursorWordForward( false );
+    setCursorPosition( cursorPositionAt( QPoint( size().width(), 0 ) ) + 1 );
 }

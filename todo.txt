@@ -6,7 +6,6 @@ Reread all the classes and remove obsolete comments.
 Replace screenshots (non-zaurus ones) with Windows's ones in online help.
 Check if the text of online help is still correct.  Remove or adjust references to zaurus for example.
 Probably replace all setSelected( true ) by setCurrentItem() instead?
-In Scrollable.*LineEdit, scrollUp() and scrollDown() should be smarter : for example, for scrollDown(), the cursor should go at the last visible line and go down one line.  Otherwise, it may feels like it's doing nothing.  Same thing for ScrollableMultiLineEdit wit scrollUp(), scrollDown(), scrollPageUp(), and scrollPageDown().
 Setting the 2 language selectors to the same language should not be allowed, I think.
 Complete l10n in es/ja/en/fr.
 The columns of the prop tables don't resize properly.

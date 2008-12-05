@@ -21,17 +21,7 @@ void VocabTreeItem::setOpen( bool isOpened ) {
 }
 
 void VocabTreeItem::setOn( bool isOn ) {
-    // We clear the selection in order to effectively reset it after
-    // changing the state of the item.  This is needed because the
-    // item is updated when a selection event occurs.
-    //bool isUpdateHackEnabled = listView()->isUpdatesEnabled();
-    //if( isUpdateHackEnabled )
-    //    listView()->clearSelection();
-    //setCheckState( 0, isOn ? Qt::Checked : Qt::Unchecked );
     vocab->setMarkedForStudy( isOn );
-    // Force updating the event.
-    //if( isUpdateHackEnabled )
-    //    listView()->setSelected( this, true );
 }
 
 void VocabTreeItem::setSelected( bool isSelected ) {

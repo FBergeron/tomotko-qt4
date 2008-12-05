@@ -31,26 +31,13 @@ void FolderTreeItem::setPropertiesPanel( PropertiesPanel* propsPanel ) {
 }
 
 void FolderTreeItem::setOpen( bool isOpened ) {
-    // Ignore close event for root.
-    if( parent() || isOpened ) {
-        setExpanded( isOpened );
-        updateIcon();
-        prefs.setFolderOpen( folder->getId(), isOpened );
-    }
+    setExpanded( isOpened );
+    updateIcon();
+    prefs.setFolderOpen( folder->getId(), isOpened );
 }
 
 void FolderTreeItem::setOn( bool isOn ) {
-    // We clear the selection in order to effectively reset it after
-    // changing the state of the item.  This is needed because the
-    // item is updated when a selection event occurs.
-    //bool isUpdateHackEnabled = listView()->isUpdatesEnabled();
-    //if( isUpdateHackEnabled )
-    //    listView()->clearSelection();
-    //setCheckState( 0, isOn ? Qt::Checked : Qt::Unchecked );
     folder->setMarkedForStudy( isOn );
-    // Force updating the event.
-    //if( isUpdateHackEnabled )
-    //    listView()->setSelected( this, true );
 }
 
 Folder* FolderTreeItem::getFolder() {

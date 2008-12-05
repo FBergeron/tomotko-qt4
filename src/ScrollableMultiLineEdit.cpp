@@ -8,17 +8,25 @@ ScrollableMultiLineEdit::~ScrollableMultiLineEdit() {
 }
 
 void ScrollableMultiLineEdit::scrollUp() {
+    QTextCursor cursor( cursorForPosition( QPoint( 0, 0 ) ) );
+    setTextCursor( cursor );
     moveCursor( QTextCursor::Up );
 }
 
 void ScrollableMultiLineEdit::scrollDown() {
+    QTextCursor cursor( cursorForPosition( QPoint( 0, size().height() ) ) );
+    setTextCursor( cursor );
     moveCursor( QTextCursor::Down );
 }
 
 void ScrollableMultiLineEdit::scrollPageUp() {
-    moveCursor( QTextCursor::PreviousBlock );
+    int delta = size().height() - 40; // Not perfect but good enough.
+    QTextCursor cursor( cursorForPosition( QPoint( 0, -delta  ) ) );
+    setTextCursor( cursor );
 }
 
 void ScrollableMultiLineEdit::scrollPageDown() {
-    moveCursor( QTextCursor::NextBlock );
+    int delta = size().height() - 40; // Not perfect but good enough.
+    QTextCursor cursor( cursorForPosition( QPoint( 0, size().height() + delta ) ) );
+    setTextCursor( cursor );
 }

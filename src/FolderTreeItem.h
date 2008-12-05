@@ -17,7 +17,6 @@ public:
 
     FolderTreeItem( QTreeWidget* parent, Folder* folder, Preferences& prefs, PropertiesPanel* propsPanel = NULL );
     FolderTreeItem( QTreeWidgetItem* parent, Folder* folder, Preferences& prefs, PropertiesPanel* propsPanel = NULL );
-    //FolderTreeItem( const FolderTreeItem& item );
     ~FolderTreeItem();
 
     const char* className() const { return "FolderTreeItem"; }
