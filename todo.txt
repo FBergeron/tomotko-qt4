@@ -3,7 +3,6 @@ ToDo
 Try to understand why the png file in Christianson doesn't work.
 Test remove terms (multiple selection).  It's probably buggy because of nextTermItem management...
 Reread all the classes and remove obsolete comments.
-Replace screenshots (non-zaurus ones) with Windows's ones in online help.
 Check if the text of online help is still correct.  Remove or adjust references to zaurus for example.
 Probably replace all setSelected( true ) by setCurrentItem() instead?
 Setting the 2 language selectors to the same language should not be allowed, I think.
