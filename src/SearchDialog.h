@@ -3,8 +3,6 @@
 
 #include <iostream>
 #include <QDialog>
-//#include <qfontmetrics.h>
-//#include <qheader.h>
 #include <QHBoxLayout>
 #include <QHeaderView>
 #include <QIcon>

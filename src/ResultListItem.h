@@ -14,6 +14,8 @@
 #include <QWidget>
 #include "Term.h"
 
+using namespace std;
+
 class ResultListItem : public QTreeWidgetItem {
 
 public:
@@ -22,11 +24,9 @@ public:
     ~ResultListItem();
 
     Term* getTerm();
-    void setup();
     void updateUi();
     void setFont( int column, const QFont& font ); 
     QFont font( int column ) const;
-    //virtual void paintCell( QPainter * p, const QColorGroup & cg, int column, int width, int align );
 
 private:
 
@@ -42,5 +42,3 @@ private:
 };
 
 #endif
-
-

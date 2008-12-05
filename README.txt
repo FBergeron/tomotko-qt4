@@ -170,7 +170,7 @@ $ ipkg.old install toMOTko_x.y.z_arm.ipk
 
 What to do before a release
 ---------------------------
-- Update version number in the About dialog, control file and preinst script.
+- Update version number in the About dialog script.
 - Update online documentation if necessary (screenshots, new features, etc.)
 - Remove traces if any.
 - Build latest ipk file.

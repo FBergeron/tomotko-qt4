@@ -9,25 +9,17 @@ ResultListItem::ResultListItem( QTreeWidget* parent, Term* term, const QString& 
 ResultListItem::~ResultListItem() {
 }
 
-void ResultListItem::setup() {
-    //int rowHeight = QFontMetrics( treeWidget()->font() ).height();
-    //QFontMetrics firstLangFontMetrics( font( 0 ) );
-    //if( firstLangFontMetrics.height() > rowHeight )
-    //    rowHeight = firstLangFontMetrics.height();
-    //QFontMetrics testLangFontMetrics( font( 1 ) );
-    //if( testLangFontMetrics.height() > rowHeight )
-    //    rowHeight = testLangFontMetrics.height();
-    //setHeight( rowHeight );
-}
-
 void ResultListItem::updateUi() {
     if( term ) {
         if( term->isTranslationExists( firstLanguage ) ) {
             const Translation& firstLangTranslation = term->getTranslation( firstLanguage );
             setText( 0, firstLangTranslation.getWord() );
+            setForeground( 0, QBrush( treeWidget()->palette().color( QPalette::Active, QPalette::WindowText ) ) );
         }
-        else
+        else {
             setText( 0, QObject::tr( "Undefined" ) );
+            setForeground( 0, QBrush( treeWidget()->palette().color( QPalette::Disabled, QPalette::WindowText ) ) );
+        }
 
         if( term->isTranslationExists( testLanguage ) ) {
             const Translation& testLangTranslation = term->getTranslation( testLanguage );
@@ -35,9 +27,12 @@ void ResultListItem::updateUi() {
             if( altShown && testLangTranslation.getAlt().length() > 0 )
                 testLangStr += " [" + testLangTranslation.getAlt() + "]";
             setText( 1, testLangStr );
+            setForeground( 1, QBrush( treeWidget()->palette().color( QPalette::Active, QPalette::WindowText ) ) );
         }
-        else
+        else {
             setText( 1, QObject::tr( "Undefined" ) );
+            setForeground( 1, QBrush( treeWidget()->palette().color( QPalette::Disabled, QPalette::WindowText ) ) );
+        }
 
         setText( 2, vocabTitle );
         setText( 3, location );
@@ -58,28 +53,3 @@ QFont ResultListItem::font( int column ) const {
     else
         return( treeWidget()->font() );
 }
-
-//void ResultListItem::paintCell( QPainter* p, const QColorGroup& cg, int column, int width, int align ) {
-//    if( !p )
-//        return;
-//
-//    QFont oldFont = p->font();
-//    p->setFont( font( column ) );
-//
-//    QColorGroup colorGroup( cg );
-//    switch( column ) {
-//        case 0 : 
-//            if( term && !term->isTranslationExists( firstLanguage ) )
-//                colorGroup.setColor( QColorGroup::Text, listView()->palette().color( QPalette::Disabled, QColorGroup::Text ) );
-//            break;
-//
-//        case 1 :
-//            if( term && !term->isTranslationExists( testLanguage ) )
-//                colorGroup.setColor( QColorGroup::Text, listView()->palette().color( QPalette::Disabled, QColorGroup::Text ) );
-//            break;
-//    }
-//
-//    QTreeWidgetItem::paintCell( p, colorGroup, column, width, align );
-//
-//    p->setFont( oldFont );
-//}

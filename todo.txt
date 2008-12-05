@@ -1,7 +1,6 @@
 ToDo
 ----
 Try to understand why the png file in Christianson doesn't work.
-Make the executable/installable version doesn't use the console.  Use exceptions maybe?
 Test remove terms (multiple selection).  It's probably buggy because of nextTermItem management...
 Reread all the classes and remove obsolete comments.
 Replace screenshots (non-zaurus ones) with Windows's ones in online help.
@@ -30,7 +29,7 @@ When we quit toMOTko, we should delete all files [0-9]+.tar.gz and tree.dat.gz. 
 
 In all TreeView, setAnimated( true ) for a cute special effect.
 I passed prefs to SequenceDialog.  Remove it if unused.
-
+Use exceptions to handle errors.
 There is a font sampler in the Qt's demo that could be useful and a QFontDialog.
 Maybe use QGridLayout with columnStretch for fontPreferences (check the QGridLayout doc for the example).
 I wonder if it would not be nicer if we had a column just for the checkbox in the termlist?
