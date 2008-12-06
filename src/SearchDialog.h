@@ -30,6 +30,8 @@ public:
     SearchDialog( Controller* controller, QWidget* parent = 0 );
     ~SearchDialog();
 
+    QSize sizeHint() const;
+
 public slots:
 
     void show();

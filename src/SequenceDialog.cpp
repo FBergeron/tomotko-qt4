@@ -9,7 +9,7 @@ SequenceDialog::~SequenceDialog() {
 }
 
 void SequenceDialog::init() {
-    setWindowFlags( Qt::Dialog );
+    setWindowFlags( Qt::Window );
     setModal( true );
 
     sequencePanel = new QWidget();

@@ -1283,7 +1283,6 @@ uint VocabularyManagerFrame::getSelectedTermCount() const {
 void VocabularyManagerFrame::search() {
     if( !searchDialog ) {
         searchDialog = new SearchDialog( controller, this );
-        searchDialog->resize( size() );
         connect( searchDialog, SIGNAL( showTermRequested( const TermKey& ) ), this, SLOT( showTerm( const TermKey& ) ) ); 
         connect( searchDialog, SIGNAL( termsRemoved() ), this, SLOT( updateUi() ) );
     }

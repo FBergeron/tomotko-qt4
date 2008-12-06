@@ -14,7 +14,7 @@ TermDialog::TermDialog( Vocabulary& vocab, Controller* controller, QWidget* pare
 }
 
 void TermDialog::init() {
-    setWindowFlags( Qt::Dialog | Qt::WindowMaximizeButtonHint );
+    setWindowFlags( Qt::Window | Qt::WindowMaximizeButtonHint );
     setModal( true );
 
     Preferences& prefs = controller->getPreferences();

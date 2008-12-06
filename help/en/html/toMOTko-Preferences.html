@@ -8,7 +8,7 @@
         <h1>Preferences</h1>
         <p>
         The Preferences dialog allows you to specify custom attributes of toMOTko.
-        It contains 3 panels : Quiz, Languages, and Interface.
+        It contains 4 panels : Quiz, Languages, Fonts, and Interface.
         </p>
         <p>The Quiz panel is shown below :</p>
         <p><img src="img/preferencesQuiz.png" width="431" height="407"/></p>
@@ -51,13 +51,13 @@
         <p><img src="img/sequenceEditor.png" width="375" height="364"/></p>
         <p>
         To compose the revealing sequence expression, you click the appropriate buttons.  The buttons will be
-        disabled or enabled in function of the state of the revealing sequence expression.  This way, it warrants
-        that the expression will be valid once finished.
+        disabled or enabled in function of the state of the revealing sequence expression.  This way, it guarantees 
+        that the expression will be valid once it's finished.
         </p><p>
         To reveal more than one field at a time, you use the junction (+) operator.  To reveal fields after clicking
         the Eye button, you use the iteration (>) button.  Once the revealing sequence is completed, you click Ok and 
-        it will be added in the list.  To cancel the composition of a revealing sequence, close the window by clicking
-        the X button and the sequence will be discarded.
+        it will be added in the list.  To cancel the composition of a revealing sequence, close the window or click 
+        the Cancel button.  The sequence will be discarded.
         </p>
         <p>The Languages panel is shown below :</p>
         <p><img src="img/preferencesLanguages.png" width="431" height="407"/></p>
@@ -73,8 +73,7 @@
         You can <b>specify the font of labels and fields</b> using the font selector in this pane.
         The available fonts of your system will be displayed in the list box.  You can select a font name and its size.
         The font change will take place once you close the Preferences dialog.  You may have to install additional fonts
-        depending on the languages you want to study.  It's recommended to have the unifont font installed so that you
-        can display most of the characters.
+        depending on the languages you want to study.
         </p><p>
         Depending of the fonts installed on your system, some sizes may not be available and
         the result may be a little bit surprising.  Try some values until you're satisfied.
@@ -88,26 +87,23 @@
         <p>To give an example, here are my font preferences :</p>
         <table border="1">
             <tr><td>&nbsp;</td><td>Fonts</td></tr>
-            <tr><td>Labels</td><td>unifont, medium</td></tr>
-            <tr><td>Fields</td><td>unifont, medium</td></tr>
-            <tr><td>English</td><td>verdana, large</td></tr>
-            <tr><td>French</td><td>verdana, large</td></tr>
-            <tr><td>German</td><td>verdana, large</td></tr>
-            <tr><td>Japanese</td><td>lcfont, large</td></tr>
-            <tr><td>Spanish</td><td>verdana, large</td></tr>
+            <tr><td>Labels</td><td>Arial, Very small</td></tr>
+            <tr><td>Fields</td><td>Arial, Small</td></tr>
+            <tr><td>Japanese</td><td>MS Mincho</td></tr>
         </table>
         <p>
         As the comment field is likely to contain text in two languages (the
         source and target languages), toMOTko will try to use the best possible font, considering
         the Font Overrides.  In the worst case, it will use the Field font as default.  
-        Because of that, it's recommended to set a generic font for Field font (like unifont).
+        Because of that, it's recommended to set a generic font for Field font (preferably a
+        font supporting Unicode characters).
         </p>
         <p>The Interface panel is shown below :</p>
         <p><img src="img/preferencesInterface.png" width="431" height="407"/></p>
         <p>
         You can <b>enable the built-in accent support</b> by checking the Digraph option.
         </p><p>
-        The digraphs option was borrowed from the famous Vim editor (http://www.vim.org).
+        The digraphs option was borrowed from the famous Vim editor (<a href="http://www.vim.org">http://www.vim.org</a>).
         It allows a user to input accented letters of some foreign languages without installing 
         an external Input Method component.  It works like this : Whenever you want to input
         an accented letter, you will do it using 2 letters (hence the name digraphs).

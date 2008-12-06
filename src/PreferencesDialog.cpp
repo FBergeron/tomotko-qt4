@@ -23,7 +23,7 @@ PreferencesDialog::~PreferencesDialog() {
 }
 
 void PreferencesDialog::init() {
-    setWindowFlags( Qt::Dialog );
+    setWindowFlags( Qt::Window );
     setModal( true ); 
 
     tab = new QTabWidget();

@@ -7,14 +7,13 @@
 
 SearchDialog::SearchDialog( Controller* controller, QWidget* parent /* = 0 */ ) : QDialog( parent ), controller( controller ) {
     init();
-    updateFonts();
 }
 
 SearchDialog::~SearchDialog() {
 }
 
 void SearchDialog::init() {
-    setWindowFlags( Qt::Dialog | Qt::WindowMaximizeButtonHint );
+    setWindowFlags( Qt::Window | Qt::WindowMaximizeButtonHint );
     setModal( true );
     queryPanel = new QWidget();
     queryPanelLayout = new QHBoxLayout();
@@ -101,6 +100,7 @@ void SearchDialog::init() {
 
     setWindowTitle( tr( "Search..." ) );
 
+    updateFonts();
     updateUi();
 }
 
@@ -371,3 +371,6 @@ void SearchDialog::doRemoveTerms( bool allowSelectTrans /* = true */, bool confi
     }
 }
 
+QSize SearchDialog::sizeHint() const {
+    return( QSize( 700, 500 ) );
+}
