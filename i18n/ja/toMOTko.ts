@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1">
+<!DOCTYPE TS><TS version="1.1" language="en_US">
+<defaultcodec></defaultcodec>
 <context>
     <name>HelpBrowser</name>
     <message>
         <location filename="../../src/HelpBrowser.cpp" line="11"/>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>ホーム</translation>
     </message>
     <message>
         <location filename="../../src/HelpBrowser.cpp" line="12"/>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>戻る</translation>
     </message>
     <message>
         <location filename="../../src/HelpBrowser.cpp" line="13"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../../src/HelpBrowser.cpp" line="38"/>
         <source>Help: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ヘルプ：　%1</translation>
     </message>
 </context>
 <context>
@@ -28,62 +29,62 @@
     <message>
         <location filename="../../src/MainWindow.cpp" line="305"/>
         <source>Actions</source>
-        <translation type="unfinished">機能</translation>
+        <translation>機能</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="313"/>
         <source>StartQuiz</source>
-        <translation type="unfinished">クイズを始める</translation>
+        <translation>クイズを始める</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="314"/>
         <source>ManageGlossaries</source>
-        <translation type="unfinished">用語集を管理する</translation>
+        <translation>用語集を管理する</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="315"/>
         <source>Import...</source>
-        <translation type="unfinished">インポート...</translation>
+        <translation>インポート...</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="316"/>
         <source>Export...</source>
-        <translation type="unfinished">エクスポート...</translation>
+        <translation>エクスポート...</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="318"/>
         <source>Preferences...</source>
-        <translation type="unfinished">設定...</translation>
+        <translation>設定...</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="319"/>
         <source>Quit</source>
-        <translation type="unfinished">終了</translation>
+        <translation>終了</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="317"/>
         <source>ShowAllGlossariesAndTerms</source>
-        <translation type="unfinished">全ての用語集と言葉を表示する</translation>
+        <translation>全ての用語集と言葉を表示する</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="184"/>
         <source>?</source>
-        <translation type="unfinished">?</translation>
+        <translation>?</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="335"/>
         <source>About...</source>
-        <translation type="unfinished">toMOTkoについて...</translation>
+        <translation>toMOTkoについて...</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="267"/>
         <source>RestartQuiz</source>
-        <translation type="unfinished">クイズを再び始める</translation>
+        <translation>クイズを再び始める</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="380"/>
         <source>AboutToMOTko...</source>
-        <translation type="unfinished">toMOTkoについて...</translation>
+        <translation>toMOTkoについて...</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="380"/>
@@ -108,67 +109,67 @@
     <message>
         <location filename="../../src/MainWindow.cpp" line="309"/>
         <source>Reveal</source>
-        <translation type="unfinished">表す</translation>
+        <translation>表す</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="310"/>
         <source>RightAnswer</source>
-        <translation type="unfinished">正解</translation>
+        <translation>正解</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="311"/>
         <source>WrongAnswer</source>
-        <translation type="unfinished">不正解</translation>
+        <translation>不正解</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="312"/>
         <source>EditQuizTerm</source>
-        <translation type="unfinished">クイズの言葉を編集する</translation>
+        <translation>クイズの言葉を編集する</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="320"/>
         <source>AddFolder</source>
-        <translation type="unfinished">新しいフォルダーを作る</translation>
+        <translation>新しいフォルダーを作る</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="321"/>
         <source>AddGlossary</source>
-        <translation type="unfinished">新しい用語集を作る</translation>
+        <translation>新しい用語集を作る</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="322"/>
         <source>RemoveItem</source>
-        <translation type="unfinished">アイテムを消す</translation>
+        <translation>アイテムを消す</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="323"/>
         <source>AddTerm</source>
-        <translation type="unfinished">言葉を追加する</translation>
+        <translation>言葉を追加する</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="324"/>
         <source>EditTerm</source>
-        <translation type="unfinished">言葉を編集する</translation>
+        <translation>言葉を編集する</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="325"/>
         <source>RemoveTerm</source>
-        <translation type="unfinished">言葉を消す</translation>
+        <translation>言葉を消す</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="326"/>
         <source>CheckAllTerms</source>
-        <translation type="unfinished">全ての言葉にチェックを入れる</translation>
+        <translation>全ての言葉にチェックを入れる</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="399"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="400"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="327"/>
@@ -178,22 +179,22 @@
     <message>
         <location filename="../../src/MainWindow.cpp" line="328"/>
         <source>Maximize</source>
-        <translation type="unfinished"></translation>
+        <translation>最大化</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="329"/>
         <source>Search...</source>
-        <translation type="unfinished"></translation>
+        <translation>検索</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="306"/>
         <source>Edition</source>
-        <translation type="unfinished">編集</translation>
+        <translation>編集</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="186"/>
         <source>Help...</source>
-        <translation type="unfinished"></translation>
+        <translation>ヘルプ...</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="393"/>
@@ -206,182 +207,182 @@
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="4"/>
         <source>VerySmall</source>
-        <translation type="unfinished">とても小さい</translation>
+        <translation>とても小さい</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="4"/>
         <source>Small</source>
-        <translation type="unfinished">小さい</translation>
+        <translation>小さい</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="4"/>
         <source>Medium</source>
-        <translation type="unfinished">普通</translation>
+        <translation>普通</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="4"/>
         <source>Large</source>
-        <translation type="unfinished">大きい</translation>
+        <translation>大きい</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="5"/>
         <source>VeryLarge</source>
-        <translation type="unfinished">とても大きい</translation>
+        <translation>とても大きい</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="258"/>
         <source>StudyLanguages</source>
-        <translation type="unfinished">言語</translation>
+        <translation>言語</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="33"/>
         <source>Length</source>
-        <translation type="unfinished">質問の数</translation>
+        <translation>質問の数</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="90"/>
         <source>QuizLengthShortest</source>
-        <translation type="unfinished">少ない (1)</translation>
+        <translation>少ない (1)</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="91"/>
         <source>QuizLengthMedium</source>
-        <translation type="unfinished">普通 (3)</translation>
+        <translation>普通 (3)</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="93"/>
         <source>QuizLengthLongest</source>
-        <translation type="unfinished">多い (5)</translation>
+        <translation>多い (5)</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="183"/>
         <source>DigraphesEnabled</source>
-        <translation type="unfinished">ダイグラフ　On</translation>
+        <translation>ダイグラフをオン </translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="269"/>
         <source>Fonts</source>
-        <translation type="unfinished">フォント</translation>
+        <translation>フォント</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="119"/>
         <source>LabelsFont</source>
-        <translation type="unfinished">ラベル</translation>
+        <translation>ラベル</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="142"/>
         <source>ResetDefaultValue</source>
-        <translation type="unfinished">リセット</translation>
+        <translation>リセット</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="139"/>
         <source>FieldsFont</source>
-        <translation type="unfinished">フィールド</translation>
+        <translation>フィールド</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="267"/>
         <source>Quiz</source>
-        <translation type="unfinished">クイズ</translation>
+        <translation>クイズ</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="268"/>
         <source>Languages</source>
-        <translation type="unfinished">言語</translation>
+        <translation>言語</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="270"/>
         <source>Interface</source>
-        <translation type="unfinished">インタフェース</translation>
+        <translation>インタフェース</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="291"/>
         <source>Preferences...</source>
-        <translation type="unfinished">設定...</translation>
+        <translation>設定...</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="205"/>
         <source>Keyboard Accelerators</source>
-        <translation type="unfinished">キーボードショートカット</translation>
+        <translation>キーボードショートカット</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="212"/>
         <source>Action</source>
-        <translation type="unfinished">機能</translation>
+        <translation>機能</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="212"/>
         <source>Key</source>
-        <translation type="unfinished">ショートカット</translation>
+        <translation>ショートカット</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="229"/>
         <source>Clear key</source>
-        <translation type="unfinished">消す</translation>
+        <translation>消す</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="230"/>
         <source>Set key</source>
-        <translation type="unfinished">指定</translation>
+        <translation>指定</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="597"/>
         <source>&lt;press key&gt;</source>
-        <translation type="unfinished">ショートカットを打って下さい</translation>
+        <translation>ショートカットを打って下さい</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="231"/>
         <source>Reset key</source>
-        <translation type="unfinished">リセット</translation>
+        <translation>リセット</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="37"/>
         <source>RevealingOrders</source>
-        <translation type="unfinished"></translation>
+        <translation>表示順番</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="58"/>
         <source>Add revealing sequence</source>
-        <translation type="unfinished"></translation>
+        <translation>新しい順番を加える</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="62"/>
         <source>Remove revealing sequence</source>
-        <translation type="unfinished"></translation>
+        <translation>順番を削除する</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="68"/>
         <source>QuizWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>クイズのウィンドウ</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="155"/>
         <source>LanguageFontOverrides</source>
-        <translation type="unfinished"></translation>
+        <translation>言語のフォントのオーバーライト</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="180"/>
         <source>BuiltInSupportForAccents</source>
-        <translation type="unfinished"></translation>
+        <translation>アクセントのサポートをオン</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="187"/>
         <source>QuizOptions</source>
-        <translation type="unfinished"></translation>
+        <translation>クイズ</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="190"/>
         <source>hideQuizButtons</source>
-        <translation type="unfinished"></translation>
+        <translation>ボタンを隠す</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="194"/>
         <source>GlossaryManagerOptions</source>
-        <translation type="unfinished"></translation>
+        <translation>用語集マネジャー</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="197"/>
         <source>ShowAltInTermList</source>
-        <translation type="unfinished"></translation>
+        <translation>発音を表示する</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="665"/>
@@ -391,7 +392,7 @@
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="666"/>
         <source>Key &apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>キー　&apos;</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="666"/>
@@ -409,12 +410,12 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="277"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="279"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="393"/>
@@ -432,62 +433,62 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="90"/>
         <source>Words</source>
-        <translation type="unfinished">言葉</translation>
+        <translation>言葉</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="97"/>
         <source>Glossaries</source>
-        <translation type="unfinished">用語集</translation>
+        <translation>用語集</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="104"/>
         <source>Folders</source>
-        <translation type="unfinished">フォルダー</translation>
+        <translation>フォルダー</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="242"/>
         <source>Selected</source>
-        <translation type="unfinished">クイズ</translation>
+        <translation>クイズ</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="242"/>
         <source>Checked</source>
-        <translation type="unfinished">チェック</translation>
+        <translation>チェック</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="239"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>説明</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="240"/>
         <source>Content</source>
-        <translation type="unfinished"></translation>
+        <translation>内容</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="242"/>
         <source>Items</source>
-        <translation type="unfinished"></translation>
+        <translation>オブジェクト</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="242"/>
         <source>Total</source>
-        <translation type="unfinished"></translation>
+        <translation>合計</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="244"/>
         <source>Author</source>
-        <translation type="unfinished"></translation>
+        <translation>作者</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="245"/>
         <source>CreationDate</source>
-        <translation type="unfinished"></translation>
+        <translation>作成日時</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="246"/>
         <source>ModificationDate</source>
-        <translation type="unfinished"></translation>
+        <translation>更新日時</translation>
     </message>
 </context>
 <context>
@@ -495,137 +496,137 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/Util.cpp" line="4"/>
         <source>en</source>
-        <translation type="unfinished">英語</translation>
+        <translation>英語</translation>
     </message>
     <message>
         <location filename="../../src/Util.cpp" line="4"/>
         <source>fr</source>
-        <translation type="unfinished">フランス語</translation>
+        <translation>フランス語</translation>
     </message>
     <message>
         <location filename="../../src/Util.cpp" line="4"/>
         <source>es</source>
-        <translation type="unfinished">スペイン語</translation>
+        <translation>スペイン語</translation>
     </message>
     <message>
         <location filename="../../src/Util.cpp" line="4"/>
         <source>ja</source>
-        <translation type="unfinished">日本語</translation>
+        <translation>日本語</translation>
     </message>
     <message>
         <location filename="../../src/Util.cpp" line="4"/>
         <source>de</source>
-        <translation type="unfinished">ドイツ語</translation>
+        <translation>ドイツ語</translation>
     </message>
     <message>
         <location filename="../../src/Util.cpp" line="5"/>
         <source>ar</source>
-        <translation type="unfinished">アラビア語</translation>
+        <translation>アラビア語</translation>
     </message>
     <message>
         <location filename="../../src/Util.cpp" line="5"/>
         <source>bg</source>
-        <translation type="unfinished">ブルガリア語</translation>
+        <translation>ブルガリア語</translation>
     </message>
     <message>
         <location filename="../../src/Util.cpp" line="5"/>
         <source>el</source>
-        <translation type="unfinished">ギリシャ語</translation>
+        <translation>ギリシャ語</translation>
     </message>
     <message>
         <location filename="../../src/Util.cpp" line="5"/>
         <source>it</source>
-        <translation type="unfinished">イタリア語</translation>
+        <translation>イタリア語</translation>
     </message>
     <message>
         <location filename="../../src/Util.cpp" line="5"/>
         <source>ko</source>
-        <translation type="unfinished">韓国語</translation>
+        <translation>韓国語</translation>
     </message>
     <message>
         <location filename="../../src/Util.cpp" line="5"/>
         <source>nl</source>
-        <translation type="unfinished">オランダ語</translation>
+        <translation>オランダ語</translation>
     </message>
     <message>
         <location filename="../../src/Util.cpp" line="6"/>
         <source>pt</source>
-        <translation type="unfinished">ポルトガル語</translation>
+        <translation>ポルトガル語</translation>
     </message>
     <message>
         <location filename="../../src/Util.cpp" line="6"/>
         <source>ru</source>
-        <translation type="unfinished">ロシア語</translation>
+        <translation>ロシア語</translation>
     </message>
     <message>
         <location filename="../../src/Util.cpp" line="6"/>
         <source>sw</source>
-        <translation type="unfinished">スワヒリ語</translation>
+        <translation>スワヒリ語</translation>
     </message>
     <message>
         <location filename="../../src/Util.cpp" line="6"/>
         <source>th</source>
-        <translation type="unfinished">タイ語</translation>
+        <translation>タイ語</translation>
     </message>
     <message>
         <location filename="../../src/Util.cpp" line="6"/>
         <source>vi</source>
-        <translation type="unfinished">ベトナム語</translation>
+        <translation>ベトナム語</translation>
     </message>
     <message>
         <location filename="../../src/Util.cpp" line="7"/>
         <source>zh</source>
-        <translation type="unfinished">中国語</translation>
+        <translation>中国語</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="31"/>
         <source>Edition</source>
-        <translation type="unfinished">編集</translation>
+        <translation>編集</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="331"/>
         <source>Cut</source>
-        <translation type="unfinished">切り取り</translation>
+        <translation>切り取り</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="38"/>
         <source>Copy</source>
-        <translation type="unfinished">コピー</translation>
+        <translation>コピー</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="42"/>
         <source>Paste</source>
-        <translation type="unfinished">貼り付け</translation>
+        <translation>貼り付け</translation>
     </message>
     <message>
         <location filename="../../src/VocabParser.cpp" line="85"/>
         <source>Error</source>
-        <translation type="unfinished">エラー</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="935"/>
         <source>Warning</source>
-        <translation type="unfinished">注意</translation>
+        <translation>注意</translation>
     </message>
     <message>
         <location filename="../../src/QuizFrame.cpp" line="758"/>
         <source>Information</source>
-        <translation type="unfinished">情報</translation>
+        <translation>情報</translation>
     </message>
     <message>
         <location filename="../../src/Controller.cpp" line="736"/>
         <source>MyGlossaries</source>
-        <translation type="unfinished">私の用語集</translation>
+        <translation>私の用語集</translation>
     </message>
     <message>
         <location filename="../../src/Controller.cpp" line="143"/>
         <source>NewFolder</source>
-        <translation type="unfinished">新しいフォルダーを作る</translation>
+        <translation>新しいフォルダーを作る</translation>
     </message>
     <message>
         <location filename="../../src/Controller.cpp" line="172"/>
         <source>NewGlossary</source>
-        <translation type="unfinished">新しい用語集を作る</translation>
+        <translation>新しい用語集を作る</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="375"/>
@@ -633,19 +634,19 @@ Overwrite the current assignment?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/TermListItem.cpp" line="32"/>
+        <location filename="../../src/TermListItem.cpp" line="36"/>
         <source>Undefined</source>
-        <translation type="unfinished"></translation>
+        <translation>未定義</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="504"/>
         <source>OperationSuccessful</source>
-        <translation type="unfinished"></translation>
+        <translation>作業終了</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="506"/>
         <source>OperationFailed</source>
-        <translation type="unfinished"></translation>
+        <translation>作業できませんでした</translation>
     </message>
     <message>
         <location filename="../../src/VocabParser.cpp" line="87"/>
@@ -658,42 +659,42 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/QuizFrame.cpp" line="652"/>
         <source>Reveal</source>
-        <translation type="unfinished">表す</translation>
+        <translation>表す</translation>
     </message>
     <message>
         <location filename="../../src/QuizFrame.cpp" line="642"/>
         <source>RightAnswer</source>
-        <translation type="unfinished">正解</translation>
+        <translation>正解</translation>
     </message>
     <message>
         <location filename="../../src/QuizFrame.cpp" line="646"/>
         <source>EditWord</source>
-        <translation type="unfinished">言葉を編集する</translation>
+        <translation>言葉を編集する</translation>
     </message>
     <message>
         <location filename="../../src/QuizFrame.cpp" line="634"/>
         <source>Word/Expr.</source>
-        <translation type="unfinished">言葉</translation>
+        <translation>言葉</translation>
     </message>
     <message>
         <location filename="../../src/QuizFrame.cpp" line="638"/>
         <source>???</source>
-        <translation type="unfinished">???</translation>
+        <translation>???</translation>
     </message>
     <message>
         <location filename="../../src/QuizFrame.cpp" line="633"/>
         <source>Alt./Phon.</source>
-        <translation type="unfinished">発音</translation>
+        <translation>発音</translation>
     </message>
     <message>
         <location filename="../../src/QuizFrame.cpp" line="637"/>
         <source>Examples/Comments</source>
-        <translation type="unfinished">例/コメント</translation>
+        <translation>例/コメント</translation>
     </message>
     <message>
         <location filename="../../src/QuizFrame.cpp" line="644"/>
         <source>WrongAnswer</source>
-        <translation type="unfinished">不正解</translation>
+        <translation>不正解</translation>
     </message>
     <message>
         <location filename="../../src/QuizFrame.cpp" line="279"/>
@@ -703,17 +704,17 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/QuizFrame.cpp" line="653"/>
         <source>MaximizeComment</source>
-        <translation type="unfinished"></translation>
+        <translation>コメントを最大化</translation>
     </message>
     <message>
         <location filename="../../src/QuizFrame.cpp" line="386"/>
         <source>WellDone</source>
-        <translation type="unfinished"></translation>
+        <translation>おめでとう！全ての%1の言葉を習いました。用語集マネジャーで違う言葉を選択して下さい。</translation>
     </message>
     <message>
         <location filename="../../src/QuizFrame.cpp" line="188"/>
         <source>Image</source>
-        <translation type="unfinished"></translation>
+        <translation>イメージ</translation>
     </message>
     <message>
         <location filename="../../src/QuizFrame.cpp" line="758"/>
@@ -724,17 +725,14 @@ Overwrite the current assignment?</source>
 <context>
     <name>ScrollableLineEdit</name>
     <message>
-        <location filename="" line="0"/>
         <source>Cut</source>
         <translation type="obsolete">切り取り</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Copy</source>
         <translation type="obsolete">コピー</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Paste</source>
         <translation type="obsolete">貼り付け</translation>
     </message>
@@ -744,22 +742,22 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="161"/>
         <source>Glossary</source>
-        <translation type="unfinished">用語集</translation>
+        <translation>用語集</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="278"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="279"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="155"/>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>検索</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="156"/>
@@ -769,7 +767,7 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="161"/>
         <source>Location</source>
-        <translation type="unfinished"></translation>
+        <translation>フォルダ名</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="164"/>
@@ -779,27 +777,27 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="166"/>
         <source>Edit Term</source>
-        <translation type="unfinished"></translation>
+        <translation>言葉を編集する</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="168"/>
         <source>Remove Term(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>言葉を削除する</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="172"/>
         <source>Search...</source>
-        <translation type="unfinished"></translation>
+        <translation>検索</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="193"/>
         <source>%1 term(s) found</source>
-        <translation type="unfinished"></translation>
+        <translation>%1個の言葉が見つかれました。</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="272"/>
         <source>ConfirmRemoveSelectedTerms</source>
-        <translation type="unfinished"></translation>
+        <translation>本当にこれを削除してもいいですか？</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="320"/>
@@ -814,7 +812,7 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="153"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>リセット</translation>
     </message>
 </context>
 <context>
@@ -822,17 +820,17 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/SequenceDialog.cpp" line="20"/>
         <source>Quiz</source>
-        <translation type="unfinished">クイズ</translation>
+        <translation>クイズ</translation>
     </message>
     <message>
         <location filename="../../src/SequenceDialog.cpp" line="78"/>
         <source>Word/Expr.</source>
-        <translation type="unfinished">言葉</translation>
+        <translation>言葉</translation>
     </message>
     <message>
         <location filename="../../src/SequenceDialog.cpp" line="76"/>
         <source>Alt./Phon.</source>
-        <translation type="unfinished">発音</translation>
+        <translation>発音</translation>
     </message>
     <message>
         <location filename="../../src/SequenceDialog.cpp" line="37"/>
@@ -847,32 +845,32 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/SequenceDialog.cpp" line="87"/>
         <source>Image</source>
-        <translation type="unfinished"></translation>
+        <translation>イメージ</translation>
     </message>
     <message>
         <location filename="../../src/SequenceDialog.cpp" line="103"/>
         <source>CommentLabelPanel</source>
-        <translation type="unfinished"></translation>
+        <translation>例/コメント</translation>
     </message>
     <message>
         <location filename="../../src/SequenceDialog.cpp" line="135"/>
         <source>Sequence</source>
-        <translation type="unfinished"></translation>
+        <translation>表示順番</translation>
     </message>
     <message>
         <location filename="../../src/SequenceDialog.cpp" line="145"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../../src/SequenceDialog.cpp" line="147"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
         <location filename="../../src/SequenceDialog.cpp" line="162"/>
         <source>AddRevealingSequence</source>
-        <translation type="unfinished"></translation>
+        <translation>新しい順番を加える</translation>
     </message>
     <message>
         <location filename="../../src/SequenceDialog.cpp" line="177"/>
@@ -890,72 +888,72 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/TermDialog.cpp" line="94"/>
         <source>Word/Expr.</source>
-        <translation type="unfinished">言葉</translation>
+        <translation>言葉</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="92"/>
         <source>Alt./Phon.</source>
-        <translation type="unfinished">発音</translation>
+        <translation>発音</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="119"/>
         <source>Examples/Comments</source>
-        <translation type="unfinished">例/コメント</translation>
+        <translation>例/コメント</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="170"/>
         <source>EditTerm</source>
-        <translation type="unfinished">言葉を編集する</translation>
+        <translation>言葉を編集する</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="34"/>
         <source>Cut</source>
-        <translation type="unfinished">切り取り</translation>
+        <translation>切り取り</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="126"/>
         <source>Image</source>
-        <translation type="unfinished"></translation>
+        <translation>イメージ</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="138"/>
         <source>setImage</source>
-        <translation type="unfinished"></translation>
+        <translation>指定</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="140"/>
         <source>setImageTooltip</source>
-        <translation type="unfinished"></translation>
+        <translation>イメージを指定</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="142"/>
         <source>clearImage</source>
-        <translation type="unfinished"></translation>
+        <translation>消す</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="144"/>
         <source>clearImageTooltip</source>
-        <translation type="unfinished"></translation>
+        <translation>イメージを消す</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="155"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="157"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="245"/>
         <source>SetImage...</source>
-        <translation type="unfinished"></translation>
+        <translation>イメージを指定 ...</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="245"/>
         <source>Images (*.png *.gif)</source>
-        <translation type="unfinished"></translation>
+        <translation>イメージ (*.png *.gif)</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="277"/>
@@ -968,22 +966,22 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/TranslationSelectionDialog.cpp" line="15"/>
         <source>Languages</source>
-        <translation type="unfinished">言語</translation>
+        <translation>言語</translation>
     </message>
     <message>
         <location filename="../../src/TranslationSelectionDialog.cpp" line="37"/>
         <source>CheckAllLanguages</source>
-        <translation type="unfinished">全ての言語にチェックを入れる</translation>
+        <translation>全ての言語にチェックを入れる</translation>
     </message>
     <message>
         <location filename="../../src/TranslationSelectionDialog.cpp" line="45"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../../src/TranslationSelectionDialog.cpp" line="47"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>キャンセル</translation>
     </message>
 </context>
 <context>
@@ -991,7 +989,7 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="620"/>
         <source>Glossaries</source>
-        <translation type="unfinished">用語集</translation>
+        <translation>用語集</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="634"/>
@@ -1051,47 +1049,47 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="941"/>
         <source>Yes</source>
-        <translation type="unfinished">はい</translation>
+        <translation>はい</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="942"/>
         <source>No</source>
-        <translation type="unfinished">いいえ</translation>
+        <translation>いいえ</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="631"/>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>プロパティ</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="646"/>
         <source>MaximizeDetails</source>
-        <translation type="unfinished"></translation>
+        <translation>最大化</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="632"/>
         <source>Words</source>
-        <translation type="unfinished">言葉</translation>
+        <translation>言葉</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="385"/>
         <source>Import...</source>
-        <translation type="unfinished">インポート...</translation>
+        <translation>インポート...</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="499"/>
         <source>Export...</source>
-        <translation type="unfinished">エクスポート...</translation>
+        <translation>エクスポート...</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="799"/>
         <source>ConfirmRemoveItem</source>
-        <translation type="unfinished"></translation>
+        <translation>本当にこれを削除してもいいですか？</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="935"/>
         <source>ConfirmRemoveSelectedTerms</source>
-        <translation type="unfinished"></translation>
+        <translation>本当にこれを削除してもいいですか？</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="982"/>
@@ -1106,7 +1104,7 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="500"/>
         <source>Glossaries (*.zip)</source>
-        <translation type="unfinished"></translation>
+        <translation>用語集 (*.zip)</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="385"/>
@@ -1116,7 +1114,7 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="430"/>
         <source>ImportSuccessful</source>
-        <translation type="unfinished"></translation>
+        <translation>インポートができました</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="432"/>
@@ -1126,7 +1124,7 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="436"/>
         <source>ItemImportFailed</source>
-        <translation type="unfinished"></translation>
+        <translation>インポートができませんでした</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="439"/>
@@ -1141,12 +1139,12 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="478"/>
         <source>GlossaryExportSuccessful</source>
-        <translation type="unfinished"></translation>
+        <translation>エクスポートができました</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="480"/>
         <source>GlossaryExportFailed</source>
-        <translation type="unfinished"></translation>
+        <translation>エクスポートができませんでした</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="488"/>
@@ -1156,28 +1154,25 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="504"/>
         <source>FolderExportSuccessful</source>
-        <translation type="unfinished"></translation>
+        <translation>エクスポートができました</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="506"/>
         <source>FolderExportFailed</source>
-        <translation type="unfinished"></translation>
+        <translation>エクスポートができませんでした</translation>
     </message>
 </context>
 <context>
     <name>ZFileDialog</name>
     <message>
-        <location filename="" line="0"/>
         <source>Name</source>
         <translation type="obsolete">名前</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Size</source>
         <translation type="obsolete">サイズ</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Date</source>
         <translation type="obsolete">更新日時</translation>
     </message>

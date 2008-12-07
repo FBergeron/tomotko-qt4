@@ -612,7 +612,7 @@ No obstante, asignar la teclea?</translation>
         <translation type="unfinished">Pegar</translation>
     </message>
     <message>
-        <location filename="../../src/TermListItem.cpp" line="32"/>
+        <location filename="../../src/TermListItem.cpp" line="36"/>
         <source>Undefined</source>
         <translation type="unfinished">Indefinido</translation>
     </message>

@@ -608,7 +608,7 @@ Overwrite the current assignment?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/TermListItem.cpp" line="32"/>
+        <location filename="../../src/TermListItem.cpp" line="36"/>
         <source>Undefined</source>
         <translation type="unfinished"></translation>
     </message>

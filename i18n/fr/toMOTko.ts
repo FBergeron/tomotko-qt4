@@ -609,7 +609,7 @@ Affecter le raccourci quand même?</translation>
         <translation type="unfinished">Coller</translation>
     </message>
     <message>
-        <location filename="../../src/TermListItem.cpp" line="32"/>
+        <location filename="../../src/TermListItem.cpp" line="36"/>
         <source>Undefined</source>
         <translation type="unfinished">Non défini</translation>
     </message>
