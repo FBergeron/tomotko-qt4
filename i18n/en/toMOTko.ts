@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="en_US">
+<defaultcodec></defaultcodec>
 <context>
     <name>HelpBrowser</name>
     <message>
@@ -640,7 +641,6 @@ Overwrite the current assignment?</source>
         <translation>Parse error at line %1, col %2. %3.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>NoResumableQuizAvailable</source>
         <translation type="obsolete">No resumable quiz is
 available for the
@@ -733,37 +733,30 @@ selected languages.</translation>
 <context>
     <name>ScrollableLineEdit</name>
     <message>
-        <location filename="" line="0"/>
         <source>Undo</source>
         <translation type="obsolete">Undo</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Redo</source>
         <translation type="obsolete">Redo</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Cut</source>
         <translation type="obsolete">Cut</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Copy</source>
         <translation type="obsolete">Copy</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Paste</source>
         <translation type="obsolete">Paste</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Clear</source>
         <translation type="obsolete">Clear</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Select All</source>
         <translation type="obsolete">Select All</translation>
     </message>
@@ -1180,7 +1173,9 @@ selected languages.</translation>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="432"/>
         <source>InvisibleImport</source>
-        <translation>The new data is invisible for now. You must either select appropriate languages in the selectors or check the item &quot;Show all glossaries and terms&quot; in the Actions menu.</translation>
+        <translation type="unfinished">
+
+The new data is invisible for now. You must either select appropriate languages in the selectors or check the item &quot;Show all glossaries and terms&quot; in the Actions menu.</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="499"/>
@@ -1196,17 +1191,14 @@ selected languages.</translation>
 <context>
     <name>ZFileDialog</name>
     <message>
-        <location filename="" line="0"/>
         <source>Name</source>
         <translation type="obsolete">Name</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Size</source>
         <translation type="obsolete">Size</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Date</source>
         <translation type="obsolete">Date</translation>
     </message>

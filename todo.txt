@@ -1,18 +1,18 @@
 ToDo
 ----
-Try to understand why the png file in Christianson doesn't work.
 Test remove terms (multiple selection).  It's probably buggy because of nextTermItem management...
 Reread all the classes and remove obsolete comments.
 Probably replace all setSelected( true ) by setCurrentItem() instead?
-Setting the 2 language selectors to the same language should not be allowed, I think.
 Complete l10n in es/ja/en/fr.
-The columns of the prop tables don't resize properly.
+The columns of the prop tables don't resize properly.  Check all lists.
 Would it be possible not to copy toMOTko.ico in the release/debug dir?
 Change some strings in the Installer: copyright and license.
 Sometimes, when I delete a glossary, it reappears the next time I start toMOTko.  How to reproduce it?
 In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  Will it bring data incompatibility with previous versions? I think so.  If there seems to be incompatibilities, it may also be caused by the TermScheduler's tempTermPool handling in operator>>.  Test that!
+Try to understand why the png file in Christianson doesn't work.
 Release 0.11.x for Windows
-
+Reorganize the web site for the qt4 version.
+Translate online help in French and Spanish.
 The Search field doesn't accept digraphs.
 Apparently, on MacOS, the application icon is ugly, resolution should be better.  64x64?
 Add a FAQ in the website (documenting the problems for dependency lib and fonts)

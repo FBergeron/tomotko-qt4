@@ -332,6 +332,7 @@ void MainWindow::retranslateUi() {
     copyAction->setText( QObject::tr( "Copy" ) );
     pasteAction->setText( QObject::tr( "Paste" ) );
 
+    helpAction->setText( tr( "Help..." ) );
     aboutAction->setText( tr( "About..." ) );
     
     updateFirstLanguageValues();
@@ -546,7 +547,7 @@ void MainWindow::updateLanguageSelector( QComboBox* comboBox ) {
 }
 
 void MainWindow::setFirstLanguage( const QString& lang ) {
-    if( lang == QApplication::translate( "Object", control->getPreferences().getTestLanguage().toLatin1().data() ) && 
+    if( lang == QApplication::translate( "QObject", control->getPreferences().getTestLanguage().toLatin1().data() ) && 
             control->getPreferences().getTestLanguage() != QString( "" ) )
         switchFirstAndTestLanguages();
     else
@@ -557,7 +558,7 @@ void MainWindow::setFirstLanguage( const QString& lang ) {
 }
 
 void MainWindow::setTestLanguage( const QString& lang ) {
-    if( lang == QApplication::translate( "Object", control->getPreferences().getFirstLanguage().toLatin1().data() ) && 
+    if( lang == QApplication::translate( "QObject", control->getPreferences().getFirstLanguage().toLatin1().data() ) && 
             control->getPreferences().getFirstLanguage() != QString( "" ) )
         switchFirstAndTestLanguages();
     else
