@@ -105,13 +105,13 @@ LaunchApplication
 Yes
 
 PackageDescription
-{}
+{Small flashcard application}
 
 PackageLicense
-{}
+{GPL v2}
 
 PackageMaintainer
-{}
+{Frederic Bergeron}
 
 PackageName
 <%ShortAppName%>
@@ -123,7 +123,7 @@ PackageRelease
 <%PatchVersion%>
 
 PackageSummary
-{}
+{Small flashcard application}
 
 PackageVersion
 <%MajorVersion%>.<%MinorVersion%>
@@ -138,7 +138,7 @@ ProjectID
 BB3CF79C-CC0A-412A-A07A-D6AD7863F204
 
 ProjectVersion
-1.2.10.1
+1.2.12.0
 
 SaveOnlyToplevelDirs
 No
@@ -346,7 +346,7 @@ array set Properties {
 <%InstallDir%>
 
 04D6EF01-FDA5-44E9-8068-9FE793743640,FileSize
-15713386
+15656128
 
 04D6EF01-FDA5-44E9-8068-9FE793743640,Name
 {Program Files}
@@ -411,6 +411,9 @@ Finish
 382C3494-1A74-47A4-B179-F48AC371B3EC,Alias
 {Setup Actions}
 
+382C3494-1A74-47A4-B179-F48AC371B3EC,Conditions
+{0 conditions}
+
 3CF445DA-7754-4BCB-9150-3CE71E1EBA8E,CheckCondition
 {Before Action is Executed}
 
@@ -428,6 +431,9 @@ Finish
 
 46D4FEEC-AA5A-4741-807A-B5607CCB7F61,Alias
 {Startup Actions}
+
+46D4FEEC-AA5A-4741-807A-B5607CCB7F61,Conditions
+{0 conditions}
 
 4AC47581-0A50-4365-87A1-0AE56C6A67D2,CancelButton,subst
 1
@@ -488,6 +494,9 @@ Yes
 
 520E1ED9-1380-42F6-81C6-D8E1D7F024C5,Prompt
 <%UninstallStartupText%>
+
+530F1F0D-8467-4AB6-BDE1-F200E399B038,Conditions
+{0 conditions}
 
 544A3FAF-82BE-43AF-9778-245876D01A5F,CheckCondition
 {Before Action is Executed}
@@ -891,6 +900,9 @@ B63351FF-3FA1-4FE2-AA2C-4776D51E059D,CancelButton,subst
 B63351FF-3FA1-4FE2-AA2C-4776D51E059D,Caption,subst
 1
 
+B63351FF-3FA1-4FE2-AA2C-4776D51E059D,Conditions
+{0 conditions}
+
 B63351FF-3FA1-4FE2-AA2C-4776D51E059D,Message,subst
 1
 
@@ -909,11 +921,17 @@ B8214D9B-9359-47D4-AA8C-B3595971A81A,String
 BA235820-E4EE-4360-808F-129B60699790,Caption,subst
 1
 
+BA235820-E4EE-4360-808F-129B60699790,Conditions
+{0 conditions}
+
 BA235820-E4EE-4360-808F-129B60699790,Title,subst
 1
 
 BB4FD18F-66D4-474E-B9A4-4084659EC19E,Comment
 {Ask the user if they want to proceed with the install.}
+
+BB4FD18F-66D4-474E-B9A4-4084659EC19E,Conditions
+{2 conditions}
 
 C3C807FF-6A0D-457F-B2D6-E2B4E08775E0,Message,subst
 1
@@ -938,6 +956,9 @@ CD99706B-2818-4924-B108-CB7C9AA37287,Conditions
 
 D06E0BB5-6E4F-4CA0-ADA3-1E30A363350C,Action
 {Uninstall Actions}
+
+D1052193-27AC-4A79-91FA-11143273E8A9,Conditions
+{0 conditions}
 
 D3C5E6AF-A88A-4D0B-B276-C735353C863F,CheckCondition
 {Before Action is Executed}
@@ -1091,6 +1112,9 @@ Yes
 
 EDF6238B-AD31-4681-8EE3-AEF7FBDEE158,Prompt
 <%InstallStartupText%>
+
+EE939CAA-BC62-4424-B261-4AB62B045CD3,Conditions
+{0 conditions}
 
 F1674F25-25E4-407C-AA8B-36810E937038,Conditions
 {1 condition}
@@ -1667,6 +1691,13 @@ FileBeingInstalledText
 82CD9506-8B6B-4337-A788-675F3407BBBB,Title
 <%ApplicationReadmeText%>
 
+B63351FF-3FA1-4FE2-AA2C-4776D51E059D,Message
+{It is strongly recommended that you exit all Windows programs you have  running.  Click Next to continue with the Setup program.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GPL v2.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.}
+
 C3C807FF-6A0D-457F-B2D6-E2B4E08775E0,Message
 <%InstallingApplicationText%>
 
@@ -1708,6 +1739,13 @@ FileBeingInstalledText
 369C8119-D84C-49B9-BC13-F768093021A7,Message
 <%UninstallCompleteText%>
 
+B63351FF-3FA1-4FE2-AA2C-4776D51E059D,Message
+{Se recomienda salir de todos los programas Windows que este ejecutando.  Pulse Siguiente para continuar con el programa de instalación.
+
+Este programa es Software Libre; usted puede redistribuirlo y/o modificarlo bajo los términos de la "GNU GPL v2".
+
+Este programa es distribuido con la esperanza de que le será útil, pero SIN NINGUNA GARANTIA.}
+
 C3C807FF-6A0D-457F-B2D6-E2B4E08775E0,Message
 <%InstallingApplicationText%>
 
@@ -1724,6 +1762,13 @@ FileBeingInstalledText
 
 369C8119-D84C-49B9-BC13-F768093021A7,Message
 <%UninstallCompleteText%>
+
+B63351FF-3FA1-4FE2-AA2C-4776D51E059D,Message
+{Il est fortement recommandé de fermer tous les programmes en cours d'exécution.  Cliquez sur SUIVANT pour continuer l'installation.
+
+Ce programme est un logiciel libre ; vous pouvez le redistribuer et/ou le modifier au titre des clauses de la Licence GPL v2.
+
+Ce programme est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE GARANTIE.}
 
 C3C807FF-6A0D-457F-B2D6-E2B4E08775E0,Message
 <%InstallingApplicationText%>

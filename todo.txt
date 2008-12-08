@@ -5,7 +5,6 @@ Reread all the classes and remove obsolete comments.
 Complete l10n in es/ja/en/fr.
 The columns of the prop tables don't resize properly.  Check all lists.
 Would it be possible not to copy toMOTko.ico in the release/debug dir?
-Change some strings in the Installer: copyright and license.
 Sometimes, when I delete a glossary, it reappears the next time I start toMOTko.  How to reproduce it?
 In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  Will it bring data incompatibility with previous versions? I think so.  If there seems to be incompatibilities, it may also be caused by the TermScheduler's tempTermPool handling in operator>>.  Test that!
 Try to understand why the png file in Christianson doesn't work.
