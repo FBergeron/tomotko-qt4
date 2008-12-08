@@ -1173,7 +1173,7 @@ selected languages.</translation>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="432"/>
         <source>InvisibleImport</source>
-        <translation type="unfinished">
+        <translation>
 
 The new data is invisible for now. You must either select appropriate languages in the selectors or check the item &quot;Show all glossaries and terms&quot; in the Actions menu.</translation>
     </message>

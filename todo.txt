@@ -2,7 +2,6 @@ ToDo
 ----
 Test remove terms (multiple selection).  It's probably buggy because of nextTermItem management...
 Reread all the classes and remove obsolete comments.
-Probably replace all setSelected( true ) by setCurrentItem() instead?
 Complete l10n in es/ja/en/fr.
 The columns of the prop tables don't resize properly.  Check all lists.
 Would it be possible not to copy toMOTko.ico in the release/debug dir?

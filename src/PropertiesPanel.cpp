@@ -141,7 +141,6 @@ void PropertiesPanel::init() {
     simplePropsPanelLayout = new QHBoxLayout();
     simplePropsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
     simplePropsPanel->setLayout( simplePropsPanelLayout );
-    //simplePropsPanel->setSpacing( 10 );
 
     simplePropsLabelsPanel = new QWidget();
     simplePropsLabelsPanelLayout = new QVBoxLayout();

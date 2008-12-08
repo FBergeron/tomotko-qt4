@@ -317,3 +317,5 @@ QTextStream cout(stdout, QIODevice::WriteOnly);
 QTextStream cerr(stderr, QIODevice::WriteOnly);
 
 cout << QString("bla bla");
+
+Concerning imagePath for terms.  We must always consider the cases whether the path is absolute and inside toMOTko's internal directory.

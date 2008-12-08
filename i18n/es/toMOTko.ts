@@ -1155,7 +1155,7 @@ los idomas seleccionados.</translation>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="432"/>
         <source>InvisibleImport</source>
-        <translation type="unfinished">
+        <translation>
 
 Los datos nuevos no son visibles por el momento.  Para verlos, Usted necesita seleccionar otros idiomas en los selectores or activar la opción &quot;Mostrar todos los glosarios y palablras&quot; en el menú Acciones.</translation>
     </message>

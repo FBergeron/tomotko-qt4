@@ -228,7 +228,6 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
     // the text widgets.
     addListeners();
 
-    //connect( vocabTreeView, SIGNAL( itemSelectionChanged() ), this, SLOT( updateUi() ) ); 
     updateFonts();
     updateUi();
 }
@@ -250,16 +249,14 @@ void VocabularyManagerFrame::updateTree() {
         vocabTreeView->setUpdatesEnabled( false );
         vocabTreeView->clear();
     }
-//    vocabTreeView->setSortingEnabled( false );
     vocabTreeRoot = buildTreeRec( vocabTreeView, NULL, controller->getVocabTree() );
     vocabTreeView->sortItems( 0, Qt::AscendingOrder );
-//    vocabTreeView->setSortingEnabled( true );
 
-    //vocabTreeView->setSelected( vocabTreeRoot, true );
+    //vocabTreeView->setCurrentItem( vocabTreeRoot );
     //if( currentFolderId != -1 || currentVocabId != -1 )
     //    restoreSelection( currentFolderId, currentVocabId, currentTermId, selectedTermIdList );
     //else
-    //    vocabTreeView->setSelected( vocabTreeRoot, true );
+    //    vocabTreeView->setCurrentItem( vocabTreeRoot );
     if( vocabTreeView ) {
         addListeners();
         vocabTreeView->setUpdatesEnabled( true );
@@ -418,14 +415,14 @@ void VocabularyManagerFrame::importData() {
                         newTreeItem = buildTreeRec( folderItem, newVocab ); 
                     }
                     if( newTreeItem ) {
-                        vocabTreeView->scrollToItem( newTreeItem );
-                        vocabTreeView->setCurrentItem( newTreeItem ); //newTreeItem->setSelected( true ); //vocabTreeView->setSelected( newTreeItem, true );
+                        vocabTreeView->scrollToItem( newTreeItem, QAbstractItemView::PositionAtCenter );
+                        vocabTreeView->setCurrentItem( newTreeItem );
                         newTreeItem->setExpanded( true );
                     }
                     else {
                         // This happens when the imported data is from a different language pair
                         // than the current one.  We reselect the selectedItem in this case.
-                        vocabTreeView->setCurrentItem( selectedItem ); //selectedItem->setSelected( true );// vocabTreeView->setSelected( selectedItem, true );
+                        vocabTreeView->setCurrentItem( selectedItem );
                     }
                     QString msg = tr( "ImportSuccessful" );
                     if( !newTreeItem )
@@ -570,7 +567,7 @@ void VocabularyManagerFrame::restoreTreeSelection() {
             FolderTreeItem* folderItem = (FolderTreeItem*)item;
             if( currentFolderId == folderItem->getFolder()->getId() ) {
                 isTreeItemFound = true;
-                vocabTreeView->scrollToItem( item );
+                vocabTreeView->scrollToItem( item, QAbstractItemView::PositionAtCenter );
                 vocabTreeView->setCurrentItem( item );
                 break;
             }
@@ -579,7 +576,7 @@ void VocabularyManagerFrame::restoreTreeSelection() {
             VocabTreeItem* vocabItem = (VocabTreeItem*)item;
             if( currentVocabId == vocabItem->getVocabulary()->getId() ) {
                 isTreeItemFound = true;
-                vocabTreeView->scrollToItem( item );
+                vocabTreeView->scrollToItem( item, QAbstractItemView::PositionAtCenter );
                 vocabTreeView->setCurrentItem( item );
                 break;
             }
@@ -587,7 +584,7 @@ void VocabularyManagerFrame::restoreTreeSelection() {
     }
     if( !isTreeItemFound ) {
         vocabTreeView->setCurrentItem( vocabTreeRoot );
-        vocabTreeView->scrollToItem( vocabTreeRoot );
+        vocabTreeView->scrollToItem( vocabTreeRoot, QAbstractItemView::PositionAtCenter );
     }
 }
 
@@ -598,10 +595,10 @@ void VocabularyManagerFrame::restoreVocabSelection() {
             TermListItem* termItem = (TermListItem*)termList->topLevelItem( i );
             int termItemId = termItem->getTerm()->getId();
             if( selectedTermIdList.contains( termItemId ) )
-                termItem->setSelected( true );//termList->setSelected( termItem, true );
+                termList->setCurrentItem( termItem );
             if( currentTermId == termItemId ) {
-                termList->scrollToItem( termItem );
-                termItem->setSelected( true );//termList->setCurrentItem( termItem );
+                termList->scrollToItem( termItem, QAbstractItemView::PositionAtCenter );
+                termList->setCurrentItem( termItem );
                 updateTermList();
                 break;
             }
@@ -769,7 +766,7 @@ FolderTreeItem* VocabularyManagerFrame::addFolder( Folder* folder, QMap<int,Voca
         newFolderItem->setPropertiesPanel( folderDetailsPropsPanel );
         folderDetailsPropsPanel->setFolder( newFolderItem->getFolder() );
         folderDetailsPropsPanel->updateCounters();
-        vocabTreeView->scrollToItem( newFolderItem );
+        vocabTreeView->scrollToItem( newFolderItem, QAbstractItemView::PositionAtCenter );
     }
     return( newFolderItem );
 }
@@ -784,7 +781,7 @@ VocabTreeItem* VocabularyManagerFrame::addVocab( Vocabulary* vocab ) {
         newVocabItem->setPropertiesPanel( vocabDetailsPropsPanel );
         vocabDetailsPropsPanel->setVocabulary( newVocabItem->getVocabulary() );
         vocabDetailsPropsPanel->updateCounters();
-        vocabTreeView->scrollToItem( newVocabItem );
+        vocabTreeView->scrollToItem( newVocabItem, QAbstractItemView::PositionAtCenter );
     }
     return( newVocabItem );
 }
@@ -866,8 +863,8 @@ void VocabularyManagerFrame::addTerm() {
                     TermListItem* termItem = (TermListItem*)termList->topLevelItem( i );
                     Term* termToSelect = termItem->getTerm();
                     if( termToSelect->getId() == newTerm.getId() ) {
-                        termItem->setSelected( true ); //termList->setSelected( termItem, true );
-                        termList->scrollToItem( termItem );
+                        termList->setCurrentItem( termItem );
+                        termList->scrollToItem( termItem, QAbstractItemView::PositionAtCenter );
                         break;
                     }
                 }
@@ -954,15 +951,18 @@ void VocabularyManagerFrame::doRemoveTerms( bool allowSelectTrans /*= true*/, bo
                 TermListItem* termItem = (TermListItem*)termList->topLevelItem( i );
                 if( termItem->isSelected()/*termList->isSelected( termItem )*/ ) {
                     Term* term = termItem->getTerm();
-                    //if( !term->getImagePath().isNull() && term->getImagePath().left( 1 ) != "/" ) {
-                    //    const QString& imagePath = controller->getApplicationDirName() + "/" + vocab->getParent()->getPath() +
-                    //        "/v-" + QString::number( vocab->getId() ) + "/" + term->getImagePath();
-                    //    QFile imageFile( imagePath );
-                    //    if( imageFile.exists() ) {
-                    //        if( !imageFile.remove() )
-                    //            cerr << "Could not remove image " << qPrintable( imagePath ) << endl;
-                    //    }
-                    //}
+                    if( !term->getImagePath().isNull() ) {
+                        QDir imagePath( term->getImagePath() );
+                        if( imagePath.isRelative() ) {
+                            const QString& imagePath = controller->getApplicationDirName() + "/" + vocab->getParent()->getPath() +
+                                "/v-" + QString::number( vocab->getId() ) + "/" + term->getImagePath();
+                            QFile imageFile( imagePath );
+                            if( imageFile.exists() ) {
+                                if( !imageFile.remove() )
+                                    cerr << "Could not remove image " << qPrintable( imagePath ) << endl;
+                            }
+                        }
+                    }
                     vocab->removeTerm( term->getId() );
                     delete( termItem );
                 }
@@ -1010,15 +1010,18 @@ void VocabularyManagerFrame::doRemoveTerms( bool allowSelectTrans /*= true*/, bo
                 }
                 
                 if( term->getTranslationCount() == 0 ) {
-                    //if( !term->getImagePath().isNull() && term->getImagePath().left( 1 ) != "/" ) {
-                    //    const QString& imagePath = controller->getApplicationDirName() + "/" + vocab->getParent()->getPath() +
-                    //        "/v-" + QString::number( vocab->getId() ) + "/" + term->getImagePath();
-                    //    QFile imageFile( imagePath );
-                    //    if( imageFile.exists() ) {
-                    //        if( !imageFile.remove() )
-                    //            cerr << "Could not remove image " << qPrintable( imagePath ) << endl;
-                    //    }
-                    //}
+                    if( !term->getImagePath().isNull() ) {
+                        QDir imagePath( term->getImagePath() );
+                        if( imagePath.isRelative() ) {
+                            const QString& imagePath = controller->getApplicationDirName() + "/" + vocab->getParent()->getPath() +
+                                "/v-" + QString::number( vocab->getId() ) + "/" + term->getImagePath();
+                            QFile imageFile( imagePath );
+                            if( imageFile.exists() ) {
+                                if( !imageFile.remove() )
+                                    cerr << "Could not remove image " << qPrintable( imagePath ) << endl;
+                            }
+                        }
+                    }
                     vocab->removeTerm( term->getId() );
                     delete( termItem );
                 }
@@ -1059,16 +1062,13 @@ FolderTreeItem* VocabularyManagerFrame::buildTreeRec( VocabTreeView* vocabTreeVi
         else {
             // Root folder.
             folderItem = new FolderTreeItem( vocabTreeView, folder, controller->getPreferences() );
-            //folderItem->setDisabled( true );
+            //folderItem->setDisabled( true ); Doesn't work on qt4 as all the children are also disabled.  Maybe use setFlags() instead.
         }
         if( folderItem ) {
             if( closeFolder )
                 folderItem->setOpen( false );
             else
                 folderItem->setOpen( controller->getPreferences().isFolderOpen( folder->getId() ) );
-            //cerr << "folder " << folder->getId() << " is marked? " << folder->isMarkedForStudy() << endl;
-            //folderItem->setCheckState( 0, folder->isMarkedForStudy() ? Qt::Checked : Qt::Unchecked );
-            //cerr << "state=" << ( folderItem->checkState( 0 ) == Qt::Checked ) << endl;
             folderItem->setPropertiesPanel( folderDetailsPropsPanel );
             if( !folder->isEmpty() ) {
                 QString firstLang = controller->getPreferences().getFirstLanguage();
@@ -1105,8 +1105,6 @@ VocabTreeItem* VocabularyManagerFrame::buildTreeRec( FolderTreeItem* parentItem,
     if( isVocabVisible ) {
         VocabTreeItem* vocabItem = new VocabTreeItem( parentItem, vocab );    
         vocabItem->setOpen( false );
-        //    cerr << "vocab " << vocab->getId() << " is marked? " << vocab->isMarkedForStudy() << endl;
-        //vocabItem->setCheckState( 0, vocab->isMarkedForStudy() ? Qt::Checked : Qt::Unchecked );
         vocabItem->setPropertiesPanel( vocabDetailsPropsPanel );
         return( vocabItem );
     }
@@ -1140,17 +1138,21 @@ void VocabularyManagerFrame::copyTerms() const {
             if( term->isCommentExists( commentKey ) )
                 termCopy->addComment( commentKey, term->getComment( commentKey ) );
 
-            QString absoluteImagePath = term->getImagePath();
-            if( !absoluteImagePath.isNull() && absoluteImagePath.left( 1 ) != "/" ) {
-                TreeItem* currItem = (TreeItem*)vocabTreeView->currentItem();
-                if( currItem && !currItem->isFolder() ) {
-                    VocabTreeItem* vocabItem = (VocabTreeItem*)vocabTreeView->currentItem();
-                    Vocabulary* vocab = vocabItem->getVocabulary();
-                    absoluteImagePath = controller->getApplicationDirName() + "/" + vocab->getParent()->getPath() +
-                        "/v-" + QString::number( vocab->getId() ) + "/" + absoluteImagePath;
+            if( !term->getImagePath().isNull() ) {
+                QDir imagePath( term->getImagePath() );
+                if( imagePath.isRelative() ) {
+                    TreeItem* currItem = (TreeItem*)vocabTreeView->currentItem();
+                    if( currItem && !currItem->isFolder() ) {
+                        VocabTreeItem* vocabItem = (VocabTreeItem*)vocabTreeView->currentItem();
+                        Vocabulary* vocab = vocabItem->getVocabulary();
+                        QString absoluteImagePath = controller->getApplicationDirName() + "/" + vocab->getParent()->getPath() +
+                            "/v-" + QString::number( vocab->getId() ) + "/" + term->getImagePath();
+                        termCopy->setImagePath( absoluteImagePath );
+                    }
                 }
+                else 
+                    termCopy->setImagePath( term->getImagePath() );
             }
-            termCopy->setImagePath( absoluteImagePath );
 
             termsToCopy.append( *termCopy );
         }
@@ -1185,22 +1187,22 @@ void VocabularyManagerFrame::pasteTerms() {
             const QString& comment = *it3;
             newTerm.addComment( key, comment );
         }
-        //if( !term.getImagePath().isNull() ) {
-        //    // If the path refers to a file outside toMOTko's directory, we just copy the path.
-        //    // Otherwise, we copy the image as well as the container vocabulary may be moved or deleted ulteriorly.
-        //    if( term.getImagePath().left( controller->getApplicationDirName().length() ) == controller->getApplicationDirName() ) {
-        //        const QString& vocabLocation = controller->getApplicationDirName() + "/" + currVocab->getParent()->getPath() +
-        //            "/v-" + QString::number( currVocab->getId() ) + "/";
-        //        QFileInfo imageToCopyInfo( term.getImagePath() );
-        //        QString imageFilename = imageToCopyInfo.fileName();
-        //        if( Util::copy( term.getImagePath(), vocabLocation + imageFilename ) )
-        //            newTerm.setImagePath( imageFilename ); 
-        //        else
-        //            cerr << "Could not copy " << qPrintable( term.getImagePath() ) << " to " << qPrintable( vocabLocation + imageFilename ) << endl;
-        //    }
-        //    else 
-        //        newTerm.setImagePath( term.getImagePath() ); 
-        //}
+        if( !term.getImagePath().isNull() ) {
+            // If the path refers to a file outside toMOTko's directory, we just copy the path.
+            // Otherwise, we copy the image as well as the container vocabulary may be moved or deleted ulteriorly.
+            if( term.getImagePath().left( controller->getApplicationDirName().length() ) == controller->getApplicationDirName() ) {
+                const QString& vocabLocation = controller->getApplicationDirName() + "/" + currVocab->getParent()->getPath() +
+                    "/v-" + QString::number( currVocab->getId() ) + "/";
+                QFileInfo imageToCopyInfo( term.getImagePath() );
+                QString imageFilename = imageToCopyInfo.fileName();
+                if( QFile::copy( term.getImagePath(), vocabLocation + imageFilename ) )
+                    newTerm.setImagePath( imageFilename ); 
+                else
+                    cerr << "Could not copy " << qPrintable( term.getImagePath() ) << " to " << qPrintable( vocabLocation + imageFilename ) << endl;
+            }
+            else 
+                newTerm.setImagePath( term.getImagePath() ); 
+        }
 
         currVocab->addTerm( newTerm );
         currVocab->setModificationDate( QDateTime::currentDateTime() );
@@ -1218,7 +1220,7 @@ void VocabularyManagerFrame::pasteVocabulary() {
     in >> vocabToPaste;
 
     VocabTreeItem* newVocabItem = addVocab( &vocabToPaste );
-    vocabTreeView->setCurrentItem( newVocabItem ); //newVocabItem->setSelected( true ); //vocabTreeView->setSelected( newVocabItem, true ); 
+    vocabTreeView->setCurrentItem( newVocabItem );
 }
 
 void VocabularyManagerFrame::pasteFolder() {
@@ -1236,8 +1238,8 @@ void VocabularyManagerFrame::pasteFolder() {
     // will open when we call ensureItemVisible().  This way, the tree is updated
     // properly.
     newFolderItem->parent()->setExpanded( false );
-    vocabTreeView->setCurrentItem( newFolderItem ); //newFolderItem->setSelected( true );// vocabTreeView->setSelected( newFolderItem, true );
-    vocabTreeView->scrollToItem( newFolderItem );
+    vocabTreeView->setCurrentItem( newFolderItem );
+    vocabTreeView->scrollToItem( newFolderItem, QAbstractItemView::PositionAtCenter );
 }
 
 void VocabularyManagerFrame::addListeners() {
@@ -1294,7 +1296,7 @@ void VocabularyManagerFrame::search() {
 void VocabularyManagerFrame::showTerm( const TermKey& termKey ) {
     VocabTreeItem* vocabTreeItem = vocabTreeView->getVocabTreeItem( termKey.getVocabId() );
     if( vocabTreeItem ) {
-        vocabTreeView->scrollToItem( vocabTreeItem );
+        vocabTreeView->scrollToItem( vocabTreeItem, QAbstractItemView::PositionAtCenter );
         vocabTreeView->setCurrentItem( vocabTreeItem );
         detailsPanel->setCurrentIndex( panelVocabIndex );
         vocabDetailsTabWidget->setCurrentWidget( vocabDetailsTermsPanel );
@@ -1303,8 +1305,8 @@ void VocabularyManagerFrame::showTerm( const TermKey& termKey ) {
             int termItemId = termItem->getTerm()->getId();
             if( termItemId == termKey.getTermId() ) {
                 termList->clearSelection();
-                termList->scrollToItem( termItem );
-                termItem->setSelected( true );//termList->setSelected( termItem, true );
+                termList->setCurrentItem( termItem );
+                termList->scrollToItem( termItem, QAbstractItemView::PositionAtCenter );
                 break;
             }
         }

@@ -1176,7 +1176,7 @@ les langues sélectionnées.</translation>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="432"/>
         <source>InvisibleImport</source>
-        <translation type="unfinished">
+        <translation>
 
 Les données importées sont invisibles pour le moment.  Pour les voir, vous devez soit affecter les langues appropriées dans les sélecteurs ou cocher l&apos;option &quot;Voir tous les glossaires/mots&quot; du menu Actions.</translation>
     </message>
