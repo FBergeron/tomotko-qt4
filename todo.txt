@@ -1,16 +1,13 @@
 ToDo
 ----
-Improve the Online Help.  Now, it looks more like a reference guide.  We need a tutorial version or a Getting started quickly section.
-Translate online help in French and Spanish.
 Test remove terms (multiple selection).  It's probably buggy because of nextTermItem management...
-Reread all the classes and remove obsolete comments.
 Complete l10n in es/ja/en/fr.
-Would it be possible not to copy toMOTko.ico in the release/debug dir?
 Sometimes, when I delete a glossary, it reappears the next time I start toMOTko.  How to reproduce it?
 In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  Will it bring data incompatibility with previous versions? I think so.  If there seems to be incompatibilities, it may also be caused by the TermScheduler's tempTermPool handling in operator>>.  Test that!
-Try to understand why the png file in Christianson doesn't work.
 Release 0.11.x for Windows
+Would it be possible not to copy toMOTko.ico in the release/debug dir?
 Reorganize the web site for the qt4 version.
+Translate online help in French and Spanish.
 The Search field doesn't accept digraphs.
 Apparently, on MacOS, the application icon is ugly, resolution should be better.  64x64?  I think I have to make a special icon file for mac.
 Add a FAQ in the website (documenting the problems for dependency lib and fonts)
