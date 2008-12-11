@@ -2,9 +2,13 @@
 #define CONTENT_LISTVIEW_H
 
 #include <iostream>
-#include "SmartListView.h"
+#include <QHeaderView>
+#include <QResizeEvent>
+#include <QTreeWidget>
 
-class ContentListView : public SmartListView {
+using namespace std;
+
+class ContentListView : public QTreeWidget {
 
 public:
 
@@ -12,7 +16,11 @@ public:
     virtual ~ContentListView();
 
     QSize sizeHint() const;
+    virtual int sizeHintForColumn( int column ) const;
 
+protected:
+
+    void resizeEvent( QResizeEvent* event );
 };
 
 #endif

@@ -11,12 +11,12 @@
 #include <QMessageBox>
 #include <QPixmap>
 #include <QPushButton>
+#include <QTreeWidget>
 #include <QVBoxLayout>
 #include <QWidget>
 #include "Controller.h"
 #include "HistoryField.h"
 #include "ResultListItem.h"
-#include "SmartListView.h"
 #include "TermDialog.h"
 #include "TermKey.h"
 #include "TranslationSelectionDialog.h"
@@ -75,7 +75,7 @@ private:
     QLabel*                 resultsHeaderLabel;
     QLabel*                 resultsCounterLabel;
 
-    SmartListView*          resultsListView;
+    QTreeWidget*          resultsListView;
 
     QWidget*                resultsButtonsPanel;
     QHBoxLayout*            resultsButtonsPanelLayout;

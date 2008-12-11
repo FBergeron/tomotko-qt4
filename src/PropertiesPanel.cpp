@@ -134,8 +134,6 @@ void PropertiesPanel::init() {
     contentListView->headerItem()->setTextAlignment( 1, Qt::AlignRight );
     contentListView->headerItem()->setTextAlignment( 2, Qt::AlignRight );
     contentListView->headerItem()->setTextAlignment( 3, Qt::AlignRight );
-    //contentListView->setStretchColumn( 0 );
-    contentListView->setAllColumnsWide( true );
 
     simplePropsPanel = new QWidget();
     simplePropsPanelLayout = new QHBoxLayout();

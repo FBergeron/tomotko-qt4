@@ -1,13 +1,9 @@
 #ifndef PROPERTIES_PANEL_H
 #define PROPERTIES_PANEL_H 
 
-//#include <qdialog.h>
 #include <QHBoxLayout>
-//#include <qheader.h>
 #include <QLabel>
 #include <QLineEdit>
-//#include <qpixmap.h>
-//#include <qpushbutton.h>
 #include <QTextEdit>
 #include <QTreeWidget>
 #include <QString>
@@ -18,10 +14,9 @@
 #include "DigraphMultiLineEdit.h"
 #include "Folder.h"
 #include "Preferences.h"
-#include "SmartListView.h"
 #include "Vocabulary.h"
 
-class PropertiesPanel : public QWidget/*QVBox*/ {
+class PropertiesPanel : public QWidget {
 
     Q_OBJECT
     
@@ -69,8 +64,7 @@ private:
     DigraphMultiLineEdit*   descriptionMultiLineEdit;
 
     QLabel*                 contentLabel;
-    //QTreeWidget*            contentListView;//ContentListView*        contentListView;
-    SmartListView*          contentListView;
+    ContentListView*        contentListView;
 
     QLabel*                 authorLabel;
     DigraphLineEdit*        authorField;

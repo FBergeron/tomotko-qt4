@@ -52,14 +52,15 @@ void SearchDialog::init() {
     resultsHeaderPanelLayout->addStretch();
     resultsHeaderPanelLayout->addWidget( resultsCounterLabel );
 
-    resultsListView = new SmartListView();
+    resultsListView = new QTreeWidget();
     resultsListView->setColumnCount( 4 );
+    resultsListView->header()->setMovable( false );
     QStringList headerLabels;
     headerLabels << QApplication::translate( "QObject", controller->getPreferences().getFirstLanguage().toLatin1().data() );
     headerLabels << QApplication::translate( "QObject", controller->getPreferences().getTestLanguage().toLatin1().data() );
     headerLabels << tr( "Glossary" ) << tr( "Location" );
     resultsListView->setHeaderLabels( headerLabels );
-    resultsListView->setAllColumnsWide( true );
+    resultsListView->header()->setResizeMode( QHeaderView::Stretch );
     resultsListView->setAllColumnsShowFocus( true );
     resultsListView->setSelectionMode( QAbstractItemView::ExtendedSelection );
     connect( resultsListView, SIGNAL( itemSelectionChanged() ), this, SLOT( updateUi() ) );

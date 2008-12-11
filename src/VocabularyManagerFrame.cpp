@@ -138,7 +138,7 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
     vocabDetailsTermsPanel = new QWidget();
     vocabDetailsTermsPanelLayout = new QVBoxLayout();
     vocabDetailsTermsPanel->setLayout( vocabDetailsTermsPanelLayout );
-    termList = new SmartListView();
+    termList = new QTreeWidget();
     termList->header()->setMovable( false );
     termList->setSortingEnabled( true );
     termList->setSelectionMode( QAbstractItemView::ExtendedSelection );
@@ -146,7 +146,7 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
     QStringList headerLabels = QStringList();
     headerLabels << QApplication::translate( "QObject", controller->getPreferences().getFirstLanguage().toLatin1().data() ) << QApplication::translate( "QObject", controller->getPreferences().getTestLanguage().toLatin1().data() );
     termList->setHeaderLabels( headerLabels );
-    termList->setAllColumnsWide( true );
+    //termList->header()->setResizeMode( QHeaderView::Stretch );
     connect( termList, SIGNAL( itemSelectionChanged() ), this, SLOT( updateTermList() ) ); 
 
     termControlPanel = new QWidget();

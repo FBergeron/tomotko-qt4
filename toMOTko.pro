@@ -44,7 +44,6 @@ HEADERS     +=  src/Base.h \
                 src/StandbyTerm.h \
                 src/TermScheduler.h \
                 src/Translation.h \
-                src/SmartListView.h \
                 src/ContentListView.h \
                 src/VocabTreeView.h \
                 src/TreeItem.h \
@@ -91,7 +90,6 @@ SOURCES     +=  src/Util.cpp \
                 src/StandbyTerm.cpp \
                 src/TermScheduler.cpp \
                 src/Translation.cpp \
-                src/SmartListView.cpp \
                 src/ContentListView.cpp \
                 src/VocabTreeView.cpp \
                 src/TreeItem.cpp \
