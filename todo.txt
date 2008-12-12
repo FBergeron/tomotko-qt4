@@ -1,7 +1,5 @@
 ToDo
 ----
-Sometimes, when I delete a glossary, it reappears the next time I start toMOTko.  How to reproduce it?
-Release 0.11.x for Windows
 Would it be possible not to copy toMOTko.ico in the release/debug dir?
 Reorganize the web site for the qt4 version.
 Translate online help in French and Spanish.

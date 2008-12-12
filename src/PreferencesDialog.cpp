@@ -581,7 +581,7 @@ void PreferencesDialog::removeFontOverride( const QString& language ) {
     }
 }
 
-void PreferencesDialog::updateFontOverride( QTreeWidgetItem* item, int column ) {
+void PreferencesDialog::updateFontOverride( QTreeWidgetItem* item, int /*column*/ ) {
     QString lang( Util::getLanguageCode( item->text( 0 ) ) );
     bool isChecked = ( item->checkState( 0 ) == Qt::Checked );
     if( isChecked ) 

@@ -285,7 +285,7 @@ void TermDialog::initImage( const QString& path ) {
     }
 }
 
-void TermDialog::resizeEvent( QResizeEvent* evt ) {
+void TermDialog::resizeEvent( QResizeEvent* /*evt*/ ) {
     resizeImageBox();
 }
 
