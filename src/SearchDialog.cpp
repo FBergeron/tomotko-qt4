@@ -54,6 +54,7 @@ void SearchDialog::init() {
 
     resultsListView = new QTreeWidget();
     resultsListView->setColumnCount( 4 );
+    resultsListView->setSortingEnabled( true );
     resultsListView->header()->setMovable( false );
     QStringList headerLabels;
     headerLabels << QApplication::translate( "QObject", controller->getPreferences().getFirstLanguage().toLatin1().data() );
@@ -374,4 +375,8 @@ void SearchDialog::doRemoveTerms( bool allowSelectTrans /* = true */, bool confi
 
 QSize SearchDialog::sizeHint() const {
     return( QSize( 700, 500 ) );
+}
+
+void SearchDialog::setDigraphEnabled( bool isDigraphEnabled ) {
+    queryField->setDigraphEnabled( isDigraphEnabled );
 }

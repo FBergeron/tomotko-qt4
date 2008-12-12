@@ -611,6 +611,8 @@ void VocabularyManagerFrame::setDigraphEnabled( bool isEnabled ) {
     vocabDetailsVocabTitleLineEdit->setDigraphEnabled( isEnabled );
     folderDetailsPropsPanel->setDigraphEnabled( isEnabled );
     vocabDetailsPropsPanel->setDigraphEnabled( isEnabled );
+    if( searchDialog )
+        searchDialog->setDigraphEnabled( isEnabled );
 }
 
 void VocabularyManagerFrame::retranslateUi() {
@@ -1279,6 +1281,7 @@ uint VocabularyManagerFrame::getSelectedTermCount() const {
 void VocabularyManagerFrame::search() {
     if( !searchDialog ) {
         searchDialog = new SearchDialog( controller, this );
+        searchDialog->setDigraphEnabled( controller->getPreferences().isDigraphEnabled() ); 
         connect( searchDialog, SIGNAL( showTermRequested( const TermKey& ) ), this, SLOT( showTerm( const TermKey& ) ) ); 
         connect( searchDialog, SIGNAL( termsRemoved() ), this, SLOT( updateUi() ) );
     }

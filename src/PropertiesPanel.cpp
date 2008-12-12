@@ -218,6 +218,8 @@ void PropertiesPanel::updateFonts() {
     descriptionLabel->setFont( labelsFont );
     descriptionMultiLineEdit->setFont( mediumFont );
     contentLabel->setFont( labelsFont );
+    for( int i = 0; i < contentListView->columnCount(); i++ )
+        contentListView->headerItem()->setFont( i, labelsFont );
     contentListView->setFont( mediumFont ); 
     authorLabel->setFont( labelsFont );
     authorField->setFont( mediumFont );

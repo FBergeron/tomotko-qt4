@@ -13,7 +13,10 @@ using namespace std;
 
 #include <iostream>
 #include <QComboBox>
+#include <QKeyEvent>
+#include <QLineEdit>
 #include <QWidget>
+#include "Util.h"
 
 class HistoryField : public QComboBox {
 
@@ -23,6 +26,20 @@ public:
 
     HistoryField( QWidget* parent = 0 );
     void activate();
+    bool isDigraphEnabled() const;
+
+public slots:
+
+    void setDigraphEnabled( bool isEnabled );
+
+protected:
+
+    virtual void keyPressEvent( QKeyEvent* event );
+
+private:
+
+    bool digraphEnabled;
+    QString buffer;
 
 };
 
