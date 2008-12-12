@@ -1,9 +1,6 @@
 ToDo
 ----
-Test remove terms (multiple selection).  It's probably buggy because of nextTermItem management...
-Complete l10n in es/ja/en/fr.
 Sometimes, when I delete a glossary, it reappears the next time I start toMOTko.  How to reproduce it?
-In TermScheduler and StandbyTerm, I replaced uint by int.  Is it a good idea?  Will it bring data incompatibility with previous versions? I think so.  If there seems to be incompatibilities, it may also be caused by the TermScheduler's tempTermPool handling in operator>>.  Test that!
 Release 0.11.x for Windows
 Would it be possible not to copy toMOTko.ico in the release/debug dir?
 Reorganize the web site for the qt4 version.

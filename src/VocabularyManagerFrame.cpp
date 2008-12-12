@@ -146,7 +146,7 @@ VocabularyManagerFrame::VocabularyManagerFrame( Controller* controller, QWidget*
     QStringList headerLabels = QStringList();
     headerLabels << QApplication::translate( "QObject", controller->getPreferences().getFirstLanguage().toLatin1().data() ) << QApplication::translate( "QObject", controller->getPreferences().getTestLanguage().toLatin1().data() );
     termList->setHeaderLabels( headerLabels );
-    //termList->header()->setResizeMode( QHeaderView::Stretch );
+    termList->header()->setResizeMode( QHeaderView::Stretch );
     connect( termList, SIGNAL( itemSelectionChanged() ), this, SLOT( updateTermList() ) ); 
 
     termControlPanel = new QWidget();
@@ -905,14 +905,14 @@ void VocabularyManagerFrame::removeTerms() {
 }
 
 void VocabularyManagerFrame::doRemoveTerms( bool allowSelectTrans /*= true*/, bool confirmBeforeRemove /*= true*/ ) {
-    int selectedItemCount = 0;
     // Find all the translation languages of the selected terms.
     QStringList translationLanguages;
+    QList<TermListItem*> itemsToDelete;
 
     for( int i = 0; i < termList->topLevelItemCount(); i++ ) {
         TermListItem* termItem = (TermListItem*)termList->topLevelItem( i );
-        if( termItem->isSelected() /*termList->isSelected( termItem )*/ ) {
-            selectedItemCount++;
+        if( termItem->isSelected() ) {
+            itemsToDelete << termItem;
             Term* term = termItem->getTerm();
             for( Term::TranslationMap::ConstIterator it = term->translationsBegin(); it != term->translationsEnd(); it++ ) {
                 const Translation& trans = *it;
@@ -921,10 +921,8 @@ void VocabularyManagerFrame::doRemoveTerms( bool allowSelectTrans /*= true*/, bo
             }
         }
     }
-
-    if( selectedItemCount == 0 )
+    if( itemsToDelete.size() == 0 )
         return;
-
     if( translationLanguages.count() <= 2 ) {
         int response;
 
@@ -947,25 +945,23 @@ void VocabularyManagerFrame::doRemoveTerms( bool allowSelectTrans /*= true*/, bo
             VocabTreeItem* vocabItem = (VocabTreeItem*)vocabTreeView->currentItem();
             Vocabulary* vocab = vocabItem->getVocabulary();
 
-            for( int i = 0; i < termList->topLevelItemCount(); i++ ) {
-                TermListItem* termItem = (TermListItem*)termList->topLevelItem( i );
-                if( termItem->isSelected()/*termList->isSelected( termItem )*/ ) {
-                    Term* term = termItem->getTerm();
-                    if( !term->getImagePath().isNull() ) {
-                        QDir imagePath( term->getImagePath() );
-                        if( imagePath.isRelative() ) {
-                            const QString& imagePath = controller->getApplicationDirName() + "/" + vocab->getParent()->getPath() +
-                                "/v-" + QString::number( vocab->getId() ) + "/" + term->getImagePath();
-                            QFile imageFile( imagePath );
-                            if( imageFile.exists() ) {
-                                if( !imageFile.remove() )
-                                    cerr << "Could not remove image " << qPrintable( imagePath ) << endl;
-                            }
+            for( int i = 0; i < itemsToDelete.size(); i++ ) {
+                TermListItem* termItem = (TermListItem*)itemsToDelete[ i ];
+                Term* term = termItem->getTerm();
+                if( !term->getImagePath().isNull() ) {
+                    QDir imagePath( term->getImagePath() );
+                    if( imagePath.isRelative() ) {
+                        const QString& imagePath = controller->getApplicationDirName() + "/" + vocab->getParent()->getPath() +
+                            "/v-" + QString::number( vocab->getId() ) + "/" + term->getImagePath();
+                        QFile imageFile( imagePath );
+                        if( imageFile.exists() ) {
+                            if( !imageFile.remove() )
+                                cerr << "Could not remove image " << qPrintable( imagePath ) << endl;
                         }
                     }
-                    vocab->removeTerm( term->getId() );
-                    delete( termItem );
                 }
+                vocab->removeTerm( term->getId() );
+                delete( termItem );
             }
 
             vocab->setModificationDate( QDateTime::currentDateTime() );
@@ -998,33 +994,31 @@ void VocabularyManagerFrame::doRemoveTerms( bool allowSelectTrans /*= true*/, bo
         VocabTreeItem* vocabItem = (VocabTreeItem*)vocabTreeView->currentItem();
         Vocabulary* vocab = vocabItem->getVocabulary();
 
-        for( int i = 0; i < termList->topLevelItemCount(); i++ ) {
-            TermListItem* termItem = (TermListItem*)termList->topLevelItem( i );
+        for( int i = 0; i < itemsToDelete.size(); i++ ) {
+            TermListItem* termItem = itemsToDelete[ i ];
 
-            if( termItem->isSelected() ) {
-                Term* term = termItem->getTerm();
+            Term* term = termItem->getTerm();
 
-                for( QStringList::ConstIterator it = selectedLanguages.begin(); it != selectedLanguages.end(); it++ ) {
-                    QString lang = *it;
-                    term->removeTranslation( lang );
-                }
-                
-                if( term->getTranslationCount() == 0 ) {
-                    if( !term->getImagePath().isNull() ) {
-                        QDir imagePath( term->getImagePath() );
-                        if( imagePath.isRelative() ) {
-                            const QString& imagePath = controller->getApplicationDirName() + "/" + vocab->getParent()->getPath() +
-                                "/v-" + QString::number( vocab->getId() ) + "/" + term->getImagePath();
-                            QFile imageFile( imagePath );
-                            if( imageFile.exists() ) {
-                                if( !imageFile.remove() )
-                                    cerr << "Could not remove image " << qPrintable( imagePath ) << endl;
-                            }
+            for( QStringList::ConstIterator it = selectedLanguages.begin(); it != selectedLanguages.end(); it++ ) {
+                QString lang = *it;
+                term->removeTranslation( lang );
+            }
+            
+            if( term->getTranslationCount() == 0 ) {
+                if( !term->getImagePath().isNull() ) {
+                    QDir imagePath( term->getImagePath() );
+                    if( imagePath.isRelative() ) {
+                        const QString& imagePath = controller->getApplicationDirName() + "/" + vocab->getParent()->getPath() +
+                            "/v-" + QString::number( vocab->getId() ) + "/" + term->getImagePath();
+                        QFile imageFile( imagePath );
+                        if( imageFile.exists() ) {
+                            if( !imageFile.remove() )
+                                cerr << "Could not remove image " << qPrintable( imagePath ) << endl;
                         }
                     }
-                    vocab->removeTerm( term->getId() );
-                    delete( termItem );
                 }
+                vocab->removeTerm( term->getId() );
+                delete( termItem );
             }
         }
 
