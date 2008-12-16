@@ -1,3 +1,8 @@
+Version 0.11.1 for Windows! (2008-12-16)
+
+- Implemented full port of toMOTko for QT4 and Windows.
+
+
 Version 0.11.1 (2008-11-15)
 
 - Fixed uninitialized searchDialog pointer bug.
