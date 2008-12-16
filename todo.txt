@@ -3,7 +3,6 @@ ToDo
 Would it be possible not to copy toMOTko.ico in the release/debug dir?
 Reorganize the web site for the qt4 version.
 Translate online help in French and Spanish.
-The Search field doesn't accept digraphs.
 Apparently, on MacOS, the application icon is ugly, resolution should be better.  64x64?  I think I have to make a special icon file for mac.
 Add a FAQ in the website (documenting the problems for dependency lib and fonts)
 
