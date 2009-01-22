@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="de_DE">
-<defaultcodec></defaultcodec>
 <context>
     <name>HelpBrowser</name>
     <message>
@@ -27,69 +26,69 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="305"/>
+        <location filename="../../src/MainWindow.cpp" line="308"/>
         <source>Actions</source>
         <translation>Aktionen</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="313"/>
+        <location filename="../../src/MainWindow.cpp" line="316"/>
         <source>StartQuiz</source>
         <translation>Quiz beginnen</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="314"/>
+        <location filename="../../src/MainWindow.cpp" line="317"/>
         <source>ManageGlossaries</source>
         <translation>Glossare verwalten</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="315"/>
+        <location filename="../../src/MainWindow.cpp" line="318"/>
         <source>Import...</source>
         <translation>Import...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="316"/>
+        <location filename="../../src/MainWindow.cpp" line="319"/>
         <source>Export...</source>
         <translation>Export...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="318"/>
+        <location filename="../../src/MainWindow.cpp" line="321"/>
         <source>Preferences...</source>
         <translation>Einstellungen...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="319"/>
+        <location filename="../../src/MainWindow.cpp" line="322"/>
         <source>Quit</source>
         <translation>Beenden</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="184"/>
+        <location filename="../../src/MainWindow.cpp" line="185"/>
         <source>?</source>
         <translation>?</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="336"/>
+        <location filename="../../src/MainWindow.cpp" line="339"/>
         <source>About...</source>
         <translation>Über...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="267"/>
+        <location filename="../../src/MainWindow.cpp" line="270"/>
         <source>RestartQuiz</source>
         <translation>Quiz neu starten</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="317"/>
+        <location filename="../../src/MainWindow.cpp" line="320"/>
         <source>ShowAllGlossariesAndTerms</source>
         <translation>Zeige alle Glossare und Begriffe</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="381"/>
+        <location filename="../../src/MainWindow.cpp" line="384"/>
         <source>AboutToMOTko...</source>
         <translation>Über toMOTko...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="381"/>
+        <location filename="../../src/MainWindow.cpp" line="384"/>
         <source>AboutMessage</source>
-        <translation type="unfinished">&lt;html&gt;&lt;h2&gt;toMOTko v0.11.1&lt;/h2&gt;&lt;p&gt;Eine kleine Applikation um neues&lt;br/&gt;Vokabular zu lernen.&lt;/p&gt;&lt;p&gt;Geschrieben von Frederic Bergeron&lt;br/&gt;(&lt;a href=&quot;mailto:fbergeron@users.sourceforge.net&quot;&gt;fbergeron@users.sourceforge.net&lt;/a&gt;)&lt;br/&gt;Copyright (c) 2006-2009&lt;/p&gt;&lt;p&gt;Diese Programm wird unter der&lt;br/&gt;GPL v2 verbreitet.&lt;/p&gt;&lt;p&gt;Mehr Informationen unter:&lt;br/&gt;&lt;a href=&quot;http://tomotko.sourceforge.net&quot;&gt;http://tomotko.sourceforge.net&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;h2&gt;toMOTko v0.11.2&lt;/h2&gt;&lt;p&gt;Eine kleine Applikation um neues&lt;br/&gt;Vokabular zu lernen.&lt;/p&gt;&lt;p&gt;Geschrieben von Frederic Bergeron&lt;br/&gt;(&lt;a href=&quot;mailto:fbergeron@users.sourceforge.net&quot;&gt;fbergeron@users.sourceforge.net&lt;/a&gt;)&lt;br/&gt;Copyright (c) 2006-2009&lt;/p&gt;&lt;p&gt;Diese Programm wird unter der&lt;br/&gt;GPL v2 verbreitet.&lt;/p&gt;&lt;p&gt;Mehr Informationen unter:&lt;br/&gt;&lt;a href=&quot;http://tomotko.sourceforge.net&quot;&gt;http://tomotko.sourceforge.net&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="69"/>
@@ -107,97 +106,97 @@
         <translation type="obsolete">Paste</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="309"/>
+        <location filename="../../src/MainWindow.cpp" line="312"/>
         <source>Reveal</source>
         <translation>Aufdecken</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="310"/>
+        <location filename="../../src/MainWindow.cpp" line="313"/>
         <source>RightAnswer</source>
         <translation>Richtige Antwort</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="311"/>
+        <location filename="../../src/MainWindow.cpp" line="314"/>
         <source>WrongAnswer</source>
         <translation>Falsche Antwort</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="312"/>
+        <location filename="../../src/MainWindow.cpp" line="315"/>
         <source>EditQuizTerm</source>
         <translation>Wort bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="320"/>
+        <location filename="../../src/MainWindow.cpp" line="323"/>
         <source>AddFolder</source>
         <translation>Ordner hinzufügen</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="321"/>
+        <location filename="../../src/MainWindow.cpp" line="324"/>
         <source>AddGlossary</source>
         <translation>Glossar hinzufügen</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="322"/>
+        <location filename="../../src/MainWindow.cpp" line="325"/>
         <source>RemoveItem</source>
         <translation>Eintrag entfernen</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="323"/>
+        <location filename="../../src/MainWindow.cpp" line="326"/>
         <source>AddTerm</source>
         <translation>Wort hinzufügen</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="324"/>
+        <location filename="../../src/MainWindow.cpp" line="327"/>
         <source>EditTerm</source>
         <translation>Wort bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="325"/>
+        <location filename="../../src/MainWindow.cpp" line="328"/>
         <source>RemoveTerm</source>
         <translation>Wort(e) entfernen</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="326"/>
+        <location filename="../../src/MainWindow.cpp" line="329"/>
         <source>CheckAllTerms</source>
         <translation>Alle Wörter wählen</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="327"/>
+        <location filename="../../src/MainWindow.cpp" line="330"/>
         <source>InverseCheckedTerms</source>
         <translation>Auswahl invertieren</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="328"/>
+        <location filename="../../src/MainWindow.cpp" line="331"/>
         <source>Maximize</source>
         <translation>Maximieren</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="394"/>
+        <location filename="../../src/MainWindow.cpp" line="397"/>
         <source>ConfirmResumeQuiz</source>
         <translation type="unfinished">Es wurde bereits ein Quiz für die gewählten Sprachen begonnen.&lt;br&gt;Möchten Sie es fortsetzen?</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="400"/>
+        <location filename="../../src/MainWindow.cpp" line="403"/>
         <source>Yes</source>
         <translation>Ja</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="401"/>
+        <location filename="../../src/MainWindow.cpp" line="404"/>
         <source>No</source>
         <translation>Nein</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="329"/>
+        <location filename="../../src/MainWindow.cpp" line="332"/>
         <source>Search...</source>
         <translation>Suche...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="306"/>
+        <location filename="../../src/MainWindow.cpp" line="309"/>
         <source>Edition</source>
         <translation>Bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="335"/>
+        <location filename="../../src/MainWindow.cpp" line="338"/>
         <source>Help...</source>
         <translation>Hilfe...</translation>
     </message>
@@ -586,7 +585,7 @@ Overwrite the current assignment?</source>
         <translation>Bearbeiten</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="331"/>
+        <location filename="../../src/MainWindow.cpp" line="334"/>
         <source>Cut</source>
         <translation>Ausschneiden</translation>
     </message>
@@ -611,7 +610,7 @@ Overwrite the current assignment?</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="376"/>
+        <location filename="../../src/MainWindow.cpp" line="379"/>
         <source>ErrorSavingData</source>
         <translation>Ein Fehler ist beim Speichern aufgetreten. Prüfen Sie die Berechtigungen und freien Speicherplatz.</translation>
     </message>
@@ -641,6 +640,7 @@ Overwrite the current assignment?</source>
         <translation>Parse Fehler in Zeile %1, Spalte %2. %3.</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>NoResumableQuizAvailable</source>
         <translation type="obsolete">No resumable quiz is
 available for the
@@ -733,30 +733,37 @@ selected languages.</translation>
 <context>
     <name>ScrollableLineEdit</name>
     <message>
+        <location filename="" line="0"/>
         <source>Undo</source>
         <translation type="obsolete">Undo</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>Redo</source>
         <translation type="obsolete">Redo</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>Cut</source>
         <translation type="obsolete">Cut</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>Copy</source>
         <translation type="obsolete">Copy</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>Paste</source>
         <translation type="obsolete">Paste</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>Clear</source>
         <translation type="obsolete">Clear</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>Select All</source>
         <translation type="obsolete">Select All</translation>
     </message>
@@ -1191,14 +1198,17 @@ Die neuen Daten sind zur Zeit nicht sichtbar. Sie müssen die entsprechenden Spr
 <context>
     <name>ZFileDialog</name>
     <message>
+        <location filename="" line="0"/>
         <source>Name</source>
         <translation type="obsolete">Name</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>Size</source>
         <translation type="obsolete">Size</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>Date</source>
         <translation type="obsolete">Date</translation>
     </message>

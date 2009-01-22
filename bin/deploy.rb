@@ -7,13 +7,18 @@ $QT4_HOME = ENV[ 'QT4_HOME' ]
 $DEBUG_DIR = 'debug'
 $RELEASE_DIR = 'release'
 
+
 [ $DEBUG_DIR, $RELEASE_DIR ].each {
     | deployDir |
-    [ 'en', 'fr', 'ja', 'es', 'zh' ].each {
+
+    Dir.foreach( "i18n" ) {
         | lang |
-        destDir = "#{ deployDir }/i18n/#{ lang }"
-        FileUtils.mkdir_p( destDir )
-        File.copy( "i18n/#{ lang }/toMOTko.qm", "#{ destDir }/toMOTko.qm" )
+        
+        if( lang =~ /^[a-z][a-z]$/ ) 
+            destDir = "#{ deployDir }/i18n/#{ lang }"
+            FileUtils.mkdir_p( destDir )
+            File.copy( "i18n/#{ lang }/toMOTko.qm", "#{ destDir }/toMOTko.qm" )
+        end
     }
 
     [ "lib/toMOTko/digraphs.conf", "pics/toMOTko.ico", "LICENSE.txt" ].each {

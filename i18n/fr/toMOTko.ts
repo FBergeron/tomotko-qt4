@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="en_US">
-<defaultcodec></defaultcodec>
 <context>
     <name>HelpBrowser</name>
     <message>
@@ -27,69 +26,69 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="305"/>
+        <location filename="../../src/MainWindow.cpp" line="308"/>
         <source>Actions</source>
         <translation>Actions</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="313"/>
+        <location filename="../../src/MainWindow.cpp" line="316"/>
         <source>StartQuiz</source>
         <translation>Débuter le quiz</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="314"/>
+        <location filename="../../src/MainWindow.cpp" line="317"/>
         <source>ManageGlossaries</source>
         <translation>Administrer les glossaires</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="315"/>
+        <location filename="../../src/MainWindow.cpp" line="318"/>
         <source>Import...</source>
         <translation>Importer...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="316"/>
+        <location filename="../../src/MainWindow.cpp" line="319"/>
         <source>Export...</source>
         <translation>Exporter...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="318"/>
+        <location filename="../../src/MainWindow.cpp" line="321"/>
         <source>Preferences...</source>
         <translation>Préférences...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="319"/>
+        <location filename="../../src/MainWindow.cpp" line="322"/>
         <source>Quit</source>
         <translation>Quitter</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="184"/>
+        <location filename="../../src/MainWindow.cpp" line="185"/>
         <source>?</source>
         <translation>?</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="335"/>
+        <location filename="../../src/MainWindow.cpp" line="339"/>
         <source>About...</source>
         <translation>À propos...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="267"/>
+        <location filename="../../src/MainWindow.cpp" line="270"/>
         <source>RestartQuiz</source>
         <translation>Recommencer le quiz</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="317"/>
+        <location filename="../../src/MainWindow.cpp" line="320"/>
         <source>ShowAllGlossariesAndTerms</source>
         <translation>Voir tous les glossaires/mots</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="380"/>
+        <location filename="../../src/MainWindow.cpp" line="384"/>
         <source>AboutToMOTko...</source>
         <translation>À propos de toMOTko...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="380"/>
+        <location filename="../../src/MainWindow.cpp" line="384"/>
         <source>AboutMessage</source>
-        <translation>&lt;html&gt;&lt;h2&gt;toMOTko v0.11.1&lt;/h2&gt;&lt;p&gt;Petite application facilitant&lt;br/&gt;l&apos;apprentissage de vocabulaire.&lt;/p&gt;&lt;p&gt;Écrit par Frédéric Bergeron&lt;br/&gt;(&lt;a href=&quot;mailto:fbergeron@users.sourceforge.net&quot;&gt;fbergeron@users.sourceforge.net&lt;/a&gt;)&lt;br/&gt;Copyright (c) 2006-2009&lt;/p&gt;&lt;p&gt;Ce programme est distribué&lt;br/&gt;sous la licence GPL v2.&lt;/p&gt;&lt;p&gt;Pour plus d&apos;informations:&lt;br/&gt;&lt;a href=&quot;http://tomotko.sourceforge.net&quot;&gt;http://tomotko.sourceforge.net&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation>&lt;html&gt;&lt;h2&gt;toMOTko v0.11.2&lt;/h2&gt;&lt;p&gt;Petite application facilitant&lt;br/&gt;l&apos;apprentissage de vocabulaire.&lt;/p&gt;&lt;p&gt;Écrit par Frédéric Bergeron&lt;br/&gt;(&lt;a href=&quot;mailto:fbergeron@users.sourceforge.net&quot;&gt;fbergeron@users.sourceforge.net&lt;/a&gt;)&lt;br/&gt;Copyright (c) 2006-2009&lt;/p&gt;&lt;p&gt;Ce programme est distribué&lt;br/&gt;sous la licence GPL v2.&lt;/p&gt;&lt;p&gt;Pour plus d&apos;informations:&lt;br/&gt;&lt;a href=&quot;http://tomotko.sourceforge.net&quot;&gt;http://tomotko.sourceforge.net&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="69"/>
@@ -107,97 +106,97 @@
         <translation type="obsolete">Coller</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="309"/>
+        <location filename="../../src/MainWindow.cpp" line="312"/>
         <source>Reveal</source>
         <translation>Dévoiler</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="310"/>
+        <location filename="../../src/MainWindow.cpp" line="313"/>
         <source>RightAnswer</source>
         <translation>Bonne réponse</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="311"/>
+        <location filename="../../src/MainWindow.cpp" line="314"/>
         <source>WrongAnswer</source>
         <translation>Mauvaise réponse</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="312"/>
+        <location filename="../../src/MainWindow.cpp" line="315"/>
         <source>EditQuizTerm</source>
         <translation>Éditer un mot du quiz</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="320"/>
+        <location filename="../../src/MainWindow.cpp" line="323"/>
         <source>AddFolder</source>
         <translation>Ajouter dossier</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="321"/>
+        <location filename="../../src/MainWindow.cpp" line="324"/>
         <source>AddGlossary</source>
         <translation>Ajouter glossaire</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="322"/>
+        <location filename="../../src/MainWindow.cpp" line="325"/>
         <source>RemoveItem</source>
         <translation>Effacer l&apos;item</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="323"/>
+        <location filename="../../src/MainWindow.cpp" line="326"/>
         <source>AddTerm</source>
         <translation>Ajouter un mot</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="324"/>
+        <location filename="../../src/MainWindow.cpp" line="327"/>
         <source>EditTerm</source>
         <translation>Éditer un mot</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="325"/>
+        <location filename="../../src/MainWindow.cpp" line="328"/>
         <source>RemoveTerm</source>
         <translation>Effacer un ou des mots</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="326"/>
+        <location filename="../../src/MainWindow.cpp" line="329"/>
         <source>CheckAllTerms</source>
         <translation>Cocher tous les mots</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="327"/>
+        <location filename="../../src/MainWindow.cpp" line="330"/>
         <source>InverseCheckedTerms</source>
         <translation>Inverser la sélection des mots cochés</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="328"/>
+        <location filename="../../src/MainWindow.cpp" line="331"/>
         <source>Maximize</source>
         <translation>Agrandir</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="393"/>
+        <location filename="../../src/MainWindow.cpp" line="397"/>
         <source>ConfirmResumeQuiz</source>
         <translation>Il y a déjà un quiz en cours pour les langues sélectionnées. Voulez-vous continuer ce quiz?</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="399"/>
+        <location filename="../../src/MainWindow.cpp" line="403"/>
         <source>Yes</source>
         <translation>Oui</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="400"/>
+        <location filename="../../src/MainWindow.cpp" line="404"/>
         <source>No</source>
         <translation>Non</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="329"/>
+        <location filename="../../src/MainWindow.cpp" line="332"/>
         <source>Search...</source>
         <translation>Rechercher...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="306"/>
+        <location filename="../../src/MainWindow.cpp" line="309"/>
         <source>Edition</source>
         <translation>Édition</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="186"/>
+        <location filename="../../src/MainWindow.cpp" line="338"/>
         <source>Help...</source>
         <translation>Aide...</translation>
     </message>
@@ -449,47 +448,47 @@ Affecter le raccourci quand même?</translation>
         <translation>Dossiers</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="239"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="238"/>
         <source>Description</source>
         <translation>Description</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="240"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="239"/>
         <source>Content</source>
         <translation>Contenu</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="242"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="241"/>
         <source>Items</source>
         <translation>Items</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="242"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="241"/>
         <source>Selected</source>
         <translation>Quiz</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="242"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="241"/>
         <source>Checked</source>
         <translation>Cochés</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="242"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="241"/>
         <source>Total</source>
         <translation>Total</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="244"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="243"/>
         <source>Author</source>
         <translation>Auteur</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="245"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="244"/>
         <source>CreationDate</source>
         <translation>Création</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="246"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="245"/>
         <source>ModificationDate</source>
         <translation>Modification</translation>
     </message>
@@ -587,7 +586,7 @@ Affecter le raccourci quand même?</translation>
         <translation>Édition</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="331"/>
+        <location filename="../../src/MainWindow.cpp" line="334"/>
         <source>Cut</source>
         <translation>Couper</translation>
     </message>
@@ -612,12 +611,12 @@ Affecter le raccourci quand même?</translation>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="375"/>
+        <location filename="../../src/MainWindow.cpp" line="379"/>
         <source>ErrorSavingData</source>
         <translation>Un problème est survenu durant la sauvegarde des données. Vérifiez l&apos;espace-disque et les droits d&apos;accès aux fichiers.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="935"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="932"/>
         <source>Warning</source>
         <translation>Avertissement</translation>
     </message>
@@ -627,12 +626,12 @@ Affecter le raccourci quand même?</translation>
         <translation>Information</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="504"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="501"/>
         <source>OperationSuccessful</source>
         <translation>Opération réussie</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="506"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="503"/>
         <source>OperationFailed</source>
         <translation>Opération échouée</translation>
     </message>
@@ -649,6 +648,7 @@ ligne %1, colonne %2.
 %3.</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>NoResumableQuizAvailable</source>
         <translation type="obsolete">Il n&apos;y a pas de
 quiz à continuer pour
@@ -736,30 +736,37 @@ les langues sélectionnées.</translation>
 <context>
     <name>ScrollableLineEdit</name>
     <message>
+        <location filename="" line="0"/>
         <source>Undo</source>
         <translation type="obsolete">Annuler</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>Redo</source>
         <translation type="obsolete">Refaire</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>Cut</source>
         <translation type="obsolete">Couper</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>Copy</source>
         <translation type="obsolete">Copier</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>Paste</source>
         <translation type="obsolete">Coller</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>Clear</source>
         <translation type="obsolete">Effacer</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>Select All</source>
         <translation type="obsolete">Sélectionner tout</translation>
     </message>
@@ -767,77 +774,77 @@ les langues sélectionnées.</translation>
 <context>
     <name>SearchDialog</name>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="155"/>
+        <location filename="../../src/SearchDialog.cpp" line="157"/>
         <source>Search</source>
         <translation>Chercher</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="156"/>
+        <location filename="../../src/SearchDialog.cpp" line="158"/>
         <source>Results</source>
         <translation>Résultats</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="161"/>
+        <location filename="../../src/SearchDialog.cpp" line="163"/>
         <source>Glossary</source>
         <translation>Glossaire</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="161"/>
+        <location filename="../../src/SearchDialog.cpp" line="163"/>
         <source>Location</source>
         <translation>Chemin</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="164"/>
+        <location filename="../../src/SearchDialog.cpp" line="166"/>
         <source>View Glossary</source>
         <translation>Voir le glossaire</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="172"/>
+        <location filename="../../src/SearchDialog.cpp" line="174"/>
         <source>Search...</source>
         <translation>Rechercher...</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="166"/>
+        <location filename="../../src/SearchDialog.cpp" line="168"/>
         <source>Edit Term</source>
         <translation>Éditer</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="168"/>
+        <location filename="../../src/SearchDialog.cpp" line="170"/>
         <source>Remove Term(s)</source>
         <translation>Effacer</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="193"/>
+        <location filename="../../src/SearchDialog.cpp" line="195"/>
         <source>%1 term(s) found</source>
         <translation>%1 mot(s) trouvé(s)</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="272"/>
+        <location filename="../../src/SearchDialog.cpp" line="274"/>
         <source>ConfirmRemoveSelectedTerms</source>
         <translation>Êtes-vous certain de vouloir effacer le(s) mot(s) sélectionné(s)?</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="278"/>
+        <location filename="../../src/SearchDialog.cpp" line="280"/>
         <source>Yes</source>
         <translation>Oui</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="279"/>
+        <location filename="../../src/SearchDialog.cpp" line="281"/>
         <source>No</source>
         <translation>Non</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="320"/>
+        <location filename="../../src/SearchDialog.cpp" line="322"/>
         <source>MultipleTranslationsDetectedForRemoveTermsCaption</source>
         <translation>Suppression de mots</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="320"/>
+        <location filename="../../src/SearchDialog.cpp" line="322"/>
         <source>MultipleTranslationsDetectedForRemoveTerms</source>
         <translation>Certains des mots sélectionnés contiennent des traductions dans plusieurs langues.  Indiquez les traductions à effacer.</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="153"/>
+        <location filename="../../src/SearchDialog.cpp" line="155"/>
         <source>Reset</source>
         <translation>Effacer</translation>
     </message>
@@ -1014,179 +1021,179 @@ les langues sélectionnées.</translation>
 <context>
     <name>VocabularyManagerFrame</name>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="982"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="980"/>
         <source>MultipleTranslationsDetectedForRemoveTermsCaption</source>
         <translation>Suppression de mots</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="982"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="980"/>
         <source>MultipleTranslationsDetectedForRemoveTerms</source>
         <translation>Certains des mots sélectionnés contiennent des traductions dans plusieurs langues.  Indiquez les traductions à effacer.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="385"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="382"/>
         <source>MultipleTranslationsDetectedForImport</source>
         <translation>Le fichier contient des mots traduits dans plusieurs langues.  Veuillez indiquer les traductions à importer.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="462"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="459"/>
         <source>MultipleTranslationsDetectedForExport</source>
         <translation>Le glossaire contient des mots traduits dans plusieurs langues.  Veuillez indiquer les traductions à exporter.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="941"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="938"/>
         <source>Yes</source>
         <translation>Oui</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="942"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="939"/>
         <source>No</source>
         <translation>Non</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="624"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="623"/>
         <source>Title</source>
         <translation>Titre</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="620"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="619"/>
         <source>Glossaries</source>
         <translation>Glossaires</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="634"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="633"/>
         <source>AddFolder</source>
         <translation>Ajouter dossier</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="636"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="635"/>
         <source>AddGlossary</source>
         <translation>Ajouter glossaire</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="638"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="637"/>
         <source>RemoveItem</source>
         <translation>Effacer l&apos;item</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="621"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="620"/>
         <source>Folder</source>
         <translation>Dossier</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="623"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="622"/>
         <source>Glossary</source>
         <translation>Glossaire</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="647"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="646"/>
         <source>CheckAllTerms</source>
         <translation>Cocher tous les mots</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="648"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="647"/>
         <source>InverseCheckedTerms</source>
         <translation>Inverser la sélection des mots cochés</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="640"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="639"/>
         <source>AddTerm</source>
         <translation>Ajouter un mot</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="642"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="641"/>
         <source>EditTerm</source>
         <translation>Éditer le mot</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="644"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="643"/>
         <source>RemoveTerm</source>
         <translation>Effacer un mot</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="478"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="475"/>
         <source>GlossaryExportSuccessful</source>
         <translation>Le glossaire a été exporté avec succès.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="436"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="433"/>
         <source>ItemImportFailed</source>
         <translation>Une erreur est survenue. Les données n&apos;ont pas pu être importées.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="439"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="436"/>
         <source>ItemImportFailedZipFileExpected</source>
         <translation>Format de fichier invalide. Un fichier .zip était attendu. Les données n&apos;ont pas pu être importées.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="480"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="477"/>
         <source>GlossaryExportFailed</source>
         <translation>Une erreur est survenue. Le glossaire n&apos;a pas pu être exporté.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="799"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="798"/>
         <source>ConfirmRemoveItem</source>
         <translation>Êtes-vous certain de vouloir effacer cet item?</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="935"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="932"/>
         <source>ConfirmRemoveSelectedTerms</source>
         <translation>Êtes-vous certain de vouloir effacer le(s) mot(s) sélectionné(s)?</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="631"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="630"/>
         <source>Properties</source>
         <translation>Propriétés</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="646"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="645"/>
         <source>MaximizeDetails</source>
         <translation>Agrandir</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="632"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="631"/>
         <source>Words</source>
         <translation>Mots</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="488"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="485"/>
         <source>MultipleTranslationsDetectedForFolderExport</source>
         <translation>Le dossier contient des mots traduits dans plusieurs langues.  Veuillez indiquer les traductions à exporter.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="504"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="501"/>
         <source>FolderExportSuccessful</source>
         <translation>Le dossier a été exporté avec succès.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="506"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="503"/>
         <source>FolderExportFailed</source>
         <translation>Une erreur est survenue. Le dossier n&apos;a pas pu être exporté.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="385"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="382"/>
         <source>Import...</source>
         <translation>Importer...</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="430"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="427"/>
         <source>ImportSuccessful</source>
         <translation>Les données ont été importées avec succès.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="432"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="429"/>
         <source>InvisibleImport</source>
         <translation>
 
 Les données importées sont invisibles pour le moment.  Pour les voir, vous devez soit affecter les langues appropriées dans les sélecteurs ou cocher l&apos;option &quot;Voir tous les glossaires/mots&quot; du menu Actions.</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="499"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="496"/>
         <source>Export...</source>
         <translation>Exporter...</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="500"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="497"/>
         <source>Glossaries (*.zip)</source>
         <translation>Glossaires (*.zip)</translation>
     </message>
@@ -1194,14 +1201,17 @@ Les données importées sont invisibles pour le moment.  Pour les voir, vous dev
 <context>
     <name>ZFileDialog</name>
     <message>
+        <location filename="" line="0"/>
         <source>Name</source>
         <translation type="obsolete">Nom</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>Size</source>
         <translation type="obsolete">Taille</translation>
     </message>
     <message>
+        <location filename="" line="0"/>
         <source>Date</source>
         <translation type="obsolete">Date</translation>
     </message>

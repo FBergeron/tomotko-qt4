@@ -69,7 +69,7 @@ InstallPassword
 {}
 
 InstallVersion
-0.11.1.0
+0.11.2.0
 
 Language,de
 No
@@ -168,7 +168,7 @@ UpgradeApplicationID
 {}
 
 Version
-0.11.1
+0.11.2
 
 ViewReadme
 Yes
@@ -228,6 +228,8 @@ File ::9DF9150C-6020-4264-91C0-6C504CC927CF -type dir -name ja -parent 475EF220-
 File ::35C86842-4DE3-4AF3-AF10-378BBFC3F714 -name toMOTko.qm -parent 9DF9150C-6020-4264-91C0-6C504CC927CF
 File ::4F1D83E4-B4DC-4CE5-85C0-0D9DF4D9BA3D -type dir -name zh -parent 475EF220-5955-47B0-A180-1432597EC5DE
 File ::40414FC5-C0AB-40CF-85E5-597700BB7402 -name toMOTko.qm -parent 4F1D83E4-B4DC-4CE5-85C0-0D9DF4D9BA3D
+File ::578795CC-52D4-4A96-B223-C9E143B00EEB -type dir -name de -parent 475EF220-5955-47B0-A180-1432597EC5DE
+File ::8AAB6017-C336-4D9B-A152-887DA82EE1D8 -name toMOTko.qm -parent 578795CC-52D4-4A96-B223-C9E143B00EEB
 File ::BF632405-E26C-44ED-8913-66BD9CEB8A61 -name toMOTko.ico -parent E7D708CE-C646-4A8F-802E-B94C3BA82C51
 File ::4FF601D1-88A7-41A7-B040-B48C1179BA81 -name LICENSE.txt -parent E7D708CE-C646-4A8F-802E-B94C3BA82C51
 Component ::4D98AF43-AB02-405A-9ABA-EB0BE09BD051 -setup Install -active Yes -platforms {AIX-ppc FreeBSD-4-x86 FreeBSD-x86 HPUX-hppa Linux-x86 Solaris-sparc Windows} -name {Default Component} -parent Components
@@ -346,7 +348,7 @@ array set Properties {
 <%InstallDir%>
 
 04D6EF01-FDA5-44E9-8068-9FE793743640,FileSize
-15656128
+15674777
 
 04D6EF01-FDA5-44E9-8068-9FE793743640,Name
 {Program Files}
@@ -434,6 +436,9 @@ Finish
 
 46D4FEEC-AA5A-4741-807A-B5607CCB7F61,Conditions
 {0 conditions}
+
+47B2761D-241C-419A-A7FD-AE840023C438,Conditions
+{1 condition}
 
 4AC47581-0A50-4365-87A1-0AE56C6A67D2,CancelButton,subst
 1
@@ -650,6 +655,9 @@ No
 
 82CD9506-8B6B-4337-A788-675F3407BBBB,CloseButton,subst
 1
+
+82CD9506-8B6B-4337-A788-675F3407BBBB,Conditions
+{3 conditions}
 
 82CD9506-8B6B-4337-A788-675F3407BBBB,Message,subst
 1
@@ -1540,7 +1548,7 @@ Windows,BuildSeparateArchives
 No
 
 Windows,Executable
-<%AppName%>-<%Version%>-Setup<%Ext%>
+<%AppName%>-<%Version%>-Win32-Setup<%Ext%>
 
 Windows,FileDescription
 {<%AppName%> <%Version%> Setup}

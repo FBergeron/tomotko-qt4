@@ -45,7 +45,7 @@ What to do before a release
 - Update version number in the About dialog script.
 - Update online documentation if necessary (screenshots, new features, etc.)
 - Remove traces if any.
-- Build latest setup.exe file.
+- Build latest setup.exe file (make clean;make release;make clean; then run InstallJammer after updating the version property)
 - Test it.
 - Update version number in the website (version.txt), Doxygen.
 - Update website if necessary (screenshots, new features, download link, etc.)

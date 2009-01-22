@@ -29,6 +29,7 @@
 #include "icons/flag_fr.xpm"
 #include "icons/flag_ja.xpm"
 #include "icons/flag_zh.xpm"
+#include "icons/flag_de.xpm"
 
 MainWindow::MainWindow( QApplication& app, Controller* controller )
     : QMainWindow( 0/*, WDestructiveClose*/ ), app( app ), control( controller ) {
@@ -223,6 +224,8 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
             langAction->setIcon( QIcon( QPixmap( flag_ja_xpm ) ) );
         else if( langCode == QString( "zh" ) )
             langAction->setIcon( QIcon( QPixmap( flag_zh_xpm ) ) );
+        else if( langCode == QString( "de" ) )
+            langAction->setIcon( QIcon( QPixmap( flag_de_xpm ) ) );
 
         helpMenu->addAction( langAction );
         languageActionGroup->addAction( langAction );
