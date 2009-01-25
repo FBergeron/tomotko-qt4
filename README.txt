@@ -1,16 +1,30 @@
 README
 ======
 
+Prerequisites
+-------------
+To build the application, you will need the open-source version of QT4.4 (or better).
+You can download it from TrollTech's website or if you're using Linux or MacOS, you 
+probably can get it using the package manager of your operating system.
+
+You will also need a C++ compiler and some other miscellaneous development tools.
+
+
 Windows
 -------
-
 To build the Makefile :
 
 > qmake toMOTko.pro
 
-To build the executable :
+To build the executable (the debuggable version) :
 
+> make clean
 > make 
+
+To build the executable (the release version) :
+
+> make clean
+> make release 
 
 To extract localized string :
 
@@ -24,14 +38,47 @@ To deploy the required resources into debug and release directories :
 
 > bin\deploy.rb
 
-To run the executable :
+To run the executable (the debuggable version) :
 
 > debug\toMOTko.exe
+
+To run the executable (the release version) :
+
+> release\toMOTko.exe
+
+To make the installer setup.exe file :
+
+- Launch InstallJammer
+- Open etc/InstallJammer/toMOTko/toMOTko.mpi
+- Select Build (the file should be located in the output directory.)
 
 
 Linux
 -----
-Todo
+To build the Makefile :
+
+> qmake toMOTko.pro
+
+To build the executable :
+
+> make clean; 
+> make
+
+To extract localized string :
+
+> lupdate toMOTko.pro
+
+To generate the string files :
+
+> lrelease toMOTko.pro
+
+To run the executable :
+
+> ./toMOTko
+
+To make the deb file :
+
+> bin/makeDebFile.rb
 
 
 MacOS
@@ -39,14 +86,15 @@ MacOS
 Todo
 
 
-
 What to do before a release
 ---------------------------
-- Update version number in the About dialog script.
+- Update version number in the About dialog and scripts (makeDebFile.rb).
 - Update online documentation if necessary (screenshots, new features, etc.)
 - Remove traces if any.
-- Build latest setup.exe file (make clean;make release;make clean; then run InstallJammer after updating the version property)
-- Test it.
+- Build installers
+    - Windows: make clean;make release;make clean; then run InstallJammer after updating the version property to get setup.exe
+    - Linux: make clean;make;bin/makeDevFile.rb to get toMOTko-x.y.z_i386.deb
+    - Test them!
 - Update version number in the website (version.txt), Doxygen.
 - Update website if necessary (screenshots, new features, download link, etc.)
 - Run doxygen to update the documentation.
