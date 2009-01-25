@@ -88,7 +88,7 @@
     <message>
         <location filename="../../src/MainWindow.cpp" line="384"/>
         <source>AboutMessage</source>
-        <translation type="unfinished">&lt;html&gt;&lt;h2&gt;toMOTko v0.11.2&lt;/h2&gt;&lt;p&gt;Eine kleine Applikation um neues&lt;br/&gt;Vokabular zu lernen.&lt;/p&gt;&lt;p&gt;Geschrieben von Frederic Bergeron&lt;br/&gt;(&lt;a href=&quot;mailto:fbergeron@users.sourceforge.net&quot;&gt;fbergeron@users.sourceforge.net&lt;/a&gt;)&lt;br/&gt;Copyright (c) 2006-2009&lt;/p&gt;&lt;p&gt;Diese Programm wird unter der&lt;br/&gt;GPL v2 verbreitet.&lt;/p&gt;&lt;p&gt;Mehr Informationen unter:&lt;br/&gt;&lt;a href=&quot;http://tomotko.sourceforge.net&quot;&gt;http://tomotko.sourceforge.net&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation>&lt;html&gt;&lt;h2&gt;toMOTko v0.11.2&lt;/h2&gt;&lt;p&gt;Eine kleine Applikation um neues&lt;br/&gt;Vokabular zu lernen.&lt;/p&gt;&lt;p&gt;Geschrieben von Frederic Bergeron&lt;br/&gt;(&lt;a href=&quot;mailto:fbergeron@users.sourceforge.net&quot;&gt;fbergeron@users.sourceforge.net&lt;/a&gt;)&lt;br/&gt;Copyright (c) 2006-2009&lt;/p&gt;&lt;p&gt;Diese Programm wird unter der&lt;br/&gt;GPL v2 verbreitet.&lt;/p&gt;&lt;p&gt;Mehr Informationen unter:&lt;br/&gt;&lt;a href=&quot;http://tomotko.sourceforge.net&quot;&gt;http://tomotko.sourceforge.net&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="69"/>
@@ -173,7 +173,7 @@
     <message>
         <location filename="../../src/MainWindow.cpp" line="397"/>
         <source>ConfirmResumeQuiz</source>
-        <translation type="unfinished">Es wurde bereits ein Quiz für die gewählten Sprachen begonnen.&lt;br&gt;Möchten Sie es fortsetzen?</translation>
+        <translation>Es wurde bereits ein Quiz für die gewählten Sprachen begonnen.&lt;br&gt;Möchten Sie es fortsetzen?</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="403"/>

@@ -8,4 +8,4 @@ Description: Flashcard application to learn vocabulary
  vocabulary in one or more foreign languages.
 Homepage: http://tomotko.sourceforge.net
 Bugs: http://sourceforge.net/tracker/?group_id=18153&atid=897575
-Depends: libqt4-core, libqt4-gui, libqt4-xml
+Depends: libqtcore4, libqtgui4, libqt4-xml

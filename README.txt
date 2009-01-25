@@ -12,6 +12,24 @@ You will also need a C++ compiler and some other miscellaneous development tools
 
 Windows
 -------
+To extract localized string :
+
+> lupdate toMOTko.pro
+
+To generate the string files :
+
+> lrelease toMOTko.pro
+
+These 2 operations should be done at least once before building the Makefile‥
+Otherwise, you will get errors like these when running qmake:
+
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/en/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/fr/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/es/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/ja/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/zh/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/de/toMOTko.qm'
+
 To build the Makefile :
 
 > qmake toMOTko.pro
@@ -25,14 +43,6 @@ To build the executable (the release version) :
 
 > make clean
 > make release 
-
-To extract localized string :
-
-> lupdate toMOTko.pro
-
-To generate the string files :
-
-> lrelease toMOTko.pro
 
 To deploy the required resources into debug and release directories :
 
@@ -55,6 +65,24 @@ To make the installer setup.exe file :
 
 Linux
 -----
+To extract localized string :
+
+> lupdate toMOTko.pro
+
+To generate the string files :
+
+> lrelease toMOTko.pro
+
+These 2 operations should be done at least once before building the Makefile‥
+Otherwise, you will get errors like these when running qmake:
+
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/en/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/fr/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/es/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/ja/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/zh/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/de/toMOTko.qm'
+
 To build the Makefile :
 
 > qmake toMOTko.pro
@@ -63,14 +91,6 @@ To build the executable :
 
 > make clean; 
 > make
-
-To extract localized string :
-
-> lupdate toMOTko.pro
-
-To generate the string files :
-
-> lrelease toMOTko.pro
 
 To run the executable :
 
