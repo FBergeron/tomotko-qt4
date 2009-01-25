@@ -18,11 +18,11 @@ Term::Term( const Term& term ) : id( term.id ), vocabId( term.vocabId ), markedF
 Term::~Term() {
 }
 
-const int Term::getId() const {
+int Term::getId() const {
     return( id );
 }
 
-const int Term::getVocabId() const {
+int Term::getVocabId() const {
     return( vocabId );
 }
 

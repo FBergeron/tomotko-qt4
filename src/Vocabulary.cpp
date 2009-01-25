@@ -103,7 +103,7 @@ bool Vocabulary::isEmpty() const {
     return( terms.isEmpty() );
 }
 
-const uint Vocabulary::getSize() const {
+uint Vocabulary::getSize() const {
     return( terms.count() );
 }
 

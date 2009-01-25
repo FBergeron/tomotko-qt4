@@ -17,5 +17,12 @@
     <file>help/en/html/img/search.png</file>
     <file>help/en/html/img/sequenceEditor.png</file>
     <file>help/en/html/img/termEdition.png</file>
+    <file>lib/toMOTko/digraphs.conf</file>
+    <file>i18n/en/toMOTko.qm</file>
+    <file>i18n/fr/toMOTko.qm</file>
+    <file>i18n/es/toMOTko.qm</file>
+    <file>i18n/ja/toMOTko.qm</file>
+    <file>i18n/zh/toMOTko.qm</file>
+    <file>i18n/de/toMOTko.qm</file>
 </qresource>
 </RCC>

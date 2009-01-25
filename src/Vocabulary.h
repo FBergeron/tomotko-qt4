@@ -47,7 +47,7 @@ public:
     void removeTerm( const int& id );
     bool isTermExists( const int& id ) const;
     Term& getTerm( const int& id );
-    const uint getSize() const;
+    uint getSize() const;
     bool isEmpty() const;
     void getItemsCount( uint* termCount, uint* checkedTermCount, uint* selectedTermCount, bool isReachableFromRoot, const QString& firstLang = QString::null, const QString& testLang = QString::null ) const;
     int getMaxTermId() const;

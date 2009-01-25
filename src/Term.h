@@ -18,8 +18,8 @@ public:
     typedef QMap<QString, Translation> TranslationMap;
     typedef QMap<BilingualKey, QString> CommentMap;
 
-    const int getId() const;
-    const int getVocabId() const;
+    int getId() const;
+    int getVocabId() const;
     bool isMarkedForStudy() const;
     void setMarkedForStudy( bool isMarkedForStudy );
 

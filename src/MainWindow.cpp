@@ -36,7 +36,7 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
     setAttribute( Qt::WA_DeleteOnClose );
     Preferences& prefs( controller->getPreferences() );
 
-    QString transDir = qApp->applicationDirPath() + "/i18n/" + prefs.getInterfaceLanguage();
+    QString transDir = ":/i18n/" + prefs.getInterfaceLanguage();
     translator = new QTranslator( this );
     if( translator->load( "toMOTko", transDir ) )
         app.installTranslator( translator );
@@ -189,14 +189,14 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
     helpMenu->addSeparator();
     
     languageActionGroup = new QActionGroup( this ); 
-    QDir i18nDir( qApp->applicationDirPath() + "/i18n" );
+    QDir i18nDir( ":/i18n" );
     QStringList langDirs = i18nDir.entryList();
     QStringList sortedLanguages;
     for( int i = 0; i < langDirs.count(); i++ ) {
         if( langDirs[ i ] == QString( "." ) || langDirs[ i ] == QString( ".." ) )
             continue;
         QString locale = langDirs[ i ];
-        QString langDirStr = qApp->applicationDirPath() + "/i18n/" + QString( locale );
+        QString langDirStr = ":/i18n/" + QString( locale );
         QDir langDir( langDirStr );
         if( langDir.exists( QString( "toMOTko.qm" ) ) ) {
             QTranslator translator( this );
@@ -347,7 +347,7 @@ void MainWindow::retranslateUi() {
 
 void MainWindow::switchLanguage( const QString& language ) {
     qApp->removeTranslator( translator );
-    QString transDir = qApp->applicationDirPath() + "/i18n/" + language;
+    QString transDir = ":/i18n/" + language;
     if( translator->load( "toMOTko", transDir ) )
         qApp->installTranslator( translator );
     else

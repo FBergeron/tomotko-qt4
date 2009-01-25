@@ -116,7 +116,7 @@ QString Util::getDigraph( const QString& buffer ) {
 void Util::initDigraphs() {
     digraphMap = new QMap<QString, QString>();
 
-    QString digraphFilename( qApp->applicationDirPath() + "/digraphs.conf" );
+    QString digraphFilename( ":/lib/toMOTko/digraphs.conf" );
     QFile digraphFile( digraphFilename );
 
     if( !digraphFile.open( QIODevice::ReadOnly ) ) {
