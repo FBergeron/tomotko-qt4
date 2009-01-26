@@ -1,0 +1,17 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=toMOTko
+GenericName=Flashcard learning program
+GenericName[fr]=Programme pour mémoriser du vocabulaire
+GenericName[es]=Aplicación para aprender vocabulario
+GenericName[de]=Karteikarten Lernprogramm
+Exec=toMOTko
+Icon=toMOTko
+StartupNotify=false
+Terminal=false
+Categories=Education;Languages
+Comment=Learn vocabulary using flashcards
+Comment[fr]=Apprendre du nouveau vocabulaire
+Comment[es]=Aprender nuevo vocabulario
+Comment[de]=Vokabel lernen mit Karteikarten
