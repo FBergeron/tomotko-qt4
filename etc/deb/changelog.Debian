@@ -1,0 +1,12 @@
+tomotko (0.11.2-2) unstable; urgency=low
+
+  * Made Debian package lintian clean.
+
+ -- Frederic Bergeron <fbergeron@users.sourceforge.net>  Mon, 26 Jan 2009 20:00:00 +0100
+
+tomotko (0.11.2-1) unstable; urgency=low
+
+  * Created Debian package.
+
+ -- Frederic Bergeron <fbergeron@users.sourceforge.net>  Mon, 25 Jan 2009 20:00:00 +0100
+
