@@ -91,21 +91,6 @@
         <translation>&lt;html&gt;&lt;h2&gt;toMOTko v0.11.2&lt;/h2&gt;&lt;p&gt;Eine kleine Applikation um neues&lt;br/&gt;Vokabular zu lernen.&lt;/p&gt;&lt;p&gt;Geschrieben von Frederic Bergeron&lt;br/&gt;(&lt;a href=&quot;mailto:fbergeron@users.sourceforge.net&quot;&gt;fbergeron@users.sourceforge.net&lt;/a&gt;)&lt;br/&gt;Copyright (c) 2006-2009&lt;/p&gt;&lt;p&gt;Diese Programm wird unter der&lt;br/&gt;GPL v2 verbreitet.&lt;/p&gt;&lt;p&gt;Mehr Informationen unter:&lt;br/&gt;&lt;a href=&quot;http://tomotko.sourceforge.net&quot;&gt;http://tomotko.sourceforge.net&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="69"/>
-        <source>Copy</source>
-        <translation type="obsolete">Copy</translation>
-    </message>
-    <message>
-        <location filename="../../src/MainWindow.cpp" line="70"/>
-        <source>Cut</source>
-        <translation type="obsolete">Cut</translation>
-    </message>
-    <message>
-        <location filename="../../src/MainWindow.cpp" line="71"/>
-        <source>Paste</source>
-        <translation type="obsolete">Paste</translation>
-    </message>
-    <message>
         <location filename="../../src/MainWindow.cpp" line="312"/>
         <source>Reveal</source>
         <translation>Aufdecken</translation>
@@ -640,13 +625,6 @@ Overwrite the current assignment?</source>
         <translation>Parse Fehler in Zeile %1, Spalte %2. %3.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>NoResumableQuizAvailable</source>
-        <translation type="obsolete">No resumable quiz is
-available for the
-selected languages.</translation>
-    </message>
-    <message>
         <location filename="../../src/Controller.cpp" line="736"/>
         <source>MyGlossaries</source>
         <translation>Meine Glossare</translation>
@@ -728,44 +706,6 @@ selected languages.</translation>
         <location filename="../../src/QuizFrame.cpp" line="188"/>
         <source>Image</source>
         <translation>Bild</translation>
-    </message>
-</context>
-<context>
-    <name>ScrollableLineEdit</name>
-    <message>
-        <location filename="" line="0"/>
-        <source>Undo</source>
-        <translation type="obsolete">Undo</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Redo</source>
-        <translation type="obsolete">Redo</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Cut</source>
-        <translation type="obsolete">Cut</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Copy</source>
-        <translation type="obsolete">Copy</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Paste</source>
-        <translation type="obsolete">Paste</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Clear</source>
-        <translation type="obsolete">Clear</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Select All</source>
-        <translation type="obsolete">Select All</translation>
     </message>
 </context>
 <context>
@@ -1193,24 +1133,6 @@ Die neuen Daten sind zur Zeit nicht sichtbar. Sie müssen die entsprechenden Spr
         <location filename="../../src/VocabularyManagerFrame.cpp" line="497"/>
         <source>Glossaries (*.zip)</source>
         <translation>Glossare (*.zip)</translation>
-    </message>
-</context>
-<context>
-    <name>ZFileDialog</name>
-    <message>
-        <location filename="" line="0"/>
-        <source>Name</source>
-        <translation type="obsolete">Name</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Size</source>
-        <translation type="obsolete">Size</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Date</source>
-        <translation type="obsolete">Date</translation>
     </message>
 </context>
 </TS>
