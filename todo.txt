@@ -1,5 +1,9 @@
 ToDo
 ----
+Print and read http://www.debian.org/doc/debian-policy/index.html#contents and modify...
+Make a deb file (and if possible a rpm file using pkgwrite (http://ffem.org/daveb/pkgwrite/)?).  2 links: 
+- http://www.thesatya.com/blog/2005/07/makingadeb.html 
+- http://www.linuxdevices.com/articles/AT8047723203.html
 Would it be possible not to copy toMOTko.ico in the release/debug dir?
 Reorganize the web site for the qt4 version.
 Translate online help in French and Spanish.
@@ -38,7 +42,7 @@ Refactor save and load methods.  They look alike, I think it's possible do unify
 
 Use ASSERT(), CHECK_PTR() and qDebug(), qWarning() and qFatal() --> See Debugging Techniques page in documentation.
 Verify licence for KanjiDrill4Top's images.
-Port to Windows? Linux? NCurses? Or big refactoring (reduce memory footprint + separate GUI from backend)?
+Port to NCurses? Or big refactoring (reduce memory footprint + separate GUI from backend)?
 In the same way that Controller::getResolvedImagePath(), I should have the opposite function that takes an absolute path and reduce it to a relative path.  Maybe rename the functions with better names.
 In Controller.makeCopy(), verify if we should create the termCopy at all if we don't add translation.  A term with no translations should not exist.  If the term has no translations, delete it and don't add it to vocabCopy.
 Same thing for VocabularyManagerFrame.copyTerms().
