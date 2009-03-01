@@ -3,7 +3,7 @@
 require 'fileutils'
 
 $VERSION  = '0.11.2'
-$DVERSION = '2'
+$DVERSION = '1'
 
 unless( File.exists?( 'toMOTko' ) )
     $stderr.puts( "The executable file doesn't exist. Cannot make deb file." )

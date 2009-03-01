@@ -100,6 +100,10 @@ To make the deb file :
 
 > bin/makeDebFile.rb
 
+To make the rpm file :
+
+> bin/makeRpmFile.rb
+
 
 MacOS
 -----

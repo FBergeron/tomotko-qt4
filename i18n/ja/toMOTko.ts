@@ -88,7 +88,7 @@
     <message>
         <location filename="../../src/MainWindow.cpp" line="384"/>
         <source>AboutMessage</source>
-        <translation type="unfinished">&lt;html&gt;&lt;h2&gt;toMOTko v0.11.2&lt;/h2&gt;&lt;p&gt;外国語を勉強するためのアプリケーション&lt;/p&gt;&lt;p&gt;作成者：Frederic Bergeron&lt;br/&gt;(&lt;a href=&quot;mailto:fbergeron@users.sourceforge.net&quot;&gt;fbergeron@users.sourceforge.net&lt;/a&gt;)&lt;br/&gt;(c) 2006-2009&lt;/p&gt;&lt;p&gt;使用許可：GPL v2.&lt;/p&gt;&lt;p&gt;詳しくは:&lt;br/&gt;&lt;a href=&quot;http://tomotko.sourceforge.net&quot;&gt;http://tomotko.sourceforge.net&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation>&lt;html&gt;&lt;h2&gt;toMOTko v0.11.2&lt;/h2&gt;&lt;p&gt;外国語を勉強するためのアプリケーション&lt;/p&gt;&lt;p&gt;作成者：Frederic Bergeron&lt;br/&gt;(&lt;a href=&quot;mailto:fbergeron@users.sourceforge.net&quot;&gt;fbergeron@users.sourceforge.net&lt;/a&gt;)&lt;br/&gt;(c) 2006-2009&lt;/p&gt;&lt;p&gt;使用許可：GPL v2.&lt;/p&gt;&lt;p&gt;詳しくは:&lt;br/&gt;&lt;a href=&quot;http://tomotko.sourceforge.net&quot;&gt;http://tomotko.sourceforge.net&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="69"/>
