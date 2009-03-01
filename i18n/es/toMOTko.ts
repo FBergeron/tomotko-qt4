@@ -618,7 +618,7 @@ Overwrite the current assignment?</source>
         <translation>Advertencia</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="758"/>
+        <location filename="../../src/QuizFrame.cpp" line="759"/>
         <source>Information</source>
         <translation>Información</translation>
     </message>
@@ -663,22 +663,22 @@ los idomas seleccionados.</translation>
 <context>
     <name>QuizFrame</name>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="652"/>
+        <location filename="../../src/QuizFrame.cpp" line="653"/>
         <source>Reveal</source>
         <translation>Revelar</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="642"/>
+        <location filename="../../src/QuizFrame.cpp" line="643"/>
         <source>RightAnswer</source>
         <translation>Respuesta correcta</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="644"/>
+        <location filename="../../src/QuizFrame.cpp" line="645"/>
         <source>WrongAnswer</source>
         <translation>Respuesta incorrecta</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="646"/>
+        <location filename="../../src/QuizFrame.cpp" line="647"/>
         <source>EditWord</source>
         <translation>Editar una palabra</translation>
     </message>
@@ -688,7 +688,7 @@ los idomas seleccionados.</translation>
         <translation>Palabra/Expr.</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="638"/>
+        <location filename="../../src/QuizFrame.cpp" line="639"/>
         <source>???</source>
         <translation>???</translation>
     </message>
@@ -698,7 +698,7 @@ los idomas seleccionados.</translation>
         <translation>Pronunciación</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="637"/>
+        <location filename="../../src/QuizFrame.cpp" line="638"/>
         <source>Examples/Comments</source>
         <translation>Ejemplos/Comentarios</translation>
     </message>
@@ -708,7 +708,7 @@ los idomas seleccionados.</translation>
         <translation>Felicitationes! Usted ha aprendido todas las %1 palabras seleccionadaѕ.  Para estudiar otras palabras, usa el Administrador de glosarios y selecciona otras palabras.</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="758"/>
+        <location filename="../../src/QuizFrame.cpp" line="759"/>
         <source>DissociatedWord</source>
         <translation>Esta palabra ha cambiado de su glosario original.  No es posible de editarlo.</translation>
     </message>
@@ -718,12 +718,12 @@ los idomas seleccionados.</translation>
         <translation>No hay palabras selectionadas. El testo no puede empezar. Usa el Administrador de glosarios para seleccionar palabras a estudiar.</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="653"/>
+        <location filename="../../src/QuizFrame.cpp" line="654"/>
         <source>MaximizeComment</source>
         <translation>Ampliar</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="188"/>
+        <location filename="../../src/QuizFrame.cpp" line="637"/>
         <source>Image</source>
         <translation>Imagen</translation>
     </message>
@@ -794,27 +794,27 @@ los idomas seleccionados.</translation>
         <translation>%1 palabra(s) encontradas</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="274"/>
+        <location filename="../../src/SearchDialog.cpp" line="275"/>
         <source>ConfirmRemoveSelectedTerms</source>
         <translation>Usted está seguro de borrar la(s) palabra(s) seleccionada(s)?</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="280"/>
+        <location filename="../../src/SearchDialog.cpp" line="281"/>
         <source>Yes</source>
         <translation>Si</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="281"/>
+        <location filename="../../src/SearchDialog.cpp" line="282"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="322"/>
+        <location filename="../../src/SearchDialog.cpp" line="323"/>
         <source>MultipleTranslationsDetectedForRemoveTermsCaption</source>
         <translation>Borrar palabras</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="322"/>
+        <location filename="../../src/SearchDialog.cpp" line="323"/>
         <source>MultipleTranslationsDetectedForRemoveTerms</source>
         <translation>Algunas palabras seleccionadas tienen traducciones en varios idiomas.  Seleccione los traducciones que usted quisiere borrar.</translation>
     </message>

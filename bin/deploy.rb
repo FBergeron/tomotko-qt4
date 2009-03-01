@@ -11,7 +11,7 @@ $RELEASE_DIR = 'release'
 [ $DEBUG_DIR, $RELEASE_DIR ].each {
     | deployDir |
 
-    [ "lib/toMOTko/digraphs.conf", "pics/toMOTko.ico", "LICENSE.txt" ].each {
+    [ "pics/toMOTko.ico", "LICENSE.txt" ].each {
         | file |
         File.copy( file, deployDir );
     }

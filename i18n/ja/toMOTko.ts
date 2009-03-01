@@ -183,7 +183,7 @@
     <message>
         <location filename="../../src/MainWindow.cpp" line="332"/>
         <source>Search...</source>
-        <translation>検索</translation>
+        <translation>検索...</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="309"/>
@@ -608,7 +608,7 @@ Overwrite the current assignment?</source>
         <translation>注意</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="758"/>
+        <location filename="../../src/QuizFrame.cpp" line="759"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
@@ -656,17 +656,17 @@ Overwrite the current assignment?</source>
 <context>
     <name>QuizFrame</name>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="652"/>
+        <location filename="../../src/QuizFrame.cpp" line="653"/>
         <source>Reveal</source>
         <translation>表す</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="642"/>
+        <location filename="../../src/QuizFrame.cpp" line="643"/>
         <source>RightAnswer</source>
         <translation>正解</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="646"/>
+        <location filename="../../src/QuizFrame.cpp" line="647"/>
         <source>EditWord</source>
         <translation>言葉を編集する</translation>
     </message>
@@ -676,7 +676,7 @@ Overwrite the current assignment?</source>
         <translation>言葉</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="638"/>
+        <location filename="../../src/QuizFrame.cpp" line="639"/>
         <source>???</source>
         <translation>???</translation>
     </message>
@@ -686,12 +686,12 @@ Overwrite the current assignment?</source>
         <translation>発音</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="637"/>
+        <location filename="../../src/QuizFrame.cpp" line="638"/>
         <source>Examples/Comments</source>
         <translation>例/コメント</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="644"/>
+        <location filename="../../src/QuizFrame.cpp" line="645"/>
         <source>WrongAnswer</source>
         <translation>不正解</translation>
     </message>
@@ -701,7 +701,7 @@ Overwrite the current assignment?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="653"/>
+        <location filename="../../src/QuizFrame.cpp" line="654"/>
         <source>MaximizeComment</source>
         <translation>コメントを最大化</translation>
     </message>
@@ -711,12 +711,12 @@ Overwrite the current assignment?</source>
         <translation>おめでとう！全ての%1の言葉を習いました。用語集マネジャーで違う言葉を選択して下さい。</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="188"/>
+        <location filename="../../src/QuizFrame.cpp" line="637"/>
         <source>Image</source>
         <translation>イメージ</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="758"/>
+        <location filename="../../src/QuizFrame.cpp" line="759"/>
         <source>DissociatedWord</source>
         <translation type="unfinished"></translation>
     </message>
@@ -747,12 +747,12 @@ Overwrite the current assignment?</source>
         <translation>用語集</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="280"/>
+        <location filename="../../src/SearchDialog.cpp" line="281"/>
         <source>Yes</source>
         <translation>はい</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="281"/>
+        <location filename="../../src/SearchDialog.cpp" line="282"/>
         <source>No</source>
         <translation>いいえ</translation>
     </message>
@@ -794,20 +794,20 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="195"/>
         <source>%1 term(s) found</source>
-        <translation>%1個の言葉が見つかれました。</translation>
+        <translation>%1個の言葉が見つかりました。</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="274"/>
+        <location filename="../../src/SearchDialog.cpp" line="275"/>
         <source>ConfirmRemoveSelectedTerms</source>
         <translation>本当にこれを削除してもいいですか？</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="322"/>
+        <location filename="../../src/SearchDialog.cpp" line="323"/>
         <source>MultipleTranslationsDetectedForRemoveTermsCaption</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="322"/>
+        <location filename="../../src/SearchDialog.cpp" line="323"/>
         <source>MultipleTranslationsDetectedForRemoveTerms</source>
         <translation type="unfinished"></translation>
     </message>

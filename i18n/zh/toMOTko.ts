@@ -618,7 +618,7 @@ Overwrite the current assignment?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="758"/>
+        <location filename="../../src/QuizFrame.cpp" line="759"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
@@ -641,22 +641,22 @@ Overwrite the current assignment?</source>
 <context>
     <name>QuizFrame</name>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="652"/>
+        <location filename="../../src/QuizFrame.cpp" line="653"/>
         <source>Reveal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="642"/>
+        <location filename="../../src/QuizFrame.cpp" line="643"/>
         <source>RightAnswer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="644"/>
+        <location filename="../../src/QuizFrame.cpp" line="645"/>
         <source>WrongAnswer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="646"/>
+        <location filename="../../src/QuizFrame.cpp" line="647"/>
         <source>EditWord</source>
         <translation type="unfinished"></translation>
     </message>
@@ -666,7 +666,7 @@ Overwrite the current assignment?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="638"/>
+        <location filename="../../src/QuizFrame.cpp" line="639"/>
         <source>???</source>
         <translation type="unfinished"></translation>
     </message>
@@ -681,12 +681,12 @@ Overwrite the current assignment?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="637"/>
+        <location filename="../../src/QuizFrame.cpp" line="638"/>
         <source>Examples/Comments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="653"/>
+        <location filename="../../src/QuizFrame.cpp" line="654"/>
         <source>MaximizeComment</source>
         <translation type="unfinished"></translation>
     </message>
@@ -696,12 +696,12 @@ Overwrite the current assignment?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="188"/>
+        <location filename="../../src/QuizFrame.cpp" line="637"/>
         <source>Image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="758"/>
+        <location filename="../../src/QuizFrame.cpp" line="759"/>
         <source>DissociatedWord</source>
         <translation type="unfinished"></translation>
     </message>
@@ -754,27 +754,27 @@ Overwrite the current assignment?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="274"/>
+        <location filename="../../src/SearchDialog.cpp" line="275"/>
         <source>ConfirmRemoveSelectedTerms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="280"/>
+        <location filename="../../src/SearchDialog.cpp" line="281"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="281"/>
+        <location filename="../../src/SearchDialog.cpp" line="282"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="322"/>
+        <location filename="../../src/SearchDialog.cpp" line="323"/>
         <source>MultipleTranslationsDetectedForRemoveTermsCaption</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="322"/>
+        <location filename="../../src/SearchDialog.cpp" line="323"/>
         <source>MultipleTranslationsDetectedForRemoveTerms</source>
         <translation type="unfinished"></translation>
     </message>

@@ -621,7 +621,7 @@ Affecter le raccourci quand même?</translation>
         <translation>Avertissement</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="758"/>
+        <location filename="../../src/QuizFrame.cpp" line="759"/>
         <source>Information</source>
         <translation>Information</translation>
     </message>
@@ -668,27 +668,27 @@ les langues sélectionnées.</translation>
 <context>
     <name>QuizFrame</name>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="652"/>
+        <location filename="../../src/QuizFrame.cpp" line="653"/>
         <source>Reveal</source>
         <translation>Dévoiler</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="642"/>
+        <location filename="../../src/QuizFrame.cpp" line="643"/>
         <source>RightAnswer</source>
         <translation>Bonne réponse</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="644"/>
+        <location filename="../../src/QuizFrame.cpp" line="645"/>
         <source>WrongAnswer</source>
         <translation>Mauvaise réponse</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="646"/>
+        <location filename="../../src/QuizFrame.cpp" line="647"/>
         <source>EditWord</source>
         <translation>Éditer le mot</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="638"/>
+        <location filename="../../src/QuizFrame.cpp" line="639"/>
         <source>???</source>
         <translation>???</translation>
     </message>
@@ -703,7 +703,7 @@ les langues sélectionnées.</translation>
         <translation>Félicitations! Vous avez appris tous les %1 mots sélectionnés.  Utilisez le gestionnaire de glossaires pour en étudier d&apos;autres.</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="758"/>
+        <location filename="../../src/QuizFrame.cpp" line="759"/>
         <source>DissociatedWord</source>
         <translation>Le mot a été dissocié de son glossaire original.  L&apos;édition est impossible via le quiz.</translation>
     </message>
@@ -718,17 +718,17 @@ les langues sélectionnées.</translation>
         <translation>Alt./Phon.</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="637"/>
+        <location filename="../../src/QuizFrame.cpp" line="638"/>
         <source>Examples/Comments</source>
         <translation>Exemples/Commentaires</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="653"/>
+        <location filename="../../src/QuizFrame.cpp" line="654"/>
         <source>MaximizeComment</source>
         <translation>Agrandir le champ Exemples/Commentaires du quiz</translation>
     </message>
     <message>
-        <location filename="../../src/QuizFrame.cpp" line="188"/>
+        <location filename="../../src/QuizFrame.cpp" line="637"/>
         <source>Image</source>
         <translation>Image</translation>
     </message>
@@ -819,27 +819,27 @@ les langues sélectionnées.</translation>
         <translation>%1 mot(s) trouvé(s)</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="274"/>
+        <location filename="../../src/SearchDialog.cpp" line="275"/>
         <source>ConfirmRemoveSelectedTerms</source>
         <translation>Êtes-vous certain de vouloir effacer le(s) mot(s) sélectionné(s)?</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="280"/>
+        <location filename="../../src/SearchDialog.cpp" line="281"/>
         <source>Yes</source>
         <translation>Oui</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="281"/>
+        <location filename="../../src/SearchDialog.cpp" line="282"/>
         <source>No</source>
         <translation>Non</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="322"/>
+        <location filename="../../src/SearchDialog.cpp" line="323"/>
         <source>MultipleTranslationsDetectedForRemoveTermsCaption</source>
         <translation>Suppression de mots</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="322"/>
+        <location filename="../../src/SearchDialog.cpp" line="323"/>
         <source>MultipleTranslationsDetectedForRemoveTerms</source>
         <translation>Certains des mots sélectionnés contiennent des traductions dans plusieurs langues.  Indiquez les traductions à effacer.</translation>
     </message>

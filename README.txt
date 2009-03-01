@@ -112,7 +112,7 @@ What to do before a release
 - Update online documentation if necessary (screenshots, new features, etc.)
 - Remove traces if any.
 - Build installers
-    - Windows: make clean;make release;make clean; then run InstallJammer after updating the version property to get setup.exe
+    - Windows: make clean;make release;make clean; then run InstallJammer after updating the Install Version and Version String in Application Information to get setup.exe
     - Linux: make clean;make;bin/makeDevFile.rb to get toMOTko-x.y.z_i386.deb
     - Test them!
 - Update version number in the website (version.txt), Doxygen.

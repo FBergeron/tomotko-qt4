@@ -193,6 +193,7 @@ void SearchDialog::search() {
         }
     }
     resultsCounterLabel->setText( tr( "%1 term(s) found" ).arg( results.count() ) );
+    updateUi();
 }
 
 void SearchDialog::reset() {
