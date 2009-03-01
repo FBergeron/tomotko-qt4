@@ -88,7 +88,7 @@
     <message>
         <location filename="../../src/MainWindow.cpp" line="384"/>
         <source>AboutMessage</source>
-        <translation type="unfinished">&lt;html&gt;&lt;h2&gt;toMOTko v0.11.2&lt;/h2&gt;&lt;p&gt;Small application to learn&lt;br/&gt;new vocabulary.&lt;/p&gt;&lt;p&gt;Written by Frederic Bergeron&lt;br/&gt;(&lt;a href=&quot;mailto:fbergeron@users.sourceforge.net&quot;&gt;fbergeron@users.sourceforge.net&lt;/a&gt;)&lt;br/&gt;Copyright (c) 2006-2009&lt;/p&gt;&lt;p&gt;This program is distributed&lt;br/&gt;under the terms of the GPL v2.&lt;/p&gt;&lt;p&gt;For more information:&lt;br/&gt;&lt;a href=&quot;http://tomotko.sourceforge.net&quot;&gt;http://tomotko.sourceforge.net&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;h2&gt;toMOTko v0.11.2&lt;/h2&gt;&lt;p&gt;外国語を勉強するためのアプリケーション&lt;/p&gt;&lt;p&gt;作成者：Frederic Bergeron&lt;br/&gt;(&lt;a href=&quot;mailto:fbergeron@users.sourceforge.net&quot;&gt;fbergeron@users.sourceforge.net&lt;/a&gt;)&lt;br/&gt;(c) 2006-2009&lt;/p&gt;&lt;p&gt;使用許可：GPL v2.&lt;/p&gt;&lt;p&gt;詳しくは:&lt;br/&gt;&lt;a href=&quot;http://tomotko.sourceforge.net&quot;&gt;http://tomotko.sourceforge.net&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="69"/>
@@ -138,7 +138,7 @@
     <message>
         <location filename="../../src/MainWindow.cpp" line="325"/>
         <source>RemoveItem</source>
-        <translation>アイテムを消す</translation>
+        <translation>項目を削除する</translation>
     </message>
     <message>
         <location filename="../../src/MainWindow.cpp" line="326"/>
@@ -256,7 +256,7 @@
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="183"/>
         <source>DigraphesEnabled</source>
-        <translation>ダイグラフをオン </translation>
+        <translation>ダイグラフをオン</translation>
     </message>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="269"/>
@@ -457,7 +457,7 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="238"/>
         <source>Description</source>
-        <translation>説明</translation>
+        <translation>詳細</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="239"/>
@@ -467,7 +467,7 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="241"/>
         <source>Items</source>
-        <translation>オブジェクト</translation>
+        <translation>項目</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="241"/>
@@ -477,7 +477,7 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="243"/>
         <source>Author</source>
-        <translation>作者</translation>
+        <translation>作成者</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="244"/>
@@ -764,17 +764,17 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="158"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>結果</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="163"/>
         <source>Location</source>
-        <translation>フォルダ名</translation>
+        <translation>場所</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="166"/>
         <source>View Glossary</source>
-        <translation type="unfinished"></translation>
+        <translation>用語集を見る</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="168"/>
@@ -789,7 +789,7 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="174"/>
         <source>Search...</source>
-        <translation>検索</translation>
+        <translation>検索...</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="195"/>
@@ -925,7 +925,7 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/TermDialog.cpp" line="140"/>
         <source>setImageTooltip</source>
-        <translation>イメージを指定</translation>
+        <translation>イメージを指定する</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="142"/>
@@ -950,7 +950,7 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/TermDialog.cpp" line="245"/>
         <source>SetImage...</source>
-        <translation>イメージを指定 ...</translation>
+        <translation>イメージを指定する ...</translation>
     </message>
     <message>
         <location filename="../../src/TermDialog.cpp" line="245"/>
@@ -1006,7 +1006,7 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="637"/>
         <source>RemoveItem</source>
-        <translation>アイテムを消す</translation>
+        <translation>項目を削除する</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="620"/>

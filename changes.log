@@ -1,6 +1,8 @@
 Version 0.11.2 (2009-01-22)
 
+- Ported the application on Linux and produced deb and rpm files.
 - Translated the application in German.  Thanks to Christian Varga!
+- Translated some strings in Japanese.  Thanks to Yuk-chan!
 
 
 Version 0.11.1 for Windows! (2008-12-16)
