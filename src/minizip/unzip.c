@@ -46,9 +46,9 @@ woven in by Terry Thorsen 1/2003.
 #  include <string.h>
 #  include <stdlib.h>
 #endif
-#ifdef NO_ERRNO_H
+#ifdef NO_ERRNO_H 
     extern int errno;
-#else
+#elif defined( WIN_CE )
 #   include <errno.h>
 #endif
 
