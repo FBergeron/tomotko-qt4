@@ -7,7 +7,6 @@ CONFIG      +=  zlib
 TEMPLATE    =   app
 DEPENDPATH  +=  src
 INCLUDEPATH +=  . src
-LIBS        +=  -lstdc++
 QT          +=  xml
 RESOURCES   =   toMOTko.qrc
 RC_FILE     =   toMOTko.rc
