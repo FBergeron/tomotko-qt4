@@ -110,10 +110,10 @@ static int crypthead(passwd, buf, bufSize, pkeys, pcrc_32_tab, crcForCrypting)
      */
     if (++calls == 1)
     {
-#ifdef WIN_CE
-        srand((unsigned)(time(NULL) ^ ZCR_SEED2));
-#else
+#ifdef WINCE
         srand((unsigned)(0 ^ ZCR_SEED2));
+#else
+        srand((unsigned)(time(NULL) ^ ZCR_SEED2));
 #endif
     }
     init_keys(passwd, pkeys, pcrc_32_tab);

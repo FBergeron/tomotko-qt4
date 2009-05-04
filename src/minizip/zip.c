@@ -24,7 +24,7 @@
 #endif
 #ifdef NO_ERRNO_H
     extern int errno;
-#elif defined( WIN_CE )
+#elif !defined( WINCE )
 #   include <errno.h>
 #endif
 
