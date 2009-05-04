@@ -9,8 +9,6 @@
 #ifndef HISTORY_FIELD_H
 #define HISTORY_FIELD_H
 
-using namespace std;
-
 #include <iostream>
 #include <QComboBox>
 #include <QKeyEvent>

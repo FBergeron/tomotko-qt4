@@ -444,7 +444,11 @@ void MainWindow::exportData() {
 
 void MainWindow::preferences() {
     PreferencesDialog dialog( this, &(control->getPreferences()) );
+#ifdef WINCE
+    dialog.showMaximized();
+#else
     dialog.show();
+#endif
     int result = dialog.exec();
     if( result ) {
         // Check if different from previous value before updating.

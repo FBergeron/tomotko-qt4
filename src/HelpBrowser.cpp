@@ -49,6 +49,10 @@ void HelpBrowser::showPage( const QString& page ) {
     QString path = ":/help/en/html";
     HelpBrowser* browser = new HelpBrowser( path, page );
     browser->resize( 600, 600 );
+#ifdef WINCE
+    browser->showMaximized();
+#else
     browser->show();
+#endif
 }
 

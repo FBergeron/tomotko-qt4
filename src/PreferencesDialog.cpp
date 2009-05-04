@@ -694,7 +694,11 @@ void PreferencesDialog::keyPressEvent( QKeyEvent* evt ) {
 
 void PreferencesDialog::addSequence() {
     SequenceDialog dialog( prefs, this );
+#ifdef WINCE
+    dialog.showMaximized();
+#else
     dialog.show();
+#endif
     int result = dialog.exec();
     if( result ) {
         Sequence sequence = dialog.getSequence();

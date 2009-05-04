@@ -1286,7 +1286,11 @@ void VocabularyManagerFrame::search() {
         connect( searchDialog, SIGNAL( termsRemoved() ), this, SLOT( updateUi() ) );
     }
     searchDialog->updateFonts();
+#ifdef WINCE
+    searchDialog->showMaximized();
+#else
     searchDialog->show();
+#endif
     searchDialog->exec();
 }
 
