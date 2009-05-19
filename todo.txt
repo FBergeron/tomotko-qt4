@@ -1,5 +1,6 @@
 ToDo
 ----
+The font of the Image box is not correct.  Should be set.
 Print and read http://www.debian.org/doc/debian-policy/index.html#contents and modify...
 Make a deb file (and if possible a rpm file using pkgwrite (http://ffem.org/daveb/pkgwrite/)?).  2 links: 
 - http://www.thesatya.com/blog/2005/07/makingadeb.html 

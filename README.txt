@@ -107,12 +107,73 @@ To make the rpm file :
 
 MacOS
 -----
-Todo
+I build the SDK from source.  I decompressed and extracted the archive in /Developer.  I use a screen session because it takes about 2 hours to build the SDK.
+
+screen
+sudo -s
+cd /Developer/qt-mac-opensource-src-4.4.3
+make clean
+make confclean
+./configure -universal -sdk /Developer/SDKs/MacOSX10.4u.sdk
+make
+make install
+exit
+
+That's it.  At this point, the SDK is built and installed.
+
+This is not needed but, just in case, if you want to make a static version of Qt library, here is how to do:
+
+screen
+sudo -s
+cd /Developer/qt-mac-opensource-src-4.4.3
+make clean
+make confclean
+./configure -universal -static -sdk /Developer/SDKs/MacOSX10.4u.sdk
+make sub-src
+exit
+
+At the end of this process, the file libQtGui.a is built and can be used to build the application.  I will not use it though.
+
+
+To extract localized string :
+
+> lupdate toMOTko.pro
+
+To generate the string files :
+
+> lrelease toMOTko.pro
+
+These 2 operations should be done at least once before building the Makefile.
+Otherwise, you will get errors like these when running qmake:
+
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/en/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/fr/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/es/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/ja/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/zh/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/de/toMOTko.qm'
+
+To build the Makefile :
+
+> qmake -macx -config release toMOTko.pro
+
+To build the executable :
+
+> make clean; 
+> make
+
+To run the executable :
+
+> ./toMOTko.app/Contents/MacOS/tomotko
+
+To make the application package that it can be deployed later:
+
+> bin/makeDmgFile.rb
 
 
 What to do before a release
 ---------------------------
-- Update version number in the About dialog and scripts (makeDebFile.rb).
+- Update version number in the About dialog and scripts (makeDebFile.rb, makeMacOSFile.rb, and makeRpmFile.rb).
 - Update online documentation if necessary (screenshots, new features, etc.)
 - Remove traces if any.
 - Build installers
