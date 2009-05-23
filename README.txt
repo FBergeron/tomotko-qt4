@@ -10,8 +10,8 @@ probably can get it using the package manager of your operating system.
 You will also need a C++ compiler and some other miscellaneous development tools.
 
 
-Windows
--------
+Windows XP/2000/Vista
+---------------------
 To extract localized string :
 
 > lupdate toMOTko.pro
@@ -105,6 +105,13 @@ To make the rpm file :
 > bin/makeRpmFile.rb
 
 
+Windows CE 
+----------
+To build toMOTko for Windows CE, the process is a little bit more complicated.  Here are the operations I did.  Hopefully, I haven't forgotten anything...
+
+First, we need to build Qt for the desired target platform.  In my case, I was interested to build for Windows Mobile 6.0.  I downloaded the Qt source code: qt-embedded-wince-opensource-4.4.3.
+
+
 MacOS
 -----
 I build the SDK from source.  I decompressed and extracted the archive in /Developer.  I use a screen session because it takes about 2 hours to build the SDK.
@@ -178,7 +185,8 @@ What to do before a release
 - Remove traces if any.
 - Build installers
     - Windows: make clean;make release;make clean; then run InstallJammer after updating the Install Version and Version String in Application Information to get setup.exe
-    - Linux: make clean;make;bin/makeDevFile.rb to get toMOTko-x.y.z_i386.deb
+    - MacOS: make clean;make;bin/makeDmgFile.rb to get toMOTko-x.y.z.dmg
+    - Linux: make clean;make;bin/makeDevFile.rb to get tomotko-x.y.z_i386.deb
     - Test them!
 - Update version number in the website (version.txt), Doxygen.
 - Update website if necessary (screenshots, new features, download link, etc.)
