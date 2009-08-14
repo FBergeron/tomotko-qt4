@@ -178,6 +178,102 @@ To make the application package that it can be deployed later:
 > bin/makeDmgFile.rb
 
 
+Maemo
+-----
+I'm using Ubuntu 8.10 running inside VirtualBox.
+
+Before compiling and building the application, it's required to install scratchbox, the Maemo SDK, and Xephyr X11-Server.  
+This is out of scope of this document.  For more details, read installation documentation on Maemo's website.
+
+To start scratchbox :
+
+> sudo -s
+> echo 0 > /proc/sys/vm/vdso_enabled
+> exit
+> /scratchbox/login
+
+To select the architecture (either i386 or ARMEL), in scratchbox :
+
+> sb-menu
+* KillAll | 15 | OK
+* Select | <arch> | OK
+
+To launch the Xephyr X11-Server (from a new terminal window):
+
+> Xephyr :2 -host-cursor -screen 800x480x16 -dpi 96 -ac -extension Composite
+
+Once that Xephyr is running properly, set up the DISPLAY variable into scratchbox:
+
+> export DISPLAY=:2
+
+To launch the Hildon Application Framework, in scratchbox :
+
+> af-sb-init.sh start
+
+To extract localized string, in scratchbox (1) :
+
+> lupdate toMOTko.pro
+
+To generate the string files, in scratchbox (1) :
+
+> lrelease toMOTko.pro
+
+These 2 operations should be done at least once before building the Makefile‥
+Otherwise, you will get errors like these when running qmake:
+
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/en/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/fr/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/es/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/ja/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/zh/toMOTko.qm'
+RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/de/toMOTko.qm'
+
+To build the Makefile, in scratchbox (1) :
+
+> qmake toMOTko.pro
+
+To build the executable, in scratchbox (1) :
+
+> make clean
+> make 
+
+To run the application, in scratchbox :
+
+> ./toMOTko
+
+When I run the application, on ARMEL, it doesn't work very well.  Many errors are issued concerning the pixmaps :
+
+X Error: BadDrawable (invalid Pixmap or Window parameter) 9
+  Major opcode: 62 (X_CopyArea)
+  Resource id:  0x1f6fb0
+
+I suspeect that I need to install an additional library to fix this.  I don't know for sure yet.
+
+To make the deb file for i386 architecture, first compile and build the executable for i386 architecture then, outside scratchbox :
+
+> cd /scratchbox/users/fred/home/fred/tomotko
+> /home/fred/tomotko/qt4/trunk/bin/makeMaemoDebFile.rb i386
+
+To make the deb file for armel architecture, first compile and build the executable for armel architecture then, outside scratchbox :
+
+> cd /scratchbox/users/fred/home/fred/tomotko
+> /home/fred/tomotko/qt4/trunk/bin/makeMaemoDebFile.rb armel
+
+
+
+
+
+
+Notes
+-----
+(1) In ARMEL, if you get the error nmap: Permission denied when issuing this command, the following command is needed:
+
+> sudo -s
+> echo 4096 | sudo tee /proc/sys/vm/mmap_min_addr
+> exit
+
+
+
 What to do before a release
 ---------------------------
 - Update version number in the About dialog and scripts (makeDebFile.rb, makeMacOSFile.rb, and makeRpmFile.rb).

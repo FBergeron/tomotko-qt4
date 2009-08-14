@@ -1,5 +1,5 @@
 Package: tomotko
-Architecture: i386
+Architecture: $ARCH
 Version: $VERSION
 Section: misc
 Priority: optional
