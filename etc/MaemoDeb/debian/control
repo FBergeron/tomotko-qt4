@@ -1,0 +1,61 @@
+Source: tomotko
+Section: user/education
+Priority: extra
+Maintainer: Frederic Bergeron <fbergeron@users.sourceforge.net>
+Build-Depends: debhelper (>= 5), libqt4-dev
+Standards-Version: 3.7.2
+
+Package: tomotko
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Flashcard application to learn vocabulary
+ Flashcard application convenient for people wanting to learn
+ vocabulary in one or more foreign languages.
+XB-Maemo-Icon-26:
+ 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
+ b4TDk+7mvwxz3jwXz+qHAAAAAElFTkSuQmCC

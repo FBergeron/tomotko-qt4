@@ -31,8 +31,7 @@ RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/zh/toMOTko.qm'
 RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/de/toMOTko.qm'
 
 To build the Makefile :
-
-> qmake toMOTko.pro
+> toMOTko.pro
 
 To build the executable (the debuggable version) :
 
@@ -180,7 +179,7 @@ To make the application package that it can be deployed later:
 
 Maemo
 -----
-I'm using Ubuntu 8.10 running inside VirtualBox.
+I'm using Ubuntu 9.04 running inside VirtualBox.
 
 Before compiling and building the application, it's required to install scratchbox, the Maemo SDK, and Xephyr X11-Server.  
 This is out of scope of this document.  For more details, read installation documentation on Maemo's website.
@@ -247,21 +246,49 @@ X Error: BadDrawable (invalid Pixmap or Window parameter) 9
   Major opcode: 62 (X_CopyArea)
   Resource id:  0x1f6fb0
 
-I suspeect that I need to install an additional library to fix this.  I don't know for sure yet.
+I suspect that it's because I'm running Ubuntu under VirtualBox but it's not confirmed.
 
-To make the deb file for i386 architecture, first compile and build the executable for i386 architecture then, outside scratchbox :
+To make the binary deb file for i386 architecture, first compile and build the executable for i386 architecture then, outside scratchbox :
 
 > cd /scratchbox/users/fred/home/fred/tomotko
 > /home/fred/tomotko/qt4/trunk/bin/makeMaemoDebFile.rb i386
 
-To make the deb file for armel architecture, first compile and build the executable for armel architecture then, outside scratchbox :
+To make the binary deb file for armel architecture, first compile and build the executable for armel architecture then, outside scratchbox :
 
 > cd /scratchbox/users/fred/home/fred/tomotko
 > /home/fred/tomotko/qt4/trunk/bin/makeMaemoDebFile.rb armel
 
+To submit the application to Maemo's Extras repository, it must first be submitted to Extras-Devel repository.
 
+To generate the required files to do so is not an easy task.  I managed to do it once but I'm not even sure I will be able to succeed again.  Here are the steps that are required to perform:
 
+> cp -r trunk $SCRATCHBOX_HOME/tomotko-x.y.z
 
+In Scratchbox (no matter the architecture), clean up the source directory.  It must be perfectly clean!!!  Even a hidden file could disturb the procedure.  Pay special attention to .swp files created by vim while editing files:
+
+> cd ~/tomotko-x.y.z
+> make clean
+> rm toMOTko
+> rm ...
+
+Then, the debian directory for Maemo must be copied into the source directory and the files must be generated.
+
+> cp -r etc/MaemoDeb/debian . 
+> dpkg-buildpackage -rfakeroot -sa -S
+
+3 files should be produced in $SCRATCHBOX_HOME:
+
+tomotko_x.y.z-w_source.changes
+tomotko_x.y.z-w.dsc
+tomotko_x.y.z-w.tar.gz
+
+These files must be uploaded and submitted to the Maemo Extras Assistant.  Other methods are available but have never been tried yet. 
+
+If everything goes fine, the binary deb files will be built and made available through the extras-devel repository.
+
+If it fails, fix something and repeat the procedure.
+
+The next step is to promote the package to extras.  Look the Maemo documentation for this.
 
 
 Notes
@@ -269,7 +296,7 @@ Notes
 (1) In ARMEL, if you get the error nmap: Permission denied when issuing this command, the following command is needed:
 
 > sudo -s
-> echo 4096 | sudo tee /proc/sys/vm/mmap_min_addr
+> echo 4096 > /proc/sys/vm/mmap_min_addr
 > exit
 
 

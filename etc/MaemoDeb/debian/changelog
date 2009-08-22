@@ -1,0 +1,11 @@
+tomotko (0.11.2-2) unstable; urgency=low
+
+  * Cleaned the debian directory for creating the deb file.
+
+ -- Frederic Bergeron <fbergeron@users.sourceforge.net>  Sat, 22 Aug 2009 00:41:45 +0900
+
+tomotko (0.11.2-1) unstable; urgency=low
+
+  * Initial release for Maemo.
+
+ -- Frederic Bergeron <fbergeron@users.sourceforge.net>  Sat, 15 Aug 2009 00:41:45 +0900

@@ -1,0 +1,112 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+
+
+
+CFLAGS = -Wall -g
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+
+configure: configure-stamp
+configure-stamp:
+	dh_testdir
+	# Add here commands to configure the package.
+
+	touch configure-stamp
+
+
+build: build-stamp
+
+build-stamp: configure-stamp 
+	dh_testdir
+
+	# Add here commands to compile the package.
+	lupdate toMOTko.pro
+	lrelease toMOTko.pro
+	qmake toMOTko.pro
+	$(MAKE)
+	#docbook-to-man debian/tomotko.sgml > tomotko.1
+
+	touch $@
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp configure-stamp
+
+	# Add here commands to clean up after the build process.
+	-$(MAKE) clean
+
+	dh_clean 
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k 
+	dh_installdirs
+
+	# Add here commands to install the package into debian/tomotko.
+	install -d $(CURDIR)/debian/tomotko/usr/share/applications/hildon
+	install -m644 etc/deb/toMOTko.desktop $(CURDIR)/debian/tomotko/usr/share/applications/hildon/toMOTko.desktop
+
+	install -d $(CURDIR)/debian/tomotko/usr/share/pixmaps
+	install -m644 pics/toMOTko.png $(CURDIR)/debian/tomotko/usr/share/pixmaps/toMOTko.png
+
+	install -d $(CURDIR)/debian/tomotko/usr/share/man/man1
+	install -m644 etc/deb/toMOTko.1 $(CURDIR)/debian/tomotko/usr/share/man/man1/toMOTko.1
+	
+	install -m755 toMOTko $(CURDIR)/debian/tomotko/usr/bin/toMOTko
+
+	$(MAKE) DESTDIR=$(CURDIR)/debian/tomotko install
+
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs changes.log
+	dh_installdocs
+	dh_installexamples
+#	dh_install
+#	dh_installmenu
+#	dh_installdebconf	
+#	dh_installlogrotate
+#	dh_installemacsen
+#	dh_installpam
+#	dh_installmime
+#	dh_python
+#	dh_installinit
+#	dh_installcron
+#	dh_installinfo
+	dh_installman
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+#	dh_perl
+#	dh_makeshlibs
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure
