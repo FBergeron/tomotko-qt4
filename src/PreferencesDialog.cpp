@@ -694,7 +694,7 @@ void PreferencesDialog::keyPressEvent( QKeyEvent* evt ) {
 
 void PreferencesDialog::addSequence() {
     SequenceDialog dialog( prefs, this );
-#ifdef WINCE
+#if defined(WINCE) || defined(Q_WS_HILDON)
     dialog.showMaximized();
 #else
     dialog.show();

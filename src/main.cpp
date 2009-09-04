@@ -38,7 +38,7 @@ int main( int argc, char **argv ) {
 
     MainWindow* mainWindow = new MainWindow( app, controller );
     app.connect( &app, SIGNAL( lastWindowClosed() ), &app, SLOT( quit() ) );
-#ifdef WINCE
+#if defined(WINCE)
     mainWindow->showMaximized();
 #else
     mainWindow->show();

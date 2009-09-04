@@ -3,7 +3,7 @@
 const qint32 TermScheduler::magicNumber = qint32( 0x22446677 );
 
 TermScheduler::TermScheduler( const Preferences& prefs ) : prefs( prefs ) {
-#ifdef WINCE
+#if defined(WINCE)
     srand( 0 );
 #else
     srand( time( NULL ) );

@@ -444,7 +444,7 @@ void MainWindow::exportData() {
 
 void MainWindow::preferences() {
     PreferencesDialog dialog( this, &(control->getPreferences()) );
-#ifdef WINCE
+#if defined(WINCE) || defined(Q_WS_HILDON)
     dialog.showMaximized();
 #else
     dialog.show();

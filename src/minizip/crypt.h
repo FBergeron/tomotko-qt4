@@ -110,7 +110,7 @@ static int crypthead(passwd, buf, bufSize, pkeys, pcrc_32_tab, crcForCrypting)
      */
     if (++calls == 1)
     {
-#ifdef WINCE
+#if defined(WINCE)
         srand((unsigned)(0 ^ ZCR_SEED2));
 #else
         srand((unsigned)(time(NULL) ^ ZCR_SEED2));

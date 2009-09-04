@@ -1286,7 +1286,7 @@ void VocabularyManagerFrame::search() {
         connect( searchDialog, SIGNAL( termsRemoved() ), this, SLOT( updateUi() ) );
     }
     searchDialog->updateFonts();
-#ifdef WINCE
+#if defined(WINCE) || defined(Q_WS_HILDON)
     searchDialog->showMaximized();
 #else
     searchDialog->show();
