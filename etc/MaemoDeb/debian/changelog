@@ -1,3 +1,9 @@
+tomotko (0.11.2-3) unstable; urgency=low
+
+  * Maximized some windows to make them usable.
+
+ -- Frederic Bergeron <fbergeron@users.sourceforge.net>  Fri, 4 Sep 2009 00:41:45 +0900
+
 tomotko (0.11.2-2) unstable; urgency=low
 
   * Cleaned the debian directory for creating the deb file.
