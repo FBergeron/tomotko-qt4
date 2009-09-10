@@ -694,8 +694,10 @@ void PreferencesDialog::keyPressEvent( QKeyEvent* evt ) {
 
 void PreferencesDialog::addSequence() {
     SequenceDialog dialog( prefs, this );
-#if defined(WINCE) || defined(Q_WS_HILDON)
+#if defined(WINCE)
     dialog.showMaximized();
+#elif defined(Q_WS_HILDON)
+    dialog.showFullScreen();
 #else
     dialog.show();
 #endif

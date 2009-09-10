@@ -444,8 +444,10 @@ void MainWindow::exportData() {
 
 void MainWindow::preferences() {
     PreferencesDialog dialog( this, &(control->getPreferences()) );
-#if defined(WINCE) || defined(Q_WS_HILDON)
+#if defined(WINCE)
     dialog.showMaximized();
+#elif defined(Q_WS_HILDON)
+    dialog.showFullScreen();
 #else
     dialog.show();
 #endif
