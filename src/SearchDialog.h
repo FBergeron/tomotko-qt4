@@ -84,6 +84,12 @@ private:
     QPushButton*            editResultTermButton;
     QPushButton*            removeResultTermButton;
 
+#if defined(Q_WS_HILDON)
+    QWidget*                windowButtonsPanel;
+    QHBoxLayout*            windowButtonsPanelLayout;
+    QPushButton*            closeButton;
+#endif
+
 };
 
 #endif

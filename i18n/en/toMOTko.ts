@@ -663,9 +663,9 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="393"/>
         <location filename="../../src/PreferencesDialog.cpp" line="399"/>
-        <location filename="../../src/SearchDialog.cpp" line="275"/>
-        <location filename="../../src/SequenceDialog.cpp" line="171"/>
-        <location filename="../../src/SequenceDialog.cpp" line="177"/>
+        <location filename="../../src/SearchDialog.cpp" line="286"/>
+        <location filename="../../src/SequenceDialog.cpp" line="175"/>
+        <location filename="../../src/SequenceDialog.cpp" line="181"/>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="798"/>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="932"/>
         <source>Warning</source>
@@ -858,92 +858,97 @@ selected languages.</translation>
     <name>SearchDialog</name>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="32"/>
-        <location filename="../../src/SearchDialog.cpp" line="157"/>
+        <location filename="../../src/SearchDialog.cpp" line="168"/>
         <source>Search</source>
         <translation>Search</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="48"/>
-        <location filename="../../src/SearchDialog.cpp" line="158"/>
+        <location filename="../../src/SearchDialog.cpp" line="169"/>
         <source>Results</source>
         <translation>Results</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="62"/>
-        <location filename="../../src/SearchDialog.cpp" line="163"/>
+        <location filename="../../src/SearchDialog.cpp" line="174"/>
         <source>Glossary</source>
         <translation>Glossary</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="62"/>
-        <location filename="../../src/SearchDialog.cpp" line="163"/>
+        <location filename="../../src/SearchDialog.cpp" line="174"/>
         <source>Location</source>
         <translation>Location</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="73"/>
         <location filename="../../src/SearchDialog.cpp" line="76"/>
-        <location filename="../../src/SearchDialog.cpp" line="165"/>
-        <location filename="../../src/SearchDialog.cpp" line="166"/>
+        <location filename="../../src/SearchDialog.cpp" line="176"/>
+        <location filename="../../src/SearchDialog.cpp" line="177"/>
         <source>View Glossary</source>
         <translation>View Glossary</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="103"/>
-        <location filename="../../src/SearchDialog.cpp" line="174"/>
+        <location filename="../../src/SearchDialog.cpp" line="114"/>
+        <location filename="../../src/SearchDialog.cpp" line="185"/>
         <source>Search...</source>
         <translation>Search...</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="78"/>
         <location filename="../../src/SearchDialog.cpp" line="81"/>
-        <location filename="../../src/SearchDialog.cpp" line="167"/>
-        <location filename="../../src/SearchDialog.cpp" line="168"/>
+        <location filename="../../src/SearchDialog.cpp" line="178"/>
+        <location filename="../../src/SearchDialog.cpp" line="179"/>
         <source>Edit Term</source>
         <translation>Edit</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="83"/>
         <location filename="../../src/SearchDialog.cpp" line="86"/>
-        <location filename="../../src/SearchDialog.cpp" line="169"/>
-        <location filename="../../src/SearchDialog.cpp" line="170"/>
+        <location filename="../../src/SearchDialog.cpp" line="180"/>
+        <location filename="../../src/SearchDialog.cpp" line="181"/>
         <source>Remove Term(s)</source>
         <translation>Remove</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="159"/>
-        <location filename="../../src/SearchDialog.cpp" line="195"/>
+        <location filename="../../src/SearchDialog.cpp" line="107"/>
+        <source>Close</source>
+        <translation>Close</translation>
+    </message>
+    <message>
+        <location filename="../../src/SearchDialog.cpp" line="170"/>
+        <location filename="../../src/SearchDialog.cpp" line="206"/>
         <source>%1 term(s) found</source>
         <translation>%1 Word(s) Found</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="275"/>
+        <location filename="../../src/SearchDialog.cpp" line="286"/>
         <source>ConfirmRemoveSelectedTerms</source>
         <translation>Are you sure that you want to remove the selected word(s)?</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="281"/>
+        <location filename="../../src/SearchDialog.cpp" line="292"/>
         <source>Yes</source>
         <translation>Yes</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="282"/>
+        <location filename="../../src/SearchDialog.cpp" line="293"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="323"/>
+        <location filename="../../src/SearchDialog.cpp" line="334"/>
         <source>MultipleTranslationsDetectedForRemoveTermsCaption</source>
         <translation>Remove Words</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="323"/>
+        <location filename="../../src/SearchDialog.cpp" line="334"/>
         <source>MultipleTranslationsDetectedForRemoveTerms</source>
         <translation>Some of the selected words contain translations in many languages.  Please indicate which translations to delete.</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="25"/>
-        <location filename="../../src/SearchDialog.cpp" line="155"/>
+        <location filename="../../src/SearchDialog.cpp" line="166"/>
         <source>Reset</source>
         <translation></translation>
     </message>
@@ -987,32 +992,32 @@ selected languages.</translation>
         <translation>Examples/Comments</translation>
     </message>
     <message>
-        <location filename="../../src/SequenceDialog.cpp" line="135"/>
+        <location filename="../../src/SequenceDialog.cpp" line="139"/>
         <source>Sequence</source>
         <translation>Revealing Sequence</translation>
     </message>
     <message>
-        <location filename="../../src/SequenceDialog.cpp" line="162"/>
+        <location filename="../../src/SequenceDialog.cpp" line="166"/>
         <source>AddRevealingSequence</source>
         <translation>Add Revealing Sequence...</translation>
     </message>
     <message>
-        <location filename="../../src/SequenceDialog.cpp" line="171"/>
+        <location filename="../../src/SequenceDialog.cpp" line="175"/>
         <source>SequenceIsEmpty</source>
         <translation>The currently edited revealing sequence is empty.  If you want want to discard it, click Cancel to close the dialog.</translation>
     </message>
     <message>
-        <location filename="../../src/SequenceDialog.cpp" line="177"/>
+        <location filename="../../src/SequenceDialog.cpp" line="181"/>
         <source>SequenceNotTerminated</source>
         <translation>The currently edited revealing sequence doesn&apos;t end by a revealable item.  This is invalid.  Remove the last operator or add another revealable item.</translation>
     </message>
     <message>
-        <location filename="../../src/SequenceDialog.cpp" line="145"/>
+        <location filename="../../src/SequenceDialog.cpp" line="149"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../src/SequenceDialog.cpp" line="147"/>
+        <location filename="../../src/SequenceDialog.cpp" line="151"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>

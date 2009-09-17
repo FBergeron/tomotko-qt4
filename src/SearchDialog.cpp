@@ -99,6 +99,17 @@ void SearchDialog::init() {
     mainLayout->addWidget( resultsHeaderPanel );
     mainLayout->addWidget( resultsListView, 1 );
     mainLayout->addWidget( resultsButtonsPanel );
+#if defined(Q_WS_HILDON)
+    windowButtonsPanel = new QWidget();
+    windowButtonsPanelLayout = new QHBoxLayout();
+    windowButtonsPanelLayout->setContentsMargins( 0, 0, 0, 0 );
+    windowButtonsPanel->setLayout( windowButtonsPanelLayout );
+    closeButton = new QPushButton( tr( "Close" ) );
+    connect( closeButton, SIGNAL( clicked() ), this, SLOT( reject() ) );
+    windowButtonsPanelLayout->addStretch( 0 );
+    windowButtonsPanelLayout->addWidget( closeButton );
+    mainLayout->addWidget( windowButtonsPanel );
+#endif
 
     setWindowTitle( tr( "Search..." ) );
 
@@ -223,6 +234,9 @@ void SearchDialog::editResultTerm() {
         if( term ) {
             Vocabulary* vocab = controller->getVocabTree()->getVocabulary( term->getVocabId() );
             TermDialog dialog( *vocab, controller, this, *term );
+#if defined(Q_WS_HILDON)
+            dialog.showFullScreen();
+#endif
             int result = dialog.exec();
             if( result ) { 
                 Term newTerm = dialog.getTerm();

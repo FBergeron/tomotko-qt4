@@ -761,6 +761,9 @@ void QuizFrame::editCurrentTerm() {
         }
 
         TermDialog dialog( *vocab, controller, this, *term );
+#if defined(Q_WS_HILDON)
+        dialog.showFullScreen();
+#endif
         int result = dialog.exec();
         if( result ) { 
             QString firstLang( controller->getQuizFirstLanguage() );

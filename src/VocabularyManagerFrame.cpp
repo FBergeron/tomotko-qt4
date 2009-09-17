@@ -848,6 +848,9 @@ void VocabularyManagerFrame::addTerm() {
         if( vocabItem ) {
             Vocabulary* vocab = vocabItem->getVocabulary();
             TermDialog dialog( *vocab, controller, this );
+#if defined(Q_WS_HILDON)
+            dialog.showFullScreen();
+#endif
             int result = dialog.exec();
             if( result ) {
                 Term newTerm( dialog.getTerm() );
@@ -884,6 +887,9 @@ void VocabularyManagerFrame::editTerm() {
             TermListItem* termItem = (TermListItem*)termList->topLevelItem( i );
             if( termItem->isSelected() ) {
                 TermDialog dialog( *vocab, controller, this, *termItem->getTerm() );
+#if defined(Q_WS_HILDON)
+                dialog.showFullScreen();
+#endif
                 int result = dialog.exec();
                 if( result ) { 
                     Term newTerm = dialog.getTerm();
@@ -1288,6 +1294,8 @@ void VocabularyManagerFrame::search() {
     searchDialog->updateFonts();
 #if defined(WINCE)
     searchDialog->showMaximized();
+#elif defined(Q_WS_HILDON)
+    searchDialog->showFullScreen();
 #else
     searchDialog->show();
 #endif

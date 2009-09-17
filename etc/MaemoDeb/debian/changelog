@@ -1,3 +1,9 @@
+tomotko (0.11.2-5) unstable; urgency=low
+
+  * Show TermDialog and SearchDialog in full-screen to prevent deadlock bug mentioned by Kurochka.
+
+ -- Frederic Bergeron <fbergeron@users.sourceforge.net>  Fri, 17 Sep 2009 00:41:45 +0900
+
 tomotko (0.11.2-4) unstable; urgency=low
 
   * Show some windows in full-screen to make them usable.
