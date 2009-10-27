@@ -258,9 +258,6 @@ void PreferencesDialog::init() {
     interfacePage->setLayout( interfacePageLayout );
 #endif
 
-    interfacePage->setWidget( interfacePageBox );	
-
-
     languagePage = new QWidget();
 
     languagesPanel = new QWidget();
