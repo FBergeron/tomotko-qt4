@@ -1,7 +1,11 @@
 #include "Preferences.h"
 
 const qint32 Preferences::magicNumber = qint32( 0x77556644 );
+#if defined(Q_WS_HILDON)
+const uint Preferences::fontSizeList[] = { 10, 12, 14, 18, 24, 30, 36, 40 };
+#else
 const uint Preferences::fontSizeList[] = { 8, 9, 10, 12, 14, 18, 24, 36 };
+#endif
 
 Preferences::Preferences() 
     : quizLength( MEDIUM ), interfaceLanguage( QString( "en" ) ), digraphEnabled( false ), quizButtonsHidden( false ), altInTermListShown( false ),
@@ -449,7 +453,9 @@ void Preferences::initDefaultKeyboardAccelerators() {
     defaultAccel[ ACTION_EXPORT ] = 0;
     defaultAccel[ ACTION_SHOW_ALL_GLOSSARIES_AND_TERMS ] = 0;
     defaultAccel[ ACTION_PREFERENCES ] = Qt::CTRL + Qt::Key_P;
+#if !defined(Q_WS_HILDON)
     defaultAccel[ ACTION_QUIT ] = Qt::CTRL + Qt::Key_Q;
+#endif
     defaultAccel[ ACTION_ADD_FOLDER ] = Qt::CTRL + Qt::Key_F;
     defaultAccel[ ACTION_ADD_GLOSSARY ] = Qt::CTRL + Qt::Key_G;
     defaultAccel[ ACTION_REMOVE_ITEM ] = Qt::CTRL + Qt::Key_Backspace;

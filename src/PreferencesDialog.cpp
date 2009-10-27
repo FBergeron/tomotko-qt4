@@ -170,7 +170,9 @@ void PreferencesDialog::init() {
     fontPageLayout->addStretch();
     fontPage->setLayout( fontPageLayout );
 
-    interfacePage = new QWidget();
+    interfacePage = new QScrollArea();
+    //interfacePage->setWidgetResizable( true );
+    interfacePageBox = new QWidget();
 
     miscInterfaceOptionsPanel = new QWidget();
     miscInterfaceOptionsPanelLayout = new QGridLayout();
@@ -208,6 +210,7 @@ void PreferencesDialog::init() {
 
     keyboardAccelListView = new QTreeWidget();
     keyboardAccelListView->setColumnCount( 2 );
+    keyboardAccelListView->setMinimumWidth( 700 );
     QStringList headerLabels;
     headerLabels << tr( "Action" ) << tr( "Key" ); 
     keyboardAccelListView->setHeaderLabels( headerLabels );
@@ -241,9 +244,13 @@ void PreferencesDialog::init() {
     connect( setAccelKeyButton, SIGNAL( clicked() ), this, SLOT( setAccelKey() ) );
     connect( resetAccelKeyButton, SIGNAL( clicked() ), this, SLOT( resetAccelKey() ) );
 
-    interfacePageLayout = new QVBoxLayout( interfacePage );
+    interfacePageLayout = new QVBoxLayout();
     interfacePageLayout->addWidget( miscInterfaceOptionsPanel );
     interfacePageLayout->addWidget( keyboardAccelPanel, 1 );
+    interfacePageBox->setLayout( interfacePageLayout );
+
+    interfacePage->setWidget( interfacePageBox );	
+
 
     languagePage = new QWidget();
 

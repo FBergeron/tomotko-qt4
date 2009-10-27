@@ -175,7 +175,9 @@ void PropertiesPanel::init() {
     mainLayout->addWidget( descriptionMultiLineEdit, 1 );
     mainLayout->addWidget( contentLabel );
     mainLayout->addWidget( contentListView );
+#if !defined(Q_WS_HILDON)
     mainLayout->addWidget( simplePropsPanel );
+#endif
 }
 
 PropertiesPanel::~PropertiesPanel() {

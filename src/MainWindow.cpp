@@ -381,7 +381,11 @@ void MainWindow::closeEvent( QCloseEvent* ce ) {
 }
 
 void MainWindow::about() {
+#if defined(Q_WS_HILDON)
+    QMessageBox::about( this, tr( "AboutToMOTko..." ), tr( "AboutMessageShort" ) );
+#else
     QMessageBox::about( this, tr( "AboutToMOTko..." ), tr( "AboutMessage" ) );
+#endif
 }
 
 void MainWindow::help() {

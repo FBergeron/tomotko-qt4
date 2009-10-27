@@ -86,12 +86,18 @@
         <translation>Recomenzar el testo</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="384"/>
+        <location filename="../../src/MainWindow.cpp" line="385"/>
+        <location filename="../../src/MainWindow.cpp" line="387"/>
         <source>AboutToMOTko...</source>
         <translation>Acerca de toMOTko...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="384"/>
+        <location filename="../../src/MainWindow.cpp" line="385"/>
+        <source>AboutMessageShort</source>
+        <translation>&lt;html&gt;&lt;h2&gt;toMOTko v0.11.2&lt;/h2&gt;&lt;p&gt;Pequeña aplicación para aprender&lt;br/&gt;nuevo vocabulario.&lt;/p&gt;&lt;p&gt;Escrito por Frederic Bergeron&lt;br/&gt;(&lt;a href=&quot;mailto:fbergeron@users.sourceforge.net&quot;&gt;fbergeron@users.sourceforge.net&lt;/a&gt;)&lt;br/&gt;Copyright (c) 2006-2009&lt;/p&gt;&lt;p&gt;toMOTko es software GPL v2.</translation>
+    </message>
+    <message>
+        <location filename="../../src/MainWindow.cpp" line="387"/>
         <source>AboutMessage</source>
         <translation>&lt;html&gt;&lt;h2&gt;toMOTko v0.11.2&lt;/h2&gt;&lt;p&gt;Pequeña aplicación para aprender&lt;br/&gt;nuevo vocabulario.&lt;/p&gt;&lt;p&gt;Escrito por Frederic Bergeron&lt;br/&gt;(&lt;a href=&quot;mailto:fbergeron@users.sourceforge.net&quot;&gt;fbergeron@users.sourceforge.net&lt;/a&gt;)&lt;br/&gt;Copyright (c) 2006-2009&lt;/p&gt;&lt;p&gt;toMOTko es software libre.&lt;br/&gt;Puede redistribuirlo y/o modificarlo&lt;br/&gt;bajo los términos de la GPL v2.&lt;/p&gt;&lt;p&gt;Para mas información:&lt;br/&gt;&lt;a href=&quot;http://tomotko.sourceforge.net&quot;&gt;http://tomotko.sourceforge.net&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
@@ -192,17 +198,17 @@
         <translation>Ampliar</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="397"/>
+        <location filename="../../src/MainWindow.cpp" line="401"/>
         <source>ConfirmResumeQuiz</source>
         <translation>Usted ya he empezado un quiz en los idiomas selectionados.  Quiere continuar este quiz?</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="403"/>
+        <location filename="../../src/MainWindow.cpp" line="407"/>
         <source>Yes</source>
         <translation>Si</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="404"/>
+        <location filename="../../src/MainWindow.cpp" line="408"/>
         <source>No</source>
         <translation>No</translation>
     </message>
@@ -472,55 +478,55 @@ Overwrite the current assignment?</source>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="122"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="238"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="240"/>
         <source>Description</source>
         <translation>Descripción</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="127"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="239"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="241"/>
         <source>Content</source>
         <translation>Contenido</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="132"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="241"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="243"/>
         <source>Items</source>
         <translation>Temas</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="132"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="241"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="243"/>
         <source>Selected</source>
         <translation>Quiz</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="132"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="241"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="243"/>
         <source>Checked</source>
         <translation>Marcados</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="132"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="241"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="243"/>
         <source>Total</source>
         <translation>Total</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="155"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="243"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="245"/>
         <source>Author</source>
         <translation>Autor</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="162"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="244"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="246"/>
         <source>CreationDate</source>
         <translation>Creación</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="168"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="245"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="247"/>
         <source>ModificationDate</source>
         <translation>Modificación</translation>
     </message>
@@ -661,16 +667,16 @@ Overwrite the current assignment?</source>
     <message>
         <location filename="../../src/PreferencesDialog.cpp" line="393"/>
         <location filename="../../src/PreferencesDialog.cpp" line="399"/>
-        <location filename="../../src/SearchDialog.cpp" line="286"/>
-        <location filename="../../src/SequenceDialog.cpp" line="175"/>
-        <location filename="../../src/SequenceDialog.cpp" line="181"/>
+        <location filename="../../src/SearchDialog.cpp" line="289"/>
+        <location filename="../../src/SequenceDialog.cpp" line="171"/>
+        <location filename="../../src/SequenceDialog.cpp" line="177"/>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="798"/>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="932"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="938"/>
         <source>Warning</source>
         <translation>Advertencia</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="397"/>
+        <location filename="../../src/MainWindow.cpp" line="401"/>
         <location filename="../../src/QuizFrame.cpp" line="264"/>
         <location filename="../../src/QuizFrame.cpp" line="279"/>
         <location filename="../../src/QuizFrame.cpp" line="386"/>
@@ -904,27 +910,27 @@ los idomas seleccionados.</translation>
         <translation>%1 palabra(s) encontradas</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="286"/>
+        <location filename="../../src/SearchDialog.cpp" line="289"/>
         <source>ConfirmRemoveSelectedTerms</source>
         <translation>Usted está seguro de borrar la(s) palabra(s) seleccionada(s)?</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="292"/>
+        <location filename="../../src/SearchDialog.cpp" line="295"/>
         <source>Yes</source>
         <translation>Si</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="293"/>
+        <location filename="../../src/SearchDialog.cpp" line="296"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="334"/>
+        <location filename="../../src/SearchDialog.cpp" line="337"/>
         <source>MultipleTranslationsDetectedForRemoveTermsCaption</source>
         <translation>Borrar palabras</translation>
     </message>
     <message>
-        <location filename="../../src/SearchDialog.cpp" line="334"/>
+        <location filename="../../src/SearchDialog.cpp" line="337"/>
         <source>MultipleTranslationsDetectedForRemoveTerms</source>
         <translation>Algunas palabras seleccionadas tienen traducciones en varios idiomas.  Seleccione los traducciones que usted quisiere borrar.</translation>
     </message>
@@ -974,32 +980,32 @@ los idomas seleccionados.</translation>
         <translation>Ejemplos/Comentarios</translation>
     </message>
     <message>
-        <location filename="../../src/SequenceDialog.cpp" line="139"/>
+        <location filename="../../src/SequenceDialog.cpp" line="135"/>
         <source>Sequence</source>
         <translation>Secuencia de revelación</translation>
     </message>
     <message>
-        <location filename="../../src/SequenceDialog.cpp" line="166"/>
+        <location filename="../../src/SequenceDialog.cpp" line="162"/>
         <source>AddRevealingSequence</source>
         <translation>Añadir una secuencia de revelación...</translation>
     </message>
     <message>
-        <location filename="../../src/SequenceDialog.cpp" line="175"/>
+        <location filename="../../src/SequenceDialog.cpp" line="171"/>
         <source>SequenceIsEmpty</source>
         <translation>La secuencia está vacía. Si Usted quiere cancelarla clique Cancelar para cerrar la ventana.</translation>
     </message>
     <message>
-        <location filename="../../src/SequenceDialog.cpp" line="181"/>
+        <location filename="../../src/SequenceDialog.cpp" line="177"/>
         <source>SequenceNotTerminated</source>
         <translation>La sequencia no es valida. Se termina por un operator de unión.  Debe añadir un otro item o borrar el ultimo operator.</translation>
     </message>
     <message>
-        <location filename="../../src/SequenceDialog.cpp" line="149"/>
+        <location filename="../../src/SequenceDialog.cpp" line="145"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../src/SequenceDialog.cpp" line="151"/>
+        <location filename="../../src/SequenceDialog.cpp" line="147"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -1109,12 +1115,12 @@ los idomas seleccionados.</translation>
 <context>
     <name>VocabularyManagerFrame</name>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="980"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="986"/>
         <source>MultipleTranslationsDetectedForRemoveTermsCaption</source>
         <translation>Borrar palabras</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="980"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="986"/>
         <source>MultipleTranslationsDetectedForRemoveTerms</source>
         <translation>Algunas palabras seleccionadas tienen traducciones en varios idiomas.  Seleccione los traducciones que usted quisiere borrar.</translation>
     </message>
@@ -1229,18 +1235,18 @@ los idomas seleccionados.</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="804"/>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="938"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="944"/>
         <source>Yes</source>
         <translation>Si</translation>
     </message>
     <message>
         <location filename="../../src/VocabularyManagerFrame.cpp" line="805"/>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="939"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="945"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/VocabularyManagerFrame.cpp" line="932"/>
+        <location filename="../../src/VocabularyManagerFrame.cpp" line="938"/>
         <source>ConfirmRemoveSelectedTerms</source>
         <translation>Usted está seguro de borrar la(s) palabra(s) seleccionada(s)?</translation>
     </message>

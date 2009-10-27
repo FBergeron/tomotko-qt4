@@ -240,6 +240,10 @@ To run the application, in scratchbox :
 
 > ./toMOTko
 
+Or even better (so that it looks even more like a real Hildon application):
+
+> run-standalone.sh ./toMOTko
+
 When I run the application, on ARMEL, it doesn't work very well.  Many errors are issued concerning the pixmaps :
 
 X Error: BadDrawable (invalid Pixmap or Window parameter) 9

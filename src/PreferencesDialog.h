@@ -100,7 +100,8 @@ private:
     QWidget*                    languagePage;
     QWidget*                    quizPage;
     QWidget*                    fontPage;
-    QWidget*                    interfacePage;
+    QScrollArea*                interfacePage;
+    QWidget*                    interfacePageBox;
 
     QVBoxLayout*                languageLayout;
 
