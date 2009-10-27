@@ -11,6 +11,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Flashcard application to learn vocabulary
  Flashcard application convenient for people wanting to learn
  vocabulary in one or more foreign languages.
+Xsbc-Bugtracker: http://sourceforge.net/tracker?group_id=181531&atid=897575
 XB-Maemo-Icon-26:
  iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c
  6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0

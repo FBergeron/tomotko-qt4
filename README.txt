@@ -325,6 +325,7 @@ What to do before a release
 - Upload new website : cd $TOMOTKO_HOME/www;rsync -ruv --exclude=.svn * fbergeron@web.sourceforge.net:tomotko_html
 - Post news to announce the release.
 - Close bugs in bug tracker if any.
+- Add a group and/or category in the SF's Bug Tracker system.
 - Do the same thing for Freshmeat.
 - Tag the new version in SVN : svn copy https://tomotko.svn.sourceforge.net/svnroot/tomotko/qt4/trunk https://tomotko.svn.sourceforge.net/svnroot/tomotko/qt4/tags/release-0.X.0 -m "Tagging the 0.X.0 release."
 
