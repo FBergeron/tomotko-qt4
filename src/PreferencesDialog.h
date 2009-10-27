@@ -100,8 +100,12 @@ private:
     QWidget*                    languagePage;
     QWidget*                    quizPage;
     QWidget*                    fontPage;
+#if defined(Q_WS_HILDON)
     QScrollArea*                interfacePage;
     QWidget*                    interfacePageBox;
+#else
+    QWidget*                    interfacePage;
+#endif
 
     QVBoxLayout*                languageLayout;
 

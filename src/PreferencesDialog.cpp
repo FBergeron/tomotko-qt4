@@ -170,9 +170,13 @@ void PreferencesDialog::init() {
     fontPageLayout->addStretch();
     fontPage->setLayout( fontPageLayout );
 
+#if defined(Q_WS_HILDON)
     interfacePage = new QScrollArea();
     //interfacePage->setWidgetResizable( true );
     interfacePageBox = new QWidget();
+#else
+    interfacePage = new QWidget();
+#endif
 
     miscInterfaceOptionsPanel = new QWidget();
     miscInterfaceOptionsPanelLayout = new QGridLayout();
@@ -247,7 +251,12 @@ void PreferencesDialog::init() {
     interfacePageLayout = new QVBoxLayout();
     interfacePageLayout->addWidget( miscInterfaceOptionsPanel );
     interfacePageLayout->addWidget( keyboardAccelPanel, 1 );
+#if defined(Q_WS_HILDON)
     interfacePageBox->setLayout( interfacePageLayout );
+    interfacePage->setWidget( interfacePageBox );
+#else
+    interfacePage->setLayout( interfacePageLayout );
+#endif
 
     interfacePage->setWidget( interfacePageBox );	
 
