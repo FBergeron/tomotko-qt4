@@ -252,6 +252,18 @@ X Error: BadDrawable (invalid Pixmap or Window parameter) 9
 
 I suspect that it's because I'm running Ubuntu under VirtualBox but it's not confirmed.
 
+Also, the first time I invoked the QFileDialog, I got this error:
+
+D-Bus library appears to be incorrectly set up; failed to open "/var/lib/dbus/machine-id": No such file or directory.
+
+To fix this, in scratchbox:
+
+dbus-uuidgen --ensure
+
+To print QString in maemo to debug the application, I use this:
+
+cerr << aString.toStdString() << endl;
+
 To make the binary deb file for i386 architecture, first compile and build the executable for i386 architecture then, outside scratchbox :
 
 > cd /scratchbox/users/fred/home/fred/tomotko

@@ -1,3 +1,11 @@
+tomotko (0.11.2-6) unstable; urgency=low
+
+  * Removed keyboard accelerator for Quit.
+  * Increased default fonts size.
+  * Added a statement to optify the application.
+
+ -- Frederic Bergeron <fbergeron@users.sourceforge.net>  Fri, 28 Oct 2009 00:41:45 +0900
+
 tomotko (0.11.2-5) unstable; urgency=low
 
   * Show TermDialog and SearchDialog in full-screen to prevent deadlock bug mentioned by Kurochka.

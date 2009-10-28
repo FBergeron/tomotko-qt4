@@ -1,0 +1,4 @@
+ToDo (maemo)
+------------
+The application should be hildonized.
+When exporting/importing data, the QFileDialog instances that are created with QFileDialog static methods (like getSaveFileName) are too small.  I may have to create my own QFileDialog and show it fullscreen.

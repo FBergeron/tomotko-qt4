@@ -1,9 +1,5 @@
 ToDo
 ----
-On Maemo, apparently that the Preferences windows is not maximizable.  This is a problem because the room is limited.  Maybe I could have a code for maemo only where the prefs window would be shown as maximized.  pupnik (on freenode.maemo) suggests to put the labels of Interface tab aligned with the value (on the same row).
-
-
-
 The font of the Image box is not correct.  Should be set.
 Print and read http://www.debian.org/doc/debian-policy/index.html#contents and modify...
 Make a deb file (and if possible a rpm file using pkgwrite (http://ffem.org/daveb/pkgwrite/)?).  2 links: 
