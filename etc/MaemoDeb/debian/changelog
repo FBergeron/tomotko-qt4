@@ -1,3 +1,9 @@
+tomotko (0.11.2-7) unstable; urgency=low
+
+  * Moved data location from home directory to /opt.
+
+ -- Frederic Bergeron <fbergeron@users.sourceforge.net>  Fri, 30 Oct 2009 00:41:45 +0900
+
 tomotko (0.11.2-6) unstable; urgency=low
 
   * Removed keyboard accelerator for Quit.

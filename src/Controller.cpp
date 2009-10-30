@@ -1,7 +1,11 @@
 #include "Controller.h"
 
 Controller::Controller() : vocabTree( NULL ), scheduler( prefs ) {
+#if defined(Q_WS_HILDON)
+    applicationDirName = QString( "/opt/tomotko/.toMOTko" );
+#else
     applicationDirName = QDir::homePath() + QString( "/.toMOTko" );
+#endif
     markedFilename = applicationDirName + QString( "/marked.dat.z" );
     prefs.setApplicationDirName( applicationDirName );
     scheduler.setApplicationDirName( applicationDirName );
