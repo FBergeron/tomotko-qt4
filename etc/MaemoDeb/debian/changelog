@@ -1,3 +1,9 @@
+tomotko (0.11.2-8) unstable; urgency=low
+
+  * Replaced mkdir() by mkpath() when creating data directory.
+
+ -- Frederic Bergeron <fbergeron@users.sourceforge.net>  Tue, 3 Nov 2009 00:41:45 +0900
+
 tomotko (0.11.2-7) unstable; urgency=low
 
   * Moved data location from home directory to /opt.

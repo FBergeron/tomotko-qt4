@@ -14,7 +14,7 @@ Controller::Controller() : vocabTree( NULL ), scheduler( prefs ) {
 bool Controller::init() {
     QDir applDir( applicationDirName );
     if( !applDir.exists() ) {
-        if( !applDir.mkdir( applicationDirName ) )
+        if( !applDir.mkpath( applicationDirName ) )
             return( false );
     }
     getPreferences().load();
