@@ -1,3 +1,9 @@
+tomotko (0.11.2-9) unstable; urgency=low
+
+  * Revert user's data location to home directory.
+
+ -- Frederic Bergeron <fbergeron@users.sourceforge.net>  Tue, 4 Nov 2009 00:41:45 +0900
+
 tomotko (0.11.2-8) unstable; urgency=low
 
   * Replaced mkdir() by mkpath() when creating data directory.
