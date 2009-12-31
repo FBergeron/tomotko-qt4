@@ -125,12 +125,15 @@ void PropertiesPanel::init() {
     descriptionMultiLineEdit->setDigraphEnabled( isDigraphEnabled );
 
     contentLabel = new QLabel( tr( "Content" ) );
-    contentListView = new ContentListView();
+    contentListView = new QTreeWidget();
     contentListView->setAllColumnsShowFocus( true );
     contentListView->setSelectionMode( QAbstractItemView::ExtendedSelection );
+    contentListView->header()->setStretchLastSection( false );
     QStringList headerLabels;
     headerLabels << tr( "Items" ) << tr( "Selected" ) << tr( "Checked" ) << tr( "Total" );
+
     contentListView->setHeaderLabels( headerLabels );
+    contentListView->header()->setResizeMode( 0, QHeaderView::Stretch );
     contentListView->headerItem()->setTextAlignment( 1, Qt::AlignRight );
     contentListView->headerItem()->setTextAlignment( 2, Qt::AlignRight );
     contentListView->headerItem()->setTextAlignment( 3, Qt::AlignRight );
@@ -261,3 +264,17 @@ void PropertiesPanel::removeListeners() {
         this, SLOT( updateDescription() ) );
 }
 
+void PropertiesPanel::resizeEvent( QResizeEvent* evt ) {
+    QWidget::resizeEvent( evt );
+
+    int maxCounterColumnHeaderWidth = -1;
+    for( int c = 1; c < 4; c++ ) {
+        QFontMetrics fm( contentListView->headerItem()->font( c ) );
+        int counterColumnHeaderWidth = fm.width( contentListView->headerItem()->text( c ) ) + 10;
+        if( counterColumnHeaderWidth > maxCounterColumnHeaderWidth )
+            maxCounterColumnHeaderWidth = counterColumnHeaderWidth;
+    }
+    contentListView->header()->resizeSection( 1, maxCounterColumnHeaderWidth );
+    contentListView->header()->resizeSection( 2, maxCounterColumnHeaderWidth );
+    contentListView->header()->resizeSection( 3, maxCounterColumnHeaderWidth );
+}

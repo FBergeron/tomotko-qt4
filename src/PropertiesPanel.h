@@ -3,13 +3,13 @@
 
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QHeaderView>
 #include <QLineEdit>
 #include <QTextEdit>
 #include <QTreeWidget>
 #include <QString>
 #include <QVBoxLayout>
 #include <QWidget>
-#include "ContentListView.h"
 #include "DigraphLineEdit.h"
 #include "DigraphMultiLineEdit.h"
 #include "Folder.h"
@@ -35,6 +35,10 @@ public:
 public slots:
 
     void updateCounters();
+
+protected:
+
+    virtual void resizeEvent( QResizeEvent* evt );
 
 private slots:
     
@@ -64,7 +68,7 @@ private:
     DigraphMultiLineEdit*   descriptionMultiLineEdit;
 
     QLabel*                 contentLabel;
-    ContentListView*        contentListView;
+    QTreeWidget*            contentListView;
 
     QLabel*                 authorLabel;
     DigraphLineEdit*        authorField;
