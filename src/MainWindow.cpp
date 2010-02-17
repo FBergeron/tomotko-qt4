@@ -43,215 +43,218 @@ MainWindow::MainWindow( QApplication& app, Controller* controller )
     else
         cerr << "Could not load translation files in directory " << qPrintable( transDir ) << endl;
 
-    toolBar = new QToolBar();
-    toolBar->setMovable( false );
-    addToolBar( toolBar );
+    //toolBar = new QToolBar();
+    //toolBar->setMovable( false );
+    //addToolBar( toolBar );
 
-    languageSelectorPanel = new QWidget();
-    languageSelectorPanelLayout = new QHBoxLayout();
-    languageSelectorPanel->setLayout( languageSelectorPanelLayout );
+    //languageSelectorPanel = new QWidget();
+    //languageSelectorPanelLayout = new QHBoxLayout();
+    //languageSelectorPanel->setLayout( languageSelectorPanelLayout );
 
-    firstLanguageComboBox = new QComboBox();
-    languageSelectorLabel = new QLabel();
-    languageSelectorLabel->setPixmap( QPixmap( blueArrow_xpm ) );
-    testLanguageComboBox = new QComboBox();
+    //firstLanguageComboBox = new QComboBox();
+    //languageSelectorLabel = new QLabel();
+    //languageSelectorLabel->setPixmap( QPixmap( blueArrow_xpm ) );
+    //testLanguageComboBox = new QComboBox();
 
-    languageSelectorPanelLayout->addWidget( firstLanguageComboBox );
-    languageSelectorPanelLayout->addWidget( languageSelectorLabel );
-    languageSelectorPanelLayout->addWidget( testLanguageComboBox );
+    //languageSelectorPanelLayout->addWidget( firstLanguageComboBox );
+    //languageSelectorPanelLayout->addWidget( languageSelectorLabel );
+    //languageSelectorPanelLayout->addWidget( testLanguageComboBox );
 
-    updateFirstLanguageValues();
-    updateTestLanguageValues();
-    connect( firstLanguageComboBox, SIGNAL( activated( const QString& ) ), this, SLOT( setFirstLanguage( const QString& ) ) );
-    connect( testLanguageComboBox, SIGNAL( activated( const QString& ) ), this, SLOT( setTestLanguage( const QString& ) ) );
+    //updateFirstLanguageValues();
+    //updateTestLanguageValues();
+    //connect( firstLanguageComboBox, SIGNAL( activated( const QString& ) ), this, SLOT( setFirstLanguage( const QString& ) ) );
+    //connect( testLanguageComboBox, SIGNAL( activated( const QString& ) ), this, SLOT( setTestLanguage( const QString& ) ) );
 
-    copyAction = Util::createAction( QApplication::translate( "QObject", "Copy" ), editcopy_xpm, this, SLOT( copy() ), QKeySequence( Qt::CTRL + Qt::Key_C ) );
-    cutAction = Util::createAction( QApplication::translate( "QObject", "Cut" ), editcut_xpm, this, SLOT( cut() ), QKeySequence( Qt::CTRL + Qt::Key_X ) );
-    pasteAction = Util::createAction( QApplication::translate( "QObject", "Paste" ), editpaste_xpm, this, SLOT( paste() ), QKeySequence( Qt::CTRL + Qt::Key_V ) );
+    //copyAction = Util::createAction( QApplication::translate( "QObject", "Copy" ), editcopy_xpm, this, SLOT( copy() ), QKeySequence( Qt::CTRL + Qt::Key_C ) );
+    //cutAction = Util::createAction( QApplication::translate( "QObject", "Cut" ), editcut_xpm, this, SLOT( cut() ), QKeySequence( Qt::CTRL + Qt::Key_X ) );
+    //pasteAction = Util::createAction( QApplication::translate( "QObject", "Paste" ), editpaste_xpm, this, SLOT( paste() ), QKeySequence( Qt::CTRL + Qt::Key_V ) );
 
-    progressBar = new QProgressBar();
-    progressBar->setMaximumWidth( 160 );
-    connect( controller, SIGNAL( progressChanged( int ) ), progressBar, SLOT( setValue( int ) ) );
-    progressBar->setVisible( false );
+    //progressBar = new QProgressBar();
+    //progressBar->setMaximumWidth( 160 );
+    //connect( controller, SIGNAL( progressChanged( int ) ), progressBar, SLOT( setValue( int ) ) );
+    //progressBar->setVisible( false );
 
-    languageSelectorAction = toolBar->addWidget( languageSelectorPanel );
-    toolBar->addSeparator();
-    toolBar->addAction( copyAction );
-    toolBar->addAction( cutAction );
-    toolBar->addAction( pasteAction );
-    toolBar->addSeparator();
+    //languageSelectorAction = toolBar->addWidget( languageSelectorPanel );
+    //toolBar->addSeparator();
+    //toolBar->addAction( copyAction );
+    //toolBar->addAction( cutAction );
+    //toolBar->addAction( pasteAction );
+    //toolBar->addSeparator();
 
-    statusBar()->addPermanentWidget( progressBar );
+    //statusBar()->addPermanentWidget( progressBar );
 
-    mainPanel = new QStackedWidget();
+    //mainPanel = new QStackedWidget();
 
-    quizFrame = new QuizFrame( control );
+    //quizFrame = new QuizFrame( control );
 
-    vocabManagerFrame = new VocabularyManagerFrame( control );
-    vocabManagerFrame->setDigraphEnabled( prefs.isDigraphEnabled() ); 
+    //vocabManagerFrame = new VocabularyManagerFrame( control );
+    //vocabManagerFrame->setDigraphEnabled( prefs.isDigraphEnabled() ); 
 
-    action[ ACTION_REVEAL ] = Util::createAction( tr( "Reveal" ), eye_xpm, 
-        quizFrame, SLOT( reveal() ), prefs.getAccelerator( ACTION_REVEAL ) );
-    action[ ACTION_RIGHT_ANSWER ] = Util::createAction( tr( "RightAnswer" ), goodAns_xpm, 
-        quizFrame, SLOT( rightAnswer() ), prefs.getAccelerator( ACTION_RIGHT_ANSWER ) );
-    action[ ACTION_WRONG_ANSWER ] = Util::createAction( tr( "WrongAnswer" ), badAns_xpm, 
-        quizFrame, SLOT( wrongAnswer() ), prefs.getAccelerator( ACTION_WRONG_ANSWER ) );
-    action[ ACTION_EDIT_QUIZ_TERM ] = Util::createAction( tr( "EditQuizTerm" ), editTerm_xpm, 
-        quizFrame, SLOT( editCurrentTerm() ), prefs.getAccelerator( ACTION_EDIT_QUIZ_TERM ) );
-    action[ ACTION_START_QUIZ ] = Util::createAction( tr( "StartQuiz" ), startQuiz_xpm, 
-        this, SLOT( startQuiz() ), prefs.getAccelerator( ACTION_START_QUIZ ) );
-    action[ ACTION_MANAGE_GLOSSARIES ] = Util::createAction( tr( "ManageGlossaries" ), glossaryManager_xpm, 
-        this, SLOT( invokeVocabularyManager() ), prefs.getAccelerator( ACTION_MANAGE_GLOSSARIES ) );
-    action[ ACTION_IMPORT ] = Util::createAction( tr( "Import..." ), import_xpm, 
-        this, SLOT( importData() ), prefs.getAccelerator( ACTION_IMPORT ) );
-    action[ ACTION_EXPORT ] = Util::createAction( tr( "Export..." ), export_xpm, 
-        this, SLOT( exportData() ), prefs.getAccelerator( ACTION_EXPORT ) );
-    action[ ACTION_SHOW_ALL_GLOSSARIES_AND_TERMS ] = Util::createAction( tr( "ShowAllGlossariesAndTerms" ), NULL, 
-        this, SLOT( toggleLanguageFilter() ), prefs.getAccelerator( ACTION_SHOW_ALL_GLOSSARIES_AND_TERMS ), true );
-    action[ ACTION_PREFERENCES ] = Util::createAction( tr( "Preferences..." ), preferences_xpm, 
-        this, SLOT( preferences() ), prefs.getAccelerator( ACTION_PREFERENCES ) );
-    action[ ACTION_QUIT ] = Util::createAction( tr( "Quit" ), quit_xpm, 
-        this, SLOT( quit() ), prefs.getAccelerator( ACTION_QUIT ) );
-    action[ ACTION_ADD_FOLDER ] = Util::createAction( tr( "AddFolder" ), addFolder_xpm, 
-        vocabManagerFrame, SLOT( addFolder() ), prefs.getAccelerator( ACTION_ADD_FOLDER ) );
-    action[ ACTION_ADD_GLOSSARY ] = Util::createAction( tr( "AddGlossary" ), addVocab_xpm, 
-        vocabManagerFrame, SLOT( addVocab() ), prefs.getAccelerator( ACTION_ADD_GLOSSARY ) );
-    action[ ACTION_REMOVE_ITEM ] = Util::createAction( tr( "RemoveItem" ), removeItem_xpm, 
-        vocabManagerFrame, SLOT( removeItem() ), prefs.getAccelerator( ACTION_REMOVE_ITEM ) );
-    action[ ACTION_ADD_TERM ] = Util::createAction( tr( "AddTerm" ), addTerm_xpm, 
-        vocabManagerFrame, SLOT( addTerm() ), prefs.getAccelerator( ACTION_ADD_TERM ) );
-    action[ ACTION_EDIT_TERM ] = Util::createAction( tr( "EditTerm" ), editTerm_xpm, 
-        vocabManagerFrame, SLOT( editTerm() ), prefs.getAccelerator( ACTION_EDIT_TERM ) );
-    action[ ACTION_REMOVE_TERMS ] = Util::createAction( tr( "RemoveTerm" ), removeTerm_xpm, 
-        vocabManagerFrame, SLOT( removeTerms() ), prefs.getAccelerator( ACTION_REMOVE_TERMS ) );
-    action[ ACTION_CHECK_ALL_TERMS ] = Util::createAction( tr( "CheckAllTerms" ), checkAllTerms_xpm, 
-        vocabManagerFrame, SLOT( checkAllTerms() ), prefs.getAccelerator( ACTION_CHECK_ALL_TERMS ) );
-    action[ ACTION_INVERSE_CHECKED_TERMS ] = Util::createAction( tr( "InverseCheckedTerms" ), 
-        inverseCheckedTerms_xpm, vocabManagerFrame, SLOT( inverseCheckedTerms() ), prefs.getAccelerator( ACTION_INVERSE_CHECKED_TERMS ) );
-    action[ ACTION_MAXIMIZE ] = Util::createAction( tr( "Maximize" ), maximize_xpm, 
-        this, SLOT( toggleMaximize( bool ) ), prefs.getAccelerator( ACTION_MAXIMIZE ), true );
-    action[ ACTION_SEARCH ] = Util::createAction( tr( "Search..." ), search_xpm, 
-        this, SLOT( search() ), prefs.getAccelerator( ACTION_SEARCH ) );
+    //action[ ACTION_REVEAL ] = Util::createAction( tr( "Reveal" ), eye_xpm, 
+    //    quizFrame, SLOT( reveal() ), prefs.getAccelerator( ACTION_REVEAL ) );
+    //action[ ACTION_RIGHT_ANSWER ] = Util::createAction( tr( "RightAnswer" ), goodAns_xpm, 
+    //    quizFrame, SLOT( rightAnswer() ), prefs.getAccelerator( ACTION_RIGHT_ANSWER ) );
+    //action[ ACTION_WRONG_ANSWER ] = Util::createAction( tr( "WrongAnswer" ), badAns_xpm, 
+    //    quizFrame, SLOT( wrongAnswer() ), prefs.getAccelerator( ACTION_WRONG_ANSWER ) );
+    //action[ ACTION_EDIT_QUIZ_TERM ] = Util::createAction( tr( "EditQuizTerm" ), editTerm_xpm, 
+    //    quizFrame, SLOT( editCurrentTerm() ), prefs.getAccelerator( ACTION_EDIT_QUIZ_TERM ) );
+    //action[ ACTION_START_QUIZ ] = Util::createAction( tr( "StartQuiz" ), startQuiz_xpm, 
+    //    this, SLOT( startQuiz() ), prefs.getAccelerator( ACTION_START_QUIZ ) );
+    //action[ ACTION_MANAGE_GLOSSARIES ] = Util::createAction( tr( "ManageGlossaries" ), glossaryManager_xpm, 
+    //    this, SLOT( invokeVocabularyManager() ), prefs.getAccelerator( ACTION_MANAGE_GLOSSARIES ) );
+    //action[ ACTION_IMPORT ] = Util::createAction( tr( "Import..." ), import_xpm, 
+    //    this, SLOT( importData() ), prefs.getAccelerator( ACTION_IMPORT ) );
+    //action[ ACTION_EXPORT ] = Util::createAction( tr( "Export..." ), export_xpm, 
+    //    this, SLOT( exportData() ), prefs.getAccelerator( ACTION_EXPORT ) );
+    //action[ ACTION_SHOW_ALL_GLOSSARIES_AND_TERMS ] = Util::createAction( tr( "ShowAllGlossariesAndTerms" ), NULL, 
+    //    this, SLOT( toggleLanguageFilter() ), prefs.getAccelerator( ACTION_SHOW_ALL_GLOSSARIES_AND_TERMS ), true );
+    //action[ ACTION_PREFERENCES ] = Util::createAction( tr( "Preferences..." ), preferences_xpm, 
+    //    this, SLOT( preferences() ), prefs.getAccelerator( ACTION_PREFERENCES ) );
+    //action[ ACTION_QUIT ] = Util::createAction( tr( "Quit" ), quit_xpm, 
+    //    this, SLOT( quit() ), prefs.getAccelerator( ACTION_QUIT ) );
+    //action[ ACTION_ADD_FOLDER ] = Util::createAction( tr( "AddFolder" ), addFolder_xpm, 
+    //    vocabManagerFrame, SLOT( addFolder() ), prefs.getAccelerator( ACTION_ADD_FOLDER ) );
+    //action[ ACTION_ADD_GLOSSARY ] = Util::createAction( tr( "AddGlossary" ), addVocab_xpm, 
+    //    vocabManagerFrame, SLOT( addVocab() ), prefs.getAccelerator( ACTION_ADD_GLOSSARY ) );
+    //action[ ACTION_REMOVE_ITEM ] = Util::createAction( tr( "RemoveItem" ), removeItem_xpm, 
+    //    vocabManagerFrame, SLOT( removeItem() ), prefs.getAccelerator( ACTION_REMOVE_ITEM ) );
+    //action[ ACTION_ADD_TERM ] = Util::createAction( tr( "AddTerm" ), addTerm_xpm, 
+    //    vocabManagerFrame, SLOT( addTerm() ), prefs.getAccelerator( ACTION_ADD_TERM ) );
+    //action[ ACTION_EDIT_TERM ] = Util::createAction( tr( "EditTerm" ), editTerm_xpm, 
+    //    vocabManagerFrame, SLOT( editTerm() ), prefs.getAccelerator( ACTION_EDIT_TERM ) );
+    //action[ ACTION_REMOVE_TERMS ] = Util::createAction( tr( "RemoveTerm" ), removeTerm_xpm, 
+    //    vocabManagerFrame, SLOT( removeTerms() ), prefs.getAccelerator( ACTION_REMOVE_TERMS ) );
+    //action[ ACTION_CHECK_ALL_TERMS ] = Util::createAction( tr( "CheckAllTerms" ), checkAllTerms_xpm, 
+    //    vocabManagerFrame, SLOT( checkAllTerms() ), prefs.getAccelerator( ACTION_CHECK_ALL_TERMS ) );
+    //action[ ACTION_INVERSE_CHECKED_TERMS ] = Util::createAction( tr( "InverseCheckedTerms" ), 
+    //    inverseCheckedTerms_xpm, vocabManagerFrame, SLOT( inverseCheckedTerms() ), prefs.getAccelerator( ACTION_INVERSE_CHECKED_TERMS ) );
+    //action[ ACTION_MAXIMIZE ] = Util::createAction( tr( "Maximize" ), maximize_xpm, 
+    //    this, SLOT( toggleMaximize( bool ) ), prefs.getAccelerator( ACTION_MAXIMIZE ), true );
+    //action[ ACTION_SEARCH ] = Util::createAction( tr( "Search..." ), search_xpm, 
+    //    this, SLOT( search() ), prefs.getAccelerator( ACTION_SEARCH ) );
 
-    // Accelerators that are not driven by menus/actions must be added to their widgets to work.
-    vocabManagerFrame->addAction( action[ ACTION_CHECK_ALL_TERMS ] );
-    vocabManagerFrame->addAction( action[ ACTION_INVERSE_CHECKED_TERMS ] );
-    vocabManagerFrame->addAction( action[ ACTION_MAXIMIZE ] );
-    vocabManagerFrame->addAction( action[ ACTION_ADD_TERM ] );
-    vocabManagerFrame->addAction( action[ ACTION_REMOVE_TERMS ] );
-    vocabManagerFrame->addAction( action[ ACTION_EDIT_TERM ] );
-    vocabManagerFrame->addAction( action[ ACTION_ADD_FOLDER ] );
-    vocabManagerFrame->addAction( action[ ACTION_ADD_GLOSSARY ] );
-    vocabManagerFrame->addAction( action[ ACTION_REMOVE_ITEM ] );
-    quizFrame->addAction( action[ ACTION_RIGHT_ANSWER ] );
-    quizFrame->addAction( action[ ACTION_WRONG_ANSWER ] );
-    quizFrame->addAction( action[ ACTION_REVEAL ] );
-    quizFrame->addAction( action[ ACTION_EDIT_QUIZ_TERM ] );
-    quizFrame->addAction( action[ ACTION_MAXIMIZE ] );
+    //// Accelerators that are not driven by menus/actions must be added to their widgets to work.
+    //vocabManagerFrame->addAction( action[ ACTION_CHECK_ALL_TERMS ] );
+    //vocabManagerFrame->addAction( action[ ACTION_INVERSE_CHECKED_TERMS ] );
+    //vocabManagerFrame->addAction( action[ ACTION_MAXIMIZE ] );
+    //vocabManagerFrame->addAction( action[ ACTION_ADD_TERM ] );
+    //vocabManagerFrame->addAction( action[ ACTION_REMOVE_TERMS ] );
+    //vocabManagerFrame->addAction( action[ ACTION_EDIT_TERM ] );
+    //vocabManagerFrame->addAction( action[ ACTION_ADD_FOLDER ] );
+    //vocabManagerFrame->addAction( action[ ACTION_ADD_GLOSSARY ] );
+    //vocabManagerFrame->addAction( action[ ACTION_REMOVE_ITEM ] );
+    //quizFrame->addAction( action[ ACTION_RIGHT_ANSWER ] );
+    //quizFrame->addAction( action[ ACTION_WRONG_ANSWER ] );
+    //quizFrame->addAction( action[ ACTION_REVEAL ] );
+    //quizFrame->addAction( action[ ACTION_EDIT_QUIZ_TERM ] );
+    //quizFrame->addAction( action[ ACTION_MAXIMIZE ] );
 
-    actionsMenu = new QMenu( tr( "Actions" ), this );
-    actionsMenuAction = menuBar()->addMenu( actionsMenu );
+    //actionsMenu = new QMenu( tr( "Actions" ), this );
+    //actionsMenuAction = menuBar()->addMenu( actionsMenu );
    
-    actionsMenu->addAction( action[ ACTION_START_QUIZ ] );
+    //actionsMenu->addAction( action[ ACTION_START_QUIZ ] );
 
-    actionsMenu->addAction( action[ ACTION_MANAGE_GLOSSARIES ] );
+    //actionsMenu->addAction( action[ ACTION_MANAGE_GLOSSARIES ] );
 
-    actionsMenu->addSeparator();
-    actionsMenu->addAction( action[ ACTION_SHOW_ALL_GLOSSARIES_AND_TERMS ] );
+    //actionsMenu->addSeparator();
+    //actionsMenu->addAction( action[ ACTION_SHOW_ALL_GLOSSARIES_AND_TERMS ] );
 
-    actionsMenu->addSeparator();
-    actionsMenu->addAction( action[ ACTION_IMPORT ] );
-    actionsMenu->addAction( action[ ACTION_EXPORT ] );
+    //actionsMenu->addSeparator();
+    //actionsMenu->addAction( action[ ACTION_IMPORT ] );
+    //actionsMenu->addAction( action[ ACTION_EXPORT ] );
 
-    actionsMenu->addSeparator();
+    //actionsMenu->addSeparator();
 
-    actionsMenu->addAction( action[ ACTION_PREFERENCES ] );
+    //actionsMenu->addAction( action[ ACTION_PREFERENCES ] );
 
-    actionsMenu->addSeparator();
+    //actionsMenu->addSeparator();
 
-    actionsMenu->addAction( action[ ACTION_QUIT ] );
+    //actionsMenu->addAction( action[ ACTION_QUIT ] );
 
-    editionMenu = new QMenu( tr( "Edition" ), this );
-    editionMenuAction = menuBar()->addMenu( editionMenu );
+    //editionMenu = new QMenu( tr( "Edition" ), this );
+    //editionMenuAction = menuBar()->addMenu( editionMenu );
 
-    editionMenu->addAction( cutAction );
-    editionMenu->addAction( copyAction );
-    editionMenu->addAction( pasteAction );
+    //editionMenu->addAction( cutAction );
+    //editionMenu->addAction( copyAction );
+    //editionMenu->addAction( pasteAction );
 
-    editionMenu->addSeparator();
+    //editionMenu->addSeparator();
 
-    editionMenu->addAction( action[ ACTION_SEARCH ] );
+    //editionMenu->addAction( action[ ACTION_SEARCH ] );
 
-    helpMenu = new QMenu( tr( "?" ), this );
-    helpMenuAction = menuBar()->addMenu( helpMenu );
-    helpAction = Util::createAction( tr( "Help..." ), help_xpm, this, SLOT( help() ) );
-    helpMenu->addAction( helpAction );
-    helpMenu->addSeparator();
-    
-    languageActionGroup = new QActionGroup( this ); 
-    QDir i18nDir( ":/i18n" );
-    QStringList langDirs = i18nDir.entryList();
-    QStringList sortedLanguages;
-    for( int i = 0; i < langDirs.count(); i++ ) {
-        if( langDirs[ i ] == QString( "." ) || langDirs[ i ] == QString( ".." ) )
-            continue;
-        QString locale = langDirs[ i ];
-        QString langDirStr = ":/i18n/" + QString( locale );
-        QDir langDir( langDirStr );
-        if( langDir.exists( QString( "toMOTko.qm" ) ) ) {
-            QTranslator translator( this );
-            translator.load( QString( "toMOTko.qm" ), langDirStr );
-            QString language = translator.translate( "QObject", locale.toLatin1().data() );
-            sortedLanguages.append( language );
-            availableLanguages[ language ] = locale;
-        }
-    }
-    sortedLanguages.sort();
-    for( int i = 0; i < sortedLanguages.count(); i++ ) {
-        QAction* langAction = new QAction( this );
-        langAction->setCheckable( true );
-        langAction->setText( sortedLanguages[ i ] );
-        
-        // Refactor this if later.  Look at createAction() method for hint (maybe).
-        QString langCode = availableLanguages[ sortedLanguages[ i ] ];
-        if( langCode == QString( "en" ) )
-            langAction->setIcon( QIcon( QPixmap( flag_en_xpm ) ) );
-        else if( langCode == QString( "es" ) )
-            langAction->setIcon( QIcon( QPixmap( flag_es_xpm ) ) );
-        else if( langCode == QString( "fr" ) )
-            langAction->setIcon( QIcon( QPixmap( flag_fr_xpm ) ) );
-        else if( langCode == QString( "ja" ) )
-            langAction->setIcon( QIcon( QPixmap( flag_ja_xpm ) ) );
-        else if( langCode == QString( "zh" ) )
-            langAction->setIcon( QIcon( QPixmap( flag_zh_xpm ) ) );
-        else if( langCode == QString( "de" ) )
-            langAction->setIcon( QIcon( QPixmap( flag_de_xpm ) ) );
+    mainMenu = new QMenu( this );
+    menuBar()->addMenu( mainMenu );
 
-        helpMenu->addAction( langAction );
-        languageActionGroup->addAction( langAction );
-        if( controller->getPreferences().getInterfaceLanguage() == availableLanguages[ sortedLanguages[ i ] ] )
-            langAction->setChecked( true );
-    }
-    
-    helpMenu->addSeparator();
+    //helpMenu = new QMenu( tr( "?" ), this );
+    //helpMenuAction = menuBar()->addMenu( helpMenu );
+    //helpAction = Util::createAction( tr( "Help..." ), help_xpm, this, SLOT( help() ) );
+    //helpMenu->addAction( helpAction );
+    //helpMenu->addSeparator();
+    //
+    //languageActionGroup = new QActionGroup( this ); 
+    //QDir i18nDir( ":/i18n" );
+    //QStringList langDirs = i18nDir.entryList();
+    //QStringList sortedLanguages;
+    //for( int i = 0; i < langDirs.count(); i++ ) {
+    //    if( langDirs[ i ] == QString( "." ) || langDirs[ i ] == QString( ".." ) )
+    //        continue;
+    //    QString locale = langDirs[ i ];
+    //    QString langDirStr = ":/i18n/" + QString( locale );
+    //    QDir langDir( langDirStr );
+    //    if( langDir.exists( QString( "toMOTko.qm" ) ) ) {
+    //        QTranslator translator( this );
+    //        translator.load( QString( "toMOTko.qm" ), langDirStr );
+    //        QString language = translator.translate( "QObject", locale.toLatin1().data() );
+    //        sortedLanguages.append( language );
+    //        availableLanguages[ language ] = locale;
+    //    }
+    //}
+    //sortedLanguages.sort();
+    //for( int i = 0; i < sortedLanguages.count(); i++ ) {
+    //    QAction* langAction = new QAction( this );
+    //    langAction->setCheckable( true );
+    //    langAction->setText( sortedLanguages[ i ] );
+    //    
+    //    // Refactor this if later.  Look at createAction() method for hint (maybe).
+    //    QString langCode = availableLanguages[ sortedLanguages[ i ] ];
+    //    if( langCode == QString( "en" ) )
+    //        langAction->setIcon( QIcon( QPixmap( flag_en_xpm ) ) );
+    //    else if( langCode == QString( "es" ) )
+    //        langAction->setIcon( QIcon( QPixmap( flag_es_xpm ) ) );
+    //    else if( langCode == QString( "fr" ) )
+    //        langAction->setIcon( QIcon( QPixmap( flag_fr_xpm ) ) );
+    //    else if( langCode == QString( "ja" ) )
+    //        langAction->setIcon( QIcon( QPixmap( flag_ja_xpm ) ) );
+    //    else if( langCode == QString( "zh" ) )
+    //        langAction->setIcon( QIcon( QPixmap( flag_zh_xpm ) ) );
+    //    else if( langCode == QString( "de" ) )
+    //        langAction->setIcon( QIcon( QPixmap( flag_de_xpm ) ) );
+
+    //    helpMenu->addAction( langAction );
+    //    languageActionGroup->addAction( langAction );
+    //    if( controller->getPreferences().getInterfaceLanguage() == availableLanguages[ sortedLanguages[ i ] ] )
+    //        langAction->setChecked( true );
+    //}
+    //
+    //helpMenu->addSeparator();
     aboutAction = Util::createAction( tr( "About..." ), about_xpm, this, SLOT( about() ) );
-    helpMenu->addAction( aboutAction );
+    mainMenu->addAction( aboutAction );
 
-    connect( quizFrame, SIGNAL( quizHidden() ), control, SLOT( concludeQuiz() ) );
+    //connect( quizFrame, SIGNAL( quizHidden() ), control, SLOT( concludeQuiz() ) );
 
-    mainPanel->addWidget( quizFrame );
-    mainPanel->addWidget( vocabManagerFrame );
+    //mainPanel->addWidget( quizFrame );
+    //mainPanel->addWidget( vocabManagerFrame );
 
-    connect( vocabManagerFrame, SIGNAL( selectionChanged( QTreeWidgetItem* ) ), this, SLOT( updateMenus( QTreeWidgetItem* ) ) );
-    setCentralWidget( mainPanel );
-    setLanguageFilterEnabled( controller->getPreferences().isLanguageFilterEnabled() );
-    invokeVocabularyManager();
+    //connect( vocabManagerFrame, SIGNAL( selectionChanged( QTreeWidgetItem* ) ), this, SLOT( updateMenus( QTreeWidgetItem* ) ) );
+    //setCentralWidget( mainPanel );
+    //setLanguageFilterEnabled( controller->getPreferences().isLanguageFilterEnabled() );
+    //invokeVocabularyManager();
 
     setWindowTitle( "toMOTko" );
 
-    updateFonts();
+    //updateFonts();
 
-    connect( languageActionGroup, SIGNAL( triggered( QAction* ) ), this, SLOT( switchLanguage( QAction* ) ) );
+    //connect( languageActionGroup, SIGNAL( triggered( QAction* ) ), this, SLOT( switchLanguage( QAction* ) ) );
 }
 
 MainWindow::~MainWindow() {
@@ -381,11 +384,9 @@ void MainWindow::closeEvent( QCloseEvent* ce ) {
 }
 
 void MainWindow::about() {
-#if defined(Q_WS_HILDON)
-    QMessageBox::about( this, tr( "AboutToMOTko..." ), tr( "AboutMessageShort" ) );
-#else
     QMessageBox::about( this, tr( "AboutToMOTko..." ), tr( "AboutMessage" ) );
-#endif
+    //QMessageBox::aboutQt( this, "test" ); 
+    //QMaemo5InformationBox::information( this, "This is a <b>Test</b>", QMaemo5InformationBox::DefaultTimeout );
 }
 
 void MainWindow::help() {

@@ -27,85 +27,70 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="152"/>
-        <location filename="../../src/MainWindow.cpp" line="308"/>
+        <location filename="../../src/MainWindow.cpp" line="311"/>
         <source>Actions</source>
         <translation>Actions</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="101"/>
-        <location filename="../../src/MainWindow.cpp" line="270"/>
-        <location filename="../../src/MainWindow.cpp" line="316"/>
+        <location filename="../../src/MainWindow.cpp" line="273"/>
+        <location filename="../../src/MainWindow.cpp" line="319"/>
         <source>StartQuiz</source>
         <translation>Start Quiz</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="103"/>
-        <location filename="../../src/MainWindow.cpp" line="317"/>
+        <location filename="../../src/MainWindow.cpp" line="320"/>
         <source>ManageGlossaries</source>
         <translation>Manage Glossaries</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="105"/>
-        <location filename="../../src/MainWindow.cpp" line="318"/>
+        <location filename="../../src/MainWindow.cpp" line="321"/>
         <source>Import...</source>
         <translation>Import...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="107"/>
-        <location filename="../../src/MainWindow.cpp" line="319"/>
+        <location filename="../../src/MainWindow.cpp" line="322"/>
         <source>Export...</source>
         <translation>Export...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="111"/>
-        <location filename="../../src/MainWindow.cpp" line="321"/>
+        <location filename="../../src/MainWindow.cpp" line="324"/>
         <source>Preferences...</source>
         <translation>Preferences...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="113"/>
-        <location filename="../../src/MainWindow.cpp" line="322"/>
+        <location filename="../../src/MainWindow.cpp" line="325"/>
         <source>Quit</source>
         <translation>Quit</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="185"/>
         <source>?</source>
-        <translation>?</translation>
+        <translation type="obsolete">?</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="237"/>
-        <location filename="../../src/MainWindow.cpp" line="339"/>
+        <location filename="../../src/MainWindow.cpp" line="240"/>
+        <location filename="../../src/MainWindow.cpp" line="342"/>
         <source>About...</source>
         <translation>About...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="270"/>
+        <location filename="../../src/MainWindow.cpp" line="273"/>
         <source>RestartQuiz</source>
         <translation>Restart Quiz</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="109"/>
-        <location filename="../../src/MainWindow.cpp" line="320"/>
+        <location filename="../../src/MainWindow.cpp" line="323"/>
         <source>ShowAllGlossariesAndTerms</source>
         <translation>Show All Glossaries and Terms</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="385"/>
         <location filename="../../src/MainWindow.cpp" line="387"/>
         <source>AboutToMOTko...</source>
         <translation>About toMOTko...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="385"/>
-        <source>AboutMessageShort</source>
-        <translation>&lt;html&gt;&lt;h2&gt;toMOTko v0.11.2&lt;/h2&gt;&lt;p&gt;Small application to learn&lt;br/&gt;new vocabulary.&lt;/p&gt;&lt;p&gt;Written by Frederic Bergeron&lt;br/&gt;(&lt;a href=&quot;mailto:fbergeron@users.sourceforge.net&quot;&gt;fbergeron@users.sourceforge.net&lt;/a&gt;)&lt;br/&gt;Copyright (c) 2006-2009&lt;/p&gt;&lt;p&gt;This program is GPL v2.</translation>
-    </message>
-    <message>
         <location filename="../../src/MainWindow.cpp" line="387"/>
         <source>AboutMessage</source>
-        <translation>&lt;html&gt;&lt;h2&gt;toMOTko v0.11.2&lt;/h2&gt;&lt;p&gt;Small application to learn&lt;br/&gt;new vocabulary.&lt;/p&gt;&lt;p&gt;Written by Frederic Bergeron&lt;br/&gt;(&lt;a href=&quot;mailto:fbergeron@users.sourceforge.net&quot;&gt;fbergeron@users.sourceforge.net&lt;/a&gt;)&lt;br/&gt;Copyright (c) 2006-2009&lt;/p&gt;&lt;p&gt;This program is distributed&lt;br/&gt;under the terms of the GPL v2.&lt;/p&gt;&lt;p&gt;For more information:&lt;br/&gt;&lt;a href=&quot;http://tomotko.sourceforge.net&quot;&gt;http://tomotko.sourceforge.net&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation>&lt;html&gt;&lt;h2&gt;toMOTko v0.11.2&lt;/h2&gt;&lt;p&gt;Small application to learn new vocabulary.&lt;/p&gt;&lt;p&gt;Written by Frederic Bergeron&lt;br/&gt;(&lt;a href=&quot;mailto:fbergeron@users.sourceforge.net&quot;&gt;fbergeron@users.sourceforge.net&lt;/a&gt;)&lt;br/&gt;Copyright (c) 2006-2010&lt;/p&gt;&lt;p&gt;This program is GPL v2.&lt;/p&gt;&lt;p&gt;Homepage: &lt;a href=&quot;http://tomotko.sourceforge.net&quot;&gt;http://tomotko.sourceforge.net&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Copy</source>
@@ -120,113 +105,97 @@
         <translation type="obsolete">Paste</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="93"/>
-        <location filename="../../src/MainWindow.cpp" line="312"/>
+        <location filename="../../src/MainWindow.cpp" line="315"/>
         <source>Reveal</source>
         <translation>Reveal</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="95"/>
-        <location filename="../../src/MainWindow.cpp" line="313"/>
+        <location filename="../../src/MainWindow.cpp" line="316"/>
         <source>RightAnswer</source>
         <translation>Right Answer</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="97"/>
-        <location filename="../../src/MainWindow.cpp" line="314"/>
+        <location filename="../../src/MainWindow.cpp" line="317"/>
         <source>WrongAnswer</source>
         <translation>Wrong Answer</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="99"/>
-        <location filename="../../src/MainWindow.cpp" line="315"/>
+        <location filename="../../src/MainWindow.cpp" line="318"/>
         <source>EditQuizTerm</source>
         <translation>Edit Quiz Term</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="115"/>
-        <location filename="../../src/MainWindow.cpp" line="323"/>
+        <location filename="../../src/MainWindow.cpp" line="326"/>
         <source>AddFolder</source>
         <translation>Add Folder</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="117"/>
-        <location filename="../../src/MainWindow.cpp" line="324"/>
+        <location filename="../../src/MainWindow.cpp" line="327"/>
         <source>AddGlossary</source>
         <translation>Add Glossary</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="119"/>
-        <location filename="../../src/MainWindow.cpp" line="325"/>
+        <location filename="../../src/MainWindow.cpp" line="328"/>
         <source>RemoveItem</source>
         <translation>Remove Item</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="121"/>
-        <location filename="../../src/MainWindow.cpp" line="326"/>
+        <location filename="../../src/MainWindow.cpp" line="329"/>
         <source>AddTerm</source>
         <translation>Add Word</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="123"/>
-        <location filename="../../src/MainWindow.cpp" line="327"/>
+        <location filename="../../src/MainWindow.cpp" line="330"/>
         <source>EditTerm</source>
         <translation>Edit Word</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="125"/>
-        <location filename="../../src/MainWindow.cpp" line="328"/>
+        <location filename="../../src/MainWindow.cpp" line="331"/>
         <source>RemoveTerm</source>
         <translation>Remove Word(s)</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="127"/>
-        <location filename="../../src/MainWindow.cpp" line="329"/>
+        <location filename="../../src/MainWindow.cpp" line="332"/>
         <source>CheckAllTerms</source>
         <translation>Check All Words</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="129"/>
-        <location filename="../../src/MainWindow.cpp" line="330"/>
+        <location filename="../../src/MainWindow.cpp" line="333"/>
         <source>InverseCheckedTerms</source>
         <translation>Inverse Checked Words</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="131"/>
-        <location filename="../../src/MainWindow.cpp" line="331"/>
+        <location filename="../../src/MainWindow.cpp" line="334"/>
         <source>Maximize</source>
         <translation>Maximize</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="401"/>
+        <location filename="../../src/MainWindow.cpp" line="402"/>
         <source>ConfirmResumeQuiz</source>
         <translation>There is a resumable quiz available for the current languages. Do you want to resume this quiz?</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="407"/>
+        <location filename="../../src/MainWindow.cpp" line="408"/>
         <source>Yes</source>
         <translation>Yes</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="408"/>
+        <location filename="../../src/MainWindow.cpp" line="409"/>
         <source>No</source>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="133"/>
-        <location filename="../../src/MainWindow.cpp" line="332"/>
+        <location filename="../../src/MainWindow.cpp" line="335"/>
         <source>Search...</source>
         <translation>Search...</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="174"/>
-        <location filename="../../src/MainWindow.cpp" line="309"/>
+        <location filename="../../src/MainWindow.cpp" line="312"/>
         <source>Edition</source>
         <translation>Edit</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="187"/>
-        <location filename="../../src/MainWindow.cpp" line="338"/>
+        <location filename="../../src/MainWindow.cpp" line="341"/>
         <source>Help...</source>
         <translation>Help...</translation>
     </message>
@@ -239,22 +208,22 @@
         <translation>Language Font Overrides</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="269"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="282"/>
         <source>Fonts</source>
         <translation>Fonts</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="180"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="186"/>
         <source>BuiltInSupportForAccents</source>
         <translation>Built-in Support for Accents</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="183"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="189"/>
         <source>DigraphesEnabled</source>
         <translation>Digraphs Enabled</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="258"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="271"/>
         <source>StudyLanguages</source>
         <translation>Languages of Interest</translation>
     </message>
@@ -300,102 +269,97 @@
         <translation>Reset</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="268"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="281"/>
         <source>Languages</source>
         <translation>Languages</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="267"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="280"/>
         <source>Quiz</source>
         <translation>Quiz</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="270"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="283"/>
         <source>Interface</source>
         <translation>Interface</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="291"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="304"/>
         <source>Preferences...</source>
         <translation>Preferences...</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="393"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="406"/>
         <source>RevealingOrderMandatory</source>
         <translation>You must select at least one revealing sequence option. If none are available, create a new one.</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="4"/>
         <source>VerySmall</source>
-        <translation>Very small</translation>
+        <translation type="obsolete">Very small</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="4"/>
         <source>Small</source>
-        <translation>Small</translation>
+        <translation type="obsolete">Small</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="4"/>
         <source>Medium</source>
-        <translation>Medium</translation>
+        <translation type="obsolete">Medium</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="4"/>
         <source>Large</source>
-        <translation>Large</translation>
+        <translation type="obsolete">Large</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="4"/>
         <source>VeryLarge</source>
-        <translation>Very large</translation>
+        <translation type="obsolete">Very large</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="399"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="412"/>
         <source>StudyLanguagesMandatory</source>
         <translation>You must select at least two study languages (one source language and one target language.)</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="205"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="211"/>
         <source>Keyboard Accelerators</source>
         <translation>Keyboard Accelerators</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="212"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="219"/>
         <source>Action</source>
         <translation>Action</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="212"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="219"/>
         <source>Key</source>
         <translation>Key</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="229"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="236"/>
         <source>Clear key</source>
         <translation>Clear Key</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="230"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="237"/>
         <source>Set key</source>
         <translation>Set Key</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="597"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="610"/>
         <source>&lt;press key&gt;</source>
         <translation>&lt;Press Key&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="665"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="678"/>
         <source>Duplicate key binding</source>
         <translation>Duplicate Key Binding</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="666"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="679"/>
         <source>Key &apos;</source>
         <translation>Key &apos;</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="666"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="679"/>
         <source>&apos;
 is currently assigned to
 &apos;</source>
@@ -404,23 +368,23 @@ is currently assigned to
 &apos;</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="667"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="680"/>
         <source>&apos;.
 Overwrite the current assignment?</source>
         <translation>&apos;. Overwrite the current assignment?</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="231"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="238"/>
         <source>Reset key</source>
         <translation>Reset Key</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="187"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="193"/>
         <source>QuizOptions</source>
         <translation>Quiz</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="190"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="196"/>
         <source>hideQuizButtons</source>
         <translation>Hide Buttons</translation>
     </message>
@@ -440,22 +404,22 @@ Overwrite the current assignment?</source>
         <translation>Quiz Window</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="194"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="200"/>
         <source>GlossaryManagerOptions</source>
         <translation>List of Terms</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="197"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="203"/>
         <source>ShowAltInTermList</source>
         <translation>Show Alt./Phon. Value</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="277"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="290"/>
         <source>Ok</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="279"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="292"/>
         <source>Cancel</source>
         <translation></translation>
     </message>
@@ -480,55 +444,55 @@ Overwrite the current assignment?</source>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="122"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="240"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="243"/>
         <source>Description</source>
         <translation>Description</translation>
     </message>
     <message>
         <location filename="../../src/PropertiesPanel.cpp" line="127"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="241"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="244"/>
         <source>Content</source>
         <translation>Content</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="132"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="243"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="133"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="246"/>
         <source>Items</source>
         <translation>Items</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="132"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="243"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="133"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="246"/>
         <source>Selected</source>
         <translation>Quiz</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="132"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="243"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="133"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="246"/>
         <source>Checked</source>
         <translation>Checked</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="132"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="243"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="133"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="246"/>
         <source>Total</source>
         <translation>Total</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="155"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="245"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="158"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="248"/>
         <source>Author</source>
         <translation>Author</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="162"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="246"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="165"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="249"/>
         <source>CreationDate</source>
         <translation>Creation</translation>
     </message>
     <message>
-        <location filename="../../src/PropertiesPanel.cpp" line="168"/>
-        <location filename="../../src/PropertiesPanel.cpp" line="247"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="171"/>
+        <location filename="../../src/PropertiesPanel.cpp" line="250"/>
         <source>ModificationDate</source>
         <translation>Modification</translation>
     </message>
@@ -626,21 +590,18 @@ Overwrite the current assignment?</source>
         <translation>Edit</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="69"/>
-        <location filename="../../src/MainWindow.cpp" line="334"/>
+        <location filename="../../src/MainWindow.cpp" line="337"/>
         <source>Cut</source>
         <translation>Cut</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="68"/>
-        <location filename="../../src/MainWindow.cpp" line="335"/>
+        <location filename="../../src/MainWindow.cpp" line="338"/>
         <location filename="../../src/TermDialog.cpp" line="38"/>
         <source>Copy</source>
         <translation>Copy</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="70"/>
-        <location filename="../../src/MainWindow.cpp" line="336"/>
+        <location filename="../../src/MainWindow.cpp" line="339"/>
         <location filename="../../src/TermDialog.cpp" line="42"/>
         <source>Paste</source>
         <translation>Paste</translation>
@@ -655,20 +616,20 @@ Overwrite the current assignment?</source>
     </message>
     <message>
         <location filename="../../src/FolderParser.cpp" line="46"/>
-        <location filename="../../src/MainWindow.cpp" line="379"/>
+        <location filename="../../src/MainWindow.cpp" line="382"/>
         <location filename="../../src/TermDialog.cpp" line="277"/>
         <location filename="../../src/VocabParser.cpp" line="85"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="379"/>
+        <location filename="../../src/MainWindow.cpp" line="382"/>
         <source>ErrorSavingData</source>
         <translation>A problem occurred when saving data.  Check file permissions and disk space.</translation>
     </message>
     <message>
-        <location filename="../../src/PreferencesDialog.cpp" line="393"/>
-        <location filename="../../src/PreferencesDialog.cpp" line="399"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="406"/>
+        <location filename="../../src/PreferencesDialog.cpp" line="412"/>
         <location filename="../../src/SearchDialog.cpp" line="289"/>
         <location filename="../../src/SequenceDialog.cpp" line="171"/>
         <location filename="../../src/SequenceDialog.cpp" line="177"/>
@@ -678,7 +639,7 @@ Overwrite the current assignment?</source>
         <translation>Warning</translation>
     </message>
     <message>
-        <location filename="../../src/MainWindow.cpp" line="401"/>
+        <location filename="../../src/MainWindow.cpp" line="402"/>
         <location filename="../../src/QuizFrame.cpp" line="264"/>
         <location filename="../../src/QuizFrame.cpp" line="279"/>
         <location filename="../../src/QuizFrame.cpp" line="386"/>
@@ -919,7 +880,7 @@ selected languages.</translation>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="107"/>
         <source>Close</source>
-        <translation>Close</translation>
+        <translation type="unfinished">Close</translation>
     </message>
     <message>
         <location filename="../../src/SearchDialog.cpp" line="170"/>

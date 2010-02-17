@@ -3,183 +3,15 @@ README
 
 Prerequisites
 -------------
-To build the application, you will need the open-source version of QT4.4 (or better).
-You can download it from TrollTech's website or if you're using Linux or MacOS, you 
+To build the application, you will need the open-source version of QT4.6 (or better).
+You can download it from TrollTech or Nokia's website or if you're using Linux or MacOS, you 
 probably can get it using the package manager of your operating system.
 
 You will also need a C++ compiler and some other miscellaneous development tools.
 
+The development on Maemo is going too fast to keep this section updated.  Google is your friend.
 
-Windows XP/2000/Vista
----------------------
-To extract localized string :
-
-> lupdate toMOTko.pro
-
-To generate the string files :
-
-> lrelease toMOTko.pro
-
-These 2 operations should be done at least once before building the Makefile‥
-Otherwise, you will get errors like these when running qmake:
-
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/en/toMOTko.qm'
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/fr/toMOTko.qm'
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/es/toMOTko.qm'
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/ja/toMOTko.qm'
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/zh/toMOTko.qm'
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/de/toMOTko.qm'
-
-To build the Makefile :
-> toMOTko.pro
-
-To build the executable (the debuggable version) :
-
-> make clean
-> make 
-
-To build the executable (the release version) :
-
-> make clean
-> make release 
-
-To deploy the required resources into debug and release directories :
-
-> bin\deploy.rb
-
-To run the executable (the debuggable version) :
-
-> debug\toMOTko.exe
-
-To run the executable (the release version) :
-
-> release\toMOTko.exe
-
-To make the installer setup.exe file :
-
-- Launch InstallJammer
-- Open etc/InstallJammer/toMOTko/toMOTko.mpi
-- Select Build (the file should be located in the output directory.)
-
-
-Linux
------
-To extract localized string :
-
-> lupdate toMOTko.pro
-
-To generate the string files :
-
-> lrelease toMOTko.pro
-
-These 2 operations should be done at least once before building the Makefile‥
-Otherwise, you will get errors like these when running qmake:
-
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/en/toMOTko.qm'
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/fr/toMOTko.qm'
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/es/toMOTko.qm'
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/ja/toMOTko.qm'
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/zh/toMOTko.qm'
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/de/toMOTko.qm'
-
-To build the Makefile :
-
-> qmake toMOTko.pro
-
-To build the executable :
-
-> make clean; 
-> make
-
-To run the executable :
-
-> ./toMOTko
-
-To make the deb file :
-
-> bin/makeDebFile.rb
-
-To make the rpm file :
-
-> bin/makeRpmFile.rb
-
-
-Windows CE 
-----------
-To build toMOTko for Windows CE, the process is a little bit more complicated.  Here are the operations I did.  Hopefully, I haven't forgotten anything...
-
-First, we need to build Qt for the desired target platform.  In my case, I was interested to build for Windows Mobile 6.0.  I downloaded the Qt source code: qt-embedded-wince-opensource-4.4.3.
-
-
-MacOS
------
-I build the SDK from source.  I decompressed and extracted the archive in /Developer.  I use a screen session because it takes about 2 hours to build the SDK.
-
-screen
-sudo -s
-cd /Developer/qt-mac-opensource-src-4.4.3
-make clean
-make confclean
-./configure -universal -sdk /Developer/SDKs/MacOSX10.4u.sdk
-make
-make install
-exit
-
-That's it.  At this point, the SDK is built and installed.
-
-This is not needed but, just in case, if you want to make a static version of Qt library, here is how to do:
-
-screen
-sudo -s
-cd /Developer/qt-mac-opensource-src-4.4.3
-make clean
-make confclean
-./configure -universal -static -sdk /Developer/SDKs/MacOSX10.4u.sdk
-make sub-src
-exit
-
-At the end of this process, the file libQtGui.a is built and can be used to build the application.  I will not use it though.
-
-
-To extract localized string :
-
-> lupdate toMOTko.pro
-
-To generate the string files :
-
-> lrelease toMOTko.pro
-
-These 2 operations should be done at least once before building the Makefile.
-Otherwise, you will get errors like these when running qmake:
-
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/en/toMOTko.qm'
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/fr/toMOTko.qm'
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/es/toMOTko.qm'
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/ja/toMOTko.qm'
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/zh/toMOTko.qm'
-RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/de/toMOTko.qm'
-
-To build the Makefile :
-
-> qmake -macx -config release toMOTko.pro
-
-To build the executable :
-
-> make clean; 
-> make
-
-To run the executable :
-
-> ./toMOTko.app/Contents/MacOS/tomotko
-
-To make the application package that it can be deployed later:
-
-> bin/makeDmgFile.rb
-
-
-Maemo
------
-I'm using Ubuntu 9.04 running inside VirtualBox.
+I'm using Ubuntu 8.10 running inside VirtualBox.
 
 Before compiling and building the application, it's required to install scratchbox, the Maemo SDK, and Xephyr X11-Server.  
 This is out of scope of this document.  For more details, read installation documentation on Maemo's website.
@@ -199,7 +31,7 @@ To select the architecture (either i386 or ARMEL), in scratchbox :
 
 To launch the Xephyr X11-Server (from a new terminal window):
 
-> Xephyr :2 -host-cursor -screen 800x480x16 -dpi 96 -ac -extension Composite
+> Xephyr :2 -host-cursor -screen 800x480x16 -dpi 96 -ac -kb &
 
 Once that Xephyr is running properly, set up the DISPLAY variable into scratchbox:
 
@@ -211,11 +43,11 @@ To launch the Hildon Application Framework, in scratchbox :
 
 To extract localized string, in scratchbox (1) :
 
-> lupdate toMOTko.pro
+> /opt/qt4-maemo5/bin/lupdate toMOTko.pro
 
 To generate the string files, in scratchbox (1) :
 
-> lrelease toMOTko.pro
+> /opt/qt4-maemo5/bin/lrelease toMOTko.pro
 
 These 2 operations should be done at least once before building the Makefile‥
 Otherwise, you will get errors like these when running qmake:
@@ -229,7 +61,7 @@ RCC: Error in 'toMOTko.qrc': Cannot find file 'i18n/de/toMOTko.qm'
 
 To build the Makefile, in scratchbox (1) :
 
-> qmake toMOTko.pro
+> /opt/qt4-maemo5/bin/make toMOTko.pro
 
 To build the executable, in scratchbox (1) :
 

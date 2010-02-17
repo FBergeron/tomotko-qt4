@@ -1,13 +1,13 @@
 Package: tomotko
 Architecture: $ARCH
 Version: $VERSION
-Section: misc
-Priority: optional
+Section: $SECTION
+Priority: $PRIORITY
 Maintainer: Frederic Bergeron <fbergeron@users.sourceforge.net>
 Description: Flashcard application to learn vocabulary
  Flashcard application convenient for people wanting to learn
  vocabulary in one or more foreign languages.
 Homepage: http://tomotko.sourceforge.net
-Bugs: http://sourceforge.net/tracker/?group_id=18153&atid=897575
+Bugs: https://sourceforge.net/tracker/?group_id=181531&atid=897575
 Installed-Size: $SIZE_IN_KB
-Depends: libqtcore4, libqtgui4, libqt4-xml, libc6 (>= 2.4)
+Depends: $DEPENDS

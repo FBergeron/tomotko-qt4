@@ -205,7 +205,8 @@ Sequence Preferences::getRevealingSequenceAt( int index ) {
 }
 
 QString Preferences::getInterfaceLanguage() const {
-    return( interfaceLanguage );
+    return( "en" );
+//    return( interfaceLanguage );
 }
 
 void Preferences::setInterfaceLanguage( const QString& interfaceLanguage ) {
