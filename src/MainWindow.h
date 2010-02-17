@@ -11,7 +11,6 @@
 #include <QLabel>
 #include <QProgressBar>
 #include <QMainWindow> 
-#include <QMaemo5InformationBox>
 #include <QMap>
 #include <QMenu>
 #include <QMenuBar>
@@ -102,8 +101,6 @@ private:
     VocabularyManagerFrame* vocabManagerFrame;
 
     QToolBar*               toolBar;
-
-    QMenu*                  mainMenu;
 
     QMenu*                  actionsMenu;
     QAction*                actionsMenuAction;
